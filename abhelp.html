@@ -105,19 +105,85 @@
             <a href="https://datamateapp.github.io/privacypolicy.html">PrivacyPolicy</a>
             <a href="https://datamateapp.github.io/termsconditions.html">TermsConditions</a>
         </nav>
+    <style>
+        body {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-        <header>
-            <a href="https://dnorthway.github.io/help.html" class="floppy-disk-icon">
-                <div class="inner-square">
-                    <div class="blue-square"></div>
-                </div>
-                <div class="bottom-text">
-                    AddressBlock
-                </div>
-            </a>
-            <p><strong>Create an address block in Sheets from your Gmail or Outlook contacts using AddressBlockApp. Also works in Excel! Just download and open it in a workbook!</strong></p>
+        .contact-spreadsheet {
+            display: flex;
+            flex-direction: column;
+            width: 120px; /* Adjusted to 120px for a square icon */
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 0px;
+            padding: 0; /* Removed padding to fit within the border */
+            font-size: 8px; /* Adjusted font size to make it smaller */
+            margin-top: 20px; /* Adjusted margin-top for spacing at the top */
+        }
 
-        </header>
+        .contact-cell {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-bottom: 1px solid #ccc; /* Added bottom border for separation */
+            border-radius: 0; /* Removed border-radius to make corners square */
+            text-align: left; /* Aligned text to the left */
+        }
+
+        .name-cell {
+            position: relative;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contact-spreadsheet">
+        <div id="name-cell" class="contact-cell name-cell">
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div id="company-cell" class="contact-cell company-cell"></div>
+        <div id="address-cell" class="contact-cell address-cell"></div>
+        <div id="city-state-zip-cell" class="contact-cell city-state-zip-cell"></div>
+        <div id="email-cell" class="contact-cell email-cell"></div>
+
+        <script>
+            const contacts = [
+                { name: 'John Smith', company: 'XYZ Corp', address: '123 Main St', cityStateZip: 'Cityville, CA 12345', email: 'john@example.com' },
+                { name: 'Jane Doe', company: 'ABC Inc', address: '456 Oak St', cityStateZip: 'Townsville, NY 56789', email: 'jane@example.com' }
+            ];
+
+            let index = 0;
+            const nameCell = document.getElementById('name-cell');
+            const companyCell = document.getElementById('company-cell');
+            const addressCell = document.getElementById('address-cell');
+            const cityStateZipCell = document.getElementById('city-state-zip-cell');
+            const emailCell = document.getElementById('email-cell');
+
+            function updateContact() {
+                const contact = contacts[index];
+                nameCell.innerHTML = `${contact.name}<span class="dropdown-arrow">▼</span>`;
+                companyCell.textContent = `${contact.company}`;
+                addressCell.textContent = `${contact.address}`;
+                cityStateZipCell.textContent = `${contact.cityStateZip}`;
+                emailCell.textContent = `${contact.email}`;
+                index = (index + 1) % contacts.length;
+            }
+
+            setInterval(updateContact, 2000);
+            updateContact(); // Initial update
+        </script>
 
 
         <div class="section">
