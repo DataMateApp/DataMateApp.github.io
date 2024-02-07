@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -75,6 +75,9 @@
             border-bottom: 1px solid #0074d9;
             border-radius: 0;
             text-align: left;
+            font-weight: bold;
+            color: #0074d9;
+            text-rendering: optimizeLegibility;
         }
 
         .name-cell {
@@ -97,7 +100,7 @@
 <body class="ms-font-m ms-welcome ms-Fabric">
 
     <nav>
-        <a href="https://datamateapp.github.io/">Home</a>
+        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock Home</a>
         <a href="https://datamateapp.github.io/privacypolicy.html">PrivacyPolicy</a>
         <a href="https://datamateapp.github.io/termsconditions.html">TermsConditions</a>
     </nav>
@@ -134,7 +137,7 @@
                     index = (index + 1) % contacts.length;
                 }
 
-                setInterval(updateContact, 2000);
+                setInterval(updateContact, 12000);
                 updateContact(); // Initial update
             </script>
         </div>
