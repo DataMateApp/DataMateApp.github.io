@@ -1,5 +1,4 @@
-﻿, ﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,235 +8,145 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
-            background-color: #fff;
-            color: #000; /* Set header text color to black */
+            background-color: #0074d9;
+            color: #fff;
             text-align: center;
-            padding: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            padding: 30px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+            header p {
+                font-size: 1.2em;
+                margin: 10px 0 0;
+            }
 
         nav {
             background-color: #333;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
         }
 
             nav a {
-                float: left;
-                font-size: 16px;
                 color: white;
-                text-align: center;
-                padding: 14px 16px;
                 text-decoration: none;
+                padding: 14px 20px;
+                font-size: 16px;
+                transition: background-color 0.3s, color 0.3s;
             }
 
                 nav a:hover {
-                    background-color: #ddd;
-                    color: black;
+                    background-color: #0074d9;
+                    color: #fff;
                 }
 
         .container {
-            padding: 20px;
-        }
-
-        .section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Floppy disk icon styles */
-        .floppy-disk-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #0074d9;
-            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
+            max-width: 1000px;
             margin: 0 auto;
-            cursor: pointer;
+            padding: 40px 20px;
         }
 
-        .inner-square {
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+        h1, h2 {
+            color: #0074d9;
+            font-size: 2.2em;
+            text-align: center;
         }
 
-        .blue-square {
-            width: 7px;
-            height: 11px;
-            background-color: #0074d9;
-            position: absolute;
-            top: 0;
-            left: 70%;
-            transform: translateX(-50%);
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            margin-bottom: 20px;
         }
 
-        .bottom-text {
+        .highlight {
+            font-weight: bold;
+            color: #0074d9;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+            .cta button {
+                background-color: #0074d9;
+                color: white;
+                border: none;
+                padding: 15px 40px;
+                font-size: 1.2em;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+                .cta button:hover {
+                    background-color: #005bb5;
+                }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
             color: white;
-            font-size: 6.5px;
-            line-height: 12px;
         }
     </style>
 </head>
 
-<body class="ms-font-m ms-welcome ms-Fabric">
+<body>
+
+    <header>
+        <p>DataMateApp</p>
+<p>Save Any Data As a Record</p>
+    </header>
 
     <nav>
         <a href="https://datamateapp.github.io/">Home</a>
         <a href="https://datamateapp.github.io/help.html">Help</a>
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-        <a href="https://datamateapp.github.io/addressblock.html">Also try AddressBlock</a>
-        <a href="https://datamateapp.github.io/privacypolicy.html">PrivacyPolicy</a>
-        <a href="https://datamateapp.github.io/termsconditions.html">TermsConditions</a>
+        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a>
+        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
         <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Customer Portal</a>
     </nav>
 
-    <header>
-        <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" class="floppy-disk-icon">
-            <div class="inner-square">
-                <div class="blue-square"></div>
-            </div>
-            <div class="bottom-text">
-                DataMateApp
-            </div>
-        </a>
-        <p><strong>Save Any Data As a Record</strong></p>
+    <div class="container">
+        <section>
+            <h2>Unlock the Power of Streamlined Data Management</h2>
+            <p>Our revolutionary <span class="highlight">DataMateApp</span> is available in all languages supported by Google Sheets™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
+        </section>
 
-    </header>
+        <section>
+            <h2>Why Choose DataMate?</h2>
+            <ul>
+                <li><span class="highlight">Effortless Integration:</span> Import data from Excel™, Google Sheets™, and more with ease.</li>
+                <li><span class="highlight">Versatile Usage:</span> Whether it's invoices, work orders, timesheets, or anything else, DataMate handles it all!!</li>
+                <li><span class="highlight">Robust Data Management:</span> Manage up to 10,000 records per sheet with comprehensive control.</li>
+                <li><span class="highlight">Streamlined Contact Management:</span> Easily import and organize your contacts directly from Gmail™.</li>
+            </ul>
+        </section>
 
-            <section>
-                <div class="container">
-                    <p><h1>Unlock the power of streamlined data management with our revolutionary DataMateApp, available in all languages supported by Google Sheets™! Experience seamless integration on Chrome™, Windows™, Mac™ and iPad™.</h1></p>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>DataMate App - Streamline Your Business Management</title>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            margin: 0;
-                            padding: 20px;
-                            background-color: #f0f0f0;
-                            color: #333;
-                        }
+        <section>
+            <h2>Boost Your Productivity</h2>
+            <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/q7r409dlvR4">Watch This Video</a></p>
+        </section>
 
-                        header {
-                            text-align: center;
-                            background-color: #009688;
-                            color: white;
-                            padding: 20px 0;
-                        }
+        <div class="cta">
+            <p>Ready to revolutionize your business management?</p>
+            <button onclick="window.location.href='https://workspace.google.com/marketplace/search/DataMateApp'">Get Started Today!</button>
+        </div>
+    </div>
 
-                            header h1 {
-                                margin: 0;
-                                font-size: 2.5em;
-                            }
+    <footer>
+        &copy; 2024 DataMateApp. All Rights Reserved.
+    </footer>
 
-                        section {
-                            margin: 20px 0;
-                            padding: 20px;
-                            background-color: white;
-                            border-radius: 8px;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                        }
-
-                        h2 {
-                            color: #009688;
-                        }
-
-                        p {
-                            line-height: 1.6;
-                        }
-
-                        .highlight {
-                            color: #009688;
-                            font-weight: bold;
-                        }
-
-                        .cta {
-                            text-align: center;
-                            margin-top: 20px;
-                        }
-
-                            .cta button {
-                                background-color: #009688;
-                                color: white;
-                                border: none;
-                                padding: 15px 30px;
-                                font-size: 1.2em;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                transition: background-color 0.3s;
-                            }
-
-                                .cta button:hover {
-                                    background-color: #00796b;
-                                }
-                    </style>
-                    </head>
-                    <body>
-                        <header>
-                            <h1>DataMate App</h1>
-                            <p>Streamline Your Business Management</p>
-                        </header>
-                        <section>
-                            <h2>Transform Your Data Management</h2>
-                            <p>Say goodbye to the chaos of managing multiple spreadsheets and hello to <span class="highlight">DataMate App</span>! Our powerful tool is designed to seamlessly integrate and manage your business data, making your workflow more efficient and organized.</p>
-                        </section>
-                        <section>
-                            <h2>Why Choose DataMate?</h2>
-                            <ul>
-                                <li><span class="highlight">Easy Integration:</span> Import data from Excel™, Google Sheets™, and even web pages with ease.</li>
-                                <li><span class="highlight">Versatile Usage:</span> Manage invoices, work orders, timesheets, <strong>ANYTHING</strong> all in one place.</li>
-                                <li><span class="highlight">Comprehensive Management:</span> Save, view, print, and update up to 10,000 records per data sheet.</li>
-                                <li><span class="highlight">Contact Integration:</span> Effortlessly import and manage your contacts from Gmail™.</li>
-                            </ul>
-                        </section>
-                        <section>
-                            <h2>Boost Your Productivity</h2>
-                            <p>With the <span class="highlight">DataMate App</span>, you can streamline your data management processes, reduce errors, and improve productivity. Our user-friendly interface and robust features ensure you spend less time on administrative tasks and more time growing your business.</p>
-                        </section>
-                        <div class="cta">
-                            <p>Ready to revolutionize your business management?</p>
-                            <button onclick="window.location.href='https://workspace.google.com/marketplace/search/DataMateApp'">Get Started Today!</button>
-                        </div>
-
-        <div class="section">
-            <p><span class="highlight">DataMate</span><strong> FREE Version</strong></p>
-            <p><strong>View/Print your last 10 records</strong></p>
-            <div class="section">
-                <a href="http://workspace.google.com/marketplace/app/appname/609263591431" target="_blank" aria-label="Get it from the Google Workspace Marketplace">
-                    <img alt="Google Workspace Marketplace badge" alt-text="Get it from the Google Workspace Marketplace" src="https://workspace.google.com/static/img/marketplace/en/gwmBadge.svg?" style="height: 68px">
-                </a>
-                <p><strong>Fully functional application FREE!</strong></p>
-
-            </div>
-
-            <p><span class="highlight">DataMateApp</span><strong> Only $5 / mo.</strong></p>
-            <p><strong>View/Print 10000 records with added fuctionallity!</strong></p>
-            <div class="section">
-                <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" target="_blank" aria-label="Get it from the Google Workspace Marketplace">
-                    <img alt="Google Workspace Marketplace badge" alt-text="Get it from the Google Workspace Marketplace" src="https://workspace.google.com/static/img/marketplace/en/gwmBadge.svg?" style="height: 68px">
-                </a>
-
-                <p><strong>Explore and manage your data efficiently. Works on Chrome™, Windows™, Mac™ and iPad™!</strong></p>
-            </div>
 </body>
 </html>
