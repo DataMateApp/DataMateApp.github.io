@@ -4,56 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApp</title>
+    <title>DataMateApp - Template Sharing</title>
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #fff;
-            color: #000; /* Set header text color to black */
+            background-color: #ffffff;
+            color: #333333;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav {
-            background-color: #333;
-            overflow: hidden;
+            background-color: #0078D4;
+            padding: 10px 0;
+            text-align: center;
         }
 
             nav a {
-                float: left;
-                font-size: 16px;
+                font-size: 18px;
                 color: white;
-                text-align: center;
-                padding: 14px 16px;
                 text-decoration: none;
+                margin: 0 15px;
+                padding: 14px 20px;
             }
 
                 nav a:hover {
-                    background-color: #ddd;
-                    color: black;
+                    background-color: #005A9E;
+                    border-radius: 5px;
                 }
 
         .container {
-            padding: 20px;
+            padding: 40px;
         }
 
         .section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Floppy disk icon styles */
+            .section h1 {
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .section iframe {
+                width: 100%;
+                max-width: 800px;
+                height: 450px;
+                margin-bottom: 20px;
+                border: none;
+            }
+
+            .section p {
+                font-size: 16px;
+                line-height: 1.5;
+                color: #666;
+            }
+
+        footer {
+            background-color: #0078D4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+            footer p {
+                margin: 5px 0;
+            }
+
+            footer a {
+                color: #FFD700;
+                text-decoration: none;
+            }
+
         .floppy-disk-icon {
             width: 50px;
             height: 50px;
@@ -61,11 +96,11 @@
             clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
             position: relative;
             overflow: hidden;
-            display: flex;
+            display: inline-flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            margin: 0 auto;
+            margin-bottom: 10px;
             cursor: pointer;
         }
 
@@ -93,17 +128,18 @@
             color: white;
             font-size: 6.5px;
             line-height: 12px;
+            text-align: center;
         }
     </style>
 </head>
 
-<body class="ms-font-m ms-welcome ms-Fabric">
+<body>
 
     <nav>
         <a href="https://datamateapp.github.io/">Home</a>
         <a href="https://datamateapp.github.io/help.html">Help</a>
-        <a href="https://datamateapp.github.io/privacypolicy.html">PrivacyPolicy</a>
-        <a href="https://datamateapp.github.io/termsconditions.html">TermsConditions</a>
+        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a>
+        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
     </nav>
 
     <header>
@@ -115,49 +151,59 @@
                 DataMateApp
             </div>
         </a>
-        <p><strong>Save any data as a record</strong></p>
-        <p><h1>Welcome to DataMate Template Sharing</h1></p>
-        <p><strong>Do you have a DataMate template you would like to share? <a href="mailto:datamateapp@gmail.com">Submit Template</a></strong></p>
-        <p><strong>Just provide a YouTube™ link demonstrating operation and a 'copy' link to your template.</strong></p>
+        <h1>Welcome to DataMate Template Sharing</h1>
+        <p><strong>Do you have a Google Sheets™ or Excel™ form template you would like to share? <a href="mailto:datamateapp@gmail.com">Submit Template</a></strong></p>
+        <p><strong>Just povide a 'copy' link to your template or attach it to an email.</strong></p>
         <p><strong>TEMPLATES ARE PROVIDED "AS-IS," "WITH ALL FAULTS," AND "AS AVAILABLE." YOU BEAR ALL RISK OF USING THEM.</strong></p>
     </header>
 
+    <div class="container">
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1vnZ0GLpvTp0ZBRabP49aoHS-scUz3p-1yPXjcPLMm0I/copy?usp=sharing">DAILY REPORT</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/6VQDXHumNfM" title="DAILY REPORT"></iframe>
+        </div>
 
-    <div class="section">
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1_9NcYIt59vaC9RIl1jb5_rT2K3jlMoYi7bNrdwQ-QHU/copy#gid=1140762025">ESTIMATE/RFP</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/qoKtL_RMvgQ" title="ESTIMATE/RFP"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/1vnZ0GLpvTp0ZBRabP49aoHS-scUz3p-1yPXjcPLMm0I/copy?usp=sharing">DAILY REPORT</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/6VQDXHumNfM" title="DAILY REPORT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/17Y0Rg_659Dl5IbwO58YXx_gJAXZoNCWk0baI7j4QvsA/copy?usp=sharing">INVOICE/INVENTORY</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/UQDqx7oe25s" title="INVOICE/INVENTORY"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/1_9NcYIt59vaC9RIl1jb5_rT2K3jlMoYi7bNrdwQ-QHU/copy#gid=1140762025">ESTIMATE/RFP</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/qoKtL_RMvgQ" title="ESTIMATE/RFP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1bLC1s7jYxVoPko1OOIipEx1yViB5qqlcFVbojGO8inU/copy?usp=sharing">PURCHASE ORDER</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/WamAiVMxk54" title="PURCHASE ORDER"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/17Y0Rg_659Dl5IbwO58YXx_gJAXZoNCWk0baI7j4QvsA/copy?usp=sharing">INVOICE/INVENTORY</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/UQDqx7oe25s" title="INVOICE/INVENTORY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1f6ziqBsxFVVyyWffGpc7a7B6qT4w7f8TmDkt7zsIUqM/copy#gid=2136032088">REQUEST FOR INFORMATION</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/mSL26blRQFE" title="REQUEST FOR INFORMATION"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/1bLC1s7jYxVoPko1OOIipEx1yViB5qqlcFVbojGO8inU/copy?usp=sharing">PURCHASE ORDER</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/WamAiVMxk54" title="PURCHASE ORDER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        
-        <h1><a href="https://docs.google.com/spreadsheets/d/1f6ziqBsxFVVyyWffGpc7a7B6qT4w7f8TmDkt7zsIUqM/copy#gid=2136032088">REQUEST FOR INFORMATION</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/mSL26blRQFE" title="REQUEST FOR INFORMATION" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1vykt3oouZ48T6uLSfGZxjX5v7Y4qCHQIa5b_1DMDQlc/copy?usp=sharing">SUBCONTRACT CHANGE ORDER</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/fwCjaMVadbk" title="SUBCONTRACT CHANGE ORDER"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/1vykt3oouZ48T6uLSfGZxjX5v7Y4qCHQIa5b_1DMDQlc/copy?usp=sharing">SUBCONTRACT CHANGE ORDER</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/fwCjaMVadbk" title="SUBCONTRACT CHANGE ORDER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        
-        <h1><a href="https://docs.google.com/spreadsheets/d/1tr0uyS_LwkUAkFlVDZ7xl_nTOzU7uopslEbXoqy5IkE/copy#gid=629074606">SUBMITTALS</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/Uf7jvhv6aBs" title="SUBMITTALS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1tr0uyS_LwkUAkFlVDZ7xl_nTOzU7uopslEbXoqy5IkE/copy#gid=629074606">SUBMITTALS</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/Uf7jvhv6aBs" title="SUBMITTALS"></iframe>
+        </div>
 
-        <h1><a href="https://docs.google.com/spreadsheets/d/1oLp1x3xvVPKtv0NDHGXW3JmXUIcL-WOOGI9xNuZtFxM/copy?usp=sharing">WEEKLY TIME CARDS</a> Template</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/hgSv9iTp05s" title="WEEKLY TIME CARDS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p>
-            Congratulations! Enjoy the benefits of a more organized and efficient management experience.
-        </p>
+        <div class="section">
+            <h1><a href="https://docs.google.com/spreadsheets/d/1oLp1x3xvVPKtv0NDHGXW3JmXUIcL-WOOGI9xNuZtFxM/copy?usp=sharing">WEEKLY TIME CARDS</a> Template</h1>
+            <iframe src="https://www.youtube.com/embed/hgSv9iTp05s" title="WEEKLY TIME CARDS"></iframe>
+        </div>
     </div>
 
-        <footer>
-            <p>Questions or feedback? <a href="mailto:datamateapp@gmail.com">Email me.</a></p>
-            <p>&copy; 2024 Excellence-US, LLC. All rights reserved.</p>
-        </footer>
+    <footer>
+        <p>Questions or feedback? <a href="mailto:datamateapp@gmail.com">datamateapp@gmail.com</a></p>
+        <p>© 2024 Excellence-US, LLC. All rights reserved.</p>
+    </footer>
+
 </body>
 
 </html>
-
