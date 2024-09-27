@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,30 +23,67 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-            header p {
-                font-size: 1.2em;
-                margin: 10px 0 0;
-            }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
 
+        /* Navigation styling */
         nav {
             background-color: #333;
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            position: relative;
         }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                padding: 14px 20px;
-                font-size: 16px;
-                transition: background-color 0.3s, color 0.3s;
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0074d9;
+            color: #fff;
+        }
+
+        /* Hamburger menu icon */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                display: none;
+                width: 100%;
             }
 
-                nav a:hover {
-                    background-color: #0074d9;
-                    color: #fff;
-                }
+            nav a {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #555;
+                display: block;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .active {
+                display: flex;
+            }
+        }
 
         .container {
             max-width: 1000px;
@@ -76,20 +113,20 @@
             margin-top: 40px;
         }
 
-            .cta button {
-                background-color: #0074d9;
-                color: white;
-                border: none;
-                padding: 15px 40px;
-                font-size: 1.2em;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
+        .cta button {
+            background-color: #0074d9;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-                .cta button:hover {
-                    background-color: #005bb5;
-                }
+        .cta button:hover {
+            background-color: #005bb5;
+        }
 
         footer {
             text-align: center;
@@ -104,10 +141,12 @@
 
     <header>
         <p>DataMateApp</p>
-<p>Save Any Data As a Record</p>
+        <p>Save Any Data As a Record</p>
     </header>
 
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
         <a href="https://datamateapp.github.io/">Home</a>
         <a href="https://datamateapp.github.io/help.html">Help</a>
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
@@ -127,7 +166,7 @@
             <h2>Why Choose DataMate?</h2>
             <ul>
                 <li><span class="highlight">Effortless Integration:</span> Import data from Excel™, Google Sheets™, and more with ease.</li>
-                <li><span class="highlight">Versatile Usage:</span> Whether it's invoices, work orders, timesheets, or anything else, DataMate handles it all!!</li>
+                <li><span class="highlight">Versatile Usage:</span> Whether it's invoices, work orders, timesheets, or anything else, DataMate handles it all!</li>
                 <li><span class="highlight">Robust Data Management:</span> Manage up to 10,000 records per sheet with comprehensive control.</li>
                 <li><span class="highlight">Streamlined Contact Management:</span> Easily import and organize your contacts directly from Gmail™.</li>
             </ul>
@@ -148,5 +187,11 @@
         &copy; 2024 DataMateApp. All Rights Reserved.
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
