@@ -8,54 +8,55 @@
 
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
+            font-family: 'Roboto', Arial, sans-serif; /* Google's primary font */
+            background-color: #ffffff; /* Clean white background */
             margin: 0;
             padding: 0;
             color: #333;
         }
 
         header {
-            background-color: #0074d9;
+            background-color: #4285f4; /* Google Blue */
             color: #fff;
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0 0;
-        }
+            header p {
+                font-size: 1.2em;
+                margin: 5px 0;
+            }
 
         /* Navigation styling */
         nav {
-            background-color: #333;
             display: flex;
             justify-content: center;
             padding: 10px 0;
-            position: relative;
+            background-color: #f1f3f4;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-            font-size: 16px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+            nav a {
+                color: #202124;
+                text-decoration: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 5px;
+                transition: background-color 0.2s;
+            }
 
-        nav a:hover {
-            background-color: #0074d9;
-            color: #fff;
-        }
+                nav a:hover {
+                    background-color: #e8f0fe;
+                    color: #202124;
+                }
 
         /* Hamburger menu icon */
         .menu-icon {
             display: none;
             font-size: 30px;
             cursor: pointer;
-            color: white;
+            color: #202124;
             position: absolute;
             top: 10px;
             right: 20px;
@@ -69,12 +70,12 @@
                 width: 100%;
             }
 
-            nav a {
-                padding: 10px;
-                text-align: left;
-                border-bottom: 1px solid #555;
-                display: block;
-            }
+                nav a {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #ddd;
+                    display: block;
+                }
 
             .menu-icon {
                 display: block;
@@ -88,24 +89,24 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 20px;
         }
 
         h1, h2 {
-            color: #0074d9;
-            font-size: 2.2em;
+            color: #4285f4;
+            font-size: 2em;
             text-align: center;
         }
 
         p {
             line-height: 1.6;
-            font-size: 1.1em;
+            font-size: 1em;
             margin-bottom: 20px;
         }
 
         .highlight {
             font-weight: bold;
-            color: #0074d9;
+            color: #4285f4;
         }
 
         .cta {
@@ -113,27 +114,39 @@
             margin-top: 40px;
         }
 
-        .cta button {
-            background-color: #0074d9;
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+            .cta button {
+                background-color: #4285f4;
+                color: white;
+                border: none;
+                padding: 15px 35px;
+                font-size: 1em;
+                font-weight: 500;
+                border-radius: 24px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
 
-        .cta button:hover {
-            background-color: #005bb5;
-        }
+                .cta button:hover {
+                    background-color: #357ae8;
+                }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: white;
+            background-color: #f1f3f4;
+            color: #202124;
+            font-size: 0.9em;
         }
+
+            footer a {
+                color: #4285f4;
+                text-decoration: underline;
+                margin: 0 10px;
+            }
+
+                footer a:hover {
+                    text-decoration: none;
+                }
     </style>
 </head>
 
@@ -152,8 +165,7 @@
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
         <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
         <a href="https://datamateapp.github.io/DownloadConstruction.html">Prefer Excel?</a>
-        
-        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Doner Portal</a>
+        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
     </nav>
 
     <div class="container">
@@ -185,15 +197,6 @@
 
     <footer>
         &copy; 2024 DataMateApp. All Rights Reserved.
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navMenu');
-            nav.classList.toggle('active');
-        }
-    </script>
-            &copy; 2024 DataMateApp. All Rights Reserved.
         <br>
         <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
         <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
