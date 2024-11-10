@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,115 +8,137 @@
 
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #202124;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
         header {
-            background-color: #0074d9;
+            background-color: #4285f4;
             color: white;
             text-align: center;
-            padding: 30px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            font-size: 1.2em;
         }
 
         nav {
-            background-color: #333;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
             padding: 15px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
             nav a {
                 font-size: 16px;
-                color: white;
-                margin: 0 10px;
+                color: #4285f4;
                 text-decoration: none;
-                padding: 10px;
-                display: inline-block;
+                padding: 8px 16px;
+                border-radius: 4px;
                 transition: background-color 0.3s ease;
             }
 
                 nav a:hover {
-                    background-color: #0074d9;
+                    background-color: #e8f0fe;
                 }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 30px auto;
             padding: 20px;
         }
 
         .section {
             background-color: white;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 25px;
+            margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
         }
 
         h1, h2 {
-            color: #0074d9;
+            color: #202124;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
+            font-weight: 400;
         }
 
         h2 {
-            font-size: 1.8em;
-            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: #1a73e8;
         }
 
         p {
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
         ol {
-            margin-left: 20px;
+            padding-left: 20px;
+            margin-top: 10px;
         }
 
         .code {
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            padding: 5px 10px;
+            background-color: #e8f0fe;
+            border-radius: 4px;
+            padding: 3px 6px;
             font-family: monospace;
+            color: #174ea6;
         }
 
         iframe {
             width: 100%;
-            max-width: 100%;
-            height: 500px;
+            height: 450px;
             border-radius: 8px;
             border: none;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .step {
-            margin-bottom: 30px;
-        }
-
         .cta {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
             .cta button {
-                background-color: #0074d9;
+                background-color: #1a73e8;
                 color: white;
                 border: none;
-                padding: 15px 30px;
-                font-size: 1.2em;
+                padding: 12px 28px;
+                font-size: 1em;
                 border-radius: 5px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
 
                 .cta button:hover {
-                    background-color: #005bb5;
+                    background-color: #185abc;
+                }
+
+        footer {
+            background-color: #f1f3f4;
+            color: #5f6368;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            margin-top: 40px;
+            box-shadow: 0 -1px 3px rgba(60, 64, 67, 0.15);
+        }
+
+            footer a {
+                color: #4285f4;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
                 }
     </style>
 </head>
@@ -124,19 +146,16 @@
 <body>
 
     <header>
-        <p>DataMateApp</p>
-        <p>Save Any Data As a Record</p>
+        <p>DataMateApp - Save Any Data As a Record</p>
     </header>
 
     <nav>
         <a href="https://datamateapp.github.io/">Home</a>
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a>
-        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+
     </nav>
 
     <div class="container">
-
         <div class="section">
             <h1>How to Seamlessly Integrate Data with DataMateApp</h1>
             <iframe src="https://www.youtube.com/embed/q7r409dlvR4" title="DataMate"></iframe>
@@ -151,7 +170,7 @@
                 <p>Follow these steps to add data to your DataMate file:</p>
                 <ol>
                     <li>Open your existing spreadsheet (Excel™, Google Sheets™, CSV, etc.).</li>
-                    <li>Selet New File from the DataMate menu.</li>
+                    <li>Select New File from the DataMate menu.</li>
                     <li>Copy the data or form you want to integrate.</li>
                     <li>Paste the data into cells <span class="code">A3:Q48</span> on the <strong>Input</strong> sheet of DataMate.</li>
                     <li>Repeat the paste operation on the <strong>View/Print</strong> sheet, starting at cell <span class="code">A3</span>.</li>
@@ -163,9 +182,9 @@
                 <h2>Step 2: Setup the Log Table</h2>
                 <p>Set up the log table to keep track of your data records:</p>
                 <ol>
-                    <li>Select the cell labeled <span class="code">Log 1</span> on the <strong>Input</strong> sheet, press <span class="code">=</span>, and choose the cell with the unique ID label (e.g., Invoice No.). Press Enter</li>
-                    <li>Select the cell below Log 1 <span class="code">Empty</span>, press <span class="code">=</span>, and choose the cell with the corresponding data. Press Enter.
-<li>Repeat this process for up to 12 fields as needed.</li>
+                    <li>Select the cell labeled <span class="code">Log 1</span> on the <strong>Input</strong> sheet, press <span class="code">=</span>, and choose the cell with the unique ID label (e.g., Invoice No.). Press Enter.</li>
+                    <li>Select the cell below Log 1 <span class="code">Empty</span>, press <span class="code">=</span>, and choose the cell with the corresponding data. Press Enter.</li>
+                    <li>Repeat this process for up to 12 fields as needed.</li>
                 </ol>
             </div>
 
@@ -187,17 +206,26 @@
                     <li>Export your Gmail™ contacts to an Outlook™ CSV file.</li>
                     <li>Open the CSV file and copy all contacts.</li>
                     <li>Paste them into the <strong>Contacts</strong> sheet at cell <span class="code">B1</span>.</li>
-                    <li>Use the <strong>Name</strong> dropdown on the <strong>Address</strong> sheet to copy and paste contact information into your form or spreadsheet. <a href="https://youtu.be/KCCp69C1jqA">Video</a> </li>
+                    <li>Use the <strong>Name</strong> dropdown on the <strong>Address</strong> sheet to copy and paste contact information into your form or spreadsheet.</li>
                 </ol>
             </div>
 
             <div class="cta">
                 <button onclick="window.location.href='https://datamateapp.github.io/'">Explore More</button>
             </div>
-
         </div>
-
     </div>
+
+    <footer>
+        <p>© 2024 DataMateApp</p>
+        <p>
+            <a href="https://datamateapp.github.io/">Home</a> |
+            <a href="https://datamateapp.github.io/TEMPLATES.html">Templates</a> |
+            <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+            <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+        </p>
+    </footer>
+
 </body>
 
 </html>
