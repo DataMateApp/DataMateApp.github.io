@@ -41,6 +41,15 @@
                     color: black;
                 }
 
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #333;
+        }
+
         .container {
             padding: 20px;
         }
@@ -120,6 +129,24 @@
             cursor: pointer;
         }
 
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #333;
+            font-size: 0.9em;
+        }
+
+            footer a {
+                color: #0074d9;
+                text-decoration: none;
+                margin: 0 5px;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
         /* Responsive adjustments */
         @media (max-width: 600px) {
             header, .container, .section, .buy-btn {
@@ -144,8 +171,15 @@
 </head>
 
 <body>
-    <nav>
-        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg" target="_blank">Doner Portal</a>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+        <a href="https://datamateapp.github.io/">Home</a>
+        <a href="https://datamateapp.github.io/help.html">Help</a>
+        <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+        <a href="https://datamateapp.github.io/DownloadConstruction.html">Prefer Excel?</a>
+        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
     </nav>
 
     <header>
@@ -157,7 +191,7 @@
         </a>
         <p><strong>Save any data as a record...</strong></p>
         <p><strong>Support DataMate today, and help us grow this vision!</strong></p>
-        <p><strong>You can cancel at any time or view your receipt in the Doner Portal.</strong></p>
+        <p><strong>You can cancel at any time or view your receipt in the Donor Portal.</strong></p>
     </header>
 
     <div class="desc">
@@ -167,10 +201,23 @@
     <div class="buy-btn">
         <button onclick="redirectUser()">Donate $5/Month</button>
     </div>
+
+    <footer>
+        &copy; 2024 DataMateApp. All Rights Reserved.
+        <br>
+        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+    </footer>
+
+    <script>
+        function redirectUser() {
+            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
+        }
+
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
-<script>
-    function redirectUser() {
-        window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
-    }
-</script>
 </html>
