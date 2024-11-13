@@ -1,159 +1,272 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApp</title>
+    <title>DataMateApp - Home</title>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fafafa;
-            color: #202124;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
             background-color: #4285f4;
-            color: white;
+            color: #fff;
             text-align: center;
-            padding: 20px 0;
-            font-size: 1.2em;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: visible;
         }
 
-        nav {
+        /* Floppy disk icon styling */
+        .floppy-disk-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #0074d9;
+            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            overflow: hidden;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .inner-square {
+            width: 20px;
+            height: 20px;
             background-color: #fff;
-            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-            nav a {
-                font-size: 16px;
-                color: #4285f4;
-                text-decoration: none;
-                padding: 8px 16px;
-                border-radius: 4px;
-                transition: background-color 0.3s ease;
+        .blue-square {
+            width: 7px;
+            height: 11px;
+            background-color: #0074d9;
+            position: absolute;
+            top: 0;
+            left: 70%;
+            transform: translateX(-50%);
+        }
+
+        .bottom-text {
+            color: white;
+            font-size: 6.5px;
+            line-height: 12px;
+            text-align: center;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        /* Waffle navigation styling */
+        nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            background-color: #f1f3f4;
+            text-align: center;
+        }
+
+        /* Waffle menu icon styling */
+        .waffle-icon {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            justify-content: center;
+            position: absolute; /* Ensures positioning within header */
+            top: 15px; /* Adjusts icon to top of header */
+            right: 20px; /* Moves icon to the right side of header */
+            background-color: #333; /* Temporary background color for visibility */
+            z-index: 10; /* Brings icon above other elements */
+        }
+
+            .waffle-icon div {
+                width: 8px;
+                height: 8px;
+                background-color: #fff;
+                border-radius: 2px;
             }
 
-                nav a:hover {
-                    background-color: #e8f0fe;
-                }
-
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
+        /* Waffle menu styling */
+        .waffle-menu {
+            position: absolute;
+            top: 60px; /* Adjust based on icon size */
+            right: 20px;
+            display: none;
+            background-color: #f1f3f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
         }
 
-        .section {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.15);
+            .waffle-menu.active {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 20px;
+            }
+
+
+
+            .waffle-menu a {
+                font-size: 16px;
+                color: #202124;
+                text-decoration: none;
+                padding: 12px;
+                background-color: #e8f0fe;
+                border-radius: 8px;
+                text-align: center;
+                transition: background-color 0.2s;
+            }
+
+                .waffle-menu a:hover {
+                    background-color: #d0e0ff;
+                }
+
+        /* Main container styling */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
         }
 
         h1, h2 {
-            color: #202124;
-            margin-bottom: 10px;
-        }
-
-        h1 {
+            color: #4285f4;
             font-size: 2em;
-            font-weight: 400;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            font-weight: 500;
-            color: #1a73e8;
+            text-align: center;
         }
 
         p {
-            line-height: 1.7;
-            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1em;
+            margin-bottom: 20px;
         }
 
-        ol {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-
-        .code {
-            background-color: #e8f0fe;
-            border-radius: 4px;
-            padding: 3px 6px;
-            font-family: monospace;
-            color: #174ea6;
-        }
-
-        iframe {
-            width: 100%;
-            height: 450px;
-            border-radius: 8px;
-            border: none;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .highlight {
+            font-weight: bold;
+            color: #4285f4;
         }
 
         .cta {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
             .cta button {
-                background-color: #1a73e8;
+                background-color: #4285f4;
                 color: white;
                 border: none;
-                padding: 12px 28px;
+                padding: 15px 35px;
                 font-size: 1em;
-                border-radius: 5px;
+                font-weight: 500;
+                border-radius: 24px;
                 cursor: pointer;
-                transition: background-color 0.3s ease;
+                transition: background-color 0.3s;
             }
 
                 .cta button:hover {
-                    background-color: #185abc;
+                    background-color: #357ae8;
                 }
 
         footer {
             background-color: #f1f3f4;
-            color: #5f6368;
+            color: #202124;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
             font-size: 0.9em;
-            margin-top: 40px;
-            box-shadow: 0 -1px 3px rgba(60, 64, 67, 0.15);
         }
 
             footer a {
                 color: #4285f4;
-                text-decoration: none;
+                text-decoration: underline;
                 margin: 0 10px;
             }
 
                 footer a:hover {
-                    text-decoration: underline;
+                    text-decoration: none;
                 }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header, .container, .section, .buy-btn {
+                padding: 10px;
+            }
+
+            .floppy-disk-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .desc {
+                font-size: 1em;
+            }
+
+            button {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <p>DataMateApp - Save Any Data As a Record</p>
+        <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" class="floppy-disk-icon">
+            <div class="inner-square">
+                <div class="blue-square"></div>
+            </div>
+            <div class="bottom-text">DataMateApp</div>
+        </a>
+        <p><strong>DataMateApp</strong></p>
+        <p>Save Any Data As a Record</p>
+        <p>Your Free, Ad-Free Solution for Powerful, Easy-to-Use Apps</p>
+
+        <!-- Move .waffle-icon to ensure visibility and adjust style -->
+        <div class="waffle-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
-    <nav>
+    <div class="waffle-menu" id="waffleMenu">
         <a href="https://datamateapp.github.io/">Home</a>
+        <a href="https://datamateapp.github.io/help.html">Help</a>
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-
-    </nav>
+        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+        <a href="https://datamateapp.github.io/DownloadConstruction.html">Prefer Excel?</a>
+        <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+    </div>
 
     <div class="container">
         <div class="section">
@@ -216,16 +329,19 @@
         </div>
     </div>
 
+
+
     <footer>
-        <p>© 2024 DataMateApp</p>
-        <p>
-            <a href="https://datamateapp.github.io/">Home</a> |
-            <a href="https://datamateapp.github.io/TEMPLATES.html">Templates</a> |
-            <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-            <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
-        </p>
+        &copy; 2024 DataMateApp. All Rights Reserved.
+        <br>
+        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
     </footer>
 
+    <script>
+            function toggleMenu() {
+                document.getElementById("waffleMenu").classList.toggle("active");
+            }
+    </script>
 </body>
-
 </html>
