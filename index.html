@@ -4,44 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApp</title>
+    <title>DataMateApp - Home</title>
 
     <style>
         body {
-            font-family: 'Roboto', Arial, sans-serif; /* Google's primary font */
-            background-color: #ffffff; /* Clean white background */
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
+        /* Header styling */
         header {
-            background-color: #4285f4; /* Google Blue */
+            background-color: #4285f4;
             color: #fff;
             text-align: center;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-            header p {
-                font-size: 1.2em;
-                margin: 5px 0;
-            }
+        .floppy-disk-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #0074d9;
+            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            overflow: hidden;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .inner-square {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .blue-square {
+            width: 7px;
+            height: 11px;
+            background-color: #0074d9;
+            position: absolute;
+            top: 0;
+            left: 70%;
+            transform: translateX(-50%);
+        }
+
+        .bottom-text {
+            color: white;
+            font-size: 6.5px;
+            line-height: 12px;
+            text-align: center;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
 
         /* Navigation styling */
         nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
             background-color: #f1f3f4;
+            padding: 10px 0;
+            text-align: center;
         }
 
             nav a {
+                font-size: 18px;
                 color: #202124;
                 text-decoration: none;
-                padding: 10px 20px;
-                font-size: 16px;
-                font-weight: 500;
+                margin: 0 15px;
+                padding: 14px 20px;
                 border-radius: 5px;
                 transition: background-color 0.2s;
             }
@@ -51,41 +95,7 @@
                     color: #202124;
                 }
 
-        /* Hamburger menu icon */
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: #202124;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-            }
-
-                nav a {
-                    padding: 10px;
-                    text-align: left;
-                    border-bottom: 1px solid #ddd;
-                    display: block;
-                }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .active {
-                display: flex;
-            }
-        }
-
+        /* Main container styling */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -131,10 +141,10 @@
                 }
 
         footer {
-            text-align: center;
-            padding: 20px;
             background-color: #f1f3f4;
             color: #202124;
+            text-align: center;
+            padding: 20px;
             font-size: 0.9em;
         }
 
@@ -153,14 +163,18 @@
 <body>
 
     <header>
-        <p><Strong>DataMateApp</Strong></p>
+        <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" class="floppy-disk-icon">
+            <div class="inner-square">
+                <div class="blue-square"></div>
+            </div>
+            <div class="bottom-text">DataMateApp</div>
+        </a>
+        <p><strong>DataMateApp</strong></p>
         <p>Save Any Data As a Record</p>
         <p>Your Free, Ad-Free Solution for Powerful, Easy-to-Use Apps</p>
     </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <nav id="navMenu">
+    <nav>
         <a href="https://datamateapp.github.io/">Home</a>
         <a href="https://datamateapp.github.io/help.html">Help</a>
         <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
@@ -171,6 +185,10 @@
     </nav>
 
     <div class="container">
+        <section>
+            <h2>Welcome to DataMateApp</h2>
+            <p>Discover how <span class="highlight">DataMateApp</span> can simplify your data management. Our tools are free, easy to use, and integrate seamlessly with Google Sheets™ and Excel™.</p>
+        </section>
         <section>
             <h2>Unlock the Power of Streamlined Data Management</h2>
             <p>Our revolutionary <span class="highlight">DataMateApp</span> is available in all languages supported by Google Sheets™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
@@ -205,11 +223,11 @@
         </div>
         <section>
             <h2>Boost Your Productivity</h2>
-            <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/q7r409dlvR4">Watch This Video</a></p>
+            <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/q7r409dlvR4">Watch This (crude) Video</a></p>
         </section>
 
         <div class="cta">
-            <p>Ready to revolutionize your business management?</p>
+            <p>Ready to revolutionize your data management?</p>
             <button onclick="window.location.href='https://workspace.google.com/marketplace/search/DataMateApp'">Get Started FREE Today!</button>
         </div>
     </div>
@@ -220,12 +238,5 @@
         <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
         <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('navMenu');
-            nav.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
