@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -73,25 +73,29 @@
             margin: 5px 0;
         }
 
-        /* Navigation styling */
+        /* Waffle navigation styling */
         nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            padding: 20px;
             background-color: #f1f3f4;
-            padding: 10px 0;
             text-align: center;
         }
 
             nav a {
+                display: block;
                 font-size: 18px;
                 color: #202124;
                 text-decoration: none;
-                margin: 0 15px;
-                padding: 14px 20px;
-                border-radius: 5px;
+                padding: 14px 10px;
+                background-color: #e8f0fe;
+                border-radius: 8px;
                 transition: background-color 0.2s;
             }
 
                 nav a:hover {
-                    background-color: #e8f0fe;
+                    background-color: #d0e0ff;
                     color: #202124;
                 }
 
@@ -189,54 +193,60 @@
             <h2>Welcome to DataMateApp</h2>
             <p>Discover how <span class="highlight">DataMateApp</span> can simplify your data management. Our tools are free, easy to use, and integrate seamlessly with Google Sheets™ and Excel™.</p>
         </section>
-        <section>
-            <h2>Unlock the Power of Streamlined Data Management</h2>
-            <p>Our revolutionary <span class="highlight">DataMateApp</span> is available in all languages supported by Google Sheets™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
-        </section>
-
-        <div class="mission">
-            DataMate is more than just an app; it's an idea meant to inspire and connect people around the world! All DataMate apps are completely free and ad-free, designed to put powerful tools in everyone’s hands. Support DataMate today, and help us grow this vision!
-        </div>
-
         <div class="container">
+            <section>
+                <h2>Welcome to DataMateApp</h2>
+                <p>Discover how <span class="highlight">DataMateApp</span> can simplify your data management. Our tools are free, easy to use, and integrate seamlessly with Google Sheets™ and Excel™.</p>
+            </section>
+            <section>
+                <h2>Unlock the Power of Streamlined Data Management</h2>
+                <p>Our revolutionary <span class="highlight">DataMateApp</span> is available in all languages supported by Google Sheets™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
+            </section>
 
-            <div class="feature">
-                <h2>Effortless Apps for Every Need</h2>
-                <p>DataMateApp offers a wide range of apps for Google Sheets™ and Excel™, including templates for reports, purchase orders, time tracking, and more. Easily downloadable and ready to use, these apps and templates are customizable and streamline your workflow, saving you time and effort.</p>
+            <div class="mission">
+                DataMate is more than just an app; it's an idea meant to inspire and connect people around the world! All DataMate apps are completely free and ad-free, designed to put powerful tools in everyone’s hands. Support DataMate today, and help us grow this vision!
             </div>
 
-            <div class="feature">
-                <h2>Customizable Google Sheets™ Add-Ons</h2>
-                <p>Enhance your spreadsheet experience with DataMateApp's custom add-ons designed to integrate seamlessly with Google Sheets™. Featuring user-friendly tools, these add-ons empower you to do more, whether you're managing data, creating reports, or tracking projects.</p>
-            </div>
+            <div class="container">
 
-            <div class="feature">
-                <h2>Secure, Free, and Ad-Free</h2>
-                <p>DataMateApp is completely free and ad-free. We believe in providing tools that are accessible and secure for all users. Our app is designed to respect your privacy and ensure you have a reliable, distraction-free experience every time.</p>
-            </div>
+                <div class="feature">
+                    <h2>Effortless Apps for Every Need</h2>
+                    <p>DataMateApp offers a wide range of apps for Google Sheets™ and Excel™, including templates for reports, purchase orders, time tracking, and more. Easily downloadable and ready to use, these apps and templates are customizable and streamline your workflow, saving you time and effort.</p>
+                </div>
 
-            <div class="feature">
-                <h2>Help and Community Support</h2>
-                <p>Have questions or need assistance? DataMateApp offers easy access to help resources and email support to keep you moving forward with confidence. Join a community of users who are eager to help and share their experiences.</p>
-            </div>
+                <div class="feature">
+                    <h2>Customizable Google Sheets™ Add-Ons</h2>
+                    <p>Enhance your spreadsheet experience with DataMateApp's custom add-ons designed to integrate seamlessly with Google Sheets™. Featuring user-friendly tools, these add-ons empower you to do more, whether you're managing data, creating reports, or tracking projects.</p>
+                </div>
 
+                <div class="feature">
+                    <h2>Secure, Free, and Ad-Free</h2>
+                    <p>DataMateApp is completely free and ad-free. We believe in providing tools that are accessible and secure for all users. Our app is designed to respect your privacy and ensure you have a reliable, distraction-free experience every time.</p>
+                </div>
+
+                <div class="feature">
+                    <h2>Help and Community Support</h2>
+                    <p>Have questions or need assistance? DataMateApp offers easy access to help resources and email support to keep you moving forward with confidence. Join a community of users who are eager to help and share their experiences.</p>
+                </div>
+
+            </div>
+            <section>
+                <h2>Boost Your Productivity</h2>
+                <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/q7r409dlvR4">Watch This (crude) Video</a></p>
+            </section>
+
+
+            <div class="cta">
+                <p>Ready to revolutionize your data management?</p>
+                <button onclick="window.location.href='https://workspace.google.com/marketplace/search/DataMateApp'">Get Started FREE Today!</button>
+            </div>
         </div>
-        <section>
-            <h2>Boost Your Productivity</h2>
-            <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/q7r409dlvR4">Watch This (crude) Video</a></p>
-        </section>
 
-        <div class="cta">
-            <p>Ready to revolutionize your data management?</p>
-            <button onclick="window.location.href='https://workspace.google.com/marketplace/search/DataMateApp'">Get Started FREE Today!</button>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2024 DataMateApp. All Rights Reserved.
-        <br>
-        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
-    </footer>
+        <footer>
+            &copy; 2024 DataMateApp. All Rights Reserved.
+            <br>
+            <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+            <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+        </footer>
 </body>
 </html>
