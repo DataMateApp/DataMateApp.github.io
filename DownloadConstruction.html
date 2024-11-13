@@ -1,33 +1,59 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DataMateApp Excel™ Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DataMateApp</title>
+
     <style>
-        /* Basic reset and font styling */
-        * {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
-        body {
-            background-color: #f4f6f8;
-            color: #333;
+        header {
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #333;
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 10px 0;
+        }
+
+            nav a {
+                font-size: 16px;
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                transition: color 0.3s, background-color 0.3s;
+            }
+
+                nav a:hover {
+                    background-color: #ddd;
+                    color: #000;
+                }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #333;
         }
 
         .container {
-            max-width: 800px;
-            width: 100%;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .download-button {
@@ -37,66 +63,158 @@
         }
 
             .download-button button {
-                background-color: #007bff;
-                color: #fff;
-                font-size: 16px;
-                padding: 15px 20px;
+                font-weight: bold;
+                background-color: #1e90ff;
+                color: white;
+                padding: 10px 30px;
                 border: none;
-                border-radius: 5px;
+                border-radius: 8px;
                 cursor: pointer;
                 transition: background-color 0.3s;
             }
 
                 .download-button button:hover {
-                    background-color: #0056b3;
+                    background-color: #0074d9;
                 }
 
-        .info {
+        .info, .message {
+            background-color: #f9f9f9;
+            padding: 15px;
             margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .message p, .info p {
+                margin: 10px 0;
+            }
+
+            .message ul, .info ul {
+                padding-left: 20px;
+            }
+
+        .floppy-disk-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #0074d9;
+            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .inner-square {
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .blue-square {
+            width: 7px;
+            height: 11px;
+            background-color: #0074d9;
+            position: absolute;
+            top: 0;
+            left: 70%;
+            transform: translateX(-50%);
+        }
+
+        .bottom-text {
+            color: white;
+            font-size: 6.5px;
+            line-height: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #333;
             font-size: 0.9em;
-            color: #555;
-            line-height: 1.5;
         }
 
-        .message {
-            margin-top: 30px;
-            line-height: 1.6;
-        }
-
-            .message p {
-                margin-bottom: 15px;
+            footer a {
+                color: #0074d9;
+                text-decoration: none;
+                margin: 0 5px;
             }
-        /* Mobile responsiveness */
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Responsive adjustments */
         @media (max-width: 600px) {
-            .download-button button {
-                font-size: 14px;
-                padding: 12px 16px;
+            header, .container, .download-button {
+                padding: 10px;
             }
 
-            .container {
-                padding: 15px;
+            .floppy-disk-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .download-button button {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 10px 12px;
             }
         }
     </style>
 </head>
+
 <body>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+        <a href="https://datamateapp.github.io/">Home</a>
+        <a href="https://datamateapp.github.io/help.html">Help</a>
+        <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+    </nav>
+
+    <header>
+        <a href="https://datamateapp.github.io/" class="floppy-disk-icon">
+            <div class="inner-square">
+                <div class="blue-square"></div>
+            </div>
+            <div class="bottom-text">DataMateApp</div>
+        </a>
+        <p><strong>Save any data as a record...</strong></p>
+        <p><strong>Support DataMate today, and help us grow this vision!</strong></p>
+        <p><strong>You can cancel at any time or view your receipt in the Donor Portal.</strong></p>
+    </header>
+
     <div class="container">
         <div class="download-button">
             <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/Construction.xltm" download>
                 <button>Download the Ultimate Free Construction Excel™ Template</button>
             </a>
         </div>
+
         <div class="info">
-            <p>Last update: November 12, 2024 –Template is 100% complete and in the testing phase</p>
-            <p>Need Beta tester's feedback!</p>
-            <p>Note: You may need to unblock the file:</p>
+            <p><strong>Last update:</strong> November 12, 2024 – Template is 100% complete and in the testing phase</p>
+            <p><strong>Note:</strong> You may need to unblock the file:</p>
             <ul>
                 <li>Right-click the file, select <strong>Properties</strong>, and check the <strong>Unblock</strong> option on the General tab.</li>
             </ul>
         </div>
+
         <div class="message">
-            <p>Hey everyone,</p>
-            <p>Looking for beta testers.</p>
+            <p><strong>Looking for beta testers!</strong></p>
             <p>The new template includes:</p>
             <ul>
                 <li>Comprehensive CSI Division and Section support</li>
@@ -104,12 +222,25 @@
                 <li>Accessible, no XLOOKUP formulas</li>
                 <li>Automated dataset creation and custom navigation buttons</li>
             </ul>
-            <p>The template is done with the development 100% complete. I’d love feedback from professionals in construction. Feel free to share ideas, feedback, or templates by emailing <a href="mailto:datamateapp@gmail.com">datamateapp@gmail.com</a>.</p>
+            <p>The template is fully developed, and feedback from construction professionals is welcome. Share your thoughts or templates by emailing <a href="mailto:datamateapp@gmail.com">datamateapp@gmail.com</a>.</p>
             <ul>
-                <li><strong>Coming soon!</strong> The <strong>DataMate</strong> Excel™ add-in <strong>(The App to build VBA apps like this one)</strong> check back soon.</li>
+                <li><strong>Coming soon!</strong> The <strong>DataMate</strong> Excel™ add-in – a tool to build VBA apps like this one.</li>
             </ul>
         </div>
-
     </div>
+
+    <footer>
+        &copy; 2024 DataMateApp. All Rights Reserved.
+        <br>
+        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
