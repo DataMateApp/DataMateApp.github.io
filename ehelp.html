@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataMate Excel Add-In Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #0056b3;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .tip {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196f3;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+            .tip strong {
+                color: #0056b3;
+            }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DataMate Excel Add-In: Complete User Guide</h1>
+
+    <div class="step">
+        <h2>Step 1: Installing the DataMate Add-In</h2>
+        <p>Follow these steps to install the <strong>DataMate Excel Add-In</strong>:</p>
+        <ol>
+            <li>
+                <strong>Download the Add-In</strong>:
+                <ul>
+                    <li>Save the DataMate add-in file, typically with a <code>.xlam</code> extension, to a secure location on your computer.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Open Excel</strong>:
+                <ul>
+                    <li>Launch Excel and go to the <strong>File</strong> tab.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Access Add-Ins</strong>:
+                <ul>
+                    <li>Click <strong>Options</strong> and navigate to the <strong>Add-Ins</strong> section.</li>
+                    <li>At the bottom of the window, select <strong>Excel Add-Ins</strong> from the dropdown and click <strong>Go</strong>.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Browse and Enable the Add-In</strong>:
+                <ul>
+                    <li>In the Add-Ins window, click <strong>Browse</strong>.</li>
+                    <li>Locate the downloaded <code>.xlam</code> file and click <strong>OK</strong>.</li>
+                    <li>Ensure the checkbox next to the DataMate add-in is selected, then click <strong>OK</strong>.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Verify Installation</strong>:
+                <ul>
+                    <li>The DataMate menu should now appear on the Excel ribbon.</li>
+                    <li>If it doesn't appear, ensure macros are enabled under <strong>File > Options > Trust Center > Trust Center Settings > Macro Settings</strong>.</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="tip"><strong>Tip:</strong> Pin the location of the add-in file to avoid issues if the file is moved or deleted.</div>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Adding Data</h2>
+        <p>Follow these steps to add data to your <strong>DataMate</strong> file:</p>
+        <ol>
+            <li><strong>Open DataMate</strong>: Open your existing spreadsheet or form and ensure the <strong>DataMate</strong> add-in is active.</li>
+            <li>
+                <strong>Create a New Dataset</strong>:
+                <ul>
+                    <li>From the <strong>DataMate</strong> menu, select <strong>New Dataset</strong>.</li>
+                    <li>This creates and initializes the necessary sheets and buttons for your dataset.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Copy and Paste Your Data</strong>:
+                <ul>
+                    <li>Copy the data or form you want to integrate.</li>
+                    <li>Navigate to the <strong>Input</strong> sheet. Paste your data into cells <code>A3:Q200</code>.</li>
+                    <li>Repeat this process on the <strong>View/Print</strong> sheet, starting at cell <code>A3</code>.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Refresh the View</strong>:
+                <ul>
+                    <li>Go to the <strong>DataMate App</strong> menu and click <strong>Refresh View</strong>.</li>
+                    <li>This updates dropdowns, validations, and displays the most recent data.</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="tip"><strong>Tip:</strong> Avoid overwriting rows below <code>Q200</code> on the Input sheet unless you've extended the VBA range to accommodate additional rows.</div>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Setting Up the Log Table</h2>
+        <p>Keep track of your data records using the <strong>Log Table</strong>:</p>
+        <ol>
+            <li>
+                <strong>Link Log Fields</strong>:
+                <ul>
+                    <li>On the <strong>Input</strong> sheet, locate the cell labeled <strong>Log 1</strong>.</li>
+                    <li>Press <code>=</code> and click the cell containing the unique ID label (e.g., <strong>Invoice No.</strong>) on the same sheet. Press <strong>Enter</strong>.</li>
+                    <li>For <strong>Log 1 Empty</strong>, select the cell below it, press <code>=</code>, and link it to the corresponding data (e.g., the actual invoice number).</li>
+                </ul>
+            </li>
+            <li><strong>Repeat for Additional Fields</strong>: Follow the above steps to create links for up to <strong>12 log fields</strong>, depending on your data structure.</li>
+        </ol>
+        <div class="tip"><strong>Tip:</strong> You can rename the Log labels to match your dataset fields by selecting and typing over the label cells.</div>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Save, View, Print, and Update Your Data</h2>
+        <p>Effortlessly manage your data with these <strong>DataMate</strong> actions:</p>
+        <ol>
+            <li>
+                <strong>Save a Record</strong>:
+                <ul>
+                    <li>Enter your data on the <strong>Input</strong> sheet.</li>
+                    <li>Click the <strong>Save Record</strong> button.</li>
+                    <li>This saves the data and switches to the <strong>View/Print</strong> sheet for confirmation.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>View a Record</strong>:
+                <ul>
+                    <li>On the <strong>View/Print</strong> sheet, use the dropdown in cell <code>B2:L2</code> to select a record by its unique identifier.</li>
+                    <li>The selected record will populate the view fields.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Update a Record</strong>:
+                <ul>
+                    <li>Navigate to the <strong>Update</strong> sheet.</li>
+                    <li>Modify the data fields as needed.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Print a Record</strong>:
+                <ul>
+                    <li>Go to <strong>File > Print</strong> and select <strong>Print Current Selection</strong>.</li>
+                    <li>Ensure your print area is set to the relevant range on the <strong>View/Print</strong> sheet.</li>
+                </ul>
+            </li>
+        </ol>
+        <div class="tip"><strong>Tip:</strong> Use the preformatted View/Print layout for consistent and professional print results.</div>
+    </div>
+
+    <h2>Additional Tips and Instructions</h2>
+    <ul>
+        <li><strong>Navigation Buttons:</strong> Use the <strong>Exit</strong> button (located on the Input sheet, cell <code>P1</code>) to exit the current dataset and reset sheet names.</li>
+        <li><strong>Dynamic Naming:</strong> When creating a new dataset, the sheets are renamed dynamically. Ensure you properly exit any existing datasets first to avoid naming conflicts.</li>
+        <li><strong>Refresh the Input Sheet:</strong> Before entering any data, make a copy of your current Input sheet (the copied sheet will be named <code>Input (2)</code>). When you select the <strong>Refresh Input</strong> button, the Input sheet will be reset to match the content of the copied sheet (<code>Input (2)</code>).</li>
+    </ul>
+    <div class="tip"><strong>Tip:</strong> Backup your DataMate-enabled workbook regularly to avoid data loss during modifications or updates.</div>
+</body>
+</html>
