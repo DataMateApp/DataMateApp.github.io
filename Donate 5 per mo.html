@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -192,6 +193,7 @@
                 .cta button:hover {
                     background-color: #357ae8;
                 }
+
         .buy-btn p {
             margin-top: 10px;
             font-size: 1em;
@@ -207,6 +209,39 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
+        }
+        .donation-option {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            font-weight: bold;
+            background-color: #4285f4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #357ae8;
+            }
+
+        .stripe-button-wrapper {
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        stripe-buy-button {
+            --stripe-background-color: #4285f4;
+            --stripe-text-color: white;
+            --stripe-font-size: 16px;
+            --stripe-border-radius: 8px;
+            width: auto;
         }
 
         footer {
@@ -259,8 +294,8 @@
             </div>
             <div class="bottom-text">DataMateApp</div>
         </a>
-        <p><strong>DataMateApp</strong></p>
-        <p>Save Any Data As a Record</p>
+        <p><strong>Support DataMateApp</strong></p>
+        <p>Your contribution helps us grow and improve!</p>
         <p>Your Free, Ad-Free Solution for Powerful, Easy-to-Use Apps</p>
 
         <!-- Move .waffle-icon to ensure visibility and adjust style -->
@@ -286,21 +321,40 @@
         <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
         <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
     </div>
-    <div class="container">
-        <div class="desc">
-            <p><strong>Support DataMate today, and help us grow this vision!</strong></p>
-            <p><strong>You can cancel at any time or view your receipt in the Donor Portal.</strong></p>
 
-            <div>DataMateApp</div>
-            <div class="rate">$5 / Month</div>
+
+    <div class="container">
+        <div class="donation-option">
+            <h2>Donate $5.00/Month</h2>
+            <button onclick="donateFive()">Donate $5.00</button>
         </div>
 
-        <div class="buy-btn">
-            <button onclick="redirectUser()">Donate $5/Month</button>
-            <!-- Moved Thank you! below the button -->
-            <p><strong>Thank you!</strong></p>
+        <div class="donation-option">
+            <h2>Donate $2.50/Month</h2>
+            <button onclick="donateTwoFifty()">Donate $2.50</button>
+        </div>
+
+        <div class="donation-option">
+            <h2>One Time Donate What You Can</h2>
+            <div class="stripe-button-wrapper">
+                <stripe-buy-button buy-button-id="buy_btn_1QO2WDG1lPcU42DNgACDVfYi"
+                                   publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
+                </stripe-buy-button>
+            </div>
         </div>
     </div>
+
+    <script>
+        function donateFive() {
+            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
+        }
+
+        function donateTwoFifty() {
+            window.open("https://buy.stripe.com/eVa14t4is3cB1bO4gi", "_blank").focus();
+        }
+    </script>
+
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
     <footer>
         &copy; 2024 DataMateApp. All Rights Reserved.
@@ -308,16 +362,3 @@
         <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
         <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
     </footer>
-
-    <script>
-        function redirectUser() {
-            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
-        }
-
-        function toggleMenu() {
-            const nav = document.getElementById('waffleMenu');
-            nav.classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
