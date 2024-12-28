@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -277,72 +278,140 @@
 
         <div class="section">
             <h2>DataMate App Quick Start Guide</h2>
-            <p>Welcome to DataMateApp! This guide will help you quickly get started with the basic functions of integrating and managing your data using spreadsheets.</p>
 
-            <div class="step">
-                <h2>Step 1: Adding Data</h2>
-                <p>Follow these steps to add data to your DataMate file:</p>
-                <ol>
-                    <li>In a new sreadsheet, paste or enter the desired data in cells <span class="code">A1:Q46</span> on Sheet1. Data is limited to <span class="code">A1:Q46</span></li>
-                    <li>In an existing spreadsheet, rename the sheet with the desired data <strong>Sheet1</strong>.</li>
-                    <li>Select New Dataset from the DataMate menu.</li>
+            <p><strong>Welcome to DataMateApp!</strong> This guide will help you quickly get started with the basic and advanced functions of managing your data within Google Sheets. Here's how to leverage DataMateApp for efficient data integration and management:</p>
 
-                </ol>
+            <h3>Step 1: Adding Data</h3>
+
+            <h4>Initialize Your Data:</h4>
+            <ul>
+                <li>
+                    <strong>For a New Spreadsheet:</strong>
+                    <ol>
+                        <li>Open a new Google Sheet.</li>
+                        <li>Enter or paste your data into cells <code>A1:Q46</code> on the sheet named <code>Sheet1</code>. Note: Data entry is limited to this range.</li>
+                    </ol>
+                </li>
+                <li>
+                    <strong>For an Existing Spreadsheet:</strong>
+                    <ol>
+                        <li>Ensure one of your sheets is named <code>Sheet1</code> and contains the data you wish to manage in the range <code>A1:Q46</code>.</li>
+                    </ol>
+                </li>
+                <li>
+                    <strong>Create a New Dataset:</strong>
+                    <ul>
+                        <li>From the <strong>DataMate</strong> menu, select <strong>New Dataset</strong>. This action prepares your spreadsheet with specialized sheets for data management.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Step 2: Setting Up the Log Table</h3>
+
+            <p><strong>Track Your Records:</strong></p>
+            <ul>
+                <li>Navigate to the <strong>Input</strong> sheet.</li>
+                <li>
+                    For each of the 12 possible log fields:
+                    <ol>
+                        <li>Click on the cell labeled <code>Log 1</code> (or subsequent logs), type <code>=</code>, then select the cell containing the lable of your unique identifier (like Invoice Number). Press Enter.</li>
+                        <li>In the cell below each Log label (e.g., below <code>Log 1</code>), enter <code>=</code> and select the corresponding data cell. Press Enter.</li>
+                    </ol>
+                </li>
+                <li>This setup allows you to track different aspects of your records through logs.</li>
+            </ul>
+
+            <h3>Step 3: Managing Your Data</h3>
+
+            <p><strong>Save, View, Print, and Update:</strong></p>
+            <ul>
+                <li>
+                    <strong>Save Data:</strong>
+                    <ul>
+                        <li>Click <strong>Save Record</strong> from the DataMate menu to save your current data entry to the <strong>Data</strong> sheet and switch to the <strong>View_Print</strong> sheet for immediate review.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Viewing Records:</strong>
+                    <ul>
+                        <li>On the <strong>View_Print</strong> sheet, use the dropdown in cell <code>B2</code> to select and view any record you've saved.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Updating Records:</strong>
+                    <ul>
+                        <li>Navigate to the <strong>Update</strong> sheet where you can enter new or modified information for any record. Saved updates will reflect in your data.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Printing:</strong>
+                    <ul>
+                        <li>Go to <strong>File &gt; Print</strong>, and select <strong>Print Current Selection</strong> for a focused print of your data.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Resetting Input:</strong>
+                    <ul>
+                        <li>Use <strong>Reset Input</strong> to refresh the <strong>Input</strong> sheet with the current data from <code>Sheet1</code>. If changes are made directly to <code>Sheet1</code>, use <strong>Reset View_Print</strong> to update the view accordingly.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Adding Contacts</h3>
+
+            <p><strong>Contact Management:</strong></p>
+            <ul>
+                <li>
+                    <strong>Import Contacts:</strong>
+                    <ol>
+                        <li>Export your contacts from Gmail to an Outlook CSV file.</li>
+                        <li>Open this CSV file, select all data, and copy it.</li>
+                        <li>In your Google Sheet, go to the <strong>Contacts</strong> sheet and paste the data starting at cell <code>B1</code>.</li>
+                    </ol>
+                </li>
+                <li>
+                    <strong>Utilize Address Block:</strong>
+                    <ul>
+                        <li>On the <strong>Address</strong> sheet, use the <strong>Name</strong> dropdown to select a contact. This feature allows you to quickly populate address information or other contact details into your forms or spreadsheets by copying and pasting from the formulas in column F.</li>
+                        <li>For more information see <a href="https://datamateapp.github.io/abhelp.html">Address Block Help</a>.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="capabilities">
+                <h3>Capabilities of DataMateApp:</h3>
+                <ul>
+                    <li><strong>Automated Data Entry:</strong> Reduces manual input by organizing data into predefined structured sheets.</li>
+                    <li><strong>Record Management:</strong> Easily save, view, update, or print records with a few clicks, enhancing data accuracy and reducing time spent on data management.</li>
+                    <li><strong>Contact Integration:</strong> Streamline contact management by importing and utilizing contacts directly within your data workflows.</li>
+                    <li><strong>Customizable Logs:</strong> Set up to 12 log fields per record for detailed tracking tailored to your needs.</li>
+                    <li><strong>Dynamic Views:</strong> Provides a dynamic interface to switch between input, data viewing, and updating modes seamlessly.</li>
+                </ul>
             </div>
 
-            <div class="step">
-                <h2>Step 2: Setup the Log Table</h2>
-                <p>Set up the log table to keep track of your data records:</p>
-                <ol>
-                    <li>Select the cell labeled <span class="code">Log 1</span> on the <strong>Input</strong> sheet, press <span class="code">=</span>, and choose the cell with the unique ID label (e.g., Invoice No.). Press Enter.</li>
-                    <li>Select the cell below Log 1 <span class="code">Empty</span>, press <span class="code">=</span>, and choose the cell with the corresponding data. Press Enter.</li>
-                    <li>Repeat this process for up to 12 fields as needed.</li>
-                </ol>
-            </div>
+            <p class="note"><strong>Note:</strong> DataMateApp is designed to grow with your needs, offering a flexible framework where sheets like <strong>Input</strong>, <strong>Data</strong>, <strong>View_Print</strong>, <strong>Update</strong>, and <strong>Log</strong> can be customized or extended for various data management scenarios.</p>
 
-            <div class="step">
-                <h2>Step 3: Save, View, Print, and Update Your Data</h2>
-                <p>Manage your data with the following actions:</p>
-                <ol>
-                    <li>To save data, press <strong>Save Record</strong>. This switches to the <strong>View/Print</strong> sheet.</li>
-                    <li>To view a record, select it from the dropdown on the <strong>View/Print</strong> sheet.</li>
-                    <li>To update a record, enter the new information on the <strong>Update</strong> sheet.</li>
-                    <li>To print, go to <strong>File</strong> > <strong>Print</strong> and choose <strong>Print Current Selection</strong>.</li>
-                     <li><strong>Reset the Input Sheet:</strong> When you select the <strong>Reset Input</strong> button, the Input sheet will be reset to match the content of (<code>Sheet1</code>). If you make chnges to Sheet1,select the <strong>Reset View_Print</strong> button</li>
-                </ol>
-            </div>
 
-            <div class="step">
-                <h2>Adding Contacts</h2>
-                <p>Integrate your contacts into DataMate:</p>
-                <ol>
-                    <li>Export your Gmail™ contacts to an Outlook™ CSV file.</li>
-                    <li>Open the CSV file and copy all contacts.</li>
-                    <li>Paste them into the <strong>Contacts</strong> sheet at cell <span class="code">B1</span>.</li>
-                    <li>Use the <strong>Name</strong> dropdown on the <strong>Address</strong> sheet to copy and paste contact information into your form or spreadsheet.</li>
-                </ol>
-            </div>
-
-            <div class="cta">
-                <button onclick="window.location.href='https://datamateapp.github.io/'">Explore More</button>
-            </div>
+<div class="cta">
+    <button onclick="window.location.href='https://datamateapp.github.io/'">Explore More</button>
+</div>
         </div>
     </div>
 
 
 
-    <footer>
-        &copy; 2024 DataMateApp. All Rights Reserved.
-        <br>
-        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-        <a href="mailto:datamateapp@gmail.com">Contact Us.</a>
-    </footer>
+<footer>
+    &copy; 2024 DataMateApp. All Rights Reserved.
+    <br>
+    <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+    <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
+    <a href="mailto:datamateapp@gmail.com">Contact Us.</a>
+</footer>
 
-    <script>
-            function toggleMenu() {
-                document.getElementById("waffleMenu").classList.toggle("active");
-            }
-    </script>
+<script>
+    function toggleMenu() {
+        document.getElementById("waffleMenu").classList.toggle("active");
+    }
+</script>
 </body>
 </html>
