@@ -1,199 +1,128 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApp - Home</title>
-
+    <title>DataMateApps - Simplify Your Data Management</title>
     <style>
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
         }
 
         header {
-            background-color: #4285f4;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: visible;
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            border-bottom: #e8491d 3px solid;
         }
 
-        /* Floppy disk icon styling */
-        .floppy-disk-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #0074d9;
-            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            overflow: hidden;
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .inner-square {
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .blue-square {
-            width: 7px;
-            height: 11px;
-            background-color: #0074d9;
-            position: absolute;
-            top: 0;
-            left: 70%;
-            transform: translateX(-50%);
-        }
-
-        .bottom-text {
-            color: white;
-            font-size: 6.5px;
-            line-height: 12px;
-            text-align: center;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
-
-        /* Waffle navigation styling */
-        nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
-            padding: 20px;
-            background-color: #f1f3f4;
-            text-align: center;
-        }
-
-        /* Waffle menu icon styling */
-        .waffle-icon {
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3px;
-            justify-content: center;
-            position: absolute; /* Ensures positioning within header */
-            top: 15px; /* Adjusts icon to top of header */
-            right: 20px; /* Moves icon to the right side of header */
-            background-color: #333; /* Temporary background color for visibility */
-            z-index: 10; /* Brings icon above other elements */
-        }
-
-            .waffle-icon div {
-                width: 8px;
-                height: 8px;
-                background-color: #fff;
-                border-radius: 2px;
-            }
-
-        /* Waffle menu styling */
-        .waffle-menu {
-            position: absolute;
-            top: 60px; /* Adjust based on icon size */
-            right: 20px;
-            display: none;
-            background-color: #f1f3f4;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-
-            .waffle-menu.active {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-                padding: 20px;
-            }
-
-
-
-            .waffle-menu a {
-                font-size: 16px;
-                color: #202124;
+            header a {
+                color: #ffffff;
                 text-decoration: none;
-                padding: 12px;
-                background-color: #e8f0fe;
-                border-radius: 8px;
-                text-align: center;
-                transition: background-color 0.2s;
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 5px;
+                display: inline-block;
             }
 
-                .waffle-menu a:hover {
-                    background-color: #d0e0ff;
-                }
+            header h1 {
+                margin: 0;
+                font-size: 24px;
+                text-align: center;
+            }
 
-        /* Main container styling */
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            text-align: center;
+            header nav {
+                display: none;
+            }
+
+        .highlight, .current a {
+            color: #e8491d;
+            font-weight: bold;
         }
 
-        h1, h2 {
-            color: #4285f4;
-            font-size: 2em;
-            text-align: center;
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
         }
 
-        p {
-            line-height: 1.6;
-            font-size: 1em;
+        .showcase {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 0;
+        }
+
+            .showcase h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            .showcase p {
+                font-size: 1.2em;
+                padding: 0 20px;
+            }
+
+        .features {
+            padding: 20px 0;
+            text-align: center;
+            background: #ffffff;
+        }
+
+            .features h2 {
+                color: #35424a;
+            }
+
+        .feature-box {
+            padding: 10px;
+            box-sizing: border-box;
             margin-bottom: 20px;
         }
 
-        .highlight {
-            font-weight: bold;
-            color: #4285f4;
+        .feature-btn {
+            background-color: #e8491d;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
 
         .cta {
+            background: #35424a;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            margin-top: 40px;
         }
 
-            .cta button {
-                background-color: #4285f4;
-                color: white;
-                border: none;
-                padding: 15px 35px;
-                font-size: 1em;
-                font-weight: 500;
-                border-radius: 24px;
-                cursor: pointer;
-                transition: background-color 0.3s;
+            .cta a {
+                display: inline-block;
+                background: #e8491d;
+                color: #ffffff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 10px 0;
             }
 
-                .cta button:hover {
-                    background-color: #357ae8;
+                .cta a:hover {
+                    background: #ffffff;
+                    color: #e8491d;
                 }
-
         .buy-btn p {
             margin-top: 10px;
             font-size: 1em;
@@ -210,6 +139,7 @@
             border-radius: 8px;
             cursor: pointer;
         }
+
         .donation-option {
             text-align: center;
             margin: 20px 0;
@@ -245,83 +175,115 @@
         }
 
         footer {
-            background-color: #f1f3f4;
-            color: #202124;
+            padding: 20px 0;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #f4f4f4;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
+        }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: block;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0;
+            margin: 10px 0 0 10px;
         }
 
-            footer a {
-                color: #4285f4;
-                text-decoration: underline;
-                margin: 0 10px;
+        .mobile-nav {
+            display: none;
+            background: #35424a;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+            .mobile-nav a {
+                display: block;
+                padding: 10px 0;
+                text-align: center;
+                border-top: 1px solid #e8491d;
+            }
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .container {
+                width: 80%;
             }
 
-                footer a:hover {
-                    text-decoration: none;
-                }
+            header h1 {
+                font-size: 36px;
+                text-align: left;
+            }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            header, .container, .section, .buy-btn {
+            header nav {
+                display: block;
+                text-align: right;
+            }
+
+            header a {
+                font-size: 16px;
                 padding: 10px;
             }
 
-            .floppy-disk-icon {
-                width: 40px;
-                height: 40px;
+            .showcase h1 {
+                font-size: 3em;
             }
 
-            .desc {
-                font-size: 1em;
+            .showcase p {
+                font-size: 1.5em;
             }
 
-            button {
-                padding: 8px 20px;
-                font-size: 14px;
+            .feature-box {
+                float: left;
+                width: 30%;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: none;
             }
         }
     </style>
 </head>
-
 <body>
-
     <header>
-        <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" class="floppy-disk-icon">
-            <div class="inner-square">
-                <div class="blue-square"></div>
-            </div>
-            <div class="bottom-text">DataMateApp</div>
-        </a>
-        <p><strong>Support DataMateApp</strong></p>
-        <p>Your contribution helps us grow and improve!</p>
-        <p>Your Free, Ad-Free Solution for Powerful, Easy-to-Use Apps</p>
-
-        <!-- Move .waffle-icon to ensure visibility and adjust style -->
-        <div class="waffle-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="container">
+            <h1>DataMateApps</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            <nav class="desktop-nav">
+                <a href="https://datamateapp.github.io/">Home</a>
+                <a href="https://datamateapp.github.io/features.html">Features</a>
+                <a href="https://datamateapp.github.io/help.html">Help</a>
+                <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+                <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+                <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
+                <a href="https://datamateapp.github.io/Donate 5 per mo.html" class="highlight">Support DataMate</a>
+                <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+                <a href="https://script.google.com/macros/s/AKfycbxyjPrLZ_Y9BjlqYQmkvfVCljFfuUqMrJTtEOuGzW3JRBYoFqzta1KmTUht3Q_20V5K/exec">Reviews</a>
+                <a href="https://script.google.com/macros/s/AKfycbzAqT03-1G2J7J9LLzkND0xtmPEdBZWfiEOpDBnwtgLujE6eDBGL9u1IgfYDrplqVi9/exec">Community</a>
+            </nav>
+            <nav class="mobile-nav">
+                <a href="https://datamateapp.github.io/">Home</a>
+                <a href="https://datamateapp.github.io/features.html">Features</a>
+                <a href="https://datamateapp.github.io/help.html">Help</a>
+                <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+                <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+                <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
+                <a href="https://datamateapp.github.io/Donate 5 per mo.html" class="highlight">Support DataMate</a>
+                <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+                <a href="https://script.google.com/macros/s/AKfycbxyjPrLZ_Y9BjlqYQmkvfVCljFfuUqMrJTtEOuGzW3JRBYoFqzta1KmTUht3Q_20V5K/exec">Reviews</a>
+                <a href="https://script.google.com/macros/s/AKfycbzAqT03-1G2J7J9LLzkND0xtmPEdBZWfiEOpDBnwtgLujE6eDBGL9u1IgfYDrplqVi9/exec">Community</a>
+            </nav>
         </div>
     </header>
-
-    <div class="waffle-menu" id="waffleMenu">
-        <a href="https://datamateapp.github.io/">Home</a>
-        <a href="https://datamateapp.github.io/help.html">Help</a>
-        <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
-        <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
-        <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
-        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
-        <a href="https://script.google.com/macros/s/AKfycbw-lIyxxaQvyvriV61ICoykOiSQfKOj0QceyOfTBmbq7K5iOJP_gZyDwCa6orLK07Bl/exec">Review DataMateApps</a>
-    </div>
 
 
     <div class="container">
@@ -337,10 +299,10 @@
                                    publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
                 </stripe-buy-button>
             </div>
-            <div class="cta">
-            <p>You may cancel at any time or view your reciept in the Doner Portal.</p>
-            <button onclick="window.location.href='https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg'">Doner Portal
-        </div>
+
+                <p><h2>You may cancel at any time or view your reciept in the Doner Portal.</h2></p>
+                <button onclick="window.location.href='https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg'">Doner Portal
+            </div>
         </div>
     </div>
 
@@ -354,9 +316,24 @@
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
     <footer>
-        &copy; 2024 DataMateApp. All Rights Reserved.
-        <br>
-        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-        <a href="mailto:datamateapp@gmail.com">Contact Us.</a>
+        <div class="container">
+            <p>© 2025 DataMateApps | Empowering Your Data Management</p>
+            <p>
+                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
+                <a href="mailto:datamateapp@gmail.com">Contact Us</a>
+            </p>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('.mobile-nav');
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+    </script>
+</body>
