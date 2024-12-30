@@ -1,235 +1,136 @@
-﻿﻿﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApp - Home</title>
-
+    <title>DataMateApps - Simplify Your Data Management</title>
     <style>
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
         }
 
         header {
-            background-color: #4285f4;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: visible;
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            border-bottom: #e8491d 3px solid;
         }
 
-        /* Floppy disk icon styling */
-        .floppy-disk-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #0074d9;
-            clip-path: polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%);
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            overflow: hidden;
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .inner-square {
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .blue-square {
-            width: 7px;
-            height: 11px;
-            background-color: #0074d9;
-            position: absolute;
-            top: 0;
-            left: 70%;
-            transform: translateX(-50%);
-        }
-
-        .bottom-text {
-            color: white;
-            font-size: 6.5px;
-            line-height: 12px;
-            text-align: center;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
-
-        /* Waffle navigation styling */
-        nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
-            padding: 20px;
-            background-color: #f1f3f4;
-            text-align: center;
-        }
-
-        /* Waffle menu icon styling */
-        .waffle-icon {
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3px;
-            justify-content: center;
-            position: absolute; /* Ensures positioning within header */
-            top: 15px; /* Adjusts icon to top of header */
-            right: 20px; /* Moves icon to the right side of header */
-            background-color: #333; /* Temporary background color for visibility */
-            z-index: 10; /* Brings icon above other elements */
-        }
-
-            .waffle-icon div {
-                width: 8px;
-                height: 8px;
-                background-color: #fff;
-                border-radius: 2px;
-            }
-
-        /* Waffle menu styling */
-        .waffle-menu {
-            position: absolute;
-            top: 60px; /* Adjust based on icon size */
-            right: 20px;
-            display: none;
-            background-color: #f1f3f4;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-
-            .waffle-menu.active {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-                padding: 20px;
-            }
-
-
-
-            .waffle-menu a {
-                font-size: 16px;
-                color: #202124;
+            header a {
+                color: #ffffff;
                 text-decoration: none;
-                padding: 12px;
-                background-color: #e8f0fe;
-                border-radius: 8px;
-                text-align: center;
-                transition: background-color 0.2s;
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 5px;
+                display: inline-block;
             }
 
-                .waffle-menu a:hover {
-                    background-color: #d0e0ff;
-                }
+            header h1 {
+                margin: 0;
+                font-size: 24px;
+                text-align: center;
+            }
 
-        /* Main container styling */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 20px;
+            header nav {
+                display: none;
+            }
+
+        .highlight, .current a {
+            color: #e8491d;
+            font-weight: bold;
         }
 
-        h1, h2 {
-            color: #4285f4;
-            font-size: 2em;
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+
+        .showcase {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
+            background-size: cover;
             text-align: center;
+            color: #ffffff;
+            padding: 40px 0;
         }
 
-        p {
-            line-height: 1.6;
-            font-size: 1em;
+            .showcase h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            .showcase p {
+                font-size: 1.2em;
+                padding: 0 20px;
+            }
+
+        .features {
+            padding: 20px 0;
+            text-align: center;
+            background: #ffffff;
+        }
+
+            .features h2 {
+                color: #35424a;
+            }
+
+        .feature-box {
+            padding: 10px;
+            box-sizing: border-box;
             margin-bottom: 20px;
         }
 
-        .highlight {
-            font-weight: bold;
-            color: #4285f4;
+        .feature-btn {
+            background-color: #e8491d;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
 
         .cta {
+            background: #35424a;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            margin-top: 40px;
         }
 
-            .cta button {
-                background-color: #4285f4;
-                color: white;
-                border: none;
-                padding: 15px 35px;
-                font-size: 1em;
-                font-weight: 500;
-                border-radius: 24px;
-                cursor: pointer;
-                transition: background-color 0.3s;
+            .cta a {
+                display: inline-block;
+                background: #e8491d;
+                color: #ffffff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 10px 0;
             }
 
-                .cta button:hover {
-                    background-color: #357ae8;
+                .cta a:hover {
+                    background: #ffffff;
+                    color: #e8491d;
                 }
 
         footer {
-            background-color: #f1f3f4;
-            color: #202124;
+            padding: 20px 0;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #f4f4f4;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
         }
-
-            footer a {
-                color: #4285f4;
-                text-decoration: underline;
-                margin: 0 10px;
-            }
-
-                footer a:hover {
-                    text-decoration: none;
-                }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            header, .container, .section, .buy-btn {
-                padding: 10px;
-            }
-
-            .floppy-disk-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .desc {
-                font-size: 1em;
-            }
-
-            button {
-                padding: 8px 20px;
-                font-size: 14px;
-            }
-        }
-
         .tip {
             background-color: #e7f3fe;
             border-left: 4px solid #2196f3;
@@ -250,229 +151,292 @@
         .step {
             margin-bottom: 20px;
         }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: block;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0;
+            margin: 10px 0 0 10px;
+        }
+
+        .mobile-nav {
+            display: none;
+            background: #35424a;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+            .mobile-nav a {
+                display: block;
+                padding: 10px 0;
+                text-align: center;
+                border-top: 1px solid #e8491d;
+            }
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            header h1 {
+                font-size: 36px;
+                text-align: left;
+            }
+
+            header nav {
+                display: block;
+                text-align: right;
+            }
+
+            header a {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .showcase h1 {
+                font-size: 3em;
+            }
+
+            .showcase p {
+                font-size: 1.5em;
+            }
+
+            .feature-box {
+                float: left;
+                width: 30%;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: none;
+            }
+        }
     </style>
 </head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KV4MC8F4');</script>
-<!-- End Google Tag Manager -->
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV4MC8F4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <header>
-        <a href="https://workspace.google.com/marketplace/app/datamateapp/603766531216" class="floppy-disk-icon">
-            <div class="inner-square">
-                <div class="blue-square"></div>
-            </div>
-            <div class="bottom-text">DataMateApp</div>
-        </a>
-        <p><strong>DataMate Excel™ Add-in</strong></p>
-        <p>Save Any Data As a Record</p>
-        <p>The Ultimate Free, Ad-Free Data Management Solution</p>
-
-        <!-- Move .waffle-icon to ensure visibility and adjust style -->
-        <div class="waffle-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="container">
+            <h1>DataMateApps</h1>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            <nav class="desktop-nav">
+                <a href="https://datamateapp.github.io/">Home</a>
+                <a href="https://datamateapp.github.io/features.html">Features</a>
+                <a href="https://datamateapp.github.io/help.html" class="highlight">Help</a>
+                <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+                <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+                <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
+                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+                <a href="https://script.google.com/macros/s/AKfycbxyjPrLZ_Y9BjlqYQmkvfVCljFfuUqMrJTtEOuGzW3JRBYoFqzta1KmTUht3Q_20V5K/exec">Reviews</a>
+                <a href="https://script.google.com/macros/s/AKfycbzAqT03-1G2J7J9LLzkND0xtmPEdBZWfiEOpDBnwtgLujE6eDBGL9u1IgfYDrplqVi9/exec">Community</a>
+            </nav>
+            <nav class="mobile-nav">
+                <a href="https://datamateapp.github.io/">Home</a>
+                <a href="https://datamateapp.github.io/features.html">Features</a>
+                <a href="https://datamateapp.github.io/help.html" class="highlight">Help</a>
+                <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
+                <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
+                <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
+                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
+                <a href="https://script.google.com/macros/s/AKfycbxyjPrLZ_Y9BjlqYQmkvfVCljFfuUqMrJTtEOuGzW3JRBYoFqzta1KmTUht3Q_20V5K/exec">Reviews</a>
+                <a href="https://script.google.com/macros/s/AKfycbzAqT03-1G2J7J9LLzkND0xtmPEdBZWfiEOpDBnwtgLujE6eDBGL9u1IgfYDrplqVi9/exec">Community</a>
+            </nav>
         </div>
     </header>
-
-    <div class="waffle-menu" id="waffleMenu">
-        <a href="https://datamateapp.github.io/">Home</a>
-        <a href="https://datamateapp.github.io/ehelp.html">Help</a>
-        <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-        <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
-        <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
-        <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
-        <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
-        <a href="https://script.google.com/macros/s/AKfycbw-lIyxxaQvyvriV61ICoykOiSQfKOj0QceyOfTBmbq7K5iOJP_gZyDwCa6orLK07Bl/exec">Review DataMateApps</a>
-    </div>
 
 
     <h1>DataMate Excel Add-In: Complete User Guide</h1>
 
     <div class="container">
         <div class="section">
-            <h2>Step 1: Installing the Excel™ VBA Add-In</h2>
-            <p>Follow these steps to install the <strong>DataMate Excel Add-In</strong>:</p>
-            <ol>
-                <li>
-                    <strong>Download the Add-In</strong>:
-                    <ul>
-                        <li>Save the DataMate add-in file, typically with a <code>.xlam</code> extension, to a secure location on your computer.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Open Excel</strong>:
-                    <ul>
-                        <li>Launch Excel and go to the <strong>File</strong> tab.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Access Add-Ins</strong>:
-                    <ul>
-                        <li>Click <strong>Options</strong> and navigate to the <strong>Add-Ins</strong> section.</li>
-                        <li>At the bottom of the window, select <strong>Excel Add-Ins</strong> from the dropdown and click <strong>Go</strong>.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Browse and Enable the Add-In</strong>:
-                    <ul>
-                        <li>In the Add-Ins window, click <strong>Browse</strong>.</li>
-                        <li>Locate the downloaded <code>.xlam</code> file and click <strong>OK</strong>.</li>
-                        <li>Ensure the checkbox next to the DataMate add-in is selected, then click <strong>OK</strong>.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Verify Installation</strong>:
-                    <ul>
-                        <li>The DataMate menu should now appear on the Excel ribbon.</li>
-                        <li>If it doesn't appear, ensure macros are enabled under <strong>File > Options > Trust Center > Trust Center Settings > Macro Settings</strong>.</li>
-                    </ul>
-                </li>
-            </ol>
-            <div class="tip"><strong>Tip:</strong> Pin the location of the add-in file to avoid issues if the file is moved or deleted.</div>
-        </div>
+            <div class="step">
+                <h2>To install Excel™ web add-in:</h2>
+                <p><strong>Installation:</strong> (</a><a href="https://onedrive.live.com/login/">OneDrive</a>) Right click and save this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/manifest.xml" download> Installation File</a> to your computer. View your OneDrive online. Select New; Excel workbook. On the Home ribbon, select Add-ins, select Manage My Add-ins, select Upload My Add-in then upload the 'manifest.xml' file to install the app. Click the DataMate App button, the task pane will appear. Select New Dataset or select a template.</p>
+                <p><strong>Installation:</strong> (</a><a href="https://www.dropbox.com/register/">Dropbox</a>)  Right click and save this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/manifest.xml" download> Installation File</a> to your computer. Upload this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/NewDataset.xlsx" download> NewDataset.xlsx</a> to your Dropbox and open it in Excel for the web. On the Insert ribbon, select Add-ins, select Manage My Add-ins, select Upload My Add-in then upload the 'manifest.xml' file to install the app. Click the DataMate App button, the task pane will appear.</p>
+                <p>For additional installation instructions, see (</a><a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing#manually-sideload-an-add-in-to-office-on-the-web">Manually sideload an add-in to Office on the web</a>)</p>
+                <p><strong>Desktop Installation:</strong> see (</a><a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins">Sideload Office Add-ins for testing from a network share</a>) Excel 2013 or later required.</a> </p>
 
-        <div class="step">
-            <h2>To install Excel™ web add-in:</h2>
-            <p><strong>Installation:</strong> (</a><a href="https://onedrive.live.com/login/">OneDrive</a>) Right click and save this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/manifest.xml" download> Installation File</a> to your computer. View your OneDrive online. Select New; Excel workbook. On the Home ribbon, select Add-ins, select Manage My Add-ins, select Upload My Add-in then upload the 'manifest.xml' file to install the app. Click the DataMate App button, the task pane will appear. Select New Dataset or select a template.</p>
-            <p><strong>Installation:</strong> (</a><a href="https://www.dropbox.com/register/">Dropbox</a>)  Right click and save this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/manifest.xml" download> Installation File</a> to your computer. Upload this <a href="https://github.com/datamateapp/datamateapp.github.io/raw/main/NewDataset.xlsx" download> NewDataset.xlsx</a> to your Dropbox and open it in Excel for the web. On the Insert ribbon, select Add-ins, select Manage My Add-ins, select Upload My Add-in then upload the 'manifest.xml' file to install the app. Click the DataMate App button, the task pane will appear.</p>
-            <p>For additional installation instructions, see (</a><a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing#manually-sideload-an-add-in-to-office-on-the-web">Manually sideload an add-in to Office on the web</a>)</p>
-            <p><strong>Desktop Installation:</strong> see (</a><a href="https://learn.microsoft.com/en-us/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins">Sideload Office Add-ins for testing from a network share</a>) Excel 2013 or later required.</a> </p>
+            </div>
+            <div class="step">
+                <h2>Step 1: Installing the Excel™ VBA Add-In</h2>
+                <p>Follow these steps to install the <strong>DataMate Excel Add-In</strong>:</p>
+                <ol>
+                    <li>
+                        <strong>Download the Add-In</strong>:
+                        <ul>
+                            <li>Save the DataMate add-in file, typically with a <code>.xlam</code> extension, to a secure location on your computer.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Open Excel</strong>:
+                        <ul>
+                            <li>Launch Excel and go to the <strong>File</strong> tab.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Access Add-Ins</strong>:
+                        <ul>
+                            <li>Click <strong>Options</strong> and navigate to the <strong>Add-Ins</strong> section.</li>
+                            <li>At the bottom of the window, select <strong>Excel Add-Ins</strong> from the dropdown and click <strong>Go</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Browse and Enable the Add-In</strong>:
+                        <ul>
+                            <li>In the Add-Ins window, click <strong>Browse</strong>.</li>
+                            <li>Locate the downloaded <code>.xlam</code> file and click <strong>OK</strong>.</li>
+                            <li>Ensure the checkbox next to the DataMate add-in is selected, then click <strong>OK</strong>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Verify Installation</strong>:
+                        <ul>
+                            <li>The DataMate menu should now appear on the Excel ribbon.</li>
+                            <li>If it doesn't appear, ensure macros are enabled under <strong>File > Options > Trust Center > Trust Center Settings > Macro Settings</strong>.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="tip"><strong>Tip:</strong> Pin the location of the add-in file to avoid issues if the file is moved or deleted.</div>
+            </div>
 
-        </div>
 
 
 
-                <div class="step">
-                    <h2>Step 2: Adding Data</h2>
-                    <p>Follow these steps to add data to your <strong>DataMate</strong> file:</p>
-                    <ol>
-                        <li><strong>Open DataMate</strong>: Open your existing spreadsheet or form and ensure all cells containing text or data are <strong>merged</strong> and the <strong>DataMate</strong> add-in is active.</li>
-                        <li>
-                            <strong>Create a New Dataset</strong>:
-                            <ul>
-                                <li>From the <strong>DataMate</strong> menu, select <strong>New Dataset</strong>.</li>
-                                <li>This creates and initializes the necessary sheets and buttons for your dataset.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Copy and Paste Your Data</strong>:
-                            <ul>
-                                <li>Enter or copy the data or form you want to integrate.</li>
-                                <li>Navigate to the <strong>Input</strong> sheet. Paste your data into cells <code>A3:Q200</code> use paste column width.</li>
-                                <li>Repeat this process on the <strong>View/Print</strong> sheet, starting at cell <code>A3</code>.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Refresh the View</strong>:
-                            <ul>
-                                <li>Go to the <strong>DataMate App</strong> menu and click <strong>Refresh View</strong>.</li>
-                                <li>This updates dropdowns, validations, and displays the most recent data.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <div class="tip"><strong>Tip:</strong> Avoid overwriting rows below <code>Q200</code> on the Input sheet unless you've extended the VBA range to accommodate additional rows.</div>
+            <div class="step">
+                <h2>Step 2: Adding Data</h2>
+                <p>Follow these steps to add data to your <strong>DataMate</strong> file:</p>
+                <ol>
+                    <li><strong>Open DataMate</strong>: Open your existing spreadsheet or form and ensure all cells containing text or data are <strong>merged</strong> and the <strong>DataMate</strong> add-in is active.</li>
+                    <li>
+                        <strong>Create a New Dataset</strong>:
+                        <ul>
+                            <li>From the <strong>DataMate</strong> menu, select <strong>New Dataset</strong>.</li>
+                            <li>This creates and initializes the necessary sheets and buttons for your dataset.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Copy and Paste Your Data</strong>:
+                        <ul>
+                            <li>Enter or copy the data or form you want to integrate.</li>
+                            <li>Navigate to the <strong>Input</strong> sheet. Paste your data into cells <code>A3:Q200</code> use paste column width.</li>
+                            <li>Repeat this process on the <strong>View/Print</strong> sheet, starting at cell <code>A3</code>.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Refresh the View</strong>:
+                        <ul>
+                            <li>Go to the <strong>DataMate App</strong> menu and click <strong>Refresh View</strong>.</li>
+                            <li>This updates dropdowns, validations, and displays the most recent data.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="tip"><strong>Tip:</strong> Avoid overwriting rows below <code>Q200</code> on the Input sheet unless you've extended the VBA range to accommodate additional rows.</div>
+            </div>
+
+            <div class="step">
+                <h2>Step 3: Setting Up the Log Table</h2>
+                <p>Keep track of your data records using the <strong>Log Table</strong>:</p>
+                <ol>
+                    <li>
+                        <strong>Link Log Fields</strong>:
+                        <ul>
+                            <li>On the <strong>Input</strong> sheet, locate the cell labeled <strong>Log 1</strong>.</li>
+                            <li>Press <code>=</code> and click the cell containing the unique ID label (e.g., <strong>Invoice No.</strong>) on the same sheet. Press <strong>Enter</strong>.</li>
+                            <li>For <strong>Log 1 Empty</strong>, select the cell below it, press <code>=</code>, and link it to the corresponding data (e.g., the actual invoice number).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Repeat for Additional Fields</strong>: Follow the above steps to create links for up to <strong>12 log fields</strong>, depending on your data structure.</li>
+                </ol>
+                <div class="tip"><strong>Tip:</strong> You can rename the Log labels to match your dataset fields by selecting and typing over the label cells.</div>
+            </div>
+
+            <div class="step">
+                <h2>Step 4: Save, View, Print, and Update Your Data</h2>
+                <p>Effortlessly manage your data with these <strong>DataMate</strong> actions:</p>
+                <ol>
+                    <li>
+                        <strong>Save a Record</strong>:
+                        <ul>
+                            <li>Enter your data on the <strong>Input</strong> sheet.</li>
+                            <li>Click the <strong>Save Record</strong> button.</li>
+                            <li>This saves the data and switches to the <strong>View/Print</strong> sheet for confirmation.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>View a Record</strong>:
+                        <ul>
+                            <li>On the <strong>View/Print</strong> sheet, use the dropdown in cell <code>B2:L2</code> to select a record by its unique identifier.</li>
+                            <li>The selected record will populate the view fields.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Update a Record</strong>:
+                        <ul>
+                            <li>Navigate to the <strong>Update</strong> sheet.</li>
+                            <li>Modify the data fields as needed.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Print a Record</strong>:
+                        <ul>
+                            <li>Go to <strong>File > Print</strong> and select <strong>Print Current Selection</strong>.</li>
+                            <li>Ensure your print area is set to the relevant range on the <strong>View/Print</strong> sheet.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Refresh the Input Sheet</strong>:
+                        <ul>
+                            <li><strong>Refresh the Input Sheet:</strong> Before entering any data, make a copy of your current Input sheet (the copied sheet will be named <code>Input (2)</code>). When you select the <strong>Refresh Input</strong> button, the Input sheet will be reset to match the content of the copied sheet (<code>Input (2)</code>).</li>
+                        </ul>
+                    </li>
+
+                </ol>
+                <div class="tip"><strong>Tip:</strong> Use the preformatted View/Print layout for consistent and professional print results.</div>
+            </div>
+
+            <h2>Additional Tips and Instructions (Excel™ VBA Add-In)</h2>
+            <ul>
+                <li><strong>Navigation Buttons:</strong> Use the <strong>Exit</strong> button (located on the Input sheet, cell <code>P1</code>) to exit the current dataset and reset sheet names.</li>
+                <li><strong>Dynamic Naming:</strong> When creating a new dataset, the sheets are renamed dynamically. Ensure you properly exit any existing datasets first to avoid naming conflicts.</li>
+                <li><strong>Adding Input Sheets:</strong> Use the <strong>Add Input Sheet</strong> button to add additional Input sheets to the current dataset. When prompted, enter the names of the new sheets. This feature is useful for datasets with multiple inputs, such as a timesheet dataset for tracking records of multiple employees.</li>
+
+                <p>Here is a video showing Dataset creation and adding Input sheets. <a href="https://youtu.be/afwloH_ffsA">Watch This Video</a></p>
+            </ul>
+            <div class="tip"><strong>Tip:</strong> Backup your DataMate-enabled workbook regularly to avoid data loss during modifications or updates.</div>
+
+
+
+            <footer>
+                <div class="container">
+                    <p>© 2025 DataMateApps | Empowering Your Data Management</p>
+                    <p>
+                        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+                        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
+                        <a href="mailto:datamateapp@gmail.com">Contact Us</a>
+                    </p>
                 </div>
+            </footer>
 
-                <div class="step">
-                    <h2>Step 3: Setting Up the Log Table</h2>
-                    <p>Keep track of your data records using the <strong>Log Table</strong>:</p>
-                    <ol>
-                        <li>
-                            <strong>Link Log Fields</strong>:
-                            <ul>
-                                <li>On the <strong>Input</strong> sheet, locate the cell labeled <strong>Log 1</strong>.</li>
-                                <li>Press <code>=</code> and click the cell containing the unique ID label (e.g., <strong>Invoice No.</strong>) on the same sheet. Press <strong>Enter</strong>.</li>
-                                <li>For <strong>Log 1 Empty</strong>, select the cell below it, press <code>=</code>, and link it to the corresponding data (e.g., the actual invoice number).</li>
-                            </ul>
-                        </li>
-                        <li><strong>Repeat for Additional Fields</strong>: Follow the above steps to create links for up to <strong>12 log fields</strong>, depending on your data structure.</li>
-                    </ol>
-                    <div class="tip"><strong>Tip:</strong> You can rename the Log labels to match your dataset fields by selecting and typing over the label cells.</div>
-                </div>
-
-                <div class="step">
-                    <h2>Step 4: Save, View, Print, and Update Your Data</h2>
-                    <p>Effortlessly manage your data with these <strong>DataMate</strong> actions:</p>
-                    <ol>
-                        <li>
-                            <strong>Save a Record</strong>:
-                            <ul>
-                                <li>Enter your data on the <strong>Input</strong> sheet.</li>
-                                <li>Click the <strong>Save Record</strong> button.</li>
-                                <li>This saves the data and switches to the <strong>View/Print</strong> sheet for confirmation.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>View a Record</strong>:
-                            <ul>
-                                <li>On the <strong>View/Print</strong> sheet, use the dropdown in cell <code>B2:L2</code> to select a record by its unique identifier.</li>
-                                <li>The selected record will populate the view fields.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Update a Record</strong>:
-                            <ul>
-                                <li>Navigate to the <strong>Update</strong> sheet.</li>
-                                <li>Modify the data fields as needed.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Print a Record</strong>:
-                            <ul>
-                                <li>Go to <strong>File > Print</strong> and select <strong>Print Current Selection</strong>.</li>
-                                <li>Ensure your print area is set to the relevant range on the <strong>View/Print</strong> sheet.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Refresh the Input Sheet</strong>:
-                            <ul>
-                                <li><strong>Refresh the Input Sheet:</strong> Before entering any data, make a copy of your current Input sheet (the copied sheet will be named <code>Input (2)</code>). When you select the <strong>Refresh Input</strong> button, the Input sheet will be reset to match the content of the copied sheet (<code>Input (2)</code>).</li>
-                            </ul>
-                        </li>
-  
-                    </ol>
-                    <div class="tip"><strong>Tip:</strong> Use the preformatted View/Print layout for consistent and professional print results.</div>
-                </div>
-
-                <h2>Additional Tips and Instructions (Excel™ VBA Add-In)</h2>
-                <ul>
-                    <li><strong>Navigation Buttons:</strong> Use the <strong>Exit</strong> button (located on the Input sheet, cell <code>P1</code>) to exit the current dataset and reset sheet names.</li>
-                    <li><strong>Dynamic Naming:</strong> When creating a new dataset, the sheets are renamed dynamically. Ensure you properly exit any existing datasets first to avoid naming conflicts.</li>
-                    <li><strong>Adding Input Sheets:</strong> Use the <strong>Add Input Sheet</strong> button to add additional Input sheets to the current dataset. When prompted, enter the names of the new sheets. This feature is useful for datasets with multiple inputs, such as a timesheet dataset for tracking records of multiple employees.</li>
-
-                    <p>Here is a video showing Dataset creation and adding Input sheets. <a href="https://youtu.be/afwloH_ffsA">Watch This Video</a></p>
-                </ul>
-                <div class="tip"><strong>Tip:</strong> Backup your DataMate-enabled workbook regularly to avoid data loss during modifications or updates.</div>
-
-
-
-                <footer>
-                    &copy; 2024 DataMateApp. All Rights Reserved.
-                    <br>
-                    <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                    <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                    <a href="mailto:datamateapp@gmail.com">Contact Us.</a>
-                </footer>
-
-                <script>
-                    function toggleMenu() {
-                        document.getElementById("waffleMenu").classList.toggle("active");
+            <script>
+                function toggleMenu() {
+                    var nav = document.querySelector('.mobile-nav');
+                    if (nav.style.display === "block") {
+                        nav.style.display = "none";
+                    } else {
+                        nav.style.display = "block";
                     }
-                </script>
+                }
+            </script>
 </body>
 </html>
