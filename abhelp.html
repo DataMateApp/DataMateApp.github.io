@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -124,6 +125,13 @@
                     color: #e8491d;
                 }
 
+        .tip {
+            background-color: #d0e4f5;
+            border-left: 4px solid #007BFF;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
         footer {
             padding: 20px 0;
             margin-top: 20px;
@@ -235,97 +243,201 @@
         </div>
     </header>
 
- 
-        <div class="contact-spreadsheet">
-            <div id="name-cell" class="contact-cell name-cell">
-                <span class="dropdown-arrow">▼</span>
+
+    <div class="contact-spreadsheet">
+        <div id="name-cell" class="contact-cell name-cell">
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div id="company-cell" class="contact-cell company-cell"></div>
+        <div id="address-cell" class="contact-cell address-cell"></div>
+        <div id="city-state-zip-cell" class="contact-cell city-state-zip-cell"></div>
+        <div id="email-cell" class="contact-cell email-cell"></div>
+        <script>
+            const contacts = [
+                { name: 'John Smith', company: 'XYZ Corp', address: '123 Main St', cityStateZip: 'Cityville, CA 12345', email: 'john@example.com' },
+                { name: 'Jane Doe', company: 'ABC Inc', address: '456 Oak St', cityStateZip: 'Townsville, NY 56789', email: 'jane@example.com' }
+            ];
+
+            let index = 0;
+            const nameCell = document.getElementById('name-cell');
+            const companyCell = document.getElementById('company-cell');
+            const addressCell = document.getElementById('address-cell');
+            const cityStateZipCell = document.getElementById('city-state-zip-cell');
+            const emailCell = document.getElementById('email-cell');
+
+            function updateContact() {
+                const contact = contacts[index];
+                nameCell.innerHTML = `${contact.name}<span class="dropdown-arrow">▼</span>`;
+                companyCell.textContent = `${contact.company}`;
+                addressCell.textContent = `${contact.address}`;
+                cityStateZipCell.textContent = `${contact.cityStateZip}`;
+                emailCell.textContent = `${contact.email}`;
+                index = (index + 1) % contacts.length;
+            }
+
+            setInterval(updateContact, 2000);
+            updateContact(); // Initial update
+        </script>
+
+        <div class="container">
+
+            <h1>How to Create an address block in Google Sheets™  from your Gmail™ contacts using AddressBlockApp</h1>
+            <iframe width="842" height="474" src="https://www.youtube.com/embed/C5kKbSRCkGc" title="AddressBlock" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+
+            <h1>DataMate AddressBlock Add-on for Google Sheets - Help Tutorial</h1>
+
+            <p><strong>Welcome to DataMate AddressBlock!</strong> This add-on enhances Google Sheets with powerful contact management features, making it easy to organize, import, and utilize your contact data. Here's a step-by-step guide to get you started:</p>
+
+            <h2>Getting Started</h2>
+            <ol>
+                <li>
+                    <strong>Installation</strong>:
+                    <ul>
+                        <li>If the add-on isn't already installed, find it in the Google Workspace Marketplace and install it into your Google Sheets.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Initial Setup</strong>:
+                    <ul>
+                        <li>After installation, open any Google Sheet or create a new one. When you open a sheet, you'll see a new menu named "AddressBlock".</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="capabilities">
+                <h3>Capabilities Overview</h3>
+                <ul>
+                    <li><strong>Contact Management</strong>: Manage a database of contacts directly within Google Sheets, including personal and business details.</li>
+                    <li><strong>Custom Data Validation</strong>: Apply dynamic validations to ensure data integrity when adding or looking up contacts.</li>
+                    <li><strong>CSV Import</strong>: Seamlessly import contacts from CSV files exported from Gmail or Outlook.</li>
+                    <li><strong>Address Block Creation</strong>: Generate address blocks or contact information lookups for use in forms or documents.</li>
+                    <li><strong>Automated Data Entry</strong>: Automate the process of adding new contacts or updating existing ones with minimal manual input.</li>
+                </ul>
             </div>
-            <div id="company-cell" class="contact-cell company-cell"></div>
-            <div id="address-cell" class="contact-cell address-cell"></div>
-            <div id="city-state-zip-cell" class="contact-cell city-state-zip-cell"></div>
-            <div id="email-cell" class="contact-cell email-cell"></div>
-            <script>
-                const contacts = [
-                    { name: 'John Smith', company: 'XYZ Corp', address: '123 Main St', cityStateZip: 'Cityville, CA 12345', email: 'john@example.com' },
-                    { name: 'Jane Doe', company: 'ABC Inc', address: '456 Oak St', cityStateZip: 'Townsville, NY 56789', email: 'jane@example.com' }
-                ];
 
-                let index = 0;
-                const nameCell = document.getElementById('name-cell');
-                const companyCell = document.getElementById('company-cell');
-                const addressCell = document.getElementById('address-cell');
-                const cityStateZipCell = document.getElementById('city-state-zip-cell');
-                const emailCell = document.getElementById('email-cell');
+            <h2>Step-by-Step Guide</h2>
 
-                function updateContact() {
-                    const contact = contacts[index];
-                    nameCell.innerHTML = `${contact.name}<span class="dropdown-arrow">▼</span>`;
-                    companyCell.textContent = `${contact.company}`;
-                    addressCell.textContent = `${contact.address}`;
-                    cityStateZipCell.textContent = `${contact.cityStateZip}`;
-                    emailCell.textContent = `${contact.email}`;
-                    index = (index + 1) % contacts.length;
-                }
+            <h3>1. Setting Up Contact Sheets</h3>
+            <ul>
+                <li>
+                    <strong>Menu Item:</strong> <code>Add Contact Sheets</code>
+                    <ul>
+                        <li>
+                            This option sets up three essential sheets:
+                            <ul>
+                                <li><strong>contacts</strong>: Stores all your contact information in a structured format.</li>
+                                <li><strong>Address</strong>: Used for generating address blocks or looking up contact information.</li>
+                                <li><strong>NewContact</strong>: A template for entering new contact details before saving them to the <code>contacts</code> sheet.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
-                setInterval(updateContact, 2000);
-                updateContact(); // Initial update
-            </script>
+            <h3>2. Importing Contacts</h3>
+            <ul>
+                <li>
+                    <strong>Menu Items:</strong>
+                    <ul>
+                        <li><code>Import Gmail™ Contacts</code> or <code>Import Outlook™ Contacts</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Action:</strong>
+                    <ul>
+                        <li>A dialog will pop up allowing you to select a CSV file.</li>
+                        <li>The add-on will map the CSV data to the <code>contacts</code> sheet, filling in details like name, email, phone numbers, and addresses based on the CSV format (Gmail or Outlook).</li>
+                    </ul>
+                </li>
+            </ul>
 
+            <h3>3. Adding New Contacts</h3>
+            <ul>
+                <li>
+                    <strong>Menu Item:</strong> <code>Save New Contact</code>
+                    <ul>
+                        <li>
+                            <strong>How to Use:</strong>
+                            <ul>
+                                <li>Enter contact information on the <code>NewContact</code> sheet.</li>
+                                <li>Use this menu item to save the entered data to the <code>contacts</code> sheet automatically.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>4. Generating Address Blocks</h3>
+            <ul>
+                <li>
+                    <strong>Menu Items:</strong> <code>Address Block Name</code> or <code>Address Block Company</code>
+                    <ul>
+                        <li>
+                            <strong>Functionality:</strong>
+                            <ul>
+                                <li>These options are used to populate the <code>Address</code> sheet with contact information based on:</li>
+                                <li><strong>Name</strong> (for individual lookup) or</li>
+                                <li><strong>Company</strong> (for business lookup).</li>
+                                <li>Enter a cell reference in <code>F1</code> of the <code>Address</code> sheet where you want the contact information to be validated on <code>Sheet1</code>, then choose the appropriate menu item.</li>
+                                <li>This will create VLOOKUP or XLOOKUP-like formulas in the <code>Address</code> sheet, which can then be copied to your main document or form.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>5. Updating Records</h3>
+            <ul>
+                <li>
+                    <strong>Manual Updates:</strong>
+                    <ul>
+                        <li>Since the <code>contacts</code> sheet is where all data resides, you can directly edit or update any record there.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="tip">
+                <h3>Tips and Best Practices</h3>
+                <ul>
+                    <li><strong>Data Integrity:</strong> Always use the <code>NewContact</code> sheet for adding new contacts to ensure all necessary fields are filled correctly before saving.</li>
+                    <li><strong>Customization:</strong> If you need additional fields or different data structures, you can manually add them to the <code>contacts</code> sheet, but keep in mind this might require adjusting the import mappings.</li>
+                    <li><strong>Performance:</strong> For very large datasets, consider optimizing your Google Sheets by using filters instead of dynamic lookups for daily use.</li>
+                    <li><strong>Backup:</strong> Regularly back up your data, especially before making significant changes or updates.</li>
+                </ul>
+            </div>
+
+            <h2>Support and Further Assistance</h2>
+            <ul>
+                <li><strong>Help Menu:</strong> If you encounter issues, use this tutorial or refer to the <code>Help</code> menu option which might lead to more detailed documentation or forums.</li>
+                <li><strong>Feedback:</strong> We value your feedback! If you have suggestions or encounter bugs, please reach out through the "AddressBlock" menu or via the support options provided by Google Workspace.</li>
+            </ul>
+
+            <p>By leveraging these capabilities, DataMate AddressBlock turns Google Sheets into a formidable tool for contact management, saving you time and ensuring your data is always at your fingertips. Enjoy managing your contacts with ease and efficiency!</p>
+
+
+
+<footer>
     <div class="container">
-
-        <h1>How to Create an address block in Google Sheets™  from your Gmail™ contacts using AddressBlockApp</h1>
-        <iframe width="842" height="474" src="https://www.youtube.com/embed/C5kKbSRCkGc" title="AddressBlock" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-
+        <p>© 2025 DataMateApps | Empowering Your Data Management</p>
         <p>
-            Welcome to our tutorial on harnessing the power of AddressBlock to streamline your business management using
-            spreadsheets. Follow these steps to make your workflow more efficient:
-        </p>
-
-        <h2>Adding Contacts</h2>
-        <li>
-                <strong>Adding Contacts</strong>
-                <ul>
-                    <li>Export your selected <strong>Gmail™ or Outlook™</strong> contacts to an <strong>Outlook™</strong> CSV file.</li>
-                    <li>Select Import Gmail™ or Outlook™ Contacts</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Customization</strong>
-                <ul>
-                    <li>
-                        On the Address sheet, enter your desired target cell in cell F1. Select AddressBlock Name or AddresBlock Company. This will create an address block on a sheet named Sheet1 in the target cell.
-                    </li>
-                </ul>
-            </li>
-            Congratulations! You've successfully integrated your contacts into your management workflow using the
-            AddressBlock App. Enjoy the benefits of a more organized and efficient management experience.
+            <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+            <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
+            <a href="mailto:datamateapp@gmail.com">Contact Us</a>
         </p>
     </div>
+</footer>
 
-
-
-    <footer>
-        <div class="container">
-            <p>© 2025 DataMateApps | Empowering Your Data Management</p>
-            <p>
-                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                <a href="mailto:datamateapp@gmail.com">Contact Us</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var nav = document.querySelector('.mobile-nav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
+<script>
+    function toggleMenu() {
+        var nav = document.querySelector('.mobile-nav');
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+        } else {
+            nav.style.display = "block";
         }
-    </script>
+    }
+</script>
 </body>
 </html>
