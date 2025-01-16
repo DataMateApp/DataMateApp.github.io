@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,46 +53,6 @@
         header a:hover {
             color: #cccccc;
             font-weight: bold;
-        }
-
-        contact-spreadsheet {
-            display: flex;
-            flex-direction: column;
-            width: 120px;
-            background-color: #fff;
-            border: 2px solid #0074d9;
-            border-radius: 0px;
-            padding: 0;
-            font-size: 8px;
-            margin: 20px auto; /* Center horizontally */
-        }
-
-
-        .contact-cell {
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            border-bottom: 1px solid #0074d9;
-            border-radius: 0;
-            text-align: left;
-            font-weight: bold;
-            color: #0074d9;
-            text-rendering: optimizeLegibility;
-        }
-
-        .name-cell {
-            position: relative;
-        }
-
-        .dropdown-arrow {
-            position: absolute;
-            top: 50%;
-            right: 5px;
-            transform: translateY(-50%);
-        }
-
-        .center-text {
-            text-align: center;
         }
 
         .showcase {
@@ -163,6 +124,13 @@
                     background: #ffffff;
                     color: #e8491d;
                 }
+
+        .tip {
+            background-color: #d0e4f5;
+            border-left: 4px solid #007BFF;
+            padding: 10px;
+            margin: 10px 0;
+        }
 
         footer {
             padding: 20px 0;
@@ -251,7 +219,7 @@
             <nav class="desktop-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/abhelp.html">Help</a>
+                <a href="https://datamateapp.github.io/help.html">Help</a>
                 <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
                 <a href="https://datamateapp.github.io/addressblock.html" class="highlight">AddressBlock</a>
                 <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
@@ -263,9 +231,9 @@
             <nav class="mobile-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/abhelp.html">Help</a>
+                <a href="https://datamateapp.github.io/help.html" class="highlight">Help</a>
                 <a href="https://datamateapp.github.io/TEMPLATES.html">Template Sharing</a>
-                <a href="https://datamateapp.github.io/addressblock.html" class="highlight">AddressBlock</a>
+                <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
                 <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
                 <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
@@ -275,95 +243,51 @@
         </div>
     </header>
 
-        <div class="contact-spreadsheet">
-            <div id="name-cell" class="contact-cell name-cell">
-                <span class="dropdown-arrow">▼</span>
+
+    
+
+    <section class="showcase">
+        <div class="container">
+            <h2>Effortlessly Manage Your Contacts</h2>
+            <p>AddressBlock turns your Google Sheets™ into a powerful contact management system with seamless integration and automation.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-box">
+                <h3>Import Contacts</h3>
+                <p>Quickly import contacts from Gmail™ or Outlook™ CSV files directly into your spreadsheet.</p>
             </div>
-            <div id="company-cell" class="contact-cell company-cell"></div>
-            <div id="address-cell" class="contact-cell address-cell"></div>
-            <div id="city-state-zip-cell" class="contact-cell city-state-zip-cell"></div>
-            <div id="email-cell" class="contact-cell email-cell"></div>
-            <script>
-                const contacts = [
-                    { name: 'John Smith', company: 'XYZ Corp', address: '123 Main St', cityStateZip: 'Cityville, CA 12345', email: 'john@example.com' },
-                    { name: 'Jane Doe', company: 'ABC Inc', address: '456 Oak St', cityStateZip: 'Townsville, NY 56789', email: 'jane@example.com' }
-                ];
-
-                let index = 0;
-                const nameCell = document.getElementById('name-cell');
-                const companyCell = document.getElementById('company-cell');
-                const addressCell = document.getElementById('address-cell');
-                const cityStateZipCell = document.getElementById('city-state-zip-cell');
-                const emailCell = document.getElementById('email-cell');
-
-                function updateContact() {
-                    const contact = contacts[index];
-                    nameCell.innerHTML = `${contact.name}<span class="dropdown-arrow">▼</span>`;
-                    companyCell.textContent = `${contact.company}`;
-                    addressCell.textContent = `${contact.address}`;
-                    cityStateZipCell.textContent = `${contact.cityStateZip}`;
-                    emailCell.textContent = `${contact.email}`;
-                    index = (index + 1) % contacts.length;
-                }
-
-                setInterval(updateContact, 2000);
-                updateContact(); // Initial update
-            </script>
+            <div class="feature-box">
+                <h3>Address Blocks</h3>
+                <p>Generate address blocks for any contact with just a few clicks, perfect for forms or documents.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Automated Entry</h3>
+                <p>Save new contacts or update records automatically, reducing data entry errors and time.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Custom Data Validation</h3>
+                <p>Ensure data accuracy with custom validations tailored to your contact database.</p>
+            </div>
+            <div class="feature-box">
+                <h3>User-Friendly Interface</h3>
+                <p>Access all features through an intuitive menu in Google Sheets™, no coding required.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Scalable Design</h3>
+                <p>Designed to handle from small personal lists to large enterprise contact databases.</p>
+            </div>
         </div>
-        <div class="center-text">
-            <p><strong>AddressBlock for Google Sheets™</strong></p>
-            <p>
-                <a href="https://workspace.google.com/marketplace/app/addressblock/786018916601?pann=b" target="_blank" aria-label="Get it from the Google Workspace Marketplace">
-                    <img alt="Google Workspace Marketplace badge" alt-text="Get it from the Google Workspace Marketplace" src="https://workspace.google.com/static/img/marketplace/en/gwmBadge.svg?" style="height: 68px">
-                </a>
-            </p>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Get Started with AddressBlock Today!</h2>
+            <a href="https://workspace.google.com/marketplace/app/addressblock/786018916601?pann=b" target="_blank">Install Now</a>
         </div>
-
-
-    <div>
-        <h1>AddressBlockApp – Revolutionize Your Contact Management in Spreadsheets!</h1>
-        <p>
-        <p>
-            🌐 <strong>Seamless Integration</strong><br>
-            Easily create an address block in Google Sheets™ from your Gmail™ or Outlook™ contacts with AddressBlockApp. Effortlessly
-            import and organize your contacts!
-        </p>
-        <p>
-            📊 <strong>Streamlined Workflow Tutorial</strong><br>
-            Unlock the full potential of AddressBlock with our user-friendly tutorial. Follow these simple steps to
-            enhance your business management:
-        </p>
-        <ol>
-            <li>
-                <strong>Adding Contacts</strong>
-                <ul>
-                    <li>Export your selected <strong>Gmail™ or Outlook™</strong> contacts to an <strong>Outlook™</strong> CSV file.</li>
-                    <li>Select Import Gmail™ or Outlook™ Contacts</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Customization</strong>
-                <ul>
-                    <li>
-                        On the Address sheet, enter your desired target cell in cell F1. Select AddressBlock Name or AddresBlock Company. This will create an address block on a sheet named Sheet1 in the target cell.
-                    </li>
-                </ul>
-            </li>
-           
-                <strong>Congratulations!</strong>
-                <ul>
-                    <li>Enjoy the benefits of an organized and efficient management experience.</li>
-                </ul>
-            </li>
-        </ol>
-        <p>
-            📧 <strong>Questions or Feedback?</strong><br>
-            We value your input! Reach out via email with any inquiries or suggestions.
-        </p>
-        <p>
-            Download AddressBlockApp now and elevate your spreadsheet game!
-        </p>
-    </div>
+    </section>
 
 
     <footer>
