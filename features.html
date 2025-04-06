@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Simplify Your Data Management</title>
+    <title>DataMateApps - FormBuilder Features</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -102,6 +102,38 @@
             width: 100%;
         }
 
+        .comparison {
+            padding: 20px 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+            .comparison h2 {
+                color: #35424a;
+                margin-bottom: 20px;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #35424a;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
         .cta {
             background: #35424a;
             color: #fff;
@@ -131,6 +163,7 @@
             background-color: #f4f4f4;
             text-align: center;
         }
+
         /* Mobile Menu */
         .menu-toggle {
             display: block;
@@ -159,6 +192,7 @@
                 text-align: center;
                 border-top: 1px solid #e8491d;
             }
+
         /* Desktop Styles */
         @media (min-width: 768px) {
             .container {
@@ -207,7 +241,7 @@
     <header>
         <div class="container">
             <h1>DataMateApps</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <nav class="desktop-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html" class="highlight">Features</a>
@@ -237,67 +271,141 @@
         </div>
     </header>
 
-
+    <section class="showcase">
         <div class="container">
+            <h1>FormBuilder with DataMate</h1>
+            <p>A Powerful, Customizable Alternative to Google Forms</p>
+        </div>
+    </section>
 
-            <section>
-                <h2>Welcome to DataMateApp</h2>
-                <p>Discover how <span class="highlight">DataMateApp</span> can simplify your data management. Our tools are free, easy to use, and integrate seamlessly with Google Sheets™ and Excel™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
+    <div class="container">
+        <section class="features">
+            <h2>Key Features of FormBuilder</h2>
+            <div class="feature-box">
+                <h3>Advanced Field Types</h3>
+                <p>Over 25 field types including Text, Dropdown, Multi-Select, Date, Time, Number, Checkbox, Radio, Textarea, Email, Star Ratings, Range Sliders, File Uploads, Conditional Fields, Calculated Fields, Signatures, Geolocation, Progress Bars, Captcha, Images, Videos, and more.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Dynamic Tables</h3>
+                <p>Create interactive tables with dropdowns for item selection, price lookups from spreadsheet data, quantity inputs, and real-time totals (subtotal, tax, total), with the ability to add or remove rows dynamically.</p>
+            </div>
+            <div class="feature-box">
+                <h3>DataMate Integration</h3>
+                <p>Trigger custom data processing with seamless integration, copying form data across multiple sheets, updating inventory, and running complex workflows post-submission.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Flexible Submission Options</h3>
+                <p>Choose between Single Cell or Table Row submissions, with dynamic table data serialized as JSON for precise control over data storage.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Dynamic Dropdowns</h3>
+                <p>Populate dropdowns from spreadsheet ranges (e.g., <code>=Sheet1!A:A</code>) or custom lists, keeping options current with real-time updates.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Conditional Logic</h3>
+                <p>Enhance user experience with smart forms where fields appear based on responses (e.g., show a text field if a checkbox is checked).</p>
+            </div>
+            <div class="feature-box">
+                <h3>Custom Styling</h3>
+                <p>Modern, responsive design with customizable containers, headers, and footers to match your brand’s look and feel.</p>
+            </div>
+            <div class="feature-box">
+                <h3>File Management</h3>
+                <p>Upload files directly to Google Drive with automatic link generation and customizable permissions for easy access.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Real-Time Calculations</h3>
+                <p>Perform client-side calculations (e.g., <code>=Quantity*2</code> or dynamic table totals) that update instantly as users input data.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Spreadsheet-Driven Data</h3>
+                <p>Leverage spreadsheet ranges for static tables or dynamic table options, ensuring data consistency and flexibility.</p>
+            </div>
+        </section>
 
-            </section>
+        <section class="comparison">
+            <h2>FormBuilder vs. Google Forms</h2>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>FormBuilder with DataMate</th>
+                    <th>Google Forms</th>
+                </tr>
+                <tr>
+                    <td>Field Type Variety</td>
+                    <td>25+ advanced field types including dynamic tables</td>
+                    <td>Limited to 12 basic types</td>
+                </tr>
+                <tr>
+                    <td>Dynamic Tables</td>
+                    <td>Interactive tables with pricing, totals, and row management</td>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <td>Data Processing</td>
+                    <td>Custom workflows with DataMate integration</td>
+                    <td>Basic spreadsheet output only</td>
+                </tr>
+                <tr>
+                    <td>Submission Flexibility</td>
+                    <td>Single Cell or Table Row with serialized dynamic data</td>
+                    <td>Table Row only</td>
+                </tr>
+                <tr>
+                    <td>Conditional Logic</td>
+                    <td>Advanced field visibility control</td>
+                    <td>Basic section skipping</td>
+                </tr>
+                <tr>
+                    <td>Customization</td>
+                    <td>Full styling with containers and branding</td>
+                    <td>Limited theme options</td>
+                </tr>
+                <tr>
+                    <td>File Upload Handling</td>
+                    <td>Direct Drive integration with custom links</td>
+                    <td>Uploads to form owner’s Drive only</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Calculations</td>
+                    <td>Client-side totals and custom formulas</td>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <td>Spreadsheet Integration</td>
+                    <td>Deep integration with dynamic ranges and tables</td>
+                    <td>Basic response sheet</td>
+                </tr>
+            </table>
+        </section>
 
-            <h1>DataMate - More Than Just an App</h1>
-            <p><span class="highlight">DataMateApp</span> is more than just an app—it's a game-changing tool that empowers individuals and businesses to take control of their data like never before. Whether you're a professional, a small business owner, or a student, DataMateApp simplifies data management, saving you time and effort.</p>
+        <section class="cta">
+            <h2>Try FormBuilder Today!</h2>
+            <p>Experience the power of advanced form creation with DataMate.</p>
+            <a href="https://script.google.com/macros/s/AKfycbxKwP8r_5SQTPGFAme4DlALF267dj8DwCUAd_A8EihGKhc60p-9Bh5VC0NXkdw0nagb/exec" target="_blank">Get Started Now</a>
+        </section>
+    </div>
 
-            <h2>What Can DataMate Do for You?</h2>
-            <p>DataMateApp transforms how you work with spreadsheets, making data management simpler and more efficient. Here’s how:</p>
+    <footer>
+        <div class="container">
+            <p>© 2025 DataMateApps | Empowering Your Data Management</p>
+            <p>
+                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
+                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
+                <a href="mailto:datamateapp@gmail.com">Contact Us</a>
+            </p>
+        </div>
+    </footer>
 
-            <ul>
-
-                <li><strong>DataMate</strong> is an excellent tool for anyone looking to manage contacts and data within Google Sheets™ and Excel™ without the need for external CRM software.</li>
-                <li><strong>Create Updatable Datasets:</strong> Say goodbye to juggling multiple spreadsheets! DataMateApp lets you store all your data as rows on a single, structured Data sheet. Whether you're tracking customer records, project logs, or survey responses, your data is always updatable, filterable, and sortable—ready to evolve with your needs.</li>
-                <li><strong>Streamlined Data Entry:</strong> Instead of creating individual forms or managing countless files in a folder, DataMateApp consolidates your inputs into one cohesive system. Each entry becomes a record, seamlessly integrated into your dataset.</li>
-                <li><strong>Log Table for Easy Tracking:</strong> Set up a log table to keep track of all your data records. This log makes it effortless to monitor changes, stay organized, and locate specific entries when you need them.</li>
-                <li><strong>View and Print Records with Ease:</strong> Need to share or review your data? The View_Print sheet lets you select any record, view its details in a clean format, and print it on demand. Perfect for reports, audits, or presentations.</li>
-                <li><strong>Effortless Filtering and Sorting:</strong> Instantly filter and sort your records to find the exact data you need, whether you’re analyzing trends, updating entries, or compiling reports.</li>
-            </ul>
-
-            <h2>Why Choose DataMate?</h2>
-            <ul>
-                <li><strong>Simplicity:</strong> Designed to make complex tasks easy for users of all skill levels.</li>
-                <li><strong>Accessibility:</strong> Available to everyone at no cost and without intrusive ads.</li>
-                <li><strong>Efficiency:</strong> Saves time and keeps your data organized, accurate, and ready for action.</li>
-            </ul>
-
-            <p>DataMate isn’t just an app; it’s a smarter way to manage and share data. Try it today and discover the possibilities!</p>
-
-            <section>
-                <h2>Boost Your Productivity</h2>
-                <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/_cduOVxVafc?si=hFOqZbgeRx_G4GKe">Watch This Video</a></p>
-
-            </section>
-
-
-            <footer>
-                <div class="container">
-                    <p>© 2025 DataMateApps | Empowering Your Data Management</p>
-                    <p>
-                        <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                        <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                        <a href="mailto:datamateapp@gmail.com">Contact Us</a>
-                    </p>
-                </div>
-            </footer>
-
-            <script>
-                function toggleMenu() {
-                    var nav = document.querySelector('.mobile-nav');
-                    if (nav.style.display === "block") {
-                        nav.style.display = "none";
-                    } else {
-                        nav.style.display = "block";
-                    }
-                }
-            </script>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('.mobile-nav');
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
