@@ -290,8 +290,35 @@
 </head>
 <body>
     <div class="container">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataMate Tutorial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 900px; margin: auto; }
+        h1 { color: #35424a; text-align: center; }
+        h2 { color: #4CAF50; }
+        .accordion-button { background-color: #ffffff; color: #35424a; }
+        .accordion-button:not(.collapsed) { background-color: #e8491d; color: white; }
+        .step, .tip, .capabilities { background: #f9f9f9; padding: 15px; border-left: 4px solid #4CAF50; margin-bottom: 15px; border-radius: 4px; }
+        code { background: #f1f1f1; padding: 2px 5px; border-radius: 3px; color: #d32f2f; }
+        pre { background: #f5f5f5; padding: 15px; border: 1px solid #ddd; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #4CAF50; color: white; }
+        .note { color: #666; font-style: italic; }
+        footer { text-align: center; padding: 20px 0; color: #000000; background-color: #f4f4f4; }
+        .field-type { margin-left: 10px; padding: 10px; background: #fff; border: 1px solid #ddd; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
         <h1>DataMate Tutorial</h1>
-        <p>Welcome to DataMate! This comprehensive guide covers how to use DataMate for data management, form building, and contact management within Google Sheets. Current date: April 06, 2025.</p>
+        <p>Welcome to DataMate! This comprehensive guide covers how to use DataMate for data management, form building, and contact management within Google Sheets. Current date: April 07, 2025.</p>
 
         <div class="accordion" id="tutorialAccordion">
             <!-- Section 1: Overview -->
@@ -308,7 +335,7 @@
                             <ul>
                                 <li><strong>Automated Data Entry</strong>: Organize data into structured sheets.</li>
                                 <li><strong>Record Management</strong>: Save, view, update, and print records easily.</li>
-                                <li><strong>Customizable Forms</strong>: Build advanced forms with over 25 field types, including dynamic tables for interactive data entry.</li>
+                                <li><strong>Customizable Forms</strong>: Build advanced forms with over 25 field types for versatile data entry.</li>
                                 <li><strong>Contact Integration</strong>: Import and manage contacts from Gmail or CSV files.</li>
                                 <li><strong>Dynamic Logs</strong>: Track up to 12 log fields per record.</li>
                             </ul>
@@ -535,16 +562,6 @@
                                 <ul><li><strong>E</strong>: Range (e.g., "Sheet2!A1:C5").</li><li>Example: <code>["Sales Data", "Responses", "Y", "Table", "Sheet2!A1:C5"]</code></li></ul>
                             </div>
                             <div class="field-type">
-                                <h4>DynamicTable</h4>
-                                <p>An interactive table with dropdowns, price lookups, quantity inputs, and real-time totals (subtotal, tax, total).</p>
-                                <ul>
-                                    <li><strong>E</strong>: "=SheetName!Column:Column,PriceColumn:Column" (e.g., "=Inventory!A:A,PriceColumn:C").</li>
-                                    <li><strong>Behavior</strong>: Users add/remove rows; data serializes to a single cell as JSON.</li>
-                                    <li><strong>Tax Rate</strong>: Set in <code>Sheet1!C33</code> (e.g., 0.08 for 8%).</li>
-                                    <li>Example: <code>["Order Items", "Responses", "Z", "DynamicTable", "=Inventory!A:A,PriceColumn:C"]</code></li>
-                                </ul>
-                            </div>
-                            <div class="field-type">
                                 <h4>Container</h4>
                                 <p>Groups fields with custom styling.</p>
                                 <ul><li><strong>E</strong>: Inline CSS or blank.</li><li>Example: <code>["Section 1", "Responses", "AA", "Container", "background: #f0f0f0;"]</code></li></ul>
@@ -566,7 +583,7 @@
                         </div>
                         <div class="step">
                             <h3>Collect Data</h3>
-                            <p>Share the URL. Data saves to the target sheet based on submission type. Dynamic table data is serialized as JSON in a single cell for <code>TableRow</code> submissions.</p>
+                            <p>Share the URL. Data saves to the target sheet based on submission type.</p>
                         </div>
                     </div>
                 </div>
@@ -641,95 +658,9 @@
                                 <tr><td>Full-time</td><td>Responses</td><td>P</td><td>Checkbox</td><td></td></tr>
                                 <tr><td>Part-time</td><td>Responses</td><td>Q</td><td>Checkbox</td><td></td></tr>
                                 <tr><td>Weekends</td><td>Responses</td><td>R</td><td>Checkbox</td><td></td></tr>
-                                <tr><td>Evenings</td><td>Responses</td><td>S</td><td>Checkbox</td><td></td></tr>
-                                <tr><td>How did you hear about this position?</td><td>Responses</td><td>T</td><td>Dropdown</td><td>Website,Referral,Job Board</td></tr>
-                                <tr><td>Section 3: Employment Eligibility</td><td>Responses</td><td>U</td><td>Header</td><td>Employment Eligibility</td></tr>
-                                <tr><td>Are you legally authorized to work in this country?</td><td>Responses</td><td>V</td><td>Radio</td><td>Yes,No</td></tr>
-                                <tr><td>Will you now or in the future require work sponsorship?</td><td>Responses</td><td>W</td><td>Radio</td><td>Yes,No</td></tr>
-                                <tr><td>Section 4: Employment History</td><td>Responses</td><td>X</td><td>Header</td><td>Employment History</td></tr>
-                                <tr><td>Employment History Container</td><td>Responses</td><td>Y</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Employer Name</td><td>Responses</td><td>Z</td><td>Text</td><td></td></tr>
-                                <tr><td>Job Title</td><td>Responses</td><td>AA</td><td>Text</td><td></td></tr>
-                                <tr><td>Start Date</td><td>Responses</td><td>AB</td><td>Date</td><td></td></tr>
-                                <tr><td>End Date</td><td>Responses</td><td>AC</td><td>Date</td><td></td></tr>
-                                <tr><td>Duties and Responsibilities</td><td>Responses</td><td>AD</td><td>Textarea</td><td></td></tr>
-                                <tr><td>Supervisor’s Name and Contact Info</td><td>Responses</td><td>AE</td><td>Text</td><td></td></tr>
-                                <tr><td>May we contact this employer?</td><td>Responses</td><td>AF</td><td>Radio</td><td>Yes,No</td></tr>
-                                <tr><td>Reason for Leaving</td><td>Responses</td><td>AG</td><td>Text</td><td></td></tr>
-                                <tr><td>Section 5: Education</td><td>Responses</td><td>AH</td><td>Header</td><td>Education</td></tr>
-                                <tr><td>Education Container</td><td>Responses</td><td>AI</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Institution Name</td><td>Responses</td><td>AJ</td><td>Text</td><td></td></tr>
-                                <tr><td>Degree or Certification Earned</td><td>Responses</td><td>AK</td><td>Text</td><td></td></tr>
-                                <tr><td>Field of Study</td><td>Responses</td><td>AL</td><td>Text</td><td></td></tr>
-                                <tr><td>Graduation Date</td><td>Responses</td><td>AM</td><td>Date</td><td></td></tr>
-                                <tr><td>Section 6: Skills and Qualifications</td><td>Responses</td><td>AN</td><td>Header</td><td>Skills and Qualifications</td></tr>
-                                <tr><td>List relevant skills</td><td>Responses</td><td>AO</td><td>Textarea</td><td></td></tr>
-                                <tr><td>Certifications or Licenses</td><td>Responses</td><td>AP</td><td>Text</td><td></td></tr>
-                                <tr><td>Section 7: References</td><td>Responses</td><td>AQ</td><td>Header</td><td>References</td></tr>
-                                <tr><td>References Container</td><td>Responses</td><td>AR</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Reference Full Name</td><td>Responses</td><td>AS</td><td>Text</td><td></td></tr>
-                                <tr><td>Relationship</td><td>Responses</td><td>AT</td><td>Text</td><td></td></tr>
-                                <tr><td>Phone/Email</td><td>Responses</td><td>AU</td><td>Text</td><td></td></tr>
-                                <tr><td>Years Known</td><td>Responses</td><td>AV</td><td>Text</td><td></td></tr>
-                                <tr><td>Section 8: Legal and Background</td><td>Responses</td><td>AW</td><td>Header</td><td>Legal and Background</td></tr>
-                                <tr><td>Have you ever been convicted of a felony?</td><td>Responses</td><td>AX</td><td>Radio</td><td>Yes,No</td></tr>
-                                <tr><td>If yes, please explain</td><td>Responses</td><td>AY</td><td>Conditional</td><td>Have you ever been convicted of a felony?=Yes</td></tr>
-                                <tr><td>Do you consent to a background check?</td><td>Responses</td><td>AZ</td><td>Radio</td><td>Yes,No</td></tr>
-                                <tr><td>Section 9: Declaration</td><td>Responses</td><td>BA</td><td>Header</td><td>Declaration</td></tr>
-                                <tr><td>I certify that the information provided is true and complete</td><td>Responses</td><td>BB</td><td>Checkbox</td><td></td></tr>
-                                <tr><td>Signature</td><td>Responses</td><td>BC</td><td>Text</td><td></td></tr>
-                                <tr><td>Date</td><td>Responses</td><td>BD</td><td>Date</td><td></td></tr>
-                                <tr><td>Footer</td><td>Responses</td><td>BE</td><td>Footer</td><td>Thank you for applying!</td></tr>
-                            </table>
-                            <p class="note">Note: Adjust column E as needed (e.g., customize dropdowns, add more history/reference sections).</p>
-                        </div>
-                        <div class="step">
-                            <h3>Dynamic Order Form Template</h3>
-                            <p>Paste this into <code>FormSetup!A9:E</code> (set <code>B3</code>: "Dynamic Order Form", <code>B4</code>: "Input", <code>B5</code>: "TableRow"):</p>
-                            <table>
-                                <tr><th>Form Fields (A)</th><th>Target Sheet (B)</th><th>Target Cells (C)</th><th>Field Type (D)</th><th>Dropdown Options (E)</th></tr>
-                                <tr><td>Order Form Header</td><td>Input</td><td>A</td><td>Header</td><td>Welcome to the Dynamic Order Form</td></tr>
-                                <tr><td>Section 1: Customer Information</td><td>Input</td><td>B</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>First Name</td><td>NewContact</td><td>B1</td><td>Text</td><td></td></tr>
-                                <tr><td>Last Name</td><td>NewContact</td><td>B3</td><td>Text</td><td></td></tr>
-                                <tr><td>Company</td><td>NewContact</td><td>B4</td><td>Text</td><td></td></tr>
-                                <tr><td>E-mail Address</td><td>NewContact</td><td>B9</td><td>Email</td><td></td></tr>
-                                <tr><td>Section 2: Address Information</td><td>Input</td><td>C</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Home Street</td><td>NewContact</td><td>B12</td><td>Text</td><td></td></tr>
-                                <tr><td>Home City</td><td>NewContact</td><td>B13</td><td>Text</td><td></td></tr>
-                                <tr><td>Home State</td><td>NewContact</td><td>B14</td><td>Text</td><td></td></tr>
-                                <tr><td>Home Zip</td><td>NewContact</td><td>B15</td><td>Text</td><td></td></tr>
-                                <tr><td>Home Country</td><td>NewContact</td><td>B16</td><td>Text</td><td></td></tr>
-                                <tr><td>Section 3: Order Details</td><td>Input</td><td>D</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Order Items</td><td>Input</td><td>E</td><td>DynamicTable</td><td>=Inventory!A:A,PriceColumn:C</td></tr>
-                                <tr><td>Order Date</td><td>Input</td><td>F</td><td>Date</td><td></td></tr>
-                                <tr><td>Delivery Instructions</td><td>Input</td><td>G</td><td>Textarea</td><td></td></tr>
-                                <tr><td>Section 4: Verification</td><td>Input</td><td>H</td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td></tr>
-                                <tr><td>Verification</td><td>Input</td><td>I</td><td>Captcha</td><td></td></tr>
-                                <tr><td>Order Footer</td><td>Input</td><td>J</td><td>Footer</td><td>Thank you for your order!</td></tr>
-                            </table>
-                            <p class="note">Note: Ensure an <code>Inventory</code> sheet exists with items in column A and prices in column C. Set a tax rate in <code>Sheet1!C33</code> (e.g., 0.08 for 8%). This template integrates with DataMate functions like <code>newContactit</code>, <code>save</code>, <code>updateInventory</code>, and <code>copyInput1</code> if available.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                <tr><td>Evenings</td><td>Responses...
 
-            <!-- Section 7: Support -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#support">
-                        7. Support
-                    </button>
-                </h2>
-                <div id="support" class="accordion-collapse collapse" data-bs-parent="#tutorialAccordion">
-                    <div class="accordion-body">
-                        <p>For help, visit:</p>
-                        <ul>
-                            <li><a href="https://datamateapp.github.io/help.html">Help Page</a></li>
-                            <li><a href="mailto:datamateapp@gmail.com">Contact Us</a></li>
-                            <li><a href="https://github.com/DataMateApp/DataMate-code.gs">Open Source Code</a></li>
-                        </ul>
-                    </div>
+Something went wrong, please try again.
                 </div>
             </div>
         </div>
