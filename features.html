@@ -5,195 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataMateApps - Simplify Your Data Management</title>
     <style>
-        /* Replace your existing style section with this */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-.container {
-    width: 100%;  /* Changed from 90% */
-    max-width: 1200px; /* Added max-width */
-    margin: 0 auto;
-    padding: 0 15px; /* Added padding */
-    overflow: hidden;
-    box-sizing: border-box;
-}
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    border-bottom: #e8491d 3px solid;
-    position: relative;
-}
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            border-bottom: #e8491d 3px solid;
+        }
 
-header a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    padding: 5px;
-    display: block; /* Changed to block for mobile */
-}
+            header a {
+                color: #ffffff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 5px;
+                display: inline-block;
+            }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-    padding: 10px 0;
-}
+            header h1 {
+                margin: 0;
+                font-size: 24px;
+                text-align: center;
+            }
 
-header .desktop-nav {
-    display: none; /* Keep desktop nav hidden on mobile */
-}
+            header nav {
+                display: none;
+            }
 
-/* Mobile Menu */
-.menu-toggle {
-    display: block;
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    position: absolute;
-    left: 15px;
-    top: 15px;
-}
+        .highlight, .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
 
-.mobile-nav {
-    display: none;
-    background: #35424a;
-    width: 100%;
-    position: absolute;
-    top: 100%; /* Position below header */
-    left: 0;
-    z-index: 1000;
-}
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
 
-.mobile-nav a {
-    display: block;
-    padding: 10px 15px;
-    text-align: left;
-    border-top: 1px solid #e8491d;
-}
+        .showcase {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 0;
+        }
 
-.showcase {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
-    background-size: cover;
-    text-align: center;
-    color: #ffffff;
-    padding: 20px 15px; /* Reduced padding for mobile */
-}
+            .showcase h1 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
 
-.showcase h1 {
-    font-size: 1.8em; /* Reduced for mobile */
-    margin-bottom: 10px;
-}
+            .showcase p {
+                font-size: 1.2em;
+                padding: 0 20px;
+            }
 
-.showcase p {
-    font-size: 1em; /* Reduced for mobile */
-    padding: 0 10px;
-}
+        .features {
+            padding: 20px 0;
+            text-align: center;
+            background: #ffffff;
+        }
 
-.features {
-    padding: 15px 0;
-    text-align: center;
-    background: #ffffff;
-}
+            .features h2 {
+                color: #35424a;
+            }
 
-.feature-box {
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    width: 100%; /* Full width on mobile */
-}
+        .feature-box {
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
 
-.feature-btn {
-    background-color: #e8491d;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-    box-sizing: border-box;
-}
+        .formbuilder-section {
+            padding: 20px 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
 
-.cta {
-    background: #35424a;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
-}
+            .formbuilder-section h2 {
+                color: #35424a;
+            }
 
-/* Media Queries */
-@media (min-width: 768px) {
-    .container {
-        width: 80%;
-        padding: 0;
-    }
+        .cta {
+            background: #35424a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    header {
-        padding: 20px 0;
-    }
+            .cta a {
+                display: inline-block;
+                background: #e8491d;
+                color: #ffffff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin: 10px 0;
+            }
 
-    header h1 {
-        font-size: 36px;
-        text-align: left;
-        float: left;
-        padding: 0;
-    }
+                .cta a:hover {
+                    background: #ffffff;
+                    color: #e8491d;
+                }
 
-    header .desktop-nav {
-        display: block;
-        float: right;
-        padding-top: 10px;
-    }
+        footer {
+            padding: 20px 0;
+            margin-top: 20px;
+            color: #000000;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
 
-    header a {
-        display: inline-block;
-        font-size: 16px;
-        padding: 10px;
-    }
+        /* Mobile Menu */
+        .menu-toggle {
+            display: block;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0;
+            margin: 10px 0 0 10px;
+        }
 
-    .menu-toggle {
-        display: none;
-    }
+        .mobile-nav {
+            display: none;
+            background: #35424a;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-    .mobile-nav {
-        display: none !important; /* Force hide on desktop */
-    }
+            .mobile-nav a {
+                display: block;
+                padding: 10px 0;
+                text-align: center;
+                border-top: 1px solid #e8491d;
+            }
 
-    .showcase {
-        padding: 40px 0;
-    }
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .container {
+                width: 80%;
+            }
 
-    .showcase h1 {
-        font-size: 3em;
-    }
+            header h1 {
+                font-size: 36px;
+                text-align: left;
+            }
 
-    .showcase p {
-        font-size: 1.5em;
-    }
+            header nav {
+                display: block;
+                text-align: right;
+            }
 
-    .feature-box {
-        float: left;
-        width: 30%;
-        margin: 0 1.66%;
-    }
+            header a {
+                font-size: 16px;
+                padding: 10px;
+            }
 
-    .features {
-        padding: 20px 0;
-    }
-}
+            .showcase h1 {
+                font-size: 3em;
+            }
 
-@media (max-width: 767px) {
+            .showcase p {
+                font-size: 1.5em;
+            }
+
+            .feature-box {
+                float: left;
+                width: 30%;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            @media (max-width: 767px) {
     .accordion-button {
         font-size: 14px;
         padding: 10px;
@@ -210,18 +212,12 @@ header .desktop-nav {
     th, td {
         padding: 5px;
     }
-}        
-
-/* Additional mobile-specific adjustments */
-@media (max-width: 767px) {
-    .mobile-nav.active {
-        display: block;
-    }
-    
-    header {
-        padding-bottom: 0;
-    }
 }
+
+            .mobile-nav {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
