@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Simplify Your Data Management</title>
+    <title>DataMateApps - Features</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            line-height: 1.6;
         }
 
         .container {
             width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
         }
@@ -21,22 +24,25 @@
         header {
             background: #35424a;
             color: #ffffff;
-            padding: 10px 0;
-            border-bottom: #e8491d 3px solid;
+            padding: 15px 0;
+            border-bottom: #e8491d 4px solid;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
             header a {
                 color: #ffffff;
                 text-decoration: none;
                 text-transform: uppercase;
-                font-size: 14px;
-                padding: 5px;
-                display: inline-block;
+                font-size: 16px;
+                padding: 10px;
+                transition: color 0.3s;
             }
 
             header h1 {
                 margin: 0;
-                font-size: 24px;
+                font-size: 28px;
                 text-align: center;
             }
 
@@ -50,85 +56,135 @@
         }
 
         header a:hover {
-            color: #cccccc;
-            font-weight: bold;
+            color: #e8491d;
         }
 
         .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
             background-size: cover;
             text-align: center;
             color: #ffffff;
-            padding: 40px 0;
+            padding: 60px 20px;
         }
 
             .showcase h1 {
-                font-size: 2.5em;
-                margin-bottom: 10px;
+                font-size: 3em;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             }
 
             .showcase p {
-                font-size: 1.2em;
-                padding: 0 20px;
+                font-size: 1.4em;
+                max-width: 800px;
+                margin: 0 auto;
             }
 
-        .features {
-            padding: 20px 0;
-            text-align: center;
+        .features, .formbuilder-section {
+            padding: 40px 0;
             background: #ffffff;
+            text-align: center;
         }
 
-            .features h2 {
+            .features h2, .formbuilder-section h2 {
                 color: #35424a;
+                font-size: 2.2em;
+                margin-bottom: 30px;
             }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
 
         .feature-box {
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
+
+            .feature-box:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-box i {
+                font-size: 2.5em;
+                color: #e8491d;
+                margin-bottom: 15px;
+            }
+
+            .feature-box h3 {
+                color: #35424a;
+                font-size: 1.5em;
+                margin: 10px 0;
+            }
+
+            .feature-box p {
+                color: #666;
+                font-size: 1.1em;
+            }
 
         .formbuilder-section {
-            padding: 20px 0;
-            background: #f9f9f9;
-            text-align: center;
+            background: #f4f4f4;
         }
 
-            .formbuilder-section h2 {
-                color: #35424a;
+            .formbuilder-section a {
+                color: #e8491d;
+                text-decoration: none;
+                font-weight: bold;
             }
+
+                .formbuilder-section a:hover {
+                    text-decoration: underline;
+                }
 
         .cta {
             background: #35424a;
             color: #fff;
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center;
         }
+
+            .cta h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
 
             .cta a {
                 display: inline-block;
                 background: #e8491d;
                 color: #ffffff;
-                padding: 10px 20px;
+                padding: 12px 30px;
                 text-decoration: none;
                 border-radius: 5px;
-                margin: 10px 0;
+                font-size: 1.2em;
+                transition: background 0.3s;
             }
 
                 .cta a:hover {
-                    background: #ffffff;
-                    color: #e8491d;
+                    background: #cc3e12;
                 }
 
         footer {
             padding: 20px 0;
-            margin-top: 20px;
             color: #000000;
             background-color: #f4f4f4;
             text-align: center;
+            font-size: 0.9em;
         }
 
-        /* Mobile Menu */
+            footer a {
+                color: #35424a;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    color: #e8491d;
+                }
+
         .menu-toggle {
             display: block;
             font-size: 2em;
@@ -144,7 +200,7 @@
             display: none;
             background: #35424a;
             position: absolute;
-            top: 50px;
+            top: 70px;
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -152,12 +208,11 @@
 
             .mobile-nav a {
                 display: block;
-                padding: 10px 0;
+                padding: 15px 0;
                 text-align: center;
                 border-top: 1px solid #e8491d;
             }
 
-        /* Desktop Styles */
         @media (min-width: 768px) {
             .container {
                 width: 80%;
@@ -166,56 +221,40 @@
             header h1 {
                 font-size: 36px;
                 text-align: left;
+                float: left;
+                padding-left: 20px;
             }
 
             header nav {
                 display: block;
                 text-align: right;
+                padding-top: 10px;
             }
 
-            header a {
-                font-size: 16px;
-                padding: 10px;
-            }
-
-            .showcase h1 {
-                font-size: 3em;
-            }
-
-            .showcase p {
-                font-size: 1.5em;
-            }
-
-            .feature-box {
-                float: left;
-                width: 30%;
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .menu-toggle {
                 display: none;
             }
 
-            @media (max-width: 767px) {
-    .accordion-button {
-        font-size: 14px;
-        padding: 10px;
-    }
-    
-    .accordion-body {
-        padding: 10px;
-    }
-    
-    table {
-        font-size: 12px;
-    }
-    
-    th, td {
-        padding: 5px;
-    }
-}
-
             .mobile-nav {
                 display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .showcase h1 {
+                font-size: 2em;
+            }
+
+            .showcase p {
+                font-size: 1.1em;
+            }
+
+            .features h2, .formbuilder-section h2 {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -236,8 +275,8 @@
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
                 <a href="https://script.google.com/macros/s/AKfycbyYQvSrgNApdHNbvrBU7LQw8H7l7hB_233uDXrz_piebw5aZ3E0xVZIXbZpf-eFqjLP/exec">Community</a>
-                <a href="https://github.com/DataMateApp/DataMate-code.gs">Open Source</a> 
-            </nav> 
+                <a href="https://github.com/DataMateApp/DataMate-code.gs">Open Source</a>
+            </nav>
             <nav class="mobile-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html" class="highlight">Features</a>
@@ -249,64 +288,94 @@
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
                 <a href="https://script.google.com/macros/s/AKfycbyYQvSrgNApdHNbvrBU7LQw8H7l7hB_233uDXrz_piebw5aZ3E0xVZIXbZpf-eFqjLP/exec">Community</a>
-                <a href="https://github.com/DataMateApp/DataMate-code.gs">Open Source</a> 
-            </nav> 
+                <a href="https://github.com/DataMateApp/DataMate-code.gs">Open Source</a>
+            </nav>
         </div>
     </header>
 
     <section class="showcase">
         <div class="container">
-            <h1>DataMateApps</h1>
-            <p>Simplify Your Data Management</p>
+            <h1>Explore DataMate Features</h1>
+            <p>Unlock the power of seamless data management with DataMateApps</p>
         </div>
     </section>
 
-    <div class="container">
-        <section>
-            <h2>Welcome to DataMateApp</h2>
-            <p>Discover how <span class="highlight">DataMateApp</span> can simplify your data management. Our tools are free, easy to use, and integrate seamlessly with Google Sheets™ and Excel™! Experience seamless integration on Chrome™, Windows™, Mac™, and iPad™.</p>
-        </section>
+    <section class="features">
+        <div class="container">
+            <h2>What DataMate Can Do for You</h2>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <i class="material-icons">contacts</i>
+                    <h3>Contact Management</h3>
+                    <p>Easily manage contacts within Google Sheets™ and Excel™—no external CRM needed. Import from Gmail or CSV and keep everything in one place.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">storage</i>
+                    <h3>Updatable Datasets</h3>
+                    <p>Store all your data in a single, structured sheet. Update, filter, and sort records like customer data or project logs with ease.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">input</i>
+                    <h3>Streamlined Data Entry</h3>
+                    <p>Consolidate inputs into one system. Each entry becomes a record, seamlessly integrated into your dataset—no more scattered files.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">history</i>
+                    <h3>Dynamic Log Tracking</h3>
+                    <p>Monitor changes with a log table supporting up to 12 fields per record. Stay organized and find entries instantly.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">print</i>
+                    <h3>View & Print Records</h3>
+                    <p>Select, view, and print any record in a clean format—ideal for reports, audits, or presentations.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">sort</i>
+                    <h3>Effortless Filtering</h3>
+                    <p>Instantly filter and sort records to analyze trends, update data, or compile reports—all within your spreadsheet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h1>DataMate - More Than Just an App</h1>
-        <p><span class="highlight">DataMateApp</span> is more than just an app—it's a game-changing tool that empowers individuals and businesses to take control of their data like never before. Whether you're a professional, a small business owner, or a student, DataMateApp simplifies data management, saving you time and effort.</p>
+    <section class="formbuilder-section">
+        <div class="container">
+            <h2>Supercharge with FormBuilder</h2>
+            <p>Create custom forms with <strong>27 field types</strong>, including media-rich tables (images/videos), conditional logic, and file uploads. From surveys to order forms, FormBuilder integrates seamlessly with DataMate, enhancing data collection in Google Sheets™.</p>
+            <p><a href="https://github.com/DataMateApp/DataMate-code.gs" target="_blank">Explore FormBuilder on GitHub</a> | <a href="https://youtu.be/_cduOVxVafc" target="_blank">Watch Demo</a></p>
+        </div>
+    </section>
 
-        <h2>What Can DataMate Do for You?</h2>
-        <p>DataMateApp transforms how you work with spreadsheets, making data management simpler and more efficient. Here’s how:</p>
-        <ul>
-            <li><strong>DataMate</strong> is an excellent tool for anyone looking to manage contacts and data within Google Sheets™ and Excel™ without the need for external CRM software.</li>
-            <li><strong>Create Updatable Datasets:</strong> Say goodbye to juggling multiple spreadsheets! DataMateApp lets you store all your data as rows on a single, structured Data sheet. Whether you're tracking customer records, project logs, or survey responses, your data is always updatable, filterable, and sortable—ready to evolve with your needs.</li>
-            <li><strong>Streamlined Data Entry:</strong> Instead of creating individual forms or managing countless files in a folder, DataMateApp consolidates your inputs into one cohesive system. Each entry becomes a record, seamlessly integrated into your dataset.</li>
-            <li><strong>Log Table for Easy Tracking:</strong> Set up a log table to keep track of all your data records. This log makes it effortless to monitor changes, stay organized, and locate specific entries when you need them.</li>
-            <li><strong>View and Print Records with Ease:</strong> Need to share or review your data? The View_Print sheet lets you select any record, view its details in a clean format, and print it on demand. Perfect for reports, audits, or presentations.</li>
-            <li><strong>Effortless Filtering and Sorting:</strong> Instantly filter and sort your records to find the exact data you need, whether you’re analyzing trends, updating entries, or compiling reports.</li>
-        </ul>
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose DataMate?</h2>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <i class="material-icons">accessibility</i>
+                    <h3>Simple & Intuitive</h3>
+                    <p>Designed for all skill levels, making complex tasks straightforward and user-friendly.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">lock_open</i>
+                    <h3>Free & Open</h3>
+                    <p>Accessible to everyone at no cost, with open-source code and no intrusive ads.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="material-icons">speed</i>
+                    <h3>Time-Saving Efficiency</h3>
+                    <p>Keeps your data organized and accurate, freeing you to focus on what matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="formbuilder-section">
-            <h2>Enhanced with FormBuilder</h2>
-            <p><strong>FormBuilder</strong> supercharges DataMate with powerful form creation capabilities. Build custom forms with over 25 field types, including dynamic tables for interactive data entry (e.g., item selection with real-time totals), conditional logic, and seamless integration with your DataMate datasets. From simple surveys to complex order forms, FormBuilder enhances your ability to collect and manage data efficiently within Google Sheets™.</p>
-            <p><a href="https://github.com/DataMateApp/DataMate-code.gs">Try FormBuilder Now</a></p>
-        </section>
-
-        <h2>Why Choose DataMate?</h2>
-        <ul>
-            <li><strong>Simplicity:</strong> Designed to make complex tasks easy for users of all skill levels.</li>
-            <li><strong>Accessibility:</strong> Available to everyone at no cost and without intrusive ads.</li>
-            <li><strong>Efficiency:</strong> Saves time and keeps your data organized, accurate, and ready for action.</li>
-        </ul>
-
-        <p>DataMate isn’t just an app; it’s a smarter way to manage and share data. Try it today and discover the possibilities!</p>
-
-        <section>
-            <h2>Boost Your Productivity</h2>
-            <p>With the <span class="highlight">DataMateApp</span>, streamline your data management processes, reduce errors, and improve efficiency. Our user-friendly interface ensures you spend less time on admin tasks and more on growing your business. <a href="https://youtu.be/_cduOVxVafc?si=hFOqZbgeRx_G4GKe">Watch This Video</a></p>
-        </section>
-
-        <section class="cta">
-            <h2>Get Started with DataMate</h2>
-            <p>Transform your data management today!</p>
+    <section class="cta">
+        <div class="container">
+            <h2>Get Started Today</h2>
+            <p>Transform your data management with DataMate—free, powerful, and built for you.</p>
             <a href="https://script.google.com/macros/s/AKfycbwSQb14udJC7nszai-kIAF3p6wKL_5aXEfkOsAL8d8e5hcOg_gZXsaNzLEKPd5UqPsr/exec" target="_blank">Download Now</a>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
