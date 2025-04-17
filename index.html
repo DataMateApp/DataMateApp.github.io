@@ -10,12 +10,10 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            line-height: 1.6;
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
             margin: auto;
             overflow: hidden;
         }
@@ -23,25 +21,22 @@
         header {
             background: #35424a;
             color: #ffffff;
-            padding: 15px 0;
-            border-bottom: #e8491d 4px solid;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 0;
+            border-bottom: #e8491d 3px solid;
         }
 
             header a {
                 color: #ffffff;
                 text-decoration: none;
                 text-transform: uppercase;
-                font-size: 16px;
-                padding: 10px;
-                transition: color 0.3s;
+                font-size: 14px;
+                padding: 5px;
+                display: inline-block;
             }
 
             header h1 {
                 margin: 0;
-                font-size: 28px;
+                font-size: 24px;
                 text-align: center;
             }
 
@@ -55,136 +50,88 @@
         }
 
         header a:hover {
-            color: #e8491d;
+            color: #cccccc;
+            font-weight: bold;
         }
 
         .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
             background-size: cover;
             text-align: center;
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 40px 0;
         }
 
             .showcase h1 {
-                font-size: 3em;
-                margin-bottom: 15px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-size: 2.5em;
+                margin-bottom: 10px;
             }
 
             .showcase p {
-                font-size: 1.4em;
-                max-width: 800px;
-                margin: 0 auto;
+                font-size: 1.2em;
+                padding: 0 20px;
             }
 
-
-        .features, .formbuilder-section {
-            padding: 40px 0;
-            background: #ffffff;
+        .features {
+            padding: 20px 0;
             text-align: center;
+            background: #ffffff;
         }
 
-            .features h2, .formbuilder-section h2 {
+            .features h2 {
                 color: #35424a;
-                font-size: 2.2em;
-                margin-bottom: 30px;
             }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            padding: 0 20px;
-        }
 
         .feature-box {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
         }
 
-            .feature-box:hover {
-                transform: translateY(-5px);
-            }
-
-            .feature-box i {
-                font-size: 2.5em;
-                color: #e8491d;
-                margin-bottom: 15px;
-            }
-
-            .feature-box h3 {
-                color: #35424a;
-                font-size: 1.5em;
-                margin: 10px 0;
-            }
-
-            .feature-box p {
-                color: #666;
-                font-size: 1.1em;
-            }
-
-        .formbuilder-section {
-            background: #f4f4f4;
+        .feature-btn {
+            background-color: #e8491d;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
-
-            .formbuilder-section a {
-                color: #e8491d;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-                .formbuilder-section a:hover {
-                    text-decoration: underline;
-                }
 
         .cta {
             background: #35424a;
             color: #fff;
-            padding: 40px 0;
+            padding: 20px 0;
             text-align: center;
         }
-
-            .cta h2 {
-                font-size: 2em;
-                margin-bottom: 20px;
-            }
 
             .cta a {
                 display: inline-block;
                 background: #e8491d;
                 color: #ffffff;
-                padding: 12px 30px;
+                padding: 10px 20px;
                 text-decoration: none;
                 border-radius: 5px;
-                font-size: 1.2em;
-                transition: background 0.3s;
+                margin: 10px 0;
             }
 
                 .cta a:hover {
-                    background: #cc3e12;
+                    background: #ffffff;
+                    color: #e8491d;
                 }
 
         footer {
             padding: 20px 0;
+            margin-top: 20px;
             color: #000000;
             background-color: #f4f4f4;
             text-align: center;
-            font-size: 0.9em;
         }
-
-            footer a {
-                color: #35424a;
-                text-decoration: none;
-            }
-
-                footer a:hover {
-                    color: #e8491d;
-                }
-
+        /* Mobile Menu */
         .menu-toggle {
             display: block;
             font-size: 2em;
@@ -200,7 +147,7 @@
             display: none;
             background: #35424a;
             position: absolute;
-            top: 70px;
+            top: 50px;
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -208,11 +155,11 @@
 
             .mobile-nav a {
                 display: block;
-                padding: 15px 0;
+                padding: 10px 0;
                 text-align: center;
                 border-top: 1px solid #e8491d;
             }
-
+        /* Desktop Styles */
         @media (min-width: 768px) {
             .container {
                 width: 80%;
@@ -221,18 +168,29 @@
             header h1 {
                 font-size: 36px;
                 text-align: left;
-                float: left;
-                padding-left: 20px;
             }
 
             header nav {
                 display: block;
                 text-align: right;
-                padding-top: 10px;
             }
 
-            .feature-grid {
-                grid-template-columns: repeat(3, 1fr);
+            header a {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .showcase h1 {
+                font-size: 3em;
+            }
+
+            .showcase p {
+                font-size: 1.5em;
+            }
+
+            .feature-box {
+                float: left;
+                width: 30%;
             }
 
             .menu-toggle {
@@ -241,20 +199,6 @@
 
             .mobile-nav {
                 display: none;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .showcase h1 {
-                font-size: 2em;
-            }
-
-            .showcase p {
-                font-size: 1.1em;
-            }
-
-            .features h2, .formbuilder-section h2 {
-                font-size: 1.8em;
             }
         }
     </style>
@@ -270,7 +214,7 @@
                 <a href="https://datamateapp.github.io/help.html">Help</a>
                 <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
                 <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
-                <a href="https://script.google.com/macros/s/AKfycbyvcafXCbEfk-qrDTaiyObrD-pcak25-zQ_ZSmfL4Z_tP2U-e9HgeU9mHzE9Ldg_mXp/exec">Web Apps, Add-ins and Templates</a>
+                <a href="https://script.google.com/macros/s/AKfycbwGHEBuekEm4aXCKr5ZLxrx9FqAOsi5WNbEHQHgOIb2oCpNq3Ks7OqLWNepPhQhlQZH/exec">Web Apps, Add-ins and Templates</a>
                 <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
@@ -283,7 +227,7 @@
                 <a href="https://datamateapp.github.io/help.html">Help</a>
                 <a href="https://datamateapp.github.io/addressblock.html">AddressBlock</a>
                 <a href="https://datamateapp.github.io/DownloadConstruction.html">Excel™ Versions</a>
-                <a href="https://script.google.com/macros/s/AKfycbyvcafXCbEfk-qrDTaiyObrD-pcak25-zQ_ZSmfL4Z_tP2U-e9HgeU9mHzE9Ldg_mXp/exec">Web Apps, Add-ins and Templates</a>
+                <a href="https://script.google.com/macros/s/AKfycbwGHEBuekEm4aXCKr5ZLxrx9FqAOsi5WNbEHQHgOIb2oCpNq3Ks7OqLWNepPhQhlQZH/exec">Web Apps, Add-ins and Templates</a>
                 <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
