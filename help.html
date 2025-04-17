@@ -6,199 +6,284 @@
     <title>DataMateApps - Simplify Your Data Management</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333333;
+}
 
-        .container {
-            width: 90%;
-            margin: auto;
-            overflow: hidden;
-        }
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
 
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            border-bottom: #e8491d 3px solid;
-        }
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    border-bottom: #ff0000 3px solid;
+}
 
-            header a {
-                color: #ffffff;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 14px;
-                padding: 5px;
-                display: inline-block;
-            }
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 5px;
+    display: inline-block;
+}
 
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-                text-align: center;
-            }
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
 
-            header nav {
-                display: none;
-            }
+header nav {
+    display: none;
+}
 
-        .highlight, .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
+.highlight, .current a {
+    color: #ff0000;
+    font-weight: bold;
+}
 
-        header a:hover {
-            color: #cccccc;
-            font-weight: bold;
-        }
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
 
-        .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            padding: 40px 0;
-        }
+.showcase {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/datamanagement.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+    padding: 40px 0;
+}
 
-            .showcase h1 {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-            }
+.showcase h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
 
-            .showcase p {
-                font-size: 1.2em;
-                padding: 0 20px;
-            }
+.showcase p {
+    font-size: 1.2em;
+    padding: 0 20px;
+}
 
-        .features {
-            padding: 20px 0;
-            text-align: center;
-            background: #ffffff;
-        }
+.features {
+    padding: 20px 0;
+    text-align: center;
+    background: #ffffff;
+    color: #333333;
+}
 
-            .features h2 {
-                color: #35424a;
-            }
+.features h2 {
+    color: #35424a;
+}
 
-        .feature-box {
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
+.feature-box {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
 
-        .feature-btn {
-            background-color: #e8491d;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-        }
+.feature-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
 
-        .cta {
-            background: #35424a;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+.cta {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-            .cta a {
-                display: inline-block;
-                background: #e8491d;
-                color: #ffffff;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                margin: 10px 0;
-            }
+.cta a {
+    display: inline-block;
+    background: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+}
 
-                .cta a:hover {
-                    background: #ffffff;
-                    color: #e8491d;
-                }
+.cta a:hover {
+    background: #ffffff;
+    color: #ff0000;
+}
 
-        footer {
-            padding: 20px 0;
-            margin-top: 20px;
-            color: #000000;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
+footer {
+    padding: 20px 0;
+    margin-top: 20px;
+    color: #333333;
+    background-color: #f4f4f4;
+    text-align: center;
+}
 
-        .menu-toggle {
-            display: block;
-            font-size: 2em;
-            background: none;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            padding: 0;
-            margin: 10px 0 0 10px;
-        }
+footer a {
+    color: #ff0000;
+}
 
-        .mobile-nav {
-            display: none;
-            background: #35424a;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+.menu-toggle {
+    display: block;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    margin: 10px 0 0 10px;
+}
 
-            .mobile-nav a {
-                display: block;
-                padding: 10px 0;
-                text-align: center;
-                border-top: 1px solid #e8491d;
-            }
+.mobile-nav {
+    display: none;
+    background: #35424a;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 
-        @media (min-width: 768px) {
-            .container {
-                width: 80%;
-            }
+.mobile-nav a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ff0000;
+    color: #ffffff;
+}
 
-            header h1 {
-                font-size: 36px;
-                text-align: left;
-            }
+h1 {
+    color: #35424a;
+    text-align: center;
+}
 
-            header nav {
-                display: block;
-                text-align: right;
-            }
+h2 {
+    color: #4CAF50;
+}
 
-            header a {
-                font-size: 16px;
-                padding: 10px;
-            }
+.accordion-button {
+    background-color: #ffffff;
+    color: #35424a;
+}
 
-            .showcase h1 {
-                font-size: 3em;
-            }
+.accordion-button:not(.collapsed) {
+    background-color: #ff0000;
+    color: #ffffff;
+}
 
-            .showcase p {
-                font-size: 1.5em;
-            }
+.step, .tip, .capabilities {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #4CAF50;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #333333;
+}
 
-            .feature-box {
-                float: left;
-                width: 30%;
-            }
+code {
+    background: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #d32f2f;
+}
 
-            .menu-toggle {
-                display: none;
-            }
+pre {
+    background: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    color: #333333;
+}
 
-            .mobile-nav {
-                display: none;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    color: #333333;
+}
+
+th {
+    background: #4CAF50;
+    color: #ffffff;
+}
+
+.note {
+    color: #666666;
+    font-style: italic;
+}
+
+.field-type {
+    margin-left: 10px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333333;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+
+    header h1 {
+        font-size: 36px;
+        text-align: left;
+    }
+
+    header nav {
+        display: block;
+        text-align: right;
+    }
+
+    header a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .showcase h1 {
+        font-size: 3em;
+    }
+
+    .showcase p {
+        font-size: 1.5em;
+    }
+
+    .feature-box {
+        float: left;
+        width: 30%;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
             }
         }
     </style>
