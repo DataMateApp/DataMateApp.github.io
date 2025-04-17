@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataMateApps - Simplify Your Data Management</title>
     <style>
-        body {
+    body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -47,7 +47,7 @@ header nav {
 }
 
 .highlight, .current a {
-    color: #ff0000;
+    color: #ff0000 !important;
     font-weight: bold;
 }
 
@@ -217,6 +217,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    background: #ffffff;
 }
 
 th, td {
@@ -229,6 +230,26 @@ th, td {
 th {
     background: #4CAF50;
     color: #ffffff;
+}
+
+td div.header, td div.footer {
+    background: #2c3e50 !important;
+    color: #ffffff !important;
+}
+
+td div.header h2, td div.footer h2 {
+    color: #ffffff !important;
+}
+
+td div.header p, td div.footer p {
+    color: #ffffff !important;
+}
+
+td .highlight {
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 .note {
@@ -284,8 +305,8 @@ th {
 
     .mobile-nav {
         display: none;
-            }
-        }
+    }
+}
     </style>
 </head>
 <body>
