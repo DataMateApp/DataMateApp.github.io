@@ -248,32 +248,37 @@
     <div class="section">
         <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
 
-        <h3>DataMateApps Permissions</h3>
-        <button class="collapsible">View DataMateApps Permissions</button>
-        <div class="content">
-            <div class="scope-details">
-                <p><strong>https://www.googleapis.com/auth/gmail.modify</strong>: Allows DataMateApps to read, compose, send, and delete emails in your Gmail account. We use this to import Gmail contacts for address blocks, send automated notifications (e.g., when a record is saved), manage email drafts for features like mail merges, and process notification emails sent to <strong>projectprodigyapp@gmail.com</strong> for usage tracking. A narrower scope wouldn’t suffice because the app needs full email management to support these features.</p>
-                <p><strong>https://www.googleapis.com/auth/gmail.compose</strong>: Allows DataMateApps to create and modify email drafts. We use this to pre-fill emails with data from your spreadsheets or forms, enabling you to review before sending. A narrower scope wouldn’t suffice because draft creation is essential for email automation.</p>
-                <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: Allows DataMateApps to send emails on your behalf. We use this to send notifications to you and to <strong>projectprodigyapp@gmail.com</strong> (e.g., “DataMate Dataset Created”) and emails generated from your data, such as reports or confirmations. A narrower scope wouldn’t suffice because sending emails is a core feature.</p>
-                <p><strong>https://www.googleapis.com/auth/gmail.readonly</strong>: Allows DataMateApps to read email content and metadata. We use this to extract contact information from Gmail for the AddressBlock feature and to process notification emails for usage tracking. A narrower scope wouldn’t suffice because read access is necessary for contact integration and analytics.</p>
-                <p><strong>https://www.googleapis.com/auth/drive</strong>: Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
-                <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
-                <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
-                <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows DataMateApps to connect to external services. We use this to fetch data from third-party APIs (e.g., geocoding for addresses) or integrate external content into forms and records. A narrower scope wouldn’t suffice because external connectivity enhances app functionality.</p>
-                <p><strong>https://www.googleapis.com/auth/userinfo.email openid</strong>: Allows DataMateApps to access your email address for authentication. We use this to verify your identity, personalize email communications, and track usage via notification emails. A narrower scope wouldn’t suffice because email identification is required for user authentication.</p>
-            </div>
-        </div>
+        <h2>Permissions We Request</h2>
+<div class="section">
+    <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
 
-        <h3>AddressBlock Permissions</h3>
-        <button class="collapsible">View AddressBlock Permissions</button>
-        <div class="content">
-            <div class="scope-details">
-                <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows AddressBlock to see, edit, create, and delete Google Sheets. We use this to create and manage contact lists and address blocks in spreadsheets. A narrower scope wouldn’t suffice because spreadsheet operations are essential for generating address blocks.</p>
-                <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows AddressBlock to connect to external services. We use this to fetch address-related data (e.g., via geocoding APIs) to enhance address accuracy. A narrower scope wouldn’t suffice because external data integration is critical for the feature.</p>
-                <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows AddressBlock to display third-party web content in prompts and sidebars. We use this to show interactive UI elements, such as contact forms or address previews, within Google Sheets. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
-            </div>
+    <h3>DataMateApps Permissions</h3>
+    <button class="collapsible">View DataMateApps Permissions</button>
+    <div class="content">
+        <div class="scope-details">
+            <p><strong>https://www.googleapis.com/auth/gmail.modify</strong>: Allows DataMateApps to read, compose, send, and delete emails in your Gmail account. We use this to import Gmail contacts for address blocks, send automated notifications (e.g., when a record is saved), manage email drafts for features like mail merges, and process notification emails sent to <strong>projectprodigyapp@gmail.com</strong> for usage tracking. A narrower scope wouldn’t suffice because the app needs full email management to support these features.</p>
+            <p><strong>https://www.googleapis.com/auth/gmail.compose</strong>: Allows DataMateApps to create and modify email drafts. We use this to pre-fill emails with data from your spreadsheets or forms, enabling you to review before sending. A narrower scope wouldn’t suffice because draft creation is essential for email automation.</p>
+            <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: Allows DataMateApps to send emails on your behalf. We use this to send notifications to you and to <strong>projectprodigyapp@gmail.com</strong> (e.g., “DataMate Dataset Created”) and emails generated from your data, such as reports or confirmations. A narrower scope wouldn’t suffice because sending emails is a core feature.</p>
+            <p><strong>https://www.googleapis.com/auth/gmail.readonly</strong>: Allows DataMateApps to read email content and metadata. We use this to extract contact information from Gmail for the AddressBlock feature and to process notification emails for usage tracking. A narrower scope wouldn’t suffice because read access is necessary for contact integration and analytics.</p>
+            <p><strong>https://www.googleapis.com/auth/drive</strong>: Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
+            <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
+            <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
+            <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows DataMateApps to connect to external services. We use this to fetch data from third-party APIs (e.g., geocoding for addresses) or integrate external content into forms and records. A narrower scope wouldn’t suffice because external connectivity enhances app functionality.</p>
+            <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+            <p><strong>https://www.googleapis.com/auth/userinfo.email openid</strong>: Allows DataMateApps to access your email address for authentication. We use this to verify your identity, personalize email communications, and track usage via notification emails. A narrower scope wouldn’t suffice because email identification is required for user authentication.</p>
         </div>
     </div>
+
+    <h3>AddressBlock Permissions</h3>
+    <button class="collapsible">View AddressBlock Permissions</button>
+    <div class="content">
+        <div class="scope-details">
+            <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows AddressBlock to see, edit, create, and delete Google Sheets. We use this to create and manage contact lists and address blocks in spreadsheets. A narrower scope wouldn’t suffice because spreadsheet operations are essential for generating address blocks.</p>
+            <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows AddressBlock to connect to external services. We use this to fetch address-related data (e.g., via geocoding APIs) to enhance address accuracy. A narrower scope wouldn’t suffice because external data integration is critical for the feature.</p>
+            <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows AddressBlock to display third-party web content in prompts and sidebars. We use this to show interactive UI elements, such as contact forms or address previews, within Google Sheets. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+        </div>
+    </div>
+</div>
 
     <h2>Third-Party Integrations</h2>
     <div class="section">
