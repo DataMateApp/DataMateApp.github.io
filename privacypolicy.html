@@ -265,7 +265,8 @@
             <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
             <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows DataMateApps to connect to external services. We use this to fetch data from third-party APIs (e.g., geocoding for addresses) or integrate external content into forms and records. A narrower scope wouldn’t suffice because external connectivity enhances app functionality.</p>
             <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
-            <p><strong>https://www.googleapis.com/auth/userinfo.email openid</strong>: Allows DataMateApps to access your email address for authentication. We use this to verify your identity, personalize email communications, and track usage via notification emails. A narrower scope wouldn’t suffice because email identification is required for user authentication.</p>
+            <p><strong>https://www.googleapis.com/auth/userinfo.email</strong>: Allows DataMateApps to access your email address. We use this to verify your identity, personalize email communications, and track usage via notification emails sent to <strong>projectprodigyapp@gmail.com</strong>. A narrower scope wouldn’t suffice because email access is required for authentication and analytics.</p>
+            <p><strong>openid</strong>: Allows DataMateApps to authenticate your identity using OpenID Connect. We use this to securely sign you into the app and verify your Google account. A narrower scope wouldn’t suffice because OpenID Connect is required for secure authentication.</p>
         </div>
     </div>
 
@@ -279,7 +280,6 @@
         </div>
     </div>
 </div>
-
     <h2>Third-Party Integrations</h2>
     <div class="section">
         <p>DataMateApps may connect to external services via the <code>script.external_request</code> scope to enhance functionality, such as fetching geocoding data for addresses or integrating with APIs for form processing. These services are carefully selected, and we ensure they comply with data protection standards. No personal data is shared with third parties unless explicitly required for the service, and only with your consent. The notification emails sent to <strong>projectprodigyapp@gmail.com</strong> are managed by Excellence-US, LLC and are not shared with third parties.</p>
