@@ -165,6 +165,30 @@
             border-radius: 4px;
         }
 
+        .function-list {
+            max-width: 100%;
+        }
+
+        .function {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .function h4 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin: 0 0 10px;
+        }
+
+        .function p {
+            font-size: 14px;
+            margin: 0;
+            color: #555;
+        }
+
         a {
             color: #0074d9;
             text-decoration: none;
@@ -223,89 +247,87 @@
     </header>
 
     <div class="container">
-    <h1>Privacy Policy for DataMateApps and AddressBlock</h1>
-    <p><strong>Last updated: May 14, 2025</strong></p>
-    <div class="section">
-        <p>Excellence-US, LLC ("we", "us", or "our") operates DataMateApps and AddressBlock, commercial add-ons for Google Workspace. This privacy policy explains how we collect, use, and protect your information when you use our services. By using DataMateApps or AddressBlock, you agree to the terms outlined in this policy. We are committed to safeguarding your privacy and adhering to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
-    </div>
+        <h1>Privacy Policy for DataMateApps and AddressBlock</h1>
+        <p><strong>Last updated: May 15, 2025</strong></p>
+        <div class="section">
+            <p>Excellence-US, LLC ("we", "us", or "our") operates DataMateApps and AddressBlock, commercial add-ons for Google Workspace. This privacy policy explains how we collect, use, and protect your information when you use our services. By using DataMateApps or AddressBlock, you agree to the terms outlined in this policy. We are committed to safeguarding your privacy and adhering to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+        </div>
 
-    <h2>Data We Collect and How We Use It</h2>
-    <div class="section">
-        <p>DataMateApps and AddressBlock collect and process data to provide their core functionalities, such as saving records, managing contacts, creating forms, and generating address blocks. We also collect limited data for analytics to monitor usage and improve our services. Below is a detailed breakdown of the data we access and how it’s used:</p>
-        <ul>
-            <li><strong>Google Sheets Data</strong>: We access, create, edit, and delete spreadsheets to store and organize data, such as records, templates (e.g., inventory, timesheets, purchase orders), contact lists, and usage counters. This enables features like saving form submissions, generating address blocks, and tracking dataset and record creation.</li>
-            <li><strong>Google Drive Files</strong>: We access, create, edit, and delete files in Google Drive to store uploads (e.g., images, PDFs) and signatures collected via forms. This supports features like attaching files to records or storing form responses.</li>
-            <li><strong>Gmail Emails</strong>: We read, compose, send, and delete emails to support email-related features, such as sending notifications (e.g., when a dataset or record is created), importing Gmail contacts, and drafting emails with pre-filled data (e.g., for mail merges). We also send notification emails to <strong>projectprodigyapp@gmail.com</strong>, a service email address managed by Excellence-US, LLC, to track the number of datasets created and records saved. These emails appear in your sent mail folder and are processed to extract your email address for usage tracking.</li>
-            <li><strong>Email Address</strong>: We access your email address to authenticate your identity, personalize email communications, and track usage. Specifically, when notification emails are sent to <strong>projectprodigyapp@gmail.com</strong>, we extract your email address and store it in Google Sheets (e.g., in "NewContact" and "contacts" sheets) to monitor dataset and record creation and associate usage with your account.</li>
-            <li><strong>Contact Data</strong>: If you provide contact information (e.g., name, address) via forms or import it from Gmail, we store this data in Google Sheets (e.g., "contacts" sheet) to support features like address block generation and contact management.</li>
-            <li><strong>Form Data</strong>: We collect data entered in forms created by DataMateApps, including text, numbers, files, signatures, and geolocation, to save records or populate spreadsheets.</li>
-            <li><strong>Usage Data</strong>: We collect anonymized analytics to monitor app performance and improve functionality, such as tracking feature usage or error rates. Additionally, we track the number of datasets created and records saved, associated with your email address, to analyze usage patterns and enhance our services.</li>
-        </ul>
-        <p>We do not collect or process data beyond what is necessary for the app’s functionality or analytics. All data accessed via Google APIs is handled securely. Notification emails sent to <strong>projectprodigyapp@gmail.com</strong> are used solely for usage tracking and are not shared with third parties beyond Excellence-US, LLC.</p>
-    </div>
-
-    <h2>Permissions We Request</h2>
-    <div class="section">
-        <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
+        <h2>Data We Collect and How We Use It</h2>
+        <div class="section">
+            <p>DataMateApps and AddressBlock collect and process data to provide their core functionalities, such as saving records, managing contacts, creating forms, and generating address blocks. We also collect limited data for analytics to monitor usage and improve our services. Below is a detailed breakdown of the data we access and how it’s used:</p>
+            <ul>
+                <li><strong>Google Sheets Data</strong>: We access, create, edit, and delete spreadsheets to store and organize data, such as records, templates (e.g., inventory, timesheets, purchase orders), contact lists, and usage counters. This enables features like saving form submissions, generating address blocks, and tracking dataset and record creation.</li>
+                <li><strong>Google Drive Files</strong>: We access, create, edit, and delete files in Google Drive to store uploads (e.g., images, PDFs) and signatures collected via forms. This supports features like attaching files to records or storing form responses.</li>
+                <li><strong>Gmail Emails</strong>: We read, compose, send, and delete emails to support email-related features, such as sending notifications (e.g., when a dataset or record is created), importing Gmail contacts, and drafting emails with pre-filled data (e.g., for mail merges). We also send notification emails to <strong>projectprodigyapp@gmail.com</strong>, a service email address managed by Excellence-US, LLC, to track the number of datasets created and records saved. These emails appear in your sent mail folder and are processed to extract your email address for usage tracking.</li>
+                <li><strong>Email Address</strong>: We access your email address to authenticate your identity, personalize email communications, and track usage. Specifically, when notification emails are sent to <strong>projectprodigyapp@gmail.com</strong>, we extract your email address and store it in Google Sheets (e.g., in "NewContact" and "contacts" sheets) to monitor dataset and record creation and associate usage with your account.</li>
+                <li><strong>Contact Data</strong>: If you provide contact information (e.g., name, address) via forms or import it from Gmail, we store this data in Google Sheets (e.g., "contacts" sheet) to support features like address block generation and contact management.</li>
+                <li><strong>Form Data</strong>: We collect data entered in forms created by DataMateApps, including text, numbers, files, signatures, and geolocation, to save records or populate spreadsheets.</li>
+                <li><strong>Usage Data</strong>: We collect anonymized analytics to monitor app performance and improve functionality, such as tracking feature usage or error rates. Additionally, we track the number of datasets created and records saved, associated with your email address, to analyze usage patterns and enhance our services.</li>
+            </ul>
+            <p>We do not collect or process data beyond what is necessary for the app’s functionality or analytics. All data accessed via Google APIs is handled securely. Notification emails sent to <strong>projectprodigyapp@gmail.com</strong> are used solely for usage tracking and are not shared with third parties beyond Excellence-US, LLC.</p>
+        </div>
 
         <h2>Permissions We Request</h2>
-<div class="section">
-    <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
+        <div class="section">
+            <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
 
-    <h3>DataMateApps Permissions</h3>
-    <button class="collapsible">View DataMateApps Permissions</button>
-    <div class="content">
-        <div class="scope-details">
-            <p><strong>https://www.googleapis.com/auth/gmail.modify</strong>: Allows DataMateApps to read, compose, send, and delete emails in your Gmail account. We use this to import Gmail contacts for address blocks, send automated notifications (e.g., when a record is saved), manage email drafts for features like mail merges, and process notification emails sent to <strong>projectprodigyapp@gmail.com</strong> for usage tracking. A narrower scope wouldn’t suffice because the app needs full email management to support these features.</p>
-            <p><strong>https://www.googleapis.com/auth/gmail.compose</strong>: Allows DataMateApps to create and modify email drafts. We use this to pre-fill emails with data from your spreadsheets or forms, enabling you to review before sending. A narrower scope wouldn’t suffice because draft creation is essential for email automation.</p>
-            <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: Allows DataMateApps to send emails on your behalf. We use this to send notifications to you and to <strong>projectprodigyapp@gmail.com</strong> (e.g., “DataMate Dataset Created”) and emails generated from your data, such as reports or confirmations. A narrower scope wouldn’t suffice because sending emails is a core feature.</p>
-            <p><strong>https://www.googleapis.com/auth/gmail.readonly</strong>: Allows DataMateApps to read email content and metadata. We use this to extract contact information from Gmail for the AddressBlock feature and to process notification emails for usage tracking. A narrower scope wouldn’t suffice because read access is necessary for contact integration and analytics.</p>
-            <p><strong>https://www.googleapis.com/auth/drive</strong>: Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
-            <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
-            <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
-            <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows DataMateApps to connect to external services. We use this to fetch data from third-party APIs (e.g., geocoding for addresses) or integrate external content into forms and records. A narrower scope wouldn’t suffice because external connectivity enhances app functionality.</p>
-            <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
-            <p><strong>https://www.googleapis.com/auth/userinfo.email</strong>: Allows DataMateApps to access your email address. We use this to verify your identity, personalize email communications, and track usage via notification emails sent to <strong>projectprodigyapp@gmail.com</strong>. A narrower scope wouldn’t suffice because email access is required for authentication and analytics.</p>
-            <p><strong>openid</strong>: Allows DataMateApps to authenticate your identity using OpenID Connect. We use this to securely sign you into the app and verify your Google account. A narrower scope wouldn’t suffice because OpenID Connect is required for secure authentication.</p>
+            <h3>DataMateApps Permissions</h3>
+            <button class="collapsible">View DataMateApps Permissions</button>
+            <div class="content">
+                <div class="scope-details">
+                    <p><strong>https://www.googleapis.com/auth/gmail.modify</strong>: Allows DataMateApps to read, compose, send, and delete emails in your Gmail account. We use this to import Gmail contacts for address blocks, send automated notifications (e.g., when a record is saved), manage email drafts for features like mail merges, and process notification emails sent to <strong>projectprodigyapp@gmail.com</strong> for usage tracking. A narrower scope wouldn’t suffice because the app needs full email management to support these features.</p>
+                    <p><strong>https://www.googleapis.com/auth/gmail.compose</strong>: Allows DataMateApps to create and modify email drafts. We use this to pre-fill emails with data from your spreadsheets or forms, enabling you to review before sending. A narrower scope wouldn’t suffice because draft creation is essential for email automation.</p>
+                    <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: Allows DataMateApps to send emails on your behalf. We use this to send notifications to you and to <strong>projectprodigyapp@gmail.com</strong> (e.g., “DataMate Dataset Created”) and emails generated from your data, such as reports or confirmations. A narrower scope wouldn’t suffice because sending emails is a core feature.</p>
+                    <p><strong>https://www.googleapis.com/auth/gmail.readonly</strong>: Allows DataMateApps to read email content and metadata. We use this to extract contact information from Gmail for the AddressBlock feature and to process notification emails for usage tracking. A narrower scope wouldn’t suffice because read access is necessary for contact integration and analytics.</p>
+                    <p><strong>https://www.googleapis.com/auth/drive</strong>: Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
+                    <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
+                    <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
+                    <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows DataMateApps to connect to external services. We use this to fetch data from third-party APIs (e.g., geocoding for addresses) or integrate external content into forms and records. A narrower scope wouldn’t suffice because external connectivity enhances app functionality.</p>
+                    <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+                    <p><strong>https://www.googleapis.com/auth/userinfo.email</strong>: Allows DataMateApps to access your email address. We use this to verify your identity, personalize email communications, and track usage via notification emails sent to <strong>projectprodigyapp@gmail.com</strong>. A narrower scope wouldn’t suffice because email access is required for authentication and analytics.</p>
+                    <p><strong>openid</strong>: Allows DataMateApps to authenticate your identity using OpenID Connect. We use this to securely sign you into the app and verify your Google account. A narrower scope wouldn’t suffice because OpenID Connect is required for secure authentication.</p>
+                </div>
+            </div>
+
+            <h3>AddressBlock Permissions</h3>
+            <button class="collapsible">View AddressBlock Permissions</button>
+            <div class="content">
+                <div class="scope-details">
+                    <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows AddressBlock to see, edit, create, and delete Google Sheets. We use this to create and manage contact lists and address blocks in spreadsheets. A narrower scope wouldn’t suffice because spreadsheet operations are essential for generating address blocks.</p>
+                    <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows AddressBlock to connect to external services. We use this to fetch address-related data (e.g., via geocoding APIs) to enhance address accuracy. A narrower scope wouldn’t suffice because external data integration is critical for the feature.</p>
+                    <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows AddressBlock to display third-party web content in prompts and sidebars. We use this to show interactive UI elements, such as contact forms or address previews, within Google Sheets. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <h3>AddressBlock Permissions</h3>
-    <button class="collapsible">View AddressBlock Permissions</button>
-    <div class="content">
-        <div class="scope-details">
-            <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows AddressBlock to see, edit, create, and delete Google Sheets. We use this to create and manage contact lists and address blocks in spreadsheets. A narrower scope wouldn’t suffice because spreadsheet operations are essential for generating address blocks.</p>
-            <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows AddressBlock to connect to external services. We use this to fetch address-related data (e.g., via geocoding APIs) to enhance address accuracy. A narrower scope wouldn’t suffice because external data integration is critical for the feature.</p>
-            <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows AddressBlock to display third-party web content in prompts and sidebars. We use this to show interactive UI elements, such as contact forms or address previews, within Google Sheets. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+        <h2>Third-Party Integrations</h2>
+        <div class="section">
+            <p>DataMateApps may connect to external services via the <code>script.external_request</code> scope to enhance functionality, such as fetching geocoding data for addresses or integrating with APIs for form processing. These services are carefully selected, and we ensure they comply with data protection standards. No personal data is shared with third parties unless explicitly required for the service, and only with your consent. The notification emails sent to <strong>projectprodigyapp@gmail.com</strong> are managed by Excellence-US, LLC and are not shared with third parties.</p>
         </div>
-    </div>
-</div>
-    <h2>Third-Party Integrations</h2>
-    <div class="section">
-        <p>DataMateApps may connect to external services via the <code>script.external_request</code> scope to enhance functionality, such as fetching geocoding data for addresses or integrating with APIs for form processing. These services are carefully selected, and we ensure they comply with data protection standards. No personal data is shared with third parties unless explicitly required for the service, and only with your consent. The notification emails sent to <strong>projectprodigyapp@gmail.com</strong> are managed by Excellence-US, LLC and are not shared with third parties.</p>
-    </div>
 
-    <h2>Data Sharing</h2>
-    <div class="section">
-        <p>We do not share your personal data with third parties, except as described below:</p>
-        <ul>
-            <li><strong>Usage Tracking</strong>: When you create a dataset or save a record, DataMateApps sends a notification email to <strong>projectprodigyapp@gmail.com</strong>, a service email address managed by Excellence-US, LLC. These emails include your email address, which we extract and store in Google Sheets to track usage (e.g., number of datasets created or records saved). This data is used solely for analytics and service improvement and is not shared with any external parties.</li>
-            <li><strong>Third-Party Integrations</strong>: As described above, some features may involve external services, but no personal data is shared without your consent.</li>
-            <li><strong>Legal Obligations</strong>: We may share data to comply with legal requirements, such as responding to lawful requests from authorities.</li>
-        </ul>
-        <p>All other data accessed via Google APIs remains within the Google ecosystem or is processed securely by our app.</p>
-    </div>
+        <h2>Data Sharing</h2>
+        <div class="section">
+            <p>We do not share your personal data with third parties, except as described below:</p>
+            <ul>
+                <li><strong>Usage Tracking</strong>: When you create a dataset or save a record, DataMateApps sends a notification email to <strong>projectprodigyapp@gmail.com</strong>, a service email address managed by Excellence-US, LLC. These emails include your email address, which we extract and store in Google Sheets to track usage (e.g., number of datasets created or records saved). This data is used solely for analytics and service improvement and is not shared with any external parties.</li>
+                <li><strong>Third-Party Integrations</strong>: As described above, some features may involve external services, but no personal data is shared without your consent.</li>
+                <li><strong>Legal Obligations</strong>: We may share data to comply with legal requirements, such as responding to lawful requests from authorities.</li>
+            </ul>
+            <p>All other data accessed via Google APIs remains within the Google ecosystem or is processed securely by our app.</p>
+        </div>
 
-    <h2>Data Retention</h2>
-    <div class="section">
-        <p>Data stored in your Google Sheets, Drive, or Gmail accounts remains under your control and is retained according to your Google account settings. Specifically:</p>
-        <ul>
-            <li><strong>Usage Data</strong>: Your email address and associated usage data (e.g., dataset and record counts) stored in Google Sheets (e.g., "NewContact" and "contacts" sheets) are retained for as long as necessary to support analytics and service improvement, typically until you revoke our app’s access or delete the relevant spreadsheets.</li>
-            <li><strong>Notification Emails</strong>: Emails sent to <strong>projectprodigyapp@gmail.com</strong> are retained by Excellence-US, LLC for usage tracking purposes and deleted periodically when no longer needed for analytics.</li>
-            <li><strong>Comments and Reviews</strong>: If you leave comments or reviews on our website, they are retained indefinitely unless you request deletion.</li>
-        </ul>
-        <p>You can delete data in your Google account at any time or request deletion of data we hold (e.g., website comments) by contacting us.</p>
-    </div>
+        <h2>Data Retention</h2>
+        <div class="section">
+            <p>Data stored in your Google Sheets, Drive, or Gmail accounts remains under your control and is retained according to your Google account settings. Specifically:</p>
+            <ul>
+                <li><strong>Usage Data</strong>: Your email address and associated usage data (e.g., dataset and record counts) stored in Google Sheets (e.g., "NewContact" and "contacts" sheets) are retained for as long as necessary to support analytics and service improvement, typically until you revoke our app’s access or delete the relevant spreadsheets.</li>
+                <li><strong>Notification Emails</strong>: Emails sent to <strong>projectprodigyapp@gmail.com</strong> are retained by Excellence-US, LLC for usage tracking purposes and deleted periodically when no longer needed for analytics.</li>
+                <li><strong>Comments and Reviews</strong>: If you leave comments or reviews on our website, they are retained indefinitely unless you request deletion.</li>
+            </ul>
+            <p>You can delete data in your Google account at any time or request deletion of data we hold (e.g., website comments) by contacting us.</p>
+        </div>
+
         <h2>Data Security</h2>
         <div class="section">
             <p>We implement industry-standard security measures to protect your data, including secure connections and compliance with Google’s API security requirements. However, no system is completely secure, and we encourage you to use strong passwords and enable two-factor authentication on your Google account.</p>
@@ -337,6 +359,120 @@
         <h2>Who We Are</h2>
         <div class="section">
             <p>Excellence-US, LLC is the developer of DataMateApps and AddressBlock, designed to enhance productivity within Google Workspace. We are committed to transparency, user privacy, and delivering reliable tools for data management.</p>
+        </div>
+
+        <h2>DataMateApps Function Descriptions</h2>
+        <div class="section">
+            <p>The following describes the core functions of DataMateApps, detailing how they interact with your Google Sheets data to provide features like record saving, contact management, and form building.</p>
+            <button class="collapsible">View DataMateApps Function Descriptions</button>
+            <div class="content">
+                <div class="function-list">
+                    <div class="function">
+                        <h4>onInstall()</h4>
+                        <p>Triggers when the add-on is installed, calling <code>onOpen()</code> to initialize the custom menu.</p>
+                    </div>
+                    <div class="function">
+                        <h4>onOpen(e)</h4>
+                        <p>Creates a custom menu named "DataMate 🌐" in Google Sheets with options for saving records, resetting inputs, managing templates, building forms, handling contacts, and showing tutorials.</p>
+                    </div>
+                    <div class="function">
+                        <h4>doNothing()</h4>
+                        <p>Displays an alert prompting the user to select a template option when no specific action is chosen.</p>
+                    </div>
+                    <div class="function">
+                        <h4>showUploadDialog()</h4>
+                        <p>Opens a modal dialog to upload a CSV file, using the <code>UploadCSV.html</code> interface for importing contacts.</p>
+                    </div>
+                    <div class="function">
+                        <h4>processCSV(csvContent)</h4>
+                        <p>Parses and processes uploaded CSV data, mapping specific columns from an "Import" sheet to a "contacts" sheet based on predefined mappings, then notifies the user of successful import.</p>
+                    </div>
+                    <div class="function">
+                        <h4>edit()</h4>
+                        <p>Populates the "Address" sheet with VLOOKUP formulas to retrieve contact details (e.g., company, email, address) from the "contacts" sheet based on a lookup value in cell F1.</p>
+                    </div>
+                    <div class="function">
+                        <h4>newcontact()</h4>
+                        <p>Adds a new contact by copying data from the "NewContact" sheet to the "contacts" sheet, inserting a new row, setting a concatenated name formula, sorting contacts, and clearing input fields.</p>
+                    </div>
+                    <div class="function">
+                        <h4>copyInput1()</h4>
+                        <p>Copies data, formats, formulas, and column widths from "Sheet1" (A3:Q48) to the "Input" sheet, then activates cell C4 in the "Input" sheet.</p>
+                    </div>
+                    <div class="function">
+                        <h4>copyInput2()</h4>
+                        <p>Copies data, formats, formulas, and column widths from "Sheet1" (A3:Q48) to the "View_Print" sheet, then activates cell A1 in the "View_Print" sheet.</p>
+                    </div>
+                    <div class="function">
+                        <h4>newfile()</h4>
+                        <p>Creates or verifies the existence of core sheets ("Input", "View_Print", "Log", "Update", "Data"), sets up headers, formulas, formatting, and a help hyperlink, then calls <code>copyInput1()</code>, <code>view()</code>, and sends a notification email.</p>
+                    </div>
+                    <div class="function">
+                        <h4>sendDataMateEmail()</h4>
+                        <p>Sends an email to "projectprodigyapp@gmail.com" with the subject "DataMate Dataset Created" to notify that a new dataset has been added.</p>
+                    </div>
+                    <div class="function">
+                        <h4>save()</h4>
+                        <p>Saves data from the "Input" sheet (A1:Q48) to the "Data" sheet in specific columns, copies images, updates the "Update" and "Log" sheets with formulas, adds a hyperlink to "View_Print", and sends a notification email.</p>
+                    </div>
+                    <div class="function">
+                        <h4>sendDataMateEmail1()</h4>
+                        <p>Sends an email to "projectprodigyapp@gmail.com" with the subject "DataMate Record" to notify that a new record has been saved.</p>
+                    </div>
+                    <div class="function">
+                        <h4>view()</h4>
+                        <p>Refreshes the "View_Print" sheet by calling <code>copyInput2()</code> and setting VLOOKUP formulas to display data from the "Update" and "Data" sheets based on a key in A1.</p>
+                    </div>
+                    <div class="function">
+                        <h4>contacts()</h4>
+                        <p>Creates or updates "contacts", "Address", and "NewContact" sheets, sets up headers, formulas, data validation, and formatting for contact management, then activates cell B1 in the "Address" sheet.</p>
+                    </div>
+                    <div class="function">
+                        <h4>EditAddressSheet()</h4>
+                        <p>Applies VLOOKUP formulas to the "Address" sheet (F2:F14) to fetch contact details by name from the "contacts" sheet, adds data validation to a specified cell in "Sheet1", and copies formulas below it.</p>
+                    </div>
+                    <div class="function">
+                        <h4>EditAddressSheet1()</h4>
+                        <p>Applies INDEX/MATCH formulas to the "Address" sheet (G2:G14) to fetch contact details by company from the "contacts" sheet, adds data validation to a specified cell in "Sheet1", and copies formulas below it.</p>
+                    </div>
+                    <div class="function">
+                        <h4>setup()</h4>
+                        <p>Initializes an "Inventory" template by creating or configuring sheets (e.g., "Inventory", "Stock") with predefined headers, formulas, and formatting for tracking inventory items.</p>
+                    </div>
+                    <div class="function">
+                        <h4>updateInventory()</h4>
+                        <p>Updates the "Inventory" sheet by copying new or modified stock data from an input range to a master inventory log, recalculating totals, and maintaining stock levels.</p>
+                    </div>
+                    <div class="function">
+                        <h4>setupTS()</h4>
+                        <p>Sets up a "Weekly Timesheets" template by creating sheets (e.g., "Timesheet", "Summary") with headers, time-tracking formulas, and data validation for employee hours.</p>
+                    </div>
+                    <div class="function">
+                        <h4>copyToCodeTotals()</h4>
+                        <p>Copies cost code data from a timesheet or input sheet to a "Code Totals" sheet, aggregating hours or costs by code for financial tracking.</p>
+                    </div>
+                    <div class="function">
+                        <h4>setupPO()</h4>
+                        <p>Configures a "Purchase Order" template by creating sheets (e.g., "PO", "Items") with headers, formulas for totals, and data validation for supplier and item details.</p>
+                    </div>
+                    <div class="function">
+                        <h4>previewForm()</h4>
+                        <p>Displays a preview of a form built in the "FormSetup" sheet, rendering fields defined in the FormBuilder (e.g., Text, Dropdown) using an HTML interface for testing.</p>
+                    </div>
+                    <div class="function">
+                        <h4>showFormBuilder()</h4>
+                        <p>Opens a sidebar or modal dialog with the <code>FormBuilder.html</code> interface, allowing users to create or edit form fields and save configurations to the "FormSetup" sheet.</p>
+                    </div>
+                    <div class="function">
+                        <h4>showMailItSidebar()</h4>
+                        <p>Displays a sidebar using <code>MailIt.html</code> to compose emails, selecting sheets, ranges, and contacts for sending or drafting emails with embedded data.</p>
+                    </div>
+                    <div class="function">
+                        <h4>showTutorial()</h4>
+                        <p>Opens a modal dialog or sidebar displaying a tutorial with instructions on using DataMate’s features, such as templates, forms, and contact management.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
