@@ -220,7 +220,7 @@
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
                 <a href="https://script.google.com/macros/s/AKfycbyYQvSrgNApdHNbvrBU7LQw8H7l7hB_233uDXrz_piebw5aZ3E0xVZIXbZpf-eFqjLP/exec">Community</a>
-                <a href="https://docs.google.com/spreadsheets/d/1G-zoZx6OT4DhdA-yAPI--ZGLDPynkaFLdfRjU4RAX-Q/copy">Open Source</a>
+                <a href="https://drive.google.com/file/d/1yBphbReTNS95pbjNodU-USWuq-L48Jes/view?usp=sharing">Open Source</a>
             </nav>
             <nav class="mobile-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
@@ -233,7 +233,7 @@
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://script.google.com/macros/s/AKfycbzWZM7qyNnKKw9T3LMODI5MQXMvzTUO9YvP-QvP49KipDphi48pR5iLhad1ZN-3FFqa/exec">Reviews</a>
                 <a href="https://script.google.com/macros/s/AKfycbyYQvSrgNApdHNbvrBU7LQw8H7l7hB_233uDXrz_piebw5aZ3E0xVZIXbZpf-eFqjLP/exec">Community</a>
-                <a href="https://docs.google.com/spreadsheets/d/1G-zoZx6OT4DhdA-yAPI--ZGLDPynkaFLdfRjU4RAX-Q/copy">Open Source</a>
+                <a href="https://drive.google.com/file/d/1yBphbReTNS95pbjNodU-USWuq-L48Jes/view?usp=sharing">Open Source</a>
             </nav>
         </div>
     </header>
@@ -781,9 +781,28 @@
                                             </div>
                                         </div>
                                         <div class="step">
-                                            <h3>Preview & Deploy</h3>
-                                            <p>Use "DataMate > FormBuilder > Preview Form". Deploy via Apps Script: "Deploy > New Deployment > Web App."</p>
-                                        </div>
+    <h3>Preview & Deploy</h3>
+    <p>
+        1. <strong>Preview Form</strong><br>
+        Navigate to <strong>DataMate > FormBuilder > Preview Form</strong> to review your form before deployment.<br><br>
+        2. <strong>Deploy as a Web App (via Google Apps Script)</strong><br>
+        - <strong>Optional: Use Open Source Code</strong><br>
+        Copy the provided open-source code and paste it into the <strong>Apps Script Editor</strong>.<br>
+        - <strong>Steps to Deploy</strong>:<br>
+        1. In the Apps Script Editor, click <strong>Deploy > New Deployment</strong>.<br>
+        2. Select <strong>Web App</strong>.<br>
+        3. Configure the deployment settings:<br>
+        - <strong>Description</strong>: Enter a name, e.g., "DataMate FormBuilder".<br>
+        - <strong>Execute as</strong>: Select "Me" (runs under your Google account).<br>
+        - <strong>Who has access</strong>: Choose either:<br>
+        - "Anyone" (public access).<br>
+        - "Anyone with a Google account" (restricted to Google users).<br>
+        4. Click <strong>Deploy</strong>.<br>
+        5. Copy the generated <strong>Web App URL</strong>.<br><br>
+        3. <strong>Share the Form</strong><br>
+        Share the Web App URL with users to access the form directly in their browsers.
+    </p>
+</div>
                                         <div class="step">
                                             <h3>Collect Data</h3>
                                             <p>Share the URL. Data saves to the target sheet based on submission type. Dynamic table data is serialized as JSON in a single cell for <code>TableRow</code> submissions.</p>
