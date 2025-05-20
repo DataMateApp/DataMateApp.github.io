@@ -283,7 +283,11 @@
     <p><strong>https://www.googleapis.com/auth/gmail.addons.current.action.compose</strong>: Allows DataMateApps to create email drafts. A narrower scope wouldn’t suffice because creating email drafts is a core feature.</p>
     <p><strong>https://www.googleapis.com/auth/gmail.modify</strong>: Allows DataMateApps to read, compose, send, and delete emails in your Gmail account. We use this to import Gmail contacts for address blocks, send automated notifications (e.g., when a record is saved), manage email drafts for features like mail merges, and process notification emails sent to <strong>projectprodigyapp@gmail.com</strong> for usage tracking. A narrower scope wouldn’t suffice because the app needs full email management to support these features.</p>
     <p><strong>https://www.googleapis.com/auth/gmail.compose</strong>: Allows DataMateApps to create and modify email drafts. We use this to pre-fill emails with data from your spreadsheets or forms, enabling you to review before sending. A narrower scope wouldn’t suffice because draft creation is essential for email automation.</p>
-</div>
+    <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: Allows DataMateApps to send emails via Google Apps Script. We use this for automated emails, such as alerts when a dataset is created or notifications to <strong>projectprodigyapp@gmail.com</strong>, complementing Gmail API functionality. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
+                    <p>
+
+
+               </div>
             </div>
 
             <h3>AddressBlock Permissions</h3>
