@@ -300,7 +300,36 @@
 
     <div class="container">
 
-        <h1>Why DataMateApps Are Free</h1>
+       
+        <div class="donation-option">
+            <h2>Donate $5.00/Month</h2>
+            <button onclick="donateFive()">Donate $5.00</button>
+        </div>
+
+        <div class="donation-option">
+            <h2>One Time Donate What You Can</h2>
+            <div class="stripe-button-wrapper">
+                <stripe-buy-button buy-button-id="buy_btn_1QO2WDG1lPcU42DNgACDVfYi"
+                                   publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
+                </stripe-buy-button>
+            </div>
+
+                <p><h2>You may cancel at any time or view your reciept in the Doner Portal.</h2></p>
+                <button onclick="window.location.href='https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg'">Doner Portal
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function donateFive() {
+            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
+        }
+
+    </script>
+
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+            <h1>Why DataMateApps Are Free</h1>
 
     <h2>About DataMateApps</h2>
     <p>Hi, I'm <strong>Dan Northway</strong>—Founder and Developer of DataMateApps. Before retiring, I spent my career as a <strong>Construction Project Manager and Superintendent</strong>.</p>
@@ -341,34 +370,6 @@
         <p>If you’ve found DataMateApps useful, share it with colleagues, friends, and anyone who could benefit from these tools. The more people use and contribute, the better the project becomes for everyone.</p>
         <p>Whether it’s through word of mouth, social media, or email, every share makes a difference. Let’s build something great together!</p>
     </div>
-        
-        <div class="donation-option">
-            <h2>Donate $5.00/Month</h2>
-            <button onclick="donateFive()">Donate $5.00</button>
-        </div>
-
-        <div class="donation-option">
-            <h2>One Time Donate What You Can</h2>
-            <div class="stripe-button-wrapper">
-                <stripe-buy-button buy-button-id="buy_btn_1QO2WDG1lPcU42DNgACDVfYi"
-                                   publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
-                </stripe-buy-button>
-            </div>
-
-                <p><h2>You may cancel at any time or view your reciept in the Doner Portal.</h2></p>
-                <button onclick="window.location.href='https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg'">Doner Portal
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function donateFive() {
-            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
-        }
-
-    </script>
-
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
     <footer>
         <div class="container">
