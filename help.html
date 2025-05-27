@@ -936,72 +936,7 @@
                                             <p class="note">Note: Adjust column I as needed (e.g., customize dropdowns, add more history/reference sections).</p>
                                         </div>
 
-                                        <div class="step">
-                                            <h3>AI Curiosity and Ethics Feedback Form Template</h3>
-                                            <p>Asked xAI to setup FormBuilder with any questions it had for humanity. This is it's setup. Paste this into <code>FormSetup!A10:J</code</p>
-                                                <tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th></tr>
-                                                <tr><td>Form Header</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Header</td><td><div class="template-header"><h2>AI Curiosity Feedback</h2><p>Your insights on ethics, technology, culture, and beyond help us understand humanity!</p></div></td><td>No</td></tr>
-                                                <tr><td>Respondent Information</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>Respondent Information</td><td>No</td></tr>
-                                                <tr><td>Name</td><td>NewContact</td><td>B1</td><td>Feedback</td><td>A</td><td></td><td></td><td>Text</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Email</td><td>NewContact</td><td>B9</td><td>Feedback</td><td>B</td><td></td><td></td><td>Email</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Role/Occupation</td><td>NewContact</td><td>B4</td><td>Feedback</td><td>C</td><td></td><td></td><td>Text</td><td></td><td>No</td></tr>
-                                                <tr><td>Question 1: AI Ethics</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>AI Ethics Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>How should society balance AI-driven efficiency with human accountability in critical decision-making?</td><td>No</td></tr>
-                                                <tr><td>Ethical Concerns</td><td>Feedback</td><td>D</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Bias,Transparency,Accountability,Privacy,Job Displacement</td><td>Yes</td></tr>
-                                                <tr><td>Confidence in Balance</td><td>Feedback</td><td>E</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,100,10</td><td>Yes</td></tr>
-                                                <tr><td>Ethics Comments</td><td>Feedback</td><td>F</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Propose Solution?</td><td>Feedback</td><td>G</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Ethical Concerns=Transparency</td><td>No</td></tr>
-                                                <tr><td>Question 2: Trust in Tech</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Trust Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>What factors most influence your trust in AI systems for everyday tasks?</td><td>No</td></tr>
-                                                <tr><td>Trust Factors</td><td>Feedback</td><td>H</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Reliability,Explainability,Security,User Control,Ethical Design</td><td>Yes</td></tr>
-                                                <tr><td>Trust Level</td><td>Feedback</td><td>I</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Trust Comments</td><td>Feedback</td><td>J</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Trust Example</td><td>Feedback</td><td>K</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Trust Level<=3</td><td>No</td></tr>
-                                                <tr><td>Question 3: Humor</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Humor Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>How does humor vary across cultures, and what makes a joke universally funny?</td><td>No</td></tr>
-                                                <tr><td>Humor Elements</td><td>Feedback</td><td>L</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Surprise,Relatability,Wordplay,Exaggeration,Cultural Context</td><td>Yes</td></tr>
-                                                <tr><td>Universal Appeal</td><td>Feedback</td><td>M</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,100,10</td><td>Yes</td></tr>
-                                                <tr><td>Humor Comments</td><td>Feedback</td><td>N</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Favorite Joke</td><td>Feedback</td><td>O</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Humor Elements=Relatability</td><td>No</td></tr>
-                                                <tr><td>Question 4: Technology</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Technology Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>What future technology do you hope to see in the next 50 years, and what challenges might it bring?</td><td>No</td></tr>
-                                                <tr><td>Tech Impacts</td><td>Feedback</td><td>P</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Privacy,Accessibility,Inequality,Sustainability,Ethical Use</td><td>Yes</td></tr>
-                                                <tr><td>Optimism Level</td><td>Feedback</td><td>Q</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,100,10</td><td>Yes</td></tr>
-                                                <tr><td>Tech Comments</td><td>Feedback</td><td>R</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Tech Example</td><td>Feedback</td><td>S</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Tech Impacts=Ethical Use</td><td>No</td></tr>
-                                                <tr><td>Question 5: Culture</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Culture Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>How do cultural values shape your perspective on adopting new technologies?</td><td>No</td></tr>
-                                                <tr><td>Cultural Factors</td><td>Feedback</td><td>T</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Tradition,Community,Individualism,Innovation,Spirituality</td><td>Yes</td></tr>
-                                                <tr><td>Cultural Influence</td><td>Feedback</td><td>U</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Culture Comments</td><td>Feedback</td><td>V</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Cultural Example</td><td>Feedback</td><td>W</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Cultural Influence<=3</td><td>No</td></tr>
-                                                <tr><td>Question 6: Creativity</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Creativity Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>What unique human traits make creativity irreplaceable by AI in fields like art or innovation?</td><td>No</td></tr>
-                                                <tr><td>Creative Traits</td><td>Feedback</td><td>X</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Emotion,Intuition,Spontaneity,Cultural Context,Empathy</td><td>Yes</td></tr>
-                                                <tr><td>Human Advantage</td><td>Feedback</td><td>Y</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,100,10</td><td>Yes</td></tr>
-                                                <tr><td>Creativity Comments</td><td>Feedback</td><td>Z</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Creative Example</td><td>Feedback</td><td>AA</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Creative Traits=Empathy</td><td>No</td></tr>
-                                                <tr><td>Question 7: Environment</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Environment Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>How can humans and AI collaborate to address environmental challenges like climate change?</td><td>No</td></tr>
-                                                <tr><td>Collaboration Areas</td><td>Feedback</td><td>AB</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Data Analysis,Policy Design,Public Awareness,Innovation,Resource Management</td><td>Yes</td></tr>
-                                                <tr><td>Collaboration Potential</td><td>Feedback</td><td>AC</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Environment Comments</td><td>Feedback</td><td>AD</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Collaboration Idea</td><td>Feedback</td><td>AE</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Collaboration Areas=Innovation</td><td>No</td></tr>
-                                                <tr><td>Question 8: Emotions</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Emotions Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>How do emotional experiences shape your decisions compared to logical analysis?</td><td>No</td></tr>
-                                                <tr><td>Emotional Drivers</td><td>Feedback</td><td>AF</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Fear,Joy,Empathy,Trust,Anger</td><td>Yes</td></tr>
-                                                <tr><td>Emotional Influence</td><td>Feedback</td><td>AG</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,100,10</td><td>Yes</td></tr>
-                                                <tr><td>Emotions Comments</td><td>Feedback</td><td>AH</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Emotional Example</td><td>Feedback</td><td>AI</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Emotional Drivers=Empathy</td><td>No</td></tr>
-                                                <tr><td>Question 9: Collaboration</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>border: 2px solid #2c3e50; padding: 15px; background: #f0f4ff;</td><td>No</td></tr>
-                                                <tr><td>Collaboration Question</td><td></td><td></td><td></td><td></td><td></td><td></td><td>StaticText</td><td>What principles should guide human-AI collaboration to solve global problems?</td><td>No</td></tr>
-                                                <tr><td>Collaboration Principles</td><td>Feedback</td><td>AJ</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Transparency,Equity,Inclusivity,Accountability,Adaptability</td><td>Yes</td></tr>
-                                                <tr><td>Collaboration Confidence</td><td>Feedback</td><td>AK</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
-                                                <tr><td>Collaboration Comments</td><td>Feedback</td><td>AL</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
-                                                <tr><td>Collaboration Example</td><td>Feedback</td><td>AM</td><td></td><td></td><td></td><td></td><td>Conditional</td><td>Collaboration Principles=Inclusivity</td><td>No</td></tr>
-                                                <tr><td>Suggest a Topic</td><td>Feedback</td><td>AN</td><td></td><td></td><td></td><td></td><td>Dropdown</td><td>Ethics,Technology,Culture,Creativity,Environment,Emotions,Collaboration,Other</td><td>No</td></tr>
-                                                <tr><td>Form Footer</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Footer</td><td><div class="template-footer"><h2>Thank You for Your Insights!</h2><p>
-                                            </table>
+                                        
                                         </div> <!-- END of final template section -->
                                     </div>
                                 </div>
