@@ -280,8 +280,9 @@
     <p><strong>https://www.googleapis.com/auth/drive</strong>: (Only used in open-source code for UploadFile and Signature form fields when deployed as web app.) Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
     <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
     <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: To send notifications to send emails via Google Apps Script when a form is submitted. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
-    <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: Allows DataMateApps to send emails on your behalf. A narrower scope wouldn’t suffice because sending emails is a core feature.</p>               
-                    <p>
+    <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: This scope is essential for the core functionality of DataMateApps, specifically the "Mail It" feature, which enables users to send emails directly from a Google Spreadsheet. This feature allows users to select a range of spreadsheet data, format it as an HTML table, and send it as an email to recipients listed in a "contacts" sheet (Column P for email addresses, Column A for names). The emails are sent using the GmailApp.sendEmail method in Google Apps Script, which constructs and sends HTML-formatted emails based on user inputs from a sidebar interface.
+
+<p>
 
 
                </div>
