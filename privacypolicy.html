@@ -158,12 +158,12 @@
         }
 
         .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f8fafc;
-            border-radius: 4px;
-        }
+    padding: 0 18px;
+    display: none; /* Ensure content is hidden by default */
+    overflow: hidden;
+    background-color: #f8fafc;
+    border-radius: 4px;
+}
 
         .function-list {
             max-width: 100%;
@@ -273,19 +273,16 @@
             <p>DataMateApps and AddressBlock require specific permissions to function. These permissions allow us to access your Google account data as described below. Each permission is necessary for the app’s core features, and we’ve explained why we need it and why a narrower scope wouldn’t work.</p>
 
             <h3>DataMateApps Permissions</h3>
-            <button class="collapsible">View DataMateApps Permissions</button>
-            <div class="content">
-               <div class="scope-details">
-    <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
-    <p><strong>https://www.googleapis.com/auth/drive</strong>: (Only used in open-source code for UploadFile and Signature form fields when deployed as web app.) Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
-    <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
-    <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: To send notifications to send emails via Google Apps Script when a form is submitted. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
-    <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: This scope is essential for the core functionality of DataMateApps, specifically the "Mail It" feature, which enables users to send emails directly from a Google Spreadsheet. This feature allows users to select a range of spreadsheet data, format it as an HTML table, and send it as an email to recipients listed in a "contacts" sheet (Column P for email addresses, Column A for names). The emails are sent using the GmailApp.sendEmail method in Google Apps Script, which constructs and sends HTML-formatted emails based on user inputs from a sidebar interface.
-
-<p>
-
-
-               </div>
+<button class="collapsible">View DataMateApps Permissions</button>
+<div class="content">
+    <div class="scope-details">
+        <p><strong>https://www.googleapis.com/auth/spreadsheets</strong>: Allows DataMateApps to see, edit, create, and delete Google Sheets. We use this to create and manage spreadsheets for records, templates (e.g., inventory, timesheets), contact lists, and usage counters. A narrower scope wouldn’t suffice because dynamic spreadsheet operations are central to the app.</p>
+        <p><strong>https://www.googleapis.com/auth/drive</strong>: (Only used in open-source code for UploadFile and Signature form fields when deployed as web app.) Allows DataMateApps to see, edit, create, and delete files in Google Drive. We use this to store form uploads (e.g., images, PDFs), signatures, and generated files, such as reports or templates. A narrower scope wouldn’t suffice because full Drive access is required for file management.</p>
+        <p><strong>https://www.googleapis.com/auth/script.container.ui</strong>: Allows DataMateApps to display third-party web content in prompts, dialogs, and sidebars within Google Sheets. We use this to show interactive UI elements, such as form previews, contact forms, or sidebars for data entry. A narrower scope wouldn’t suffice because custom UI is required for user interaction.</p>
+        <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: To send notifications to send emails via Google Apps Script when a form is submitted. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
+        <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: This scope is essential for the core functionality of DataMateApps, specifically the "Mail It" feature, which enables users to send emails directly from a Google Spreadsheet. This feature allows users to select a range of spreadsheet data, format it as an HTML table, and send it as an email to recipients listed in a "contacts" sheet (Column P for email addresses, Column A for names). The emails are sent using the GmailApp.sendEmail method in Google Apps Script, which constructs and sends HTML-formatted emails based on user inputs from a sidebar interface.</p>
+    </div>
+</div>
 
 
         <h2>Third-Party Integrations</h2>
@@ -460,18 +457,20 @@
     </footer>
 
     <script>
-        const collapsibles = document.getElementsByClassName("collapsible");
-        for (let i = 0; i < collapsibles.length; i++) {
-            collapsibles[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                const content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
+       document.addEventListener('DOMContentLoaded', function() {
+    const collapsibles = document.getElementsByClassName('collapsible');
+    for (let i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block' || getComputedStyle(content).display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    }
+});
     </script>
 </body>
 </html>
