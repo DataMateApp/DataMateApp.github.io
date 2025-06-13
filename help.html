@@ -994,6 +994,77 @@
 <tr><td>I agree to the event terms and conditions</td><td>Responses</td><td>K</td><td></td><td></td><td></td><td></td><td>Checkbox</td><td></td><td>Yes</td></tr>
 <tr><td>Form Footer</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Footer</td><td>Thank you for registering! You will receive a confirmation soon.</td><td>No</td></tr>
 </table>
+
+                                            <h3>Order / Booking Form</h3>
+                                            <p>Paste this into <code>FormSetup!A10:J</code>:</p>
+
+                                            <table>
+<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+<tr><td>Form Header</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Header</td><td>Order / Booking Form</td><td>No</td></tr>
+<tr><td>Section 1: Customer Information</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Full Name</td><td>Responses</td><td>A</td><td></td><td></td><td></td><td></td><td>Text</td><td></td><td>Yes</td></tr>
+<tr><td>Email Address</td><td>Responses</td><td>B</td><td></td><td></td><td></td><td></td><td>Email</td><td></td><td>Yes</td></tr>
+<tr><td>Phone Number</td><td>Responses</td><td>C</td><td></td><td></td><td></td><td></td><td>Text</td><td></td><td>Yes</td></tr>
+<tr><td>Section 2: Booking Details</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Service/Product</td><td>Responses</td><td>D</td><td></td><td></td><td></td><td></td><td>Dropdown</td><td>Consultation,Repair,Subscription</td><td>Yes</td></tr>
+<tr><td>Booking Date</td><td>Responses</td><td>E</td><td></td><td></td><td></td><td></td><td>Date</td><td></td><td>Yes</td></tr>
+<tr><td>Preferred Time</td><td>Responses</td><td>F</td><td></td><td></td><td></td><td></td><td>Time</td><td></td><td>Yes</td></tr>
+<tr><td>Quantity</td><td>Responses</td><td>G</td><td></td><td></td><td></td><td></td><td>Number</td><td></td><td>Yes</td></tr>
+<tr><td>Section 3: Additional Information</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Special Requests</td><td>Responses</td><td>H</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
+<tr><td>How Did You Hear About Us?</td><td>Responses</td><td>I</td><td></td><td></td><td></td><td></td><td>Dropdown</td><td>Website,Referral,Social Media,Other</td><td>Yes</td></tr>
+<tr><td>Section 4: Payment and Confirmation</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Order Total</td><td>Responses</td><td>J</td><td></td><td></td><td></td><td></td><td>Checkout</td><td>Products!A2:B10</td><td>Yes</td></tr>
+<tr><td>I agree to the terms of service</td><td>Responses</td><td>K</td><td></td><td></td><td></td><td></td><td>Checkbox</td><td></td><td>Yes</td></tr>
+<tr><td>Form Footer</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Footer</td><td>Thank you for your order! We will confirm your booking soon.</td><td>No</td></tr>
+</table>
+
+
+                                            <h3>Quiz / Assessment Form</h3>
+                                            <p>Paste this into <code>FormSetup!A10:J</code>:</p>
+                                            <table>
+<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+<tr><td>Form Header</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Header</td><td>Quiz / Assessment Form</td><td>No</td></tr>
+<tr><td>Section 1: Participant Information</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Full Name</td><td>Responses</td><td>A</td><td></td><td></td><td></td><td></td><td>Text</td><td></td><td>Yes</td></tr>
+<tr><td>Email Address</td><td>Responses</td><td>B</td><td></td><td></td><td></td><td></td><td>Email</td><td></td><td>Yes</td></tr>
+<tr><td>Participant ID</td><td>Responses</td><td>C</td><td></td><td></td><td></td><td></td><td>Text</td><td></td><td>No</td></tr>
+<tr><td>Section 2: Quiz Questions</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Question 1: What is the capital of France?</td><td>Responses</td><td>D</td><td></td><td></td><td></td><td></td><td>Radio</td><td>Paris,London,Berlin</td><td>Yes</td></tr>
+<tr><td>Question 2: Rate your confidence in this topic</td><td>Responses</td><td>E</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
+<tr><td>Question 3: Describe a key concept</td><td>Responses</td><td>F</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>Yes</td></tr>
+<tr><td>Question 4: Select all applicable skills</td><td>Responses</td><td>G</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Problem Solving,Communication,Teamwork</td><td>Yes</td></tr>
+<tr><td>Section 3: Feedback</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>How challenging was this quiz?</td><td>Responses</td><td>H</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>1,10,1</td><td>Yes</td></tr>
+<tr><td>Additional Comments</td><td>Responses</td><td>I</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
+<tr><td>Section 4: Consent</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>I certify that my responses are my own</td><td>Responses</td><td>J</td><td></td><td></td><td></td><td></td><td>Checkbox</td><td></td><td>Yes</td></tr>
+<tr><td>Form Footer</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Footer</td><td>Thank you for completing the quiz! Results will be shared soon.</td><td>No</td></tr>
+</table>
+
+
+                                            <h3>Survey / Questionnaire Form</h3>
+                                            <p>Paste this into <code>FormSetup!A10:J</code>:</p>
+                                            
+                                            <table>
+<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+<tr><td>Form Header</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Header</td><td>Survey / Questionnaire Form</td><td>No</td></tr>
+<tr><td>Section 1: Respondent Information</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Full Name</td><td>Responses</td><td>A</td><td></td><td></td><td></td><td></td><td>Text</td><td></td><td>No</td></tr>
+<tr><td>Email Address</td><td>Responses</td><td>B</td><td></td><td></td><td></td><td></td><td>Email</td><td></td><td>No</td></tr>
+<tr><td>Age Group</td><td>Responses</td><td>C</td><td></td><td></td><td></td><td></td><td>Dropdown</td><td>18-24,25-34,35-44,45-54,55+</td><td>Yes</td></tr>
+<tr><td>Section 2: Survey Questions</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>How satisfied are you with our service?</td><td>Responses</td><td>D</td><td></td><td></td><td></td><td></td><td>StarRating</td><td></td><td>Yes</td></tr>
+<tr><td>How likely are you to recommend us?</td><td>Responses</td><td>E</td><td></td><td></td><td></td><td></td><td>RangeSlider</td><td>0,10,1</td><td>Yes</td></tr>
+<tr><td>Which features do you use most?</td><td>Responses</td><td>F</td><td></td><td></td><td></td><td></td><td>MultiSelect</td><td>Mobile App,Website,Support,Other</td><td>Yes</td></tr>
+<tr><td>What can we improve?</td><td>Responses</td><td>G</td><td></td><td></td><td></td><td></td><td>Textarea</td><td></td><td>No</td></tr>
+<tr><td>Section 3: Additional Feedback</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>Would you participate in future surveys?</td><td>Responses</td><td>H</td><td></td><td></td><td></td><td></td><td>Radio</td><td>Yes,No,Maybe</td><td>Yes</td></tr>
+<tr><td>How did you hear about this survey?</td><td>Responses</td><td>I</td><td></td><td></td><td></td><td></td><td>Dropdown</td><td>Email,Website,Social Media,Other</td><td>Yes</td></tr>
+<tr><td>Section 4: Consent</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Container</td><td>background: #f0f0f0; padding: 10px;</td><td>No</td></tr>
+<tr><td>I consent to my responses being used for analysis</td><td>Responses</td><td>J</td><td></td><td></td><td></td><td></td><td>Checkbox</td><td></td><td>Yes</td></tr>
+<tr><td>Form Footer</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Footer</td><td>Thank you for your feedback! Your responses help us improve.</td><td>No</td></tr>
+</table>
                               </div>          
                                         </div> <!-- END of final template section -->
                                     </div>
