@@ -335,6 +335,11 @@
                 border: 1px solid #ddd;
                 border-radius: 4px;
             }
+            header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
         </style>
         </head>
         <body>
@@ -1190,6 +1195,26 @@
     <li>📄 New field types: Signature, Captcha, ProgressBar</li>
   </ul>
 </div>
+                    <!-- ✅ EXPAND/COLLAPSE BUTTONS -->
+<div style="text-align:center; margin: 15px;">
+  <button class="feature-btn" onclick="expandAll()">Expand All</button>
+  <button class="feature-btn" onclick="collapseAll()">Collapse All</button>
+</div>
+
+<script>
+function expandAll() {
+  document.querySelectorAll('.accordion-collapse').forEach(el => el.classList.add('show'));
+}
+function collapseAll() {
+  document.querySelectorAll('.accordion-collapse').forEach(el => el.classList.remove('show'));
+}
+</script>
+
+
+
+<!-- ✅ REMOVE DUPLICATE <title> and <meta charset> tags from body -->
+<!-- These should remain only in <head>, not within .container -->
+
 
                         <footer>
                             <p>© 2025 DataMateApps | <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> | <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a></p>
