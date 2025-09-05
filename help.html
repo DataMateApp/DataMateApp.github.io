@@ -877,56 +877,65 @@
                                         </div>
                                         <div class="step">
   <h3>Dynamic Form App (Sidebar Interface)</h3>
-  <p>
-    This dynamic form provides an alternative interface for data entry, editing, and navigation directly within the spreadsheet sidebar.
-  </p>
-  <ol>
-    <li><strong>Launch the Form</strong>:
-      <ul>
-        <li>From the spreadsheet, go to <strong>Extensions > Apps Script</strong> and paste in the provided code.</li>
-        <li>Or if already installed, open from <strong>Dynamic Form > Open Form</strong> in the menu bar.</li>
-      </ul>
-    </li>
-    <li><strong>Initial Setup</strong>:
-      <ul>
-        <li>On first launch, a <code>Dropdowns</code> sheet will be created with headers <strong>A1: "Dropdown"</strong> and <strong>B1: "Options"</strong>.</li>
-        <li>You may define dropdown options here using comma-separated values (e.g., <code>Status,Active,Inactive</code>).</li>
-        <li>You may also define dropdown options here using sheet and range (e.g., <code>contacts!A:A</code>).</li>
-      </ul>
-    </li>
-    <li><strong>Form Behavior</strong>:
-      <ul>
-        <li>The form dynamically reads the first row of your active sheet as field headers.</li>
-        <li>Data validation or entries in the <code>Dropdowns</code> sheet are used to create select menus.</li>
-        
-      </ul>
-    </li>
-    <li><strong>Using the Form</strong>:
-      <ul>
-        <li>Fill out or edit entries in the form.</li>
-        <li>Click:
-          <ul>
-            <li><strong>Save</strong>: Add new or update existing records based on ID.</li>
-            <li><strong>New Record</strong>: Reset the form to blank state.</li>
-            <li><strong>Previous / Next</strong>: Navigate between existing visible rows.</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><strong>Form Data Handling</strong>:
-      <ul>
-        <li>Data is added directly to the active sheet as new rows.</li>
-        <li>Only visible rows are navigable—filtered rows are skipped.</li>
-        <li>Dropdowns configured either by in-sheet validation or the <code>Dropdowns</code> sheet are respected.</li>
-      </ul>
-    </li>
-    <li><strong>Error Handling</strong>:
-      <ul>
-        <li>Required fields (except ID) are validated before saving.</li>
-        <li>User-friendly messages show up in the sidebar (green for success, red for errors).</li>
-      </ul>
-    </li>
-  </ol>
+<p>
+  The Dynamic Form add-on provides a spreadsheet-integrated sidebar interface for data entry, editing, searching, and navigation. It dynamically builds form fields from the target sheet’s headers and supports dropdowns, validation, and record management.
+</p>
+<ol>
+  <li><strong>Launch the Form</strong>:
+    <ul>
+      <li>Once the script is installed, a <strong>Form</strong> menu appears in the spreadsheet menu bar.</li>
+      <li>Select <strong>📋 Dynamic Data Entry Form</strong> to open the sidebar interface.</li>
+    </ul>
+  </li>
+  <li><strong>Initial Setup</strong>:
+    <ul>
+      <li>On first launch, a <code>Dropdowns</code> sheet is created with headers: 
+        <strong>A1: "Dropdown"</strong>, <strong>B1: "Options"</strong>, and <strong>C1: "Target Sheet"</strong>.
+      </li>
+      <li>Define dropdowns by either:
+        <ul>
+          <li>Comma-separated values (e.g., <code>Status,Active,Inactive</code>).</li>
+          <li>Linking to a sheet/range (e.g., <code>Contacts!A:A</code>).</li>
+        </ul>
+      </li>
+      <li>Set the target sheet in <code>C2</code>. By default, the active sheet is used.</li>
+    </ul>
+  </li>
+  <li><strong>Form Behavior</strong>:
+    <ul>
+      <li>Form fields are generated from the first row of the target sheet (headers).</li>
+      <li>Column <strong>A ("ID")</strong> is treated as the unique identifier and is auto-handled by the app.</li>
+      <li>Dropdowns are created from in-sheet validation rules or the <code>Dropdowns</code> sheet.</li>
+    </ul>
+  </li>
+  <li><strong>Using the Form</strong>:
+    <ul>
+      <li><strong>Search by ID</strong>: Use the dropdown at the top of the sidebar to quickly find records.</li>
+      <li><strong>Form Actions</strong>:
+        <ul>
+          <li><strong>Save</strong>: Adds a new record or updates the selected one.</li>
+          <li><strong>New</strong>: Clears the form for entering a new record.</li>
+          <li><strong>Previous / Next</strong>: Navigate visible rows only (skipping filtered rows).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Form Data Handling</strong>:
+    <ul>
+      <li>New records are appended directly to the target sheet with an auto-generated or user-supplied ID.</li>
+      <li>Updates preserve formulas in cells while replacing values where applicable.</li>
+      <li>Search results and navigation are always limited to visible rows.</li>
+    </ul>
+  </li>
+  <li><strong>Error & Access Handling</strong>:
+    <ul>
+      <li>Users without edit access cannot open or use the form (an access denied message is shown).</li>
+      <li>Required fields (except ID) must be filled before saving.</li>
+      <li>Feedback messages appear in the sidebar (green for success, red for errors).</li>
+    </ul>
+  </li>
+</ol>
+
   
 </div>
 
@@ -1335,6 +1344,7 @@ document.querySelectorAll('#toc a').forEach(link => {
                     </script>
                 </body>
             </html>
+
 
 
 
