@@ -876,65 +876,82 @@
                                             <p>Share the URL. Data saves to the target sheet based on submission type. Dynamic table data is serialized as JSON in a single cell for <code>TableRow</code> submissions.</p>
                                         </div>
                                         <div class="step">
-  <h3>Dynamic Form App (Sidebar Interface)</h3>
+<h3>Dynamic Data Entry Form (Sidebar Interface)</h3>
 <p>
-  The Dynamic Form add-on provides a spreadsheet-integrated sidebar interface for data entry, editing, searching, and navigation. It dynamically builds form fields from the target sheet’s headers and supports dropdowns, validation, and record management.
+  The Dynamic Data Entry add-on provides a spreadsheet-integrated sidebar for entering, editing, searching, and navigating records. 
+  It automatically builds form fields from the target sheet’s headers, supports dropdowns from lists or ranges, and includes a configuration wizard for flexible setup.
 </p>
+
 <ol>
-  <li><strong>Launch the Form</strong>:
+  <li><strong>Launch the Add-on</strong>:
     <ul>
-      <li>Once the script is installed, a <strong>Form</strong> menu appears in the spreadsheet menu bar.</li>
-      <li>Select <strong>📋 Dynamic Data Entry Form</strong> to open the sidebar interface.</li>
+      <li>Once installed, a <strong>Form</strong> menu appears in the Google Sheets menu bar.</li>
+      <li>Select <strong>📋 Dynamic Data Entry Form</strong> to open the sidebar form interface.</li>
+      <li>Select <strong>📋 Configure Form</strong> to open the Setup Wizard sidebar for advanced settings.</li>
     </ul>
   </li>
-  <li><strong>Initial Setup</strong>:
+
+  <li><strong>Configuration Sheets</strong>:
     <ul>
-      <li>On first launch, a <code>Dropdowns</code> sheet is created with headers: 
-        <strong>A1: "Dropdown"</strong>, <strong>B1: "Options"</strong>, and <strong>C1: "Target Sheet"</strong>.
-      </li>
-      <li>Define dropdowns by either:
+      <li>On first launch, two helper sheets may be created:
         <ul>
-          <li>Comma-separated values (e.g., <code>Status,Active,Inactive</code>).</li>
-          <li>Linking to a sheet/range (e.g., <code>Contacts!A:A</code>).</li>
+          <li><code>Dropdowns</code> – for basic dropdown setup (field name and options).</li>
+          <li><code>Config</code> – for advanced settings like target sheet, header row, ID column, column blocks, and dropdown sources.</li>
         </ul>
       </li>
-      <li>Set the target sheet in <code>C2</code>. By default, the active sheet is used.</li>
+      <li>Settings in <code>Config</code> override defaults and support features like:
+        <ul>
+          <li><strong>Target Sheet</strong> – choose which sheet to connect.</li>
+          <li><strong>Header Row</strong> &amp; <strong>Data Start Row</strong> – specify structure of your table.</li>
+          <li><strong>ID Column</strong> – define the column used for record IDs (auto-detected if not set).</li>
+          <li><strong>Column Blocks</strong> – group columns into logical sections.</li>
+          <li><strong>Dropdowns</strong> – set options either by comma-separated lists or by linking to a <code>Sheet!Range</code>.</li>
+        </ul>
+      </li>
     </ul>
   </li>
+
   <li><strong>Form Behavior</strong>:
     <ul>
-      <li>Form fields are generated from the first row of the target sheet (headers).</li>
-      <li>Column <strong>A ("ID")</strong> is treated as the unique identifier and is auto-handled by the app.</li>
-      <li>Dropdowns are created from in-sheet validation rules or the <code>Dropdowns</code> sheet.</li>
+      <li>Fields are generated dynamically from the target sheet’s headers (with ID always placed first).</li>
+      <li>ID can be in any column (not restricted to column A).</li>
+      <li>ID fields are auto-handled by the app: existing IDs cannot be duplicated, and new IDs are auto-generated if left blank.</li>
+      <li>Dropdowns can be defined in the Config sheet or detected from data validation rules.</li>
     </ul>
   </li>
+
   <li><strong>Using the Form</strong>:
     <ul>
-      <li><strong>Search by ID</strong>: Use the dropdown at the top of the sidebar to quickly find records.</li>
+      <li><strong>Search by ID</strong>: Quickly look up records with the search box at the top of the sidebar.</li>
       <li><strong>Form Actions</strong>:
         <ul>
-          <li><strong>Save</strong>: Adds a new record or updates the selected one.</li>
+          <li><strong>Save</strong>: Adds a new record or updates the current one (preserving formulas where applicable).</li>
           <li><strong>New</strong>: Clears the form for entering a new record.</li>
-          <li><strong>Previous / Next</strong>: Navigate visible rows only (skipping filtered rows).</li>
+          <li><strong>Previous / Next</strong>: Navigate between visible records (skipping filtered rows).</li>
+          <li><strong>Delete</strong>: Remove a record by ID (if enabled).</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><strong>Form Data Handling</strong>:
+
+  <li><strong>Data Handling</strong>:
     <ul>
-      <li>New records are appended directly to the target sheet with an auto-generated or user-supplied ID.</li>
-      <li>Updates preserve formulas in cells while replacing values where applicable.</li>
-      <li>Search results and navigation are always limited to visible rows.</li>
+      <li>New records are appended to the target sheet, with IDs automatically assigned if not provided.</li>
+      <li>Updates preserve formulas in existing cells and only replace values as needed.</li>
+      <li>Visible records and searches respect filters applied in the sheet.</li>
+      <li>All formula cells can be auto-protected from accidental edits via the <code>protectAllFormulaCells()</code> function.</li>
     </ul>
   </li>
+
   <li><strong>Error & Access Handling</strong>:
     <ul>
-      <li>Users without edit access cannot open or use the form (an access denied message is shown).</li>
-      <li>Required fields (except ID) must be filled before saving.</li>
-      <li>Feedback messages appear in the sidebar (green for success, red for errors).</li>
+      <li>Users without edit access cannot use the form (an <strong>Access Denied</strong> message is shown).</li>
+      <li>Required fields must be filled before saving (except the ID field, which can be left blank for auto-generation).</li>
+      <li>Feedback messages are shown in the sidebar (green for success, red for errors).</li>
     </ul>
   </li>
 </ol>
+
 
   
 </div>
@@ -1344,6 +1361,7 @@ document.querySelectorAll('#toc a').forEach(link => {
                     </script>
                 </body>
             </html>
+
 
 
 
