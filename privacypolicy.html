@@ -260,7 +260,7 @@
 
         <h2>Data We Collect and How We Use It</h2>
         <div class="section">
-            <p>DataMateApps and AddressBlock collect and process data to provide their core functionalities, such as saving records, managing contacts, creating forms, and generating address blocks. We also collect limited data for analytics to monitor usage and improve our services. Below is a detailed breakdown of the data we access and how it’s used:</p>
+            <p>DataMateApps collect and process data to provide their core functionalities, such as saving records, managing contacts, creating forms, and generating address blocks. We also collect limited data for analytics to monitor usage and improve our services. Below is a detailed breakdown of the data we access and how it’s used:</p>
             <ul>
                 <li><strong>Google Sheets™ Data</strong>: We access, create, edit, and delete spreadsheets to store and organize data, such as records, templates (e.g., inventory, timesheets, purchase orders), contact lists, and usage counters. This enables features like saving form submissions, generating address blocks, and tracking dataset and record creation.</li>
                 <li><strong>Google Drive™ Files</strong>: (Only used in open-source code for UploadFile and Signature form fields when deployed as web app.) We access, create, edit, and delete files in Google Drive™ to store uploads (e.g., images, PDFs) and signatures collected via forms. This supports features like attaching files to records or storing form responses.</li>
@@ -287,6 +287,7 @@
         <p><strong>https://www.googleapis.com/auth/script.send_mail</strong>: To send notifications to send emails via Google Apps Script when a form is submitted. A narrower scope wouldn’t suffice because this scope ensures reliable email delivery.</p>
         <p><strong>https://www.googleapis.com/auth/gmail.send</strong>: This scope is essential for the core functionality of DataMateApps, specifically the "Mail It" feature, which enables users to send emails directly from a Google™ Spreadsheet. This feature allows users to select a range of spreadsheet data, format it as an HTML table, and send it as an email to recipients listed in a "contacts" sheet (Column P for email addresses, Column A for names). The emails are sent using the Gmail™App.sendEmail method in Google Apps Script™, which constructs and sends HTML-formatted emails based on user inputs from a sidebar interface.</p>
         <p><strong>https://www.googleapis.com/auth/script.external_request</strong>: Allows AddressBlock to connect to external services. We use this to fetch address-related data (e.g., via geocoding APIs) to enhance address accuracy. A narrower scope wouldn’t suffice because external data integration is critical for the feature.</p>
+        <p><strong>https://www.googleapis.com/auth/script.scriptapp</strong>: Allows SnapSync to programmatically manage triggers for automated syncs and scheduled tasks. A narrower scope wouldn’t suffice because automated syncs and scheduling is critical for the feature.</p>
 
 
     </div>
@@ -480,5 +481,6 @@
     </script>
 </body>
 </html>
+
 
 
