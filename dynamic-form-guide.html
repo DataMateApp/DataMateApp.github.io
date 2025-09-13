@@ -1,0 +1,218 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dynamic Data Entry Form — User Guide</title>
+    <style>
+        body {
+            font-family: Inter, Roboto, Arial, sans-serif;
+            max-width: 880px;
+            margin: 28px auto;
+            padding: 20px;
+            color: #111;
+            line-height: 1.45
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 6px
+        }
+
+        p.lead {
+            color: #444;
+            margin-top: 0
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03)
+        }
+
+        ul {
+            padding-left: 18px
+        }
+
+        ol {
+            padding-left: 18px
+        }
+
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.95em
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px
+        }
+
+        th, td {
+            border: 1px solid #eaeaea;
+            padding: 8px;
+            text-align: left
+        }
+
+        th {
+            background: #fafafa
+        }
+
+        .note {
+            background: #fff8e1;
+            border-left: 4px solid #ffd54f;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 12px
+        }
+
+        .ok {
+            color: green
+        }
+
+        .danger {
+            color: #b00020
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none
+        }
+
+        footer {
+            margin-top: 18px;
+            font-size: 0.9em;
+            color: #666
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Data Entry Form — Step‑by‑step Guide</h1>
+    <p class="lead">This guide explains how to configure and use the Dynamic Data Entry Form add-on (the app attached). It walks non‑technical users through setup, adding records, searching, editing, dropdown configuration, and troubleshooting.</p>
+
+    <div class="card">
+        <h2>Quick start — what this app does</h2>
+        <ul>
+            <li>Generates a dynamic form UI that matches the headers in a target sheet.</li>
+            <li>Supports creating new records and updating existing rows in the target sheet.</li>
+            <li>Auto-detects field types (text, number, email, date, url, select) and builds appropriate inputs.</li>
+            <li>Supports dropdown options from inline values or another sheet/range configured in the <code>Config</code> sheet.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>1) Open the add‑on</h2>
+        <ol>
+            <li>Open the Google Sheet where you want the form to write/read data.</li>
+            <li>From the menu: <code>Form → 📋 Dynamic Data Entry Form</code> to open the form sidebar.</li>
+            <li>To configure the form behavior, choose <code>Form → 🛠️ Configure Form</code> (Setup Wizard).</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>2) Configure the target sheet (Setup Wizard)</h2>
+        <p>The Setup Wizard writes settings into a <code>Config</code> sheet. Follow these steps:</p>
+        <ol>
+            <li>Select <strong>Target Sheet</strong> — the sheet that holds your table (headers + data).</li>
+            <li>Set <strong>Header Row</strong> — the row that has column names (usually 1).</li>
+            <li>Set <strong>Data Start Row</strong> — the first row that contains data (usually 2).</li>
+            <li>Set <strong>ID Column</strong> — the numeric column that contains a unique ID (1=A, 2=B...). If you don't have IDs, the form will auto-generate numeric IDs when adding records.</li>
+            <li>Optionally set <strong>Column(s)</strong> (`colRanges`) to limit which columns the form uses. Examples: <code>B,C,E:H</code>.</li>
+            <li>
+                Under <strong>Dropdown Fields</strong>, add rows for any field you want to be a <code>select</code>. Put either comma-separated options (e.g., <code>Red,Green,Blue</code>) or a sheet reference like <code>Lists!A:A</code> to pull options from another sheet.
+            </li>
+            <li>Click <strong>💾 Save Configuration</strong> and test with <strong>🧪 Test Configuration</strong> to ensure the app can read headers and sample rows.
+        </ol>
+        <p class="note">The app normalizes column blocks and supports specifying single columns (e.g., <code>C</code>) or ranges (<code>E:H</code>) when using Column Ranges.</p>
+    </div>
+
+    <div class="card">
+        <h2>3) How the dynamic form works</h2>
+        <ul>
+            <li>When the form opens it calls the spreadsheet to read <code>Config</code> and target sheet headers using <code>getSheetInfo()</code>.</li>
+            <li>Headers are converted into fields. Field types are detected from header names and sample data (e.g., headers containing "date" become date inputs; URLs, images, video become URL inputs).</li>
+            <li>Dropdown fields use configured options (from Config or another sheet).</li>
+            <li>
+                ID fields are read-only for existing records and auto-assigned when adding new records (incremental numbers).
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4) Add a new record</h2>
+        <ol>
+            <li>Click <strong>New Record</strong> (or clear the form) to enable adding mode.</li>
+            <li>Fill required fields (marked *). ID field may be left blank — the app will auto-generate the next numeric ID.</li>
+            <li>
+                Click <strong>Save Record</strong>. The addRecord function appends a new row and returns the created ID and row number.
+            </li>
+            <li>After saving the form reloads visible records so you can navigate to the new row.</li>
+        </ol>
+        <p class="note">If you try to add a record with an ID that already exists, the app will return an error and ask you to pick another ID.</p>
+    </div>
+
+    <div class="card">
+        <h2>5) Edit an existing record</h2>
+        <ol>
+            <li>Use the <strong>Search by ID</strong> dropdown and click <strong>Search</strong>, or use the navigation buttons ← / → to move between records.</li>
+            <li>Edit fields (ID field will be disabled for existing rows).</li>
+            <li>Click <strong>Save Record</strong>. The updateRecord function writes only changed values and preserves existing formulas in the row.
+        </ol>
+        <p class="note">If an existing cell in the row contains a formula, the app keeps the formula instead of overwriting it with a blank or typed value.</p>
+    </div>
+
+    <div class="card">
+        <h2>6) Working with dropdowns</h2>
+        <ol>
+            <li>Open Setup Wizard → Dropdown Fields to add dropdown configuration.</li>
+            <li>You can provide options as comma-separated values or point to a sheet/range (example: <code>Lists!A:A</code>).</li>
+            <li>If the dropdown field contains a value that's not currently in the options list, the form automatically adds it as an option (so editing won't lose values already in the sheet).</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>7) Searching & navigation</h2>
+        <ul>
+            <li>The ID dropdown is populated from the target sheet's ID column using <code>getColumnAValues()</code>.</li>
+            <li>Search will fetch the row with <code>getRecordById(id)</code> and display it in the form. If found, it merges the returned record into the in-memory list.</li>
+            <li>Use Previous/Next buttons to navigate through the loaded visible records (getVisibleRecords).
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>8) Troubleshooting & common errors</h2>
+        <ul>
+            <li><strong>"Target sheet does not exist"</strong> — Ensure the sheet name selected in Config matches exactly (case-sensitive).</li>
+            <li><strong>Missing headers</strong> — Confirm header row contains column names and that Header Row is set correctly in Config.</li>
+            <li><strong>Permissions</strong> — Make sure your Google account can edit the spreadsheet.</li>
+            <li><strong>ID conflicts</strong> — If you see an "ID already exists" error when adding, choose a unique ID or let the app auto-generate one.</li>
+            <li><strong>Dropdown values not found</strong> — If you referenced another sheet (e.g., <code>Lists!A:A</code>), verify the sheet exists and contains non-empty values.</li>
+            <li><strong>Form fields missing or misaligned</strong> — Check Column Ranges in Config: if you limited columns, confirm ranges cover the headers you want the form to show.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>9) Admin tips (for maintainers)</h2>
+        <ul>
+            <li>Use <code>createConfigSheet()</code> to auto-create a starter Config sheet if needed.</li>
+            <li>To include only certain blocks/columns in the form, set <code>Column Ranges</code> to comma-separated column blocks (e.g., <code>B,C,F:H</code>).</li>
+            <li>To force a field to be treated as URL, name the header containing <code>image</code> or <code>video</code> — the app forces URL type for those fields.</li>
+            <li>When updating the script, keep the client HTML input IDs synced with sanitized header names; the form uses a sanitize utility to map header → element id.
+        </ul>
+    </div>
+
+    <footer>
+        <p>Copy this HTML into a file (e.g., <code>dynamic-form-guide.html</code>) for printing or sharing with non-technical users.</p>
+    </footer>
+</body>
+</html>
