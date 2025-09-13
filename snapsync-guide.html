@@ -1,0 +1,198 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SnapSync — Add Mapping Guide</title>
+    <style>
+        body {
+            font-family: Inter, Roboto, Arial, sans-serif;
+            max-width: 880px;
+            margin: 32px auto;
+            line-height: 1.45;
+            color: #111;
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 8px
+        }
+
+        p.lead {
+            color: #444;
+            margin-top: 0
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 14px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03)
+        }
+
+        ol {
+            padding-left: 20px
+        }
+
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.95em
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px
+        }
+
+        th, td {
+            border: 1px solid #eaeaea;
+            padding: 8px;
+            text-align: left
+        }
+
+        th {
+            background: #fafafa
+        }
+
+        .example {
+            font-size: 0.95em;
+            color: #222
+        }
+
+        .note {
+            background: #fff8e1;
+            border-left: 4px solid #ffd54f;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 12px
+        }
+
+        .ok {
+            color: green
+        }
+
+        .danger {
+            color: #b00020
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none
+        }
+
+        .muted {
+            color: #666;
+            font-size: 0.95em
+        }
+
+        footer {
+            margin-top: 18px;
+            font-size: 0.9em;
+            color: #666
+        }
+    </style>
+</head>
+<body>
+    <h1>SnapSync — How to Add Multiple Source Spreadsheets (Step-by-step)</h1>
+    <p class="lead">Quick guide for non‑technical users: follow these steps inside the SnapSync sidebar to add, edit, and run mappings that pull data from multiple source spreadsheets into your dashboard.</p>
+
+    <div class="card">
+        <h2>Before you start</h2>
+        <ul>
+            <li>Open the <strong>Dashboard spreadsheet</strong> where SnapSync is installed.</li>
+            <li>Open the SnapSync sidebar from the menu: <code>SnapSync (Camera + Sync) → 📋 Open Sidebar</code>.</li>
+            <li>Make sure the spreadsheets you want to pull from are accessible (shared) to the account you're signed-in with.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>1) Add a new mapping</h2>
+        <ol>
+            <li>Open the <strong>Sync Manager</strong> tab in the SnapSync sidebar.</li>
+            <li>Fill the <strong>Source Spreadsheet ID / URL</strong> field by pasting the whole URL or just the ID (the long string in the URL between <code>/d/</code> and <code>/edit</code>).</li>
+            <li>
+                Enter the <strong>Source Range</strong>. Examples:
+                <ul>
+                    <li><code>Sheet1!A1:G100</code> — specific sheet and rows</li>
+                    <li><code>A1:G</code> — range without sheet name (assumes first sheet or current sheet; prefer including the sheet name)</li>
+                </ul>
+            </li>
+            <li>Enter the <strong>Target Range</strong> inside the Dashboard workbook. Format: <code>SheetName!A1</code>. SnapSync writes starting at that cell and expands as needed.</li>
+            <li>Optional: Add a short <strong>Notes</strong> description so you can remember what the mapping does.</li>
+            <li>Set <strong>Enabled</strong> to <code>TRUE</code> (or choose FALSE to add it disabled).</li>
+            <li>Click <strong>➕ Add Mapping</strong>. You should see a confirmation in the status area and the mapping added to the table below.</li>
+        </ol>
+        <p class="note"><strong>Tip:</strong> If you paste a full spreadsheet URL, SnapSync extracts the ID automatically. If you get a "Target sheet not found" error, create the target sheet first or correct the sheet name in the target range.</p>
+    </div>
+
+    <div class="card">
+        <h2>2) Run and verify a mapping</h2>
+        <ol>
+            <li>In the mapping table, find the mapping you added.</li>
+            <li>Click the <strong>▶</strong> button to run that single mapping. Watch the status line for success or error messages.</li>
+            <li>
+                Open the target sheet in your Dashboard to confirm the data was copied successfully (values only — formulas will be copied as values).
+            </li>
+        </ol>
+        <p class="muted">If the source range includes blank trailing rows, SnapSync trims them automatically before copying.</p>
+    </div>
+
+    <div class="card">
+        <h2>3) Run all mappings (batch update)</h2>
+        <ol>
+            <li>Click <strong>🔄 Run All Syncs</strong> from the Sync Manager.</li>
+            <li>SnapSync will iterate through every enabled mapping and copy each source into its configured target.</li>
+            <li>Use the mapping table to enable/disable individual mappings by toggling the checkbox — disabled mappings will be skipped when running all syncs.</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>4) Schedule automatic syncs</h2>
+        <ol>
+            <li>Choose a frequency from the <strong>Run every</strong> dropdown (note: add-on triggers require ≥ 1 hour intervals).</li>
+            <li>Click <strong>⏰ Save Schedule</strong>. SnapSync will set up a time‑based trigger to run all enabled mappings at that interval.</li>
+            <li>To remove or change the schedule, set a new frequency; SnapSync will delete the old trigger and create a new one.</li>
+        </ol>
+        <p class="note">If you need near-real-time updates, you can also use the Camera Tool snapshots which sync on edit within the current spreadsheet. Cross-spreadsheet auto-syncs via triggers are limited to hourly or longer intervals for add-ons.</p>
+    </div>
+
+    <div class="card">
+        <h2>Example SyncConfig table</h2>
+        <p class="example">Paste this example into the <code>SyncConfig</code> sheet (or add it via the sidebar):</p>
+        <table>
+            <thead>
+                <tr><th>Enabled</th><th>Source ID/URL</th><th>Source Range</th><th>Target Range</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>TRUE</td><td>https://docs.google.com/spreadsheets/d/<strong>1a2b3cA</strong>/edit</td><td>Sales!A1:F200</td><td>Sales!A1</td><td>Sales data from Region A</td></tr>
+                <tr><td>TRUE</td><td>https://docs.google.com/spreadsheets/d/<strong>4d5e6fB</strong>/edit</td><td>Inventory!A1:D</td><td>Inventory!A1</td><td>Inventory summary</td></tr>
+                <tr><td>TRUE</td><td>7g8h9iC</td><td>Tickets!A1:G200</td><td>Support!A1</td><td>Customer tickets</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Troubleshooting & common errors</h2>
+        <ul>
+            <li><strong>"Target sheet not found"</strong> — Make sure the sheet name in the Target Range exists in your dashboard workbook (case-sensitive).</li>
+            <li><strong>Permissions errors</strong> — Confirm the signed-in Google account has at least view access to the source spreadsheet. If not, share the sheet or use an account that has access.</li>
+            <li><strong>Invalid range</strong> — Use a valid A1 notation (include sheet name where possible, e.g. <code>Sheet1!A1:G</code>).</li>
+            <li><strong>Empty results</strong> — SnapSync trims trailing blank rows. If your entire range is blank, nothing will be copied.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Need this as a printable one-page cheat-sheet or copied into your project docs? Copy the HTML above into a new file and save as <code>snapsync-guide.html</code>.</p>
+    </footer>
+</body>
+</html>
