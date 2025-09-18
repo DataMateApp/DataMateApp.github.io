@@ -87,30 +87,33 @@
 
    .feature-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile default: 1 column */
+  grid-template-columns: 1fr; /* Mobile default */
   gap: 40px;
-  max-width: 1600px; /* expand grid container */
+  max-width: 1600px;
   margin: 0 auto;
+  justify-content: center; /* center grid as a whole */
 }
 
-/* Tablet: 2 wide columns */
+/* Tablet: 2 columns */
 @media (min-width: 768px) {
   .feature-grid {
     grid-template-columns: repeat(2, minmax(500px, 1fr));
+    justify-content: center;
   }
 }
 
-/* Desktop: keep them BIG */
+/* Desktop: 2 BIG centered boxes */
 @media (min-width: 1024px) {
   .feature-grid {
-    grid-template-columns: repeat(2, minmax(600px, 1fr));
-    justify-content: center; /* center grid in page */
+    grid-template-columns: repeat(2, minmax(600px, 700px));
+    justify-content: center; /* keep them centered */
   }
 }
+
 .feature-box {
   background: #f9f9f9;
   border-radius: 12px;
-  padding: 40px; /* more breathing room */
+  padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -344,6 +347,7 @@
   </script>
 </body>
 </html>
+
 
 
 
