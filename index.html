@@ -117,6 +117,20 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
+    /* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Desktop: keep 2 columns instead of 3 */
+@media (min-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
     .feature-btn {
       display: inline-block;
       background-color: #e8491d;
@@ -343,3 +357,4 @@
   </script>
 </body>
 </html>
+
