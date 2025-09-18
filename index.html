@@ -14,9 +14,10 @@
 
         .container {
     width: 95%;
-    max-width: 1400px;
+    max-width: 1400px; /* keeps them from stretching too much */
     margin: auto;
 }
+
         header {
             background: #35424a;
             color: #ffffff;
@@ -86,15 +87,9 @@
 
 .feature-grid {
     display: grid;
-    grid-template-columns: 1fr; /* default: single column on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* wider cards */
     gap: 40px;
     justify-content: center;
-}
-
-@media (min-width: 768px) {
-    .feature-grid {
-        grid-template-columns: 1fr 1fr; /* 2 columns on tablet and up */
-    }
 }
 
 .feature-box {
@@ -338,8 +333,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
