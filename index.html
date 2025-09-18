@@ -14,7 +14,7 @@
 
         .container {
     width: 95%;
-    max-width: 1200px;
+    max-width: 1400px; /* keep from stretching edge-to-edge */
     margin: auto;
 }
 
@@ -110,27 +110,31 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+/* Button styling */
 .feature-btn {
-    background-color: #e8491d !important; /* force the red */
-    color: white;
+    background-color: #e8491d !important;
+    color: #ffffff !important;
     padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     border: none;
     display: inline-block;
     margin-bottom: 15px;
+    -webkit-appearance: none; /* fix for iOS/Android default styles */
+    appearance: none;
     transition: background-color 0.2s ease;
 }
 
-/* Center buttons on mobile and stop them from stretching full width */
-@media (max-width: 767px) {
-    .feature-btn {
-        width: auto;
-        max-width: 90%;
-    }
+/* Ensure tap highlight doesn't turn gray */
+.feature-btn:active,
+.feature-btn:focus {
+    background-color: #cf3e16 !important;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .feature-btn:hover {
@@ -349,6 +353,7 @@
     </script>
 </body>
 </html>
+
 
 
 
