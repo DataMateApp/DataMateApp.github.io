@@ -109,41 +109,53 @@
 }
 
 
+/* Each box */
 .feature-box {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.feature-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
+/* Button (using <a> for navigation) */
 .feature-btn {
-    all: unset; /* resets all browser default styles */
-    display: inline-block;
-    background-color: #e8491d;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 16px;
-    padding: 12px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: 15px;
-    transition: background-color 0.2s ease;
+  display: inline-block;
+  background-color: #e8491d;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.2s ease;
 }
 
-.feature-btn:hover,
-.feature-btn:focus,
-.feature-btn:active {
-    background-color: #cf3e16;
-    color: #ffffff;
+.feature-btn:hover {
+  background-color: #cf3e16;
 }
+</style>
+
+<div class="feature-grid">
+  <div class="feature-box">
+    <h3>Feature 1</h3>
+    <p>Short description of feature 1 goes here.</p>
+    <a href="#" class="feature-btn">Learn More</a>
+  </div>
+
+  <div class="feature-box">
+    <h3>Feature 2</h3>
+    <p>Short description of feature 2 goes here.</p>
+    <a href="#" class="feature-btn">Learn More</a>
+  </div>
+
+  <div class="feature-box">
+    <h3>Feature 3</h3>
+    <p>Short description of feature 3 goes here.</p>
+    <a href="#" class="feature-btn">Learn More</a>
 
 
         .cta {
@@ -357,6 +369,7 @@
     </script>
 </body>
 </html>
+
 
 
 
