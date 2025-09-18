@@ -93,9 +93,11 @@
 
 /* Tablet and up: 2 wide cards per row */
 @media (min-width: 768px) {
-    .feature-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .feature-grid {
+    grid-template-columns: 1fr 1fr; /* 2 wide cards */
+  }
+}
+
 
 .feature-box {
     background: #fafafa;
@@ -110,35 +112,27 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Button styling */
 .feature-btn {
-    background-color: #e8491d !important;
-    color: #ffffff !important;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
+    all: unset; /* resets all browser default styles */
+    display: inline-block;
+    background-color: #e8491d;
+    color: #ffffff;
+    font-family: inherit;
     font-size: 16px;
+    padding: 12px 24px;
     border-radius: 6px;
     cursor: pointer;
-    border: none;
-    display: inline-block;
+    text-align: center;
+    text-decoration: none;
     margin-bottom: 15px;
-    -webkit-appearance: none; /* fix for iOS/Android default styles */
-    appearance: none;
     transition: background-color 0.2s ease;
 }
 
-/* Ensure tap highlight doesn't turn gray */
-.feature-btn:active,
-.feature-btn:focus {
-    background-color: #cf3e16 !important;
-    outline: none;
-    box-shadow: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.feature-btn:hover {
+.feature-btn:hover,
+.feature-btn:focus,
+.feature-btn:active {
     background-color: #cf3e16;
+    color: #ffffff;
 }
 
 
@@ -353,6 +347,7 @@
     </script>
 </body>
 </html>
+
 
 
 
