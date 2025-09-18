@@ -14,7 +14,7 @@
 
         .container {
     width: 95%;
-    max-width: 1400px; /* keeps them from stretching too much */
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -87,10 +87,15 @@
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* wider cards */
-    gap: 40px;
-    justify-content: center;
+    grid-template-columns: 1fr; /* default: single column for mobile */
+    gap: 30px;
 }
+
+/* Tablet and up: 2 wide cards per row */
+@media (min-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
 .feature-box {
     background: #fafafa;
@@ -333,6 +338,7 @@
     </script>
 </body>
 </html>
+
 
 
 
