@@ -6,231 +6,233 @@
   <title>DataMateApps - Simplify Your Data Management</title>
   <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
+.container {
+  width: 90%;
+  max-width: 1100px; /* reduced from 1400px */
+  margin: auto;
+}
+
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding: 10px 0;
+  border-bottom: #e8491d 3px solid;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 5px;
+  display: inline-block;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+header nav {
+  display: none;
+}
+
+.highlight, .current a {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #cccccc;
+  font-weight: bold;
+}
+
+.showcase {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('images/datamanagement.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+  padding: 60px 20px;
+}
+
+.showcase h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.showcase p {
+  font-size: 1.4em;
+  max-width: 700px; /* narrowed slightly */
+  margin: 0 auto;
+}
+
+.features {
+  padding: 40px 0;
+  text-align: center;
+  background: #ffffff;
+}
+
+.features h2 {
+  color: #35424a;
+  margin-bottom: 30px;
+}
+
+/* === Feature Grid === */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile default */
+  gap: 30px;
+  max-width: 1100px; /* reduced from 1600px */
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+}
+
+/* Desktop: 2 centered columns */
+@media (min-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(450px, 1fr));
+  }
+}
+
+.feature-box {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feature-btn {
+  display: inline-block;
+  background-color: #e8491d;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.feature-btn:hover {
+  background-color: #cf3e16;
+}
+
+.cta {
+  background: #35424a;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  background: #e8491d;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.cta a:hover {
+  background: #ffffff;
+  color: #e8491d;
+}
+
+footer {
+  padding: 20px 0;
+  margin-top: 20px;
+  color: #000000;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  margin: 10px 0 0 10px;
+}
+
+.mobile-nav {
+  display: none;
+  background: #35424a;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #e8491d;
+}
+
+/* Tablet and up refinements */
+@media (min-width: 768px) {
   .container {
-    width: 95%;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    border-bottom: #e8491d 3px solid;
-  }
-
-  header a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    padding: 5px;
-    display: inline-block;
+    width: 85%; /* tighter on tablet */
   }
 
   header h1 {
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
+    font-size: 36px;
+    text-align: left;
   }
 
   header nav {
-    display: none;
+    display: block;
+    text-align: right;
   }
 
-  .highlight, .current a {
-    color: #e8491d;
-    font-weight: bold;
-  }
-
-  header a:hover {
-    color: #cccccc;
-    font-weight: bold;
-  }
-
-  .showcase {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
-    background-size: cover;
-    text-align: center;
-    color: #ffffff;
-    padding: 60px 20px;
+  header a {
+    font-size: 16px;
+    padding: 10px;
   }
 
   .showcase h1 {
     font-size: 3em;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .showcase p {
-    font-size: 1.4em;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .features {
-    padding: 40px 0;
-    text-align: center;
-    background: #ffffff;
-  }
-
-  .features h2 {
-    color: #35424a;
-    margin-bottom: 30px;
-  }
-
-  /* === Feature Grid === */
-  .feature-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile default */
-    gap: 40px;
-    max-width: 1600px;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  /* Tablet: 2 columns */
-  @media (min-width: 768px) {
-    .feature-grid {
-      grid-template-columns: repeat(2, minmax(500px, 1fr));
-    }
-  }
-
-  /* Desktop: 2 wide centered boxes */
-  @media (min-width: 1024px) {
-    .feature-grid {
-      grid-template-columns: repeat(2, minmax(600px, 700px));
-    }
-  }
-
-  .feature-box {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  .feature-btn {
-    display: inline-block;
-    background-color: #e8491d;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-    transition: background-color 0.2s ease;
-  }
-
-  .feature-btn:hover {
-    background-color: #cf3e16;
-  }
-
-  .cta {
-    background: #35424a;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  .cta a {
-    display: inline-block;
-    background: #e8491d;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px 0;
-  }
-
-  .cta a:hover {
-    background: #ffffff;
-    color: #e8491d;
-  }
-
-  footer {
-    padding: 20px 0;
-    margin-top: 20px;
-    color: #000000;
-    background-color: #f4f4f4;
-    text-align: center;
+    font-size: 1.5em;
   }
 
   .menu-toggle {
-    display: block;
-    font-size: 2em;
-    background: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 0;
-    margin: 10px 0 0 10px;
+    display: none;
   }
 
   .mobile-nav {
     display: none;
-    background: #35424a;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
   }
+}
 
-  .mobile-nav a {
-    display: block;
-    padding: 10px 0;
-    text-align: center;
-    border-top: 1px solid #e8491d;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      width: 80%;
-    }
-
-    header h1 {
-      font-size: 36px;
-      text-align: left;
-    }
-
-    header nav {
-      display: block;
-      text-align: right;
-    }
-
-    header a {
-      font-size: 16px;
-      padding: 10px;
-    }
-
-    .showcase h1 {
-      font-size: 3em;
-    }
-
-    .showcase p {
-      font-size: 1.5em;
-    }
-
-    /* removed float-based feature-box layout */
-    .menu-toggle {
-      display: none;
-    }
-
-    .mobile-nav {
-      display: none;
-    }
-  }
 </style>
 
 </head>
@@ -344,6 +346,7 @@
   </script>
 </body>
 </html>
+
 
 
 
