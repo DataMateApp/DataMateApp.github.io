@@ -111,21 +111,32 @@
 }
 
 .feature-btn {
-    background-color: #e8491d;
+    background-color: #e8491d !important; /* force the red */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    display: inline-block;
     margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+/* Center buttons on mobile and stop them from stretching full width */
+@media (max-width: 767px) {
+    .feature-btn {
+        width: auto;
+        max-width: 90%;
+    }
 }
 
 .feature-btn:hover {
     background-color: #cf3e16;
 }
+
 
         .cta {
             background: #35424a;
@@ -338,6 +349,7 @@
     </script>
 </body>
 </html>
+
 
 
 
