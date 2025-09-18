@@ -87,36 +87,35 @@
 
    .feature-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile default: single column */
+  grid-template-columns: 1fr; /* Mobile default: 1 column */
   gap: 40px;
-  max-width: 1400px; /* widen overall grid */
+  max-width: 1600px; /* expand grid container */
   margin: 0 auto;
 }
 
-/* Tablet: 2 columns */
+/* Tablet: 2 wide columns */
 @media (min-width: 768px) {
   .feature-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(500px, 1fr));
   }
 }
 
-/* Desktop: keep 2 columns (wider layout, centered) */
+/* Desktop: keep them BIG */
 @media (min-width: 1024px) {
   .feature-grid {
-    grid-template-columns: 1fr 1fr; /* exactly 2 wide */
-    justify-content: center;
+    grid-template-columns: repeat(2, minmax(600px, 1fr));
+    justify-content: center; /* center grid in page */
   }
 }
-
 .feature-box {
   background: #f9f9f9;
   border-radius: 12px;
-  padding: 20px;
+  padding: 40px; /* more breathing room */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
     .feature-btn {
@@ -345,6 +344,7 @@
   </script>
 </body>
 </html>
+
 
 
 
