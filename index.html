@@ -1,268 +1,243 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Simplify Your Data Management</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataMateApps - Simplify Your Data Management</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
 
-        .container {
-    width: 95%;
-    max-width: 1400px; /* keep from stretching edge-to-edge */
-    margin: auto;
-}
+    .container {
+      width: 95%;
+      max-width: 1400px;
+      margin: auto;
+    }
 
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            border-bottom: #e8491d 3px solid;
-        }
+    header {
+      background: #35424a;
+      color: #ffffff;
+      padding: 10px 0;
+      border-bottom: #e8491d 3px solid;
+    }
 
-            header a {
-                color: #ffffff;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 14px;
-                padding: 5px;
-                display: inline-block;
-            }
+    header a {
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      padding: 5px;
+      display: inline-block;
+    }
 
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-                text-align: center;
-            }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      text-align: center;
+    }
 
-            header nav {
-                display: none;
-            }
+    header nav {
+      display: none;
+    }
 
-        .highlight, .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
+    .highlight, .current a {
+      color: #e8491d;
+      font-weight: bold;
+    }
 
-        header a:hover {
-            color: #cccccc;
-            font-weight: bold;
-        }
+    header a:hover {
+      color: #cccccc;
+      font-weight: bold;
+    }
 
-        .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            padding: 60px 20px;
-        }
+    .showcase {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      color: #ffffff;
+      padding: 60px 20px;
+    }
 
-            .showcase h1 {
-                font-size: 3em;
-                margin-bottom: 15px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
+    .showcase h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-            .showcase p {
-                font-size: 1.4em;
-                max-width: 800px;
-                margin: 0 auto;
-            }
+    .showcase p {
+      font-size: 1.4em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .features {
-    padding: 40px 0;
-    text-align: center;
-    background: #ffffff;
-}
+    .features {
+      padding: 40px 0;
+      text-align: center;
+      background: #ffffff;
+    }
 
-.features h2 {
-    color: #35424a;
-    margin-bottom: 30px;
-}
+    .features h2 {
+      color: #35424a;
+      margin-bottom: 30px;
+    }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* 1 column on mobile */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-/* Tablet: 2 columns */
-@media (min-width: 768px) {
-  .feature-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+    @media (min-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
-/* Desktop: 3 columns */
-@media (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+    @media (min-width: 1024px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
 
+    .feature-box {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-/* Each box */
-.feature-box {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+    .feature-btn {
+      display: inline-block;
+      background-color: #e8491d;
+      color: #ffffff;
+      font-size: 16px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: background-color 0.2s ease;
+    }
 
-/* Button (using <a> for navigation) */
-.feature-btn {
-  display: inline-block;
-  background-color: #e8491d;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 15px;
-  transition: background-color 0.2s ease;
-}
+    .feature-btn:hover {
+      background-color: #cf3e16;
+    }
 
-.feature-btn:hover {
-  background-color: #cf3e16;
-}
-</style>
+    .cta {
+      background: #35424a;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
 
-<div class="feature-grid">
-  <div class="feature-box">
-    <h3>Feature 1</h3>
-    <p>Short description of feature 1 goes here.</p>
-    <a href="#" class="feature-btn">Learn More</a>
-  </div>
+    .cta a {
+      display: inline-block;
+      background: #e8491d;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
 
-  <div class="feature-box">
-    <h3>Feature 2</h3>
-    <p>Short description of feature 2 goes here.</p>
-    <a href="#" class="feature-btn">Learn More</a>
-  </div>
+    .cta a:hover {
+      background: #ffffff;
+      color: #e8491d;
+    }
 
-  <div class="feature-box">
-    <h3>Feature 3</h3>
-    <p>Short description of feature 3 goes here.</p>
-    <a href="#" class="feature-btn">Learn More</a>
+    footer {
+      padding: 20px 0;
+      margin-top: 20px;
+      color: #000000;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
 
+    .menu-toggle {
+      display: block;
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 0;
+      margin: 10px 0 0 10px;
+    }
 
-        .cta {
-            background: #35424a;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+    .mobile-nav {
+      display: none;
+      background: #35424a;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-            .cta a {
-                display: inline-block;
-                background: #e8491d;
-                color: #ffffff;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                margin: 10px 0;
-            }
+    .mobile-nav a {
+      display: block;
+      padding: 10px 0;
+      text-align: center;
+      border-top: 1px solid #e8491d;
+    }
 
-                .cta a:hover {
-                    background: #ffffff;
-                    color: #e8491d;
-                }
+    @media (min-width: 768px) {
+      .container {
+        width: 80%;
+      }
 
-        footer {
-            padding: 20px 0;
-            margin-top: 20px;
-            color: #000000;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        /* Mobile Menu */
-        .menu-toggle {
-            display: block;
-            font-size: 2em;
-            background: none;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            padding: 0;
-            margin: 10px 0 0 10px;
-        }
+      header h1 {
+        font-size: 36px;
+        text-align: left;
+      }
 
-        .mobile-nav {
-            display: none;
-            background: #35424a;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+      header nav {
+        display: block;
+        text-align: right;
+      }
 
-            .mobile-nav a {
-                display: block;
-                padding: 10px 0;
-                text-align: center;
-                border-top: 1px solid #e8491d;
-            }
-        /* Desktop Styles */
-        @media (min-width: 768px) {
-            .container {
-                width: 80%;
-            }
+      header a {
+        font-size: 16px;
+        padding: 10px;
+      }
 
-            header h1 {
-                font-size: 36px;
-                text-align: left;
-            }
+      .showcase h1 {
+        font-size: 3em;
+      }
 
-            header nav {
-                display: block;
-                text-align: right;
-            }
+      .showcase p {
+        font-size: 1.5em;
+      }
 
-            header a {
-                font-size: 16px;
-                padding: 10px;
-            }
+      .feature-box {
+        float: left;
+        width: 30%;
+        margin-right: 5%;
+      }
 
-            .showcase h1 {
-                font-size: 3em;
-            }
+      .feature-box:last-child {
+        margin-right: 0;
+      }
 
-            .showcase p {
-                font-size: 1.5em;
-            }
+      .menu-toggle {
+        display: none;
+      }
 
-            .feature-box {
-                float: left;
-                width: 30%;
-                margin-right: 5%;
-            }
-
-                .feature-box:last-child {
-                    margin-right: 0;
-                }
-
-            .menu-toggle {
-                display: none;
-            }
-
-            .mobile-nav {
-                display: none;
-            }
-        }
-    </style>
+      .mobile-nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
     <header>
@@ -356,39 +331,15 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            var nav = document.querySelector('.mobile-nav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
-        }
-    </script>
+  <script>
+    function toggleMenu() {
+      var nav = document.querySelector('.mobile-nav');
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
