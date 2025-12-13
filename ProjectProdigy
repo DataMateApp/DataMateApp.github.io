@@ -3,122 +3,844 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProjectProdigy</title>
+    <title>Download ProjectProdigy – Construction Project Management for Google Sheets™</title>
     <style>
-        body {
-            font-family: "Inter", Arial, sans-serif;
-            background: #f5f7fa;
+        * {
             margin: 0;
             padding: 0;
-            color: #1f1f1f;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --secondary-light: #dbeafe;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--light);
+            color: var(--gray-800);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .hero {
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            color: white;
+            /* Animated Background */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+                animation: gradient 15s ease infinite;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+        @keyframes gradient {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Hero Section */
+        .showcase {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 2rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
         }
 
-            .hero h1 {
-                font-size: 42px;
-                margin-bottom: 12px;
+            .showcase::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 800px;
+                height: 800px;
+                background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+                filter: blur(80px);
+                animation: pulse 4s ease-in-out infinite;
+                z-index: 1;
             }
 
-            .hero p {
-                font-size: 18px;
-                max-width: 800px;
-                margin: 0 auto;
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
             }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        .showcase-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: blink 2s ease infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .showcase-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .showcase-tagline {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .btn-primary::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .btn-primary:hover::before {
+                left: 100%;
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
+            }
+
+        .btn-secondary {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 1rem 2rem;
             background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 2px solid var(--gray-200);
+            color: var(--gray-800);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+            .btn-secondary:hover {
+                background: var(--gray-50);
+                border-color: var(--primary);
+                transform: translateY(-2px);
+            }
+
+        .btn-secondary-badge {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        .page {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .section-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+            .section-card:hover {
+                border-color: var(--primary-light);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            }
+
+        .section-kicker {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
         }
 
         h2 {
-            font-size: 26px;
-            margin-bottom: 12px;
-            color: #0d47a1;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .muted {
+            color: var(--gray-600);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         ul {
-            padding-left: 20px;
+            list-style: none;
         }
 
-        li {
-            margin-bottom: 6px;
-            font-size: 16px;
+            ul li {
+                padding: 0.75rem 0;
+                padding-left: 2rem;
+                position: relative;
+                color: var(--gray-700);
+            }
+
+                ul li::before {
+                    content: '✓';
+                    position: absolute;
+                    left: 0;
+                    color: var(--primary);
+                    font-weight: bold;
+                    font-size: 1.25rem;
+                }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .video-link a {
-            background: #1a73e8;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
+        .step-card {
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .step-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, var(--primary), var(--secondary));
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .step-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .step-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary);
+                box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+                background: white;
+            }
+
+        .step-label {
             display: inline-block;
-            margin-top: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
         }
 
-            .video-link a:hover {
-                background: #1558b0;
+        .step-card strong {
+            display: block;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+
+        .step-card p {
+            color: var(--gray-600);
+        }
+
+        .highlight-band {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+            .comparison-table thead {
+                background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+                color: white;
+            }
+
+            .comparison-table th {
+                padding: 1rem;
+                text-align: left;
+                font-weight: 600;
+            }
+
+            .comparison-table td {
+                padding: 1rem;
+                border-bottom: 1px solid var(--gray-200);
+                color: var(--gray-700);
+            }
+
+            .comparison-table tbody tr:hover {
+                background: var(--gray-50);
+            }
+
+            .comparison-table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+        .table-label {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .procore-section {
+            background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+            border: 2px solid #fbbf24;
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+            .procore-section h2 {
+                color: var(--gray-800);
+            }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+            .comparison-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .comparison-card h3 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+                color: var(--gray-800);
+            }
+
+        .callout-box {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+            .callout-box strong {
+                font-size: 1.5rem;
+                color: var(--gray-800);
+                display: block;
+                margin-bottom: 1rem;
+            }
+
+            .callout-box p {
+                color: var(--gray-600);
+                font-size: 1.125rem;
             }
 
         .note {
-            font-size: 13px;
-            color: #5f6368;
-            margin-top: 16px;
+            color: var(--gray-600);
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .video-link {
+            margin: 1.5rem 0;
+            font-size: 1.125rem;
+        }
+
+            .video-link a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+                .video-link a::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: var(--primary);
+                    transition: width 0.3s ease;
+                }
+
+                .video-link a:hover::after {
+                    width: 100%;
+                }
+
+        footer {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            color: var(--gray-600);
+        }
+
+            footer p {
+                margin: 0.5rem 0;
+            }
+
+        @media (max-width: 768px) {
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .list-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.875rem;
+            }
+
+                .comparison-table th,
+                .comparison-table td {
+                    padding: 0.75rem 0.5rem;
+                }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>ProjectProdigy</h1>
-        <p>A <strong>Free Lifetime Download Construction Project Management Solution</strong> with full CSI Division & Section support — integrated navigation, synchronized datasets, and seamless Drive + Sheets workflows.</p>
-    </section>
+    <!-- HERO -->
+    <header class="showcase">
+        <div class="showcase-inner">
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                <span>Free lifetime download • Google Sheets™ native</span>
+            </div>
 
-    <div class="container">
-        <h2>Powerful Project Coordination — Right Inside Google Sheets™</h2>
-        <p>
-            Store your project estimates and management documents together in a single Google Sheets™ folder containing multiple datasets. ProjectProdigy integrates seamlessly with the <strong>DataMate</strong> add-on, streamlining:
-        </p>
-        <ul>
-            <li>Project navigation</li>
-            <li>Data synchronization</li>
-            <li>File linking between Drive folders and spreadsheet dashboards</li>
-        </ul>
-        <p>
-            This empowers construction, estimating, and operations teams to manage entire projects directly from Sheets — extending DataMate beyond data management into full project-level coordination.
-        </p>
+            <h1>ProjectProdigy</h1>
 
-        <h2>Key Features</h2>
-        <ul>
-            <li>Organized project datasets (Estimate, PM, Field)</li>
-            <li>Linked dashboards and synchronized data sheets (URLs, budget codes, parent folder info)</li>
-            <li>Support for all major project files: Estimate Dashboard, Submittals, RFIs, RFPs, Change Orders, Purchase Orders, and more</li>
-        </ul>
+            <p class="showcase-subtitle">
+                Construction project management built entirely on Google Sheets™ and Google Drive™.
+            </p>
+            <p class="showcase-tagline">
+                Turn your project folder into a connected workspace for estimates, RFIs, submittals, logs, and field reports.
+            </p>
 
-        <p class="note">(Drive OAuth required)</p>
 
-        <p class="video-link">
-            🎥 <a href="https://youtu.be/V0V7N736wsg" target="_blank">Watch Overview Video</a>
-        </p>
-        </ul>
+        </div>
+    </header>
 
-        <p class="note">(Drive OAuth required)</p>
+    <!-- MAIN CONTENT -->
+    <main class="page">
 
-        <p class="video-link">
-             <a href="https://script.google.com/macros/s/AKfycbzkyqkPtW3w5C3o7p-gicygbSnpNmq866Q4uROpIGw-wXzjVOsIMRi4SZg44rx_ZLmq/exec" target="_blank">Download ProjectProdidgy FREE</a>
-        </p>
-    </div>
+        <!-- WHY NOT PROCORE -->
+        <section class="procore-section">
+            <div class="section-kicker">Why Not Procore?</div>
+            <h2>Procore is powerful — but not every project needs an enterprise platform.</h2>
+            <p class="muted">
+                If your team already works in Google Sheets™, Procore can feel heavy, expensive, and disconnected from how you actually manage projects. ProjectProdigy offers a simpler alternative.
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>When Procore Makes Sense</h3>
+                    <ul>
+                        <li>Large commercial portfolios</li>
+                        <li>Complex compliance and approval workflows</li>
+                        <li>Dedicated admins and training budgets</li>
+                        <li>Enterprise integrations (ERP, accounting, BIM)</li>
+                    </ul>
+                    <p style="margin-top: 1rem; color: var(--gray-600); font-style: italic;">Procore is built for scale — and priced accordingly.</p>
+                </div>
+
+                <div class="comparison-card" style="border-color: var(--primary);">
+                    <h3 style="color: var(--primary);">When ProjectProdigy Is the Better Choice</h3>
+                    <ul>
+                        <li>Already manage projects in Google Sheets™</li>
+                        <li>Want estimates, contacts, and documents in one place</li>
+                        <li>Prefer flexible spreadsheets over fixed workflows</li>
+                        <li>Don't need enterprise-level overhead</li>
+                        <li>Want a free alternative to heavyweight PM software</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Side-by-Side Comparison</h3>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ProjectProdigy</th>
+                            <th>Procore</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-label">Platform</td>
+                            <td>Google Sheets™ + Drive™</td>
+                            <td>Proprietary cloud platform</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Setup Time</td>
+                            <td>Minutes</td>
+                            <td>Weeks to months</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Learning Curve</td>
+                            <td>Minimal (Sheets-based)</td>
+                            <td>Steep</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Project Structure</td>
+                            <td>Folder-driven</td>
+                            <td>Module-driven</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Contacts</td>
+                            <td>Built into Sheets, import from Gmail</td>
+                            <td>Separate contact system</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Customization</td>
+                            <td>Unlimited (formulas, layouts, logic)</td>
+                            <td>Limited to platform rules</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Data Ownership</td>
+                            <td>100% yours in Drive</td>
+                            <td>Locked in platform</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Subscriptions</td>
+                            <td>Free, lifetime</td>
+                            <td>Ongoing, enterprise pricing</td>
+                        </tr>
+                        <tr>
+                            <td class="table-label">Best For</td>
+                            <td>Spreadsheet-driven teams</td>
+                            <td>Enterprise organizations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout-box">
+                <strong>The Real Difference</strong>
+                <p>Procore replaces your workflow. ProjectProdigy organizes it.</p>
+            </div>
+
+            <p style="font-size: 1.125rem; color: var(--gray-700); margin-top: 2rem;">
+                ProjectProdigy doesn't force your data into rigid modules. It connects the spreadsheets you already use — estimates, RFIs, submittals, logs, contacts — into a single, synchronized project system.
+            </p>
+
+            <p style="font-size: 1.125rem; color: var(--gray-700); font-weight: 600; margin-top: 1rem;">
+                No contracts. No per-user fees. No vendor lock-in.
+            </p>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 16px;">
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">
+                    If Procore feels like too much platform, ProjectProdigy is exactly enough.
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section id="details" class="section-card">
+            <div class="section-kicker">Download Includes</div>
+            <h2>Everything You Need to Run a Project from Sheets</h2>
+            <p class="muted">
+                ProjectProdigy is a free, pre-wired project folder designed for construction teams that live in Google Sheets™.
+            </p>
+
+            <div class="list-grid">
+                <ul>
+                    <li>Project folder structure for Google Drive™.</li>
+                    <li>Estimate Dashboard + linked estimate files.</li>
+                    <li>Project Contacts dataset (with Gmail™ import support via DataMate).</li>
+                    <li>RFIs, Submittals, Change Orders, Purchase Orders, Pay Apps.</li>
+                </ul>
+                <ul>
+                    <li>Superintendent Field Pack (Daily Reports, Weekly Time Sheets, SWPPP Report).</li>
+                    <li>Built-in navigation sidebar that mirrors your Drive folder.</li>
+                    <li>"Sync Project" button to keep names, links, and dashboards aligned.</li>
+                    <li>Ready-to-use sample project you can copy and adapt.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section-card">
+            <div class="section-kicker">How It Works</div>
+            <h2>Three Simple Steps to Get Started</h2>
+
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-label">Step 1</div>
+                    <strong>Download & Unzip</strong>
+                    <p>Download the ProjectProdigy folder, unzip it, and place it in your Google Drive™.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-label">Step 2</div>
+                    <strong>Rename the Folder</strong>
+                    <p>Rename the folder with your project name. The system treats the folder name as the project.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-label">Step 3</div>
+                    <strong>Open the Main File & Sync</strong>
+                    <p>Open the main ProjectProdigy spreadsheet, run <em>Sync Project</em>, and start working from Sheets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY IT'S USEFUL -->
+        <section class="section-card">
+            <div class="section-kicker">Why ProjectProdigy</div>
+            <h2>Built for Teams That Already Use Google Sheets™</h2>
+
+            <div class="highlight-band">
+                No subscriptions. No new platform. You stay in Google Sheets™ and Google Drive™ – ProjectProdigy just gives your projects structure.
+            </div>
+
+            <div class="list-grid">
+                <ul>
+                    <li>Keep estimates, RFIs, submittals, and logs in one project folder.</li>
+                    <li>Use the navigation sidebar to open any file in one click.</li>
+                    <li>Push project name and dashboard links into all key sheets.</li>
+                </ul>
+                <ul>
+                    <li>Manage project contacts directly in Sheets (with Gmail™ import via DataMate).</li>
+                    <li>Ideal for small to mid-size contractors, estimators, and PMs.</li>
+                    <li>Works seamlessly with the DataMate add-on if you're already using it.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SHORT FAQ / NOTE -->
+        <section class="section-card">
+            <div class="section-kicker">Good to Know</div>
+            <h2>Requirements & Integration</h2>
+            <ul>
+                <li>Runs on Google Sheets™ and Google Drive™ (no extra accounts required).</li>
+                <li>ProjectProdigy is designed to work <em>with</em> the DataMate add-on, but the folder structure is useful on its own.</li>
+                <li>You can duplicate the project folder as many times as you want – one folder per job.</li>
+            </ul>
+        </section>
+
+        <!-- KEY FEATURES -->
+        <section class="section-card">
+            <div class="section-kicker">Features</div>
+            <h2>Key Features</h2>
+            <ul>
+                <li>Organized project datasets (Estimate, PM, Field)</li>
+                <li>Linked dashboards and synchronized data sheets (URLs, budget codes, parent folder info)</li>
+                <li>Support for all major project files: Estimate Dashboard, Submittals, RFIs, RFPs, Change Orders, Purchase Orders, and more</li>
+            </ul>
+
+            <p class="note">(Drive OAuth required)</p>
+
+            <p class="video-link">
+                🎥 <a href="https://youtu.be/V0V7N736wsg" target="_blank" rel="noopener">Watch Installation Video</a>
+            </p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a class="btn-primary" href="https://script.google.com/macros/s/AKfycbzkyqkPtW3w5C3o7p-gicygbSnpNmq866Q4uROpIGw-wXzjVOsIMRi4SZg44rx_ZLmq/exec" target="_blank" rel="noopener" style="display: inline-flex;">
+                    Download ProjectProdigy FREE<span>↓</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 ProjectProdigy • Powered by DataMate</p>
+        <p>Free for lifetime use • No subscriptions • Full data ownership</p>
+    </footer>
 
 </body>
 </html>
