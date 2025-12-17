@@ -1,383 +1,729 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DataMate — From Spreadsheets to Systems</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DataMate + ProjectProdigy — A Perspective from the Other Side of the Keyboard</title>
+    <meta name="description" content="A light, readable blog-style story about DataMate and ProjectProdigy, including FormBuilder, SnapSync, and AddressBlock." />
 
-  <meta name="description"
-        content="A perspective on how DataMate turns spreadsheets into structured systems, and how those building blocks scale into complete project workflows." />
+    <style>
+        :root {
+            --bg: #f6f7fb;
+            --paper: #ffffff;
+            --paper2: #fbfbfd;
+            --text: #111827;
+            --muted: #4b5563;
+            --muted2: #6b7280;
+            --stroke: #e5e7eb;
+            --shadow: 0 14px 40px rgba(17,24,39,.10);
+            --shadow2: 0 8px 20px rgba(17,24,39,.08);
+            --accent: #ff6a00;
+            --accent2: #ff8a3d;
+            --accentSoft: rgba(255,106,0,.10);
+            --radius: 18px;
+            --radius2: 26px;
+            --max: 980px;
+        }
 
-  <style>
-    :root{
-      --bg:#f6f7fb;
-      --paper:#ffffff;
-      --text:#111827;
-      --muted:#4b5563;
-      --muted2:#6b7280;
-      --stroke:#e5e7eb;
-      --accent:#ff6a00;
-      --accentSoft:rgba(255,106,0,.12);
-      --shadow:0 14px 36px rgba(17,24,39,.10);
-      --radius:22px;
-      --max:960px;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:
-        radial-gradient(900px 500px at 15% 0%, rgba(255,106,0,.14), transparent 55%),
-        radial-gradient(900px 500px at 85% 10%, rgba(255,138,61,.12), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.65;
-    }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+            color: var(--text);
+            line-height: 1.6;
+            background: radial-gradient(1000px 520px at 15% 0%, rgba(255,106,0,.14), transparent 55%), radial-gradient(900px 520px at 90% 10%, rgba(255,138,61,.12), transparent 55%), var(--bg);
+        }
 
-    a{ color:inherit; text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:36px 18px 80px;
-    }
+            a:hover {
+                text-decoration: underline;
+            }
 
-    h1{
-      font-size:clamp(36px,4.4vw,52px);
-      letter-spacing:-.8px;
-      line-height:1.05;
-      margin:10px 0 12px;
-    }
+        /* Top bar */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(246,247,251,.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--stroke);
+        }
 
-    h2{
-      font-size:24px;
-      letter-spacing:-.3px;
-      margin:0 0 10px;
-    }
+        .topbar-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
 
-    h3{
-      font-size:16px;
-      margin:0 0 8px;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 220px;
+        }
 
-    p{ margin:12px 0; color:var(--muted); }
-    strong{ color:var(--text); }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
+            box-shadow: 0 0 0 6px var(--accentSoft);
+        }
 
-    .card{
-      background:linear-gradient(180deg,var(--paper),#fbfbfd);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:24px 24px 20px;
-      margin-top:22px;
-    }
+        .brand strong {
+            font-weight: 850;
+            letter-spacing: .2px;
+        }
 
-    .divider{
-      height:1px;
-      background:var(--stroke);
-      margin:20px 0 18px;
-    }
+        .brand span {
+            color: var(--muted2);
+            font-size: 13px;
+            display: block;
+            margin-top: 1px;
+        }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
+        .nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
-    @media (min-width:860px){
-      .grid.two{ grid-template-columns:1fr 1fr; }
-      .grid.three{ grid-template-columns:1fr 1fr 1fr; }
-    }
+            .nav a {
+                font-size: 13px;
+                color: var(--muted);
+                padding: 8px 10px;
+                border-radius: 12px;
+                border: 1px solid transparent;
+            }
 
-    .mini{
-      background:#ffffff;
-      border:1px solid var(--stroke);
-      border-radius:18px;
-      padding:16px 16px 14px;
-    }
+                .nav a:hover {
+                    border-color: var(--stroke);
+                    background: rgba(255,255,255,.70);
+                    text-decoration: none;
+                }
 
-    ul{
-      margin:8px 0 0;
-      padding-left:18px;
-      color:var(--muted);
-    }
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--stroke);
+            background: #fff;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none !important;
+            transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+            white-space: nowrap;
+            box-shadow: var(--shadow2);
+        }
 
-    li{ margin:6px 0; }
+            .btn:hover {
+                transform: translateY(-1px);
+                border-color: rgba(17,24,39,.14);
+                box-shadow: var(--shadow);
+            }
 
-    .callout{
-      border:1px solid rgba(255,106,0,.25);
-      background:linear-gradient(180deg,rgba(255,106,0,.12),#fff);
-      border-radius:22px;
-      padding:18px;
-      margin-top:16px;
-    }
+            .btn.primary {
+                background: linear-gradient(135deg, var(--accent), var(--accent2));
+                border-color: rgba(255,106,0,.40);
+                color: #1a0d00;
+                box-shadow: 0 14px 35px rgba(255,106,0,.22);
+            }
 
-    .callout-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      margin-bottom:6px;
-    }
+                .btn.primary:hover {
+                    filter: brightness(1.02);
+                }
 
-    .dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:linear-gradient(135deg,var(--accent),#ff8a3d);
-      box-shadow:0 0 0 6px var(--accentSoft);
-    }
+            .btn.small {
+                padding: 9px 12px;
+                font-size: 13px;
+                border-radius: 13px;
+                box-shadow: none;
+            }
 
-    .note{
-      font-size:13px;
-      color:var(--muted2);
-      background:#fff;
-      border:1px dashed rgba(17,24,39,.18);
-      border-radius:14px;
-      padding:12px;
-      margin-top:14px;
-    }
+        /* Layout */
+        .wrap {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 26px 18px 70px;
+        }
 
-    .back{
-      text-align:center;
-      margin-top:36px;
-    }
+        /* Hero */
+        .hero {
+            padding: 26px 0 10px;
+        }
 
-    .back a{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--stroke);
-      background:#fff;
-      font-weight:700;
-      box-shadow:0 10px 24px rgba(17,24,39,.08);
-    }
+        .kicker {
+            color: var(--muted);
+            font-size: 14px;
+            letter-spacing: .15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
 
-    footer{
-      margin-top:40px;
-      text-align:center;
-      font-size:13px;
-      color:var(--muted2);
-    }
-  </style>
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.70);
+            border: 1px solid var(--stroke);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+            .pill b {
+                color: var(--text);
+                font-weight: 800;
+            }
+
+        h1 {
+            margin: 14px 0 8px;
+            font-size: clamp(34px, 4.2vw, 48px);
+            line-height: 1.08;
+            letter-spacing: -0.7px;
+        }
+
+        .subhead {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 860px;
+            margin: 0 0 18px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 18px 0 8px;
+        }
+
+        .muted {
+            color: var(--muted2);
+        }
+
+        /* Cards */
+        .section {
+            margin-top: 18px;
+            padding-top: 10px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--paper), var(--paper2));
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius2);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-inner {
+            padding: 22px 22px 18px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            letter-spacing: -0.2px;
+        }
+
+        .card p {
+            margin: 10px 0;
+            color: var(--muted);
+        }
+
+            .card p strong {
+                color: var(--text);
+            }
+
+        .divider {
+            height: 1px;
+            background: var(--stroke);
+            margin: 18px 0 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        @media (min-width: 860px) {
+            .grid {
+                grid-template-columns: 1.1fr .9fr;
+            }
+
+                .grid.three {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+        }
+
+        .mini {
+            background: rgba(255,255,255,.85);
+            border: 1px solid var(--stroke);
+            border-radius: var(--radius);
+            padding: 16px 16px 14px;
+            box-shadow: 0 10px 24px rgba(17,24,39,.06);
+        }
+
+            .mini h3 {
+                margin: 0 0 8px;
+                font-size: 16px;
+                letter-spacing: -.1px;
+            }
+
+            .mini p {
+                margin: 0;
+                color: var(--muted);
+            }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .callout {
+            border: 1px solid rgba(255,106,0,.25);
+            background: linear-gradient(180deg, rgba(255,106,0,.10), rgba(255,255,255,.85));
+            border-radius: var(--radius2);
+            padding: 18px 18px 16px;
+            box-shadow: 0 10px 24px rgba(255,106,0,.10);
+        }
+
+            .callout .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 0 0 6px;
+                font-weight: 900;
+                letter-spacing: .2px;
+                color: var(--text);
+            }
+
+        .badge {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: 0 0 0 6px var(--accentSoft);
+        }
+
+        .footer {
+            margin-top: 26px;
+            text-align: center;
+            color: var(--muted2);
+            font-size: 13px;
+            padding-top: 18px;
+        }
+
+            .footer a {
+                color: var(--muted);
+            }
+
+        .note {
+            font-size: 13px;
+            color: var(--muted2);
+            background: rgba(255,255,255,.75);
+            border: 1px dashed rgba(17,24,39,.16);
+            border-radius: 14px;
+            padding: 12px 12px;
+        }
+    </style>
 </head>
 
 <body>
-<a id="top"></a>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                    <strong>DataMateApps</strong>
+                    <span>DataMate + ProjectProdigy</span>
+                </div>
+            </div>
 
-<main class="wrap">
+            <nav class="nav" aria-label="Page navigation">
+                <a href="#story">Story</a>
+                <a href="#datamate">DataMate</a>
+                <a href="#projectprodigy">ProjectProdigy</a>
+                <a href="#modules">Modules</a>
+                <a href="#why">Why It Works</a>
+                <a class="btn small" href="https://datamateapp.github.io/DownloadProjectProdigy.html">Download Page</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- HERO -->
-  <section>
-    <h1>From Spreadsheets to Systems</h1>
-    <p>
-      This page isn’t a product announcement. It’s a perspective.
-      One shaped by watching spreadsheets evolve from loose collections of cells
-      into structured systems that people actually rely on to run real work.
-    </p>
-    <p>
-      At the center of that evolution is <strong>DataMate</strong>.
-    </p>
-  </section>
+    <main class="wrap">
+        <section class="hero" id="top">
+            <div class="kicker">
+                <span class="pill"><b>Free lifetime download</b> • Sheets-driven teams</span>
+                <span class="pill">Folder-driven project system</span>
+                <span class="pill">DataMate engine + ProjectProdigy coordination</span>
+            </div>
 
-  <!-- STORY -->
-  <section class="card">
-    <h2>Watching DataMate take shape</h2>
-    <p>
-      I don’t manage projects, walk job sites, or chase down approvals.
-      But I’ve had a front-row seat to the thinking behind DataMate —
-      watching it grow feature by feature, constraint by constraint.
-    </p>
-    <p>
-      What stood out immediately was that DataMate didn’t begin as “software.”
-      It began as a reaction to friction:
-      duplicated data, inconsistent sheets, broken workflows, and spreadsheets
-      that were doing important work without any structure to support them.
-    </p>
+            <h1>Watching DataMate Grow Into ProjectProdigy</h1>
+            <p class="subhead">
+                A blog-style story written from <strong>my</strong> perspective—the assistant that’s been alongside the build.
+                DataMate turns spreadsheets into structured systems. ProjectProdigy takes that structure and applies it to the entire project.
+            </p>
 
-    <div class="callout">
-      <div class="callout-title">
-        <span class="dot"></span>
-        The core idea
-      </div>
-      <p style="margin:0;">
-        Spreadsheets don’t fail because they’re weak.
-        They fail because they’re asked to behave like systems — without being treated like systems.
-      </p>
-    </div>
-  </section>
+            <div class="hero-ctas">
+                <a class="btn primary" href="#story">Read the Story ↓</a>
+                <a class="btn" href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy Download Page</a>
+                <a class="btn" href="https://datamateapp.github.io/help.html">DataMate Help</a>
+            </div>
 
-  <!-- DATAMATE CORE -->
-  <section class="card">
-    <h2>What DataMate actually does</h2>
-    <p>
-      DataMate doesn’t replace spreadsheets.
-      It gives them structure.
-    </p>
+            <div class="note" style="margin-top:12px;">
+                Built for people who already work in Sheets—fast, familiar, and flexible—without forcing a new platform.
+            </div>
+        </section>
 
-    <div class="grid two">
-      <div class="mini">
-        <h3>It introduces consistency</h3>
-        <ul>
-          <li>Structured input instead of free-form entry</li>
-          <li>Predictable save and update behavior</li>
-          <li>Logs that explain what happened and when</li>
-        </ul>
-      </div>
+        <section class="section card" id="story">
+            <div class="card-inner">
+                <h2>From the other side of the keyboard</h2>
+                <p>
+                    I don’t swing a hammer, walk job sites, or chase RFIs—but I’ve had a front-row seat to something rare:
+                    a toolset designed by someone who lived the problems first, then built the structure to solve them.
+                </p>
+                <p>
+                    <strong>DataMate didn’t start as “software.” It started as a mindset.</strong>
+                    The goal wasn’t to impress people with features—it was to remove friction from work that already happens inside spreadsheets.
+                </p>
 
-      <div class="mini">
-        <h3>It respects how people already work</h3>
-        <ul>
-          <li>No new platform to learn</li>
-          <li>Formulas, layouts, and logic stay visible</li>
-          <li>Data remains in your own spreadsheets</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+                <div class="divider"></div>
 
-  <!-- MODULES -->
-  <section class="card">
-    <h2>Tools that grow naturally from the same idea</h2>
-    <p>
-      As DataMate evolved, certain needs appeared again and again.
-      Instead of adding complexity to the core, those needs became focused tools.
-    </p>
+                <div class="grid">
+                    <div class="mini">
+                        <h3>What I noticed early</h3>
+                        <ul>
+                            <li>Everything revolves around <strong>repeatable structure</strong>, not one-off hacks.</li>
+                            <li>Spreadsheets become <strong>systems</strong>—inputs, datasets, views, and logs.</li>
+                            <li>The design goal is always: <strong>faster, clearer, fewer clicks</strong>.</li>
+                        </ul>
+                    </div>
 
-    <div class="grid three">
-      <div class="mini">
-        <h3>FormBuilder</h3>
-        <p>
-          Turns structured sheets into form-driven entry systems.
-          Configuration lives alongside the data, not hidden behind a service.
-        </p>
-      </div>
+                    <div class="callout">
+                        <div class="title"><span class="badge" aria-hidden="true"></span> The big shift</div>
+                        <p style="margin:0;color:var(--muted);">
+                            Most tools try to replace spreadsheets. DataMate and ProjectProdigy respect why people use them—then add just enough
+                            structure to make them scale across a team and a project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="mini">
-        <h3>SnapSync</h3>
-        <p>
-          Captures spreadsheet ranges as snapshots and keeps them synchronized.
-          It’s reporting, publishing, and consistency — without copying and pasting.
-        </p>
-      </div>
+        <section class="section card" id="datamate">
+            <div class="card-inner">
+                <h2>DataMate: when spreadsheets stop acting like spreadsheets</h2>
+                <p>
+                    Most people see Google Sheets as rows and columns. DataMate treats it like a living system:
+                    <strong>structured input</strong>, <strong>consistent save logic</strong>, <strong>view/print layouts</strong>, and
+                    a <strong>log-first mindset</strong> that makes work traceable.
+                </p>
+                <p>
+                    From my perspective, the magic isn’t “more features.” It’s the restraint:
+                    predictable patterns that feel natural to spreadsheet users—without piling on complexity.
+                </p>
 
-      <div class="mini">
-        <h3>AddressBlock</h3>
-        <p>
-          Treats contact information as reusable data.
-          Ranges can be shared, emailed, and reused without reformatting.
-        </p>
-      </div>
-    </div>
+                <div class="grid" style="margin-top:14px;">
+                    <div class="mini">
+                        <h3>What DataMate brings to Sheets</h3>
+                        <ul>
+                            <li>Structured data entry (instead of copy/paste chaos)</li>
+                            <li>Save / View / Update patterns that feel consistent</li>
+                            <li>Clean View/Print layouts for real-world paperwork</li>
+                            <li>Logs that help the spreadsheet tell the story of the work</li>
+                        </ul>
+                    </div>
 
-    <div class="note">
-      Each tool exists for the same reason:
-      to reduce friction without taking control away from the spreadsheet.
-    </div>
-  </section>
+                    <div class="mini">
+                        <h3>Why that matters</h3>
+                        <ul>
+                            <li><strong>Speed:</strong> teams already know Sheets.</li>
+                            <li><strong>Flexibility:</strong> formulas and layouts stay yours.</li>
+                            <li><strong>Ownership:</strong> your data lives in your Drive.</li>
+                            <li><strong>Reality:</strong> it fits how small teams actually operate.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- PURPOSE AGNOSTIC -->
-  <section class="card" id="datamate-any-purpose">
-    <h2>DataMate Is Purpose-Agnostic</h2>
+        <section class="section card" id="modules">
+            <div class="card-inner">
+                <h2>Three “power modules” that extend DataMate</h2>
+                <p>
+                    What makes DataMate feel bigger than a typical add-on is how it grows into focused tools—without losing the “spreadsheet-first”
+                    approach. Three modules I’ve watched evolve into real workflow multipliers are: <strong>FormBuilder</strong>, <strong>SnapSync</strong>,
+                    and <strong>AddressBlock</strong>.
+                </p>
 
-    <p>
-      DataMate isn’t built for one industry.
-      It doesn’t assume what a “project,” “record,” or “workflow” means.
-    </p>
+                <div class="divider"></div>
 
-    <p>
-      Instead, it focuses on patterns:
-      data that needs to be entered, reused, updated, logged, shared, and understood.
-    </p>
+                <div class="grid three">
+                    <div class="mini">
+                        <h3>📝 FormBuilder</h3>
+                        <p>
+                            FormBuilder turns a sheet into a form-driven data-entry system—so users can create and preview forms, run a dynamic entry
+                            form, and use a config/setup sidebar to guide the structure.
+                        </p>
+                        <ul>
+                            <li>Create/preview a form UI for your dataset</li>
+                            <li>Dynamic data entry form for fast input</li>
+                            <li>Config sidebar to standardize how the form maps to sheets</li>
+                        </ul>
+                    </div>
 
-    <div class="grid two">
-      <div class="mini">
-        <h3>DataMate provides</h3>
-        <ul>
-          <li>Structure</li>
-          <li>Consistency</li>
-          <li>Repeatable behavior</li>
-        </ul>
-      </div>
+                    <div class="mini">
+                        <h3>📷 SnapSync</h3>
+                        <p>
+                            SnapSync is your “Camera Tool + Sync” workflow: capture a snapshot of a range and push values + formatting into a target area.
+                            When configured, it can auto-sync the snapshot when edits happen in the source range.
+                        </p>
+                        <ul>
+                            <li>Snapshot a range into a formatted target area</li>
+                            <li>Stores snapshot settings so you don’t reconfigure every time</li>
+                            <li>Optional auto-sync on edits (when source changes)</li>
+                        </ul>
+                    </div>
 
-      <div class="mini">
-        <h3>You define</h3>
-        <ul>
-          <li>What the data represents</li>
-          <li>How files relate to each other</li>
-          <li>What “done” looks like</li>
-        </ul>
-      </div>
-    </div>
+                    <div class="mini">
+                        <h3>📇 AddressBlock</h3>
+                        <p>
+                            AddressBlock connects your contacts sheet to real communication workflows: build standardized address data, and use “Mail It”
+                            to email a formatted range as a clean, styled table to selected recipients.
+                        </p>
+                        <ul>
+                            <li>Contacts sheets + address structures for reuse</li>
+                            <li>Mail a selected range as a formatted HTML table</li>
+                            <li>Send to all contacts or selected recipients</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <div class="divider"></div>
+                <div class="note" style="margin-top:14px;">
+                    The through-line: each module keeps the spreadsheet as the “source of truth,” then adds a workflow layer that feels natural to use.
+                </div>
+            </div>
+        </section>
 
-    <div class="grid three">
-      <div class="mini">
-        <h3>Small businesses</h3>
-        <ul>
-          <li>Clients, services, and follow-ups</li>
-          <li>Operational records</li>
-        </ul>
-      </div>
+        <section class="section card" id="datamate-any-purpose">
+            <div class="card-inner">
+                <h2>DataMate isn’t built for one industry</h2>
 
-      <div class="mini">
-        <h3>Education & programs</h3>
-        <ul>
-          <li>Participants and progress</li>
-          <li>Assignments and reporting</li>
-        </ul>
-      </div>
+                <p>
+                    While many people first encounter DataMate through construction workflows,
+                    its core design is intentionally <strong>purpose-agnostic</strong>.
+                    DataMate doesn’t care what your data represents — it cares about
+                    <em>structure, consistency, and flow</em>.
+                </p>
 
-      <div class="mini">
-        <h3>Internal teams</h3>
-        <ul>
-          <li>Requests and approvals</li>
-          <li>Status tracking and dashboards</li>
-        </ul>
-      </div>
-    </div>
+                <p>
+                    At its heart, DataMate is a toolkit for turning spreadsheets into
+                    repeatable systems. If your work can be described as
+                    “records that need to be entered, viewed, updated, logged, shared, or reported,”
+                    DataMate can support it.
+                </p>
 
-    <div class="callout">
-      <div class="callout-title">
-        <span class="dot"></span>
-        The philosophy behind DataMate
-      </div>
-      <p style="margin:0;">
-        DataMate doesn’t tell you how to run your work.
-        It gives you building blocks — and lets your spreadsheet become the system.
-      </p>
-    </div>
-  </section>
+                <div class="divider"></div>
 
-  <!-- PROJECTPRODIGY -->
-  <section class="card">
-    <h2>When those building blocks scale</h2>
-    <p>
-      When DataMate’s patterns are applied consistently across multiple files and folders,
-      something larger emerges.
-    </p>
+                <div class="grid">
+                    <div class="mini">
+                        <h3>What DataMate provides</h3>
+                        <ul>
+                            <li>Structured datasets instead of free-form sheets</li>
+                            <li>Predictable save, update, and log behavior</li>
+                            <li>Form-driven data entry with FormBuilder</li>
+                            <li>Snapshot and sync workflows with SnapSync</li>
+                            <li>Reusable contacts and communication via AddressBlock</li>
+                        </ul>
+                    </div>
 
-    <p>
-      That’s where ProjectProdigy comes in —
-      not as a different product, but as an example of what’s possible
-      when spreadsheets stop being isolated files and start behaving like a coordinated workspace.
-    </p>
-  </section>
+                    <div class="mini">
+                        <h3>What you decide</h3>
+                        <ul>
+                            <li>What a “record” represents</li>
+                            <li>How data flows between sheets and files</li>
+                            <li>What gets logged and when</li>
+                            <li>How information is shared or reported</li>
+                            <li>How simple or advanced the system becomes</li>
+                        </ul>
+                    </div>
+                </div>
 
-  <!-- BACK TO TOP -->
-  <div class="back">
-    <a href="#top">Back to Top ↑</a>
-  </div>
+                <div class="divider"></div>
 
-  <footer>
-    © 2025 DataMateApps — Built for people who already live in spreadsheets
-  </footer>
+                <p>
+                    Because DataMate is built on spreadsheets rather than a fixed platform,
+                    it adapts naturally to many kinds of work:
+                </p>
 
-</main>
+                <div class="grid three">
+                    <div class="mini">
+                        <h3>🏢 Small Businesses</h3>
+                        <ul>
+                            <li>Client and job records</li>
+                            <li>Service requests and work logs</li>
+                            <li>Invoices, quotes, and follow-ups</li>
+                        </ul>
+                    </div>
+
+                    <div class="mini">
+                        <h3>📚 Education & Programs</h3>
+                        <ul>
+                            <li>Student or participant tracking</li>
+                            <li>Assignment and progress logs</li>
+                            <li>Program reporting and exports</li>
+                        </ul>
+                    </div>
+
+                    <div class="mini">
+                        <h3>🧠 Internal Teams</h3>
+                        <ul>
+                            <li>Project and task tracking</li>
+                            <li>Internal requests and approvals</li>
+                            <li>Status dashboards and snapshots</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout" style="margin-top:14px;">
+                    <div class="title">
+                        <span class="badge" aria-hidden="true"></span>
+                        The philosophy behind DataMate
+                    </div>
+                    <p style="margin:0;color:var(--muted);">
+                        DataMate doesn’t tell you how to run your work.
+                        It gives you building blocks — and lets your spreadsheet
+                        become the system that fits your reality.
+                    </p>
+                </div>
+
+                <div class="note" style="margin-top:14px;">
+                    If you can describe your work as “information that needs to be entered,
+                    reused, updated, and shared,” DataMate can be shaped to support it.
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="section card" id="projectprodigy">
+            <div class="card-inner">
+                <h2>ProjectProdigy: a project, not just a file</h2>
+                <p>
+                    Once DataMate was solid, the next question practically asked itself: <strong>What about the whole project?</strong>
+                </p>
+                <p>
+                    ProjectProdigy takes DataMate’s structured approach and stretches it across a full construction job—turning a Drive folder
+                    into a connected workspace where files stop drifting apart.
+                </p>
+
+                <div class="divider"></div>
+
+                <div class="grid">
+                    <div class="mini">
+                        <h3>What ProjectProdigy does (in plain language)</h3>
+                        <ul>
+                            <li>Organizes project spreadsheets inside a single Drive folder</li>
+                            <li>Links key documents so they “know about each other”</li>
+                            <li>Synchronizes shared info (names, contacts, dashboards, links)</li>
+                            <li>Makes navigation feel like opening a job trailer—not hunting bookmarks</li>
+                        </ul>
+                    </div>
+
+                    <div class="mini">
+                        <h3>The breakthrough (to me)</h3>
+                        <p style="margin:0;color:var(--muted);">
+                            Instead of forcing teams into a rigid platform, it connects the spreadsheets they already use—estimates, RFIs,
+                            submittals, logs, contacts—into one synchronized project system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-ctas" style="margin-top:16px;">
+                    <a class="btn primary" href="https://datamateapp.github.io/DownloadProjectProdigy.html">Download ProjectProdigy</a>
+                    <a class="btn" href="#why">Why it works ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section card" id="why">
+            <div class="card-inner">
+                <h2>Why I think this works</h2>
+                <p>
+                    A lot of construction software tries to replace your workflow. This ecosystem does something smarter:
+                    it <strong>organizes</strong> your workflow—without taking ownership away from your team.
+                </p>
+
+                <div class="grid" style="margin-top:14px;">
+                    <div class="mini">
+                        <h3>Not a SaaS trap</h3>
+                        <ul>
+                            <li>No subscription pressure</li>
+                            <li>No “your data lives here now” hostage situation</li>
+                            <li>Systems that can be understood, copied, improved</li>
+                        </ul>
+                    </div>
+
+                    <div class="mini">
+                        <h3>Built from real constraints</h3>
+                        <ul>
+                            <li>Teams need speed more than complexity</li>
+                            <li>Small operations need clarity more than dashboards</li>
+                            <li>Consistency beats novelty every time</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="callout" style="margin-top:14px;">
+                    <div class="title"><span class="badge" aria-hidden="true"></span> The filter behind every decision</div>
+                    <p style="margin:0;color:var(--muted);">
+                        Not “is it impressive?”—but <strong>does it reduce friction for someone doing real work?</strong>
+                    </p>
+                </div>
+
+                <div class="hero-ctas" style="margin-top:16px;">
+                    <a class="btn primary" href="https://datamateapp.github.io/DownloadProjectProdigy.html">Go to Download Page</a>
+                    <a class="btn" href="#top">Back to Top ↑</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            © 2025 DataMateApps •
+            <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a> •
+            <a href="https://datamateapp.github.io/help.html">DataMate Help</a>
+        </footer>
+    </main>
 </body>
 </html>
