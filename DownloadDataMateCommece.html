@@ -1,0 +1,280 @@
+﻿```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download — DataMate Commerce</title>
+
+    <style>
+        /* ---- THEME & RESET (matches provided style) ---- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --secondary-light: #dbeafe;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--light);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        /* ---- HERO ---- */
+        .showcase {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+        }
+
+        .showcase-inner {
+            max-width: 1000px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .5rem 1rem;
+            background: rgba(16,185,129,.1);
+            border: 1px solid rgba(16,185,129,.3);
+            border-radius: 50px;
+            font-size: .875rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .showcase-subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: .75rem;
+        }
+
+        .showcase-tagline {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        /* ---- PAGE CONTENT ---- */
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-kicker {
+            color: var(--primary);
+            font-size: .875rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+            ul li {
+                padding-left: 2rem;
+                margin-bottom: .75rem;
+                position: relative;
+            }
+
+                ul li::before {
+                    content: '✓';
+                    position: absolute;
+                    left: 0;
+                    color: var(--primary);
+                    font-weight: bold;
+                }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+            .feature-card h4 {
+                color: var(--primary);
+                margin-bottom: .75rem;
+            }
+
+        .highlight-band {
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            color: var(--gray-600);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="showcase">
+        <div class="showcase-inner">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> DataMate System</div>
+            <h1>DataMate Commerce</h1>
+            <div class="showcase-subtitle">Invoice • Inventory • Orders</div>
+            <p class="showcase-tagline">
+                A complete commerce system built entirely in Google Sheets — designed for small businesses that want clarity, control, and ownership of their data.
+            </p>
+            <a class="btn-primary" href="YOUR_DOWNLOAD_LINK_HERE">Download DataMate Commerce</a>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <main class="page">
+
+        <section class="section-card">
+            <div class="section-kicker">What It Is</div>
+            <h2>A real business system — not just a template</h2>
+            <p class="lead">
+                DataMate Commerce combines invoicing, inventory tracking, and order management into one connected workflow.
+            </p>
+            <ul>
+                <li>Professional invoices with automatic calculations</li>
+                <li>Centralized inventory with real-time stock updates</li>
+                <li>Order inputs that generate invoices</li>
+                <li>Structured, safe DataMate-driven data entry</li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <div class="section-kicker">How It Works</div>
+            <h2>Everything stays in Sheets</h2>
+            <p class="lead">
+                Customers, products, and transactions live in structured tables. Inventory updates automatically as sales are recorded.
+            </p>
+            <div class="highlight-band">
+                No subscriptions. No external databases. Your data stays in your Google Drive.
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="section-kicker">Who It’s For</div>
+            <h2>Built for small teams and operators</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>Small Businesses</h4>
+                    <p>Replace expensive invoicing and inventory software with a flexible Sheets-based system.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Makers & Sellers</h4>
+                    <p>Track products, pricing, and stock without losing control of your data.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Internal Teams</h4>
+                    <p>Use DataMate Commerce as a foundation for custom operational workflows.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="section-kicker">Platform</div>
+            <h2>Powered by DataMate</h2>
+            <p class="lead">
+                This template demonstrates how DataMate enables purpose-agnostic systems using structured inputs, protected logic, and clear separation between data entry and results.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 DataMate • Free download • Your data stays in Sheets</p>
+    </footer>
+
+</body>
+</html>
+```
