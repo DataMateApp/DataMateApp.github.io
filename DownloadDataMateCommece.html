@@ -1,4 +1,3 @@
-﻿```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +6,6 @@
     <title>Download — DataMate Commerce</title>
 
     <style>
-        /* ---- THEME & RESET (matches provided style) ---- */
         * {
             margin: 0;
             padding: 0;
@@ -39,7 +37,7 @@
             line-height: 1.6;
         }
 
-        /* ---- HERO ---- */
+        /* HERO */
         .showcase {
             min-height: 100vh;
             display: flex;
@@ -92,24 +90,11 @@
         .showcase-tagline {
             font-size: 1.1rem;
             color: var(--gray-600);
-            max-width: 720px;
-            margin: 0 auto 2.5rem;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-
-        /* ---- PAGE CONTENT ---- */
+        /* PAGE */
         .page {
             max-width: 1200px;
             margin: 0 auto;
@@ -148,19 +133,19 @@
             list-style: none;
         }
 
-            ul li {
-                padding-left: 2rem;
-                margin-bottom: .75rem;
-                position: relative;
-            }
+        ul li {
+            padding-left: 2rem;
+            margin-bottom: .75rem;
+            position: relative;
+        }
 
-                ul li::before {
-                    content: '✓';
-                    position: absolute;
-                    left: 0;
-                    color: var(--primary);
-                    font-weight: bold;
-                }
+        ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
 
         .feature-grid {
             display: grid;
@@ -176,18 +161,31 @@
             padding: 2rem;
         }
 
-            .feature-card h4 {
-                color: var(--primary);
-                margin-bottom: .75rem;
-            }
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: .75rem;
+        }
 
         .highlight-band {
             background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
             border-left: 4px solid var(--primary);
             padding: 1.5rem;
             border-radius: 12px;
-            margin: 2rem 0;
+            margin-top: 2rem;
             font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.125rem;
         }
 
         footer {
@@ -201,80 +199,129 @@
 </head>
 <body>
 
-    <!-- HERO -->
-    <section class="showcase">
-        <div class="showcase-inner">
-            <div class="eyebrow"><span class="eyebrow-dot"></span> DataMate System</div>
-            <h1>DataMate Commerce</h1>
-            <div class="showcase-subtitle">Invoice • Inventory • Orders</div>
-            <p class="showcase-tagline">
-                A complete commerce system built entirely in Google Sheets — designed for small businesses that want clarity, control, and ownership of their data.
-            </p>
-            <a class="btn-primary" href="YOUR_DOWNLOAD_LINK_HERE">Download DataMate Commerce</a>
+<!-- HERO -->
+<section class="showcase">
+    <div class="showcase-inner">
+        <div class="eyebrow">
+            <span class="eyebrow-dot"></span> DataMate System
+        </div>
+        <h1>DataMate Commerce</h1>
+        <div class="showcase-subtitle">Invoices • Inventory • Orders</div>
+        <p class="showcase-tagline">
+            A Sheets-based commerce system that can run your back office,
+            power internal operations, or deploy as a lightweight online store —
+            all while you retain full ownership of your data.
+        </p>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<main class="page">
+
+    <section class="section-card">
+        <div class="section-kicker">What It Is</div>
+        <h2>A complete commerce system — not a SaaS</h2>
+        <p class="lead">
+            DataMate Commerce combines invoicing, inventory tracking, and order management
+            into a single connected system built entirely in Google Sheets.
+        </p>
+        <ul>
+            <li>Professional invoices with automatic totals and taxes</li>
+            <li>Centralized inventory with real-time stock updates</li>
+            <li>Order entry that generates invoices automatically</li>
+            <li>Optional web app deployment for online ordering</li>
+            <li>Structured, protected DataMate-driven data entry</li>
+        </ul>
+    </section>
+
+    <section class="section-card">
+        <div class="section-kicker">How It Works</div>
+        <h2>Your data stays in Sheets</h2>
+        <p class="lead">
+            Customers, products, inventory, and transactions live in structured tables.
+            Logic is protected, inputs are controlled, and results update automatically.
+        </p>
+        <div class="highlight-band">
+            No subscriptions. No external databases. No vendor lock-in.
+            Your system lives in your Google Drive.
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <main class="page">
+    <section class="section-card">
+        <div class="section-kicker">Web App</div>
+        <h2>Deploy it as an online store</h2>
+        <p class="lead">
+            DataMate Commerce can be published as a Google Apps Script web app,
+            allowing customers to place orders through a simple online interface
+            while writing directly back to your Sheets-based system.
+        </p>
+        <ul>
+            <li>Customer-facing order forms powered by your live data</li>
+            <li>Orders flow into the same inventory and invoice tables</li>
+            <li>No external ecommerce platform required</li>
+            <li>Works for internal portals or public-facing stores</li>
+        </ul>
+        <div class="highlight-band">
+            One file. One system.
+            Back office, internal orders, or an online store — your choice.
+        </div>
+    </section>
 
-        <section class="section-card">
-            <div class="section-kicker">What It Is</div>
-            <h2>A real business system — not just a template</h2>
-            <p class="lead">
-                DataMate Commerce combines invoicing, inventory tracking, and order management into one connected workflow.
-            </p>
-            <ul>
-                <li>Professional invoices with automatic calculations</li>
-                <li>Centralized inventory with real-time stock updates</li>
-                <li>Order inputs that generate invoices</li>
-                <li>Structured, safe DataMate-driven data entry</li>
-            </ul>
-        </section>
-
-        <section class="section-card">
-            <div class="section-kicker">How It Works</div>
-            <h2>Everything stays in Sheets</h2>
-            <p class="lead">
-                Customers, products, and transactions live in structured tables. Inventory updates automatically as sales are recorded.
-            </p>
-            <div class="highlight-band">
-                No subscriptions. No external databases. Your data stays in your Google Drive.
+    <section class="section-card">
+        <div class="section-kicker">Who It’s For</div>
+        <h2>Built for operators, not platforms</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Small Businesses</h4>
+                <p>Replace costly invoicing and inventory software with a flexible Sheets-based system.</p>
             </div>
-        </section>
-
-        <section class="section-card">
-            <div class="section-kicker">Who It’s For</div>
-            <h2>Built for small teams and operators</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>Small Businesses</h4>
-                    <p>Replace expensive invoicing and inventory software with a flexible Sheets-based system.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Makers & Sellers</h4>
-                    <p>Track products, pricing, and stock without losing control of your data.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Internal Teams</h4>
-                    <p>Use DataMate Commerce as a foundation for custom operational workflows.</p>
-                </div>
+            <div class="feature-card">
+                <h4>Makers & Sellers</h4>
+                <p>Track products, pricing, and stock while keeping full control of your data.</p>
             </div>
-        </section>
+            <div class="feature-card">
+                <h4>Internal Teams</h4>
+                <p>Use it as a foundation for custom workflows, ordering systems, or operations tools.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="section-card">
-            <div class="section-kicker">Platform</div>
-            <h2>Powered by DataMate</h2>
-            <p class="lead">
-                This template demonstrates how DataMate enables purpose-agnostic systems using structured inputs, protected logic, and clear separation between data entry and results.
-            </p>
-        </section>
+    <section class="section-card">
+        <div class="section-kicker">Platform</div>
+        <h2>Powered by DataMate</h2>
+        <p class="lead">
+            DataMate Commerce demonstrates how DataMate enables purpose-agnostic systems
+            using structured inputs, protected logic, and clear separation between
+            data entry and business results.
+        </p>
+    </section>
 
-    </main>
+    <!-- DOWNLOAD CTA -->
+    <section class="section-card">
+        <div class="section-kicker">Get Started</div>
+        <h2>Run your business — or store — in Sheets</h2>
 
-    <footer>
-        <p>© 2025 DataMate • Free download • Your data stays in Sheets</p>
-    </footer>
+        <p class="lead">
+            Download <strong>DataMate Commerce</strong> to manage inventory,
+            invoices, and orders — or deploy it as a web app online store —
+            all powered by Google Sheets™.
+        </p>
+
+        <p style="text-align:center; margin-top:3rem;">
+            <a class="btn-primary"
+               href="https://script.google.com/macros/s/AKfycbx-GDZlX7UNkrcwaswIgnBl41pQJbkTGfM3dR9E0Ls2KcUJyKulbjcn7thrswa_k8cOfQ/exec"
+               target="_blank"
+               rel="noopener">
+                Download DataMate Commerce FREE ↓
+            </a>
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 DataMate • Free download • Sheets-based • Web app ready</p>
+</footer>
 
 </body>
 </html>
-```
