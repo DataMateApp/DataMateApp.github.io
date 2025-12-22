@@ -1,137 +1,69 @@
 ﻿
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Simplify Your Data Management</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataMate Help & Documentation</title>
+
+    <!-- Bootstrap (loaded first) -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Global Site Styles (matches Home page) -->
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
         }
 
-        .container {
-            width: 90%;
-            margin: auto;
-            overflow: hidden;
-        }
-
+        /* Header */
         header {
             background: #35424a;
             color: #ffffff;
             padding: 10px 0;
             border-bottom: #e8491d 3px solid;
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
 
-            header a {
-                color: #ffffff;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 14px;
-                padding: 5px;
-                display: inline-block;
+        .header-container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header nav a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 8px;
+            display: inline-block;
+        }
+
+            header nav a:hover {
+                color: #cccccc;
+                font-weight: bold;
             }
 
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-                text-align: center;
-            }
-
-            header nav {
-                display: none;
-            }
-
-        .highlight, .current a {
+        .highlight {
             color: #e8491d;
             font-weight: bold;
         }
 
-        header a:hover {
-            color: #cccccc;
-            font-weight: bold;
-        }
-
-        .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            padding: 40px 0;
-        }
-
-            .showcase h1 {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-            }
-
-            .showcase p {
-                font-size: 1.2em;
-                padding: 0 20px;
-            }
-
-        .features {
-            padding: 20px 0;
-            text-align: center;
-            background: #ffffff;
-        }
-
-            .features h2 {
-                color: #35424a;
-            }
-
-        .feature-box {
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        .feature-btn {
-            background-color: #e8491d;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-        }
-
-        .cta {
-            background: #35424a;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-            .cta a {
-                display: inline-block;
-                background: #e8491d;
-                color: #ffffff;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                margin: 10px 0;
-            }
-
-                .cta a:hover {
-                    background: #ffffff;
-                    color: #e8491d;
-                }
-
-        footer {
-            padding: 20px 0;
-            margin-top: 20px;
-            color: #000000;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
         /* Mobile Menu */
         .menu-toggle {
             display: block;
@@ -140,18 +72,12 @@
             border: none;
             color: #ffffff;
             cursor: pointer;
-            padding: 0;
-            margin: 10px 0 0 10px;
         }
 
         .mobile-nav {
             display: none;
-            background: #35424a;
-            position: absolute;
-            top: 50px;
-            left: 0;
             width: 100%;
-            z-index: 1000;
+            background: #35424a;
         }
 
             .mobile-nav a {
@@ -160,81 +86,88 @@
                 text-align: center;
                 border-top: 1px solid #e8491d;
             }
-        /* Desktop Styles */
+
+        /* Desktop */
         @media (min-width: 768px) {
-            .container {
-                width: 80%;
-            }
-
-            header h1 {
-                font-size: 36px;
-                text-align: left;
-            }
-
-            header nav {
-                display: block;
-                text-align: right;
-            }
-
-            header a {
-                font-size: 16px;
-                padding: 10px;
-            }
-
-            .showcase h1 {
-                font-size: 3em;
-            }
-
-            .showcase p {
-                font-size: 1.5em;
-            }
-
-            .feature-box {
-                float: left;
-                width: 30%;
-            }
-
             .menu-toggle {
                 display: none;
             }
 
             .mobile-nav {
-                display: none;
+                display: none !important;
+            }
+
+            header nav {
+                display: block;
             }
         }
+
+        /* Help Content */
+        .help-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 6px;
+        }
+
+        h1, h2 {
+            color: #35424a;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #e8491d;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #000000;
+            background-color: #f4f4f4;
+        }
     </style>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
 </head>
 <body>
+
     <header>
-        <div class="container">
+        <div class="header-container">
             <h1>DataMateApps</h1>
             <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-             <nav class="desktop-nav">
+
+            <nav class="desktop-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html">Features</a>
                 <a href="https://datamateapp.github.io/help.html" class="highlight">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
+                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
                 <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a> 
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
+                <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
             </nav>
-            <nav class="mobile-nav">
+
+            <nav id="mobileNav" class="mobile-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
                 <a href="https://datamateapp.github.io/features.html">Features</a>
                 <a href="https://datamateapp.github.io/help.html" class="highlight">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/ProjectProdigy Mobile.html">ProjectProdigy</a>
+                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
+                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
                 <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
                 <a href="https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg">Donor Portal</a>
                 <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
             </nav>
+           
+
         </div>
     </header>
 
@@ -1381,6 +1314,7 @@ document.querySelectorAll('#toc a').forEach(link => {
                     </script>
                 </body>
             </html>
+
 
 
 
