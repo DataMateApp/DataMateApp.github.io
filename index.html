@@ -1,365 +1,997 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataMateApps - Simplify Your Data Management</title>
-  <style>
-  body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>DataMate™ — Free Google Sheets™ Business Applications</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#020617;
+  --card:#111827;
+  --card2:#1e293b;
+  --primary:#2563eb;
+  --primary2:#3b82f6;
+  --text:#f8fafc;
+  --muted:#cbd5e1;
+  --border:rgba(255,255,255,.08);
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px; /* reduced from 1400px */
-  margin: auto;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-header {
-  background: #35424a;
-  color: #ffffff;
-  padding: 10px 0;
-  border-bottom: #e8491d 3px solid;
+html{
+  scroll-behavior:smooth;
 }
 
-header a {
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding: 5px;
-  display: inline-block;
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 24px;
-  text-align: center;
+/* =========================
+   GLOBAL
+========================= */
+
+.container{
+  width:min(92%,1200px);
+  margin:auto;
 }
 
-header nav {
-  display: none;
+section{
+  padding:80px 0;
 }
 
-.highlight, .current a {
-  color: #e8491d;
-  font-weight: bold;
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s ease;
+  cursor:pointer;
 }
 
-header a:hover {
-  color: #cccccc;
-  font-weight: bold;
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:#fff;
+  box-shadow:0 10px 30px rgba(37,99,235,.35);
 }
 
-.showcase {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('images/datamanagement.jpg') no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  color: #ffffff;
-  padding: 60px 20px;
+.btn-primary:hover{
+  transform:translateY(-2px);
 }
 
-.showcase h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.15);
+  color:#fff;
+  background:rgba(255,255,255,.04);
 }
 
-.showcase p {
-  font-size: 1.4em;
-  max-width: 700px; /* narrowed slightly */
-  margin: 0 auto;
+.btn-secondary:hover{
+  background:rgba(255,255,255,.08);
 }
 
-.features {
-  padding: 40px 0;
-  text-align: center;
-  background: #ffffff;
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(18px);
+  background:rgba(2,6,23,.88);
+  border-bottom:1px solid var(--border);
 }
 
-.features h2 {
-  color: #35424a;
-  margin-bottom: 30px;
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:78px;
 }
 
-/* === Feature Grid === */
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Mobile default */
-  gap: 30px;
-  max-width: 1100px; /* reduced from 1600px */
-  margin: 0 auto;
-  justify-content: center;
+.logo{
+  font-size:1.6rem;
+  font-weight:800;
+  color:#fff;
+  text-decoration:none;
 }
 
-/* Tablet: 2 columns */
-@media (min-width: 768px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
+.logo span{
+  color:#60a5fa;
+}
+
+.desktop-nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.desktop-nav a{
+  color:#e2e8f0;
+  text-decoration:none;
+  font-size:.95rem;
+  transition:.2s;
+}
+
+.desktop-nav a:hover{
+  color:#60a5fa;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:2rem;
+  cursor:pointer;
+}
+
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  padding:20px 0;
+  gap:14px;
+}
+
+.mobile-nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:120px 0 100px;
+  background:
+  radial-gradient(circle at top right, rgba(59,130,246,.25), transparent 30%),
+  radial-gradient(circle at bottom left, rgba(37,99,235,.18), transparent 35%);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 16px;
+  background:rgba(37,99,235,.15);
+  border:1px solid rgba(96,165,250,.25);
+  border-radius:999px;
+  color:#bfdbfe;
+  margin-bottom:24px;
+  font-size:.92rem;
+}
+
+.hero h1{
+  font-size:clamp(2.8rem,6vw,5.2rem);
+  line-height:1.05;
+  font-weight:800;
+  margin-bottom:28px;
+}
+
+.hero h1 span{
+  color:#60a5fa;
+}
+
+.hero p{
+  font-size:1.15rem;
+  color:var(--muted);
+  max-width:650px;
+  margin-bottom:34px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.hero-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+  color:#cbd5e1;
+  font-size:.95rem;
+}
+
+.hero-card{
+  background:linear-gradient(180deg,#111827,#0f172a);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.mockup-window{
+  background:#0b1220;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.05);
+}
+
+.mockup-top{
+  display:flex;
+  gap:8px;
+  padding:14px;
+  background:#111827;
+}
+
+.mockup-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#475569;
+}
+
+.mockup-content{
+  padding:24px;
+}
+
+.sheet-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.sheet-cell{
+  height:42px;
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+}
+
+.sheet-cell.active{
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  text-align:center;
+  max-width:850px;
+  margin:0 auto 60px;
+}
+
+.section-title h2{
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:18px;
+}
+
+.section-title p{
+  color:var(--muted);
+  font-size:1.08rem;
+}
+
+/* =========================
+   PROBLEM SECTION
+========================= */
+
+.problem{
+  background:#0b1120;
+}
+
+.problem-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+.problem-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:34px;
+}
+
+.problem-card h3{
+  margin-bottom:16px;
+  font-size:1.4rem;
+}
+
+.problem-card p{
+  color:var(--muted);
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.feature-card{
+  background:linear-gradient(180deg,#111827,#0b1220);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:30px;
+  transition:.25s ease;
+}
+
+.feature-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(96,165,250,.25);
+}
+
+.feature-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  background:rgba(37,99,235,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  font-size:1.5rem;
+}
+
+.feature-card h3{
+  margin-bottom:14px;
+}
+
+.feature-card p{
+  color:var(--muted);
+}
+
+/* =========================
+   APPS
+========================= */
+
+.apps{
+  background:#0b1120;
+}
+
+.apps-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.app-card{
+  background:linear-gradient(180deg,#111827,#0f172a);
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:34px;
+}
+
+.app-card h3{
+  font-size:1.5rem;
+  margin-bottom:12px;
+}
+
+.app-card p{
+  color:var(--muted);
+  margin-bottom:22px;
+}
+
+.app-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.video-link{
+  color:#93c5fd;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  text-align:center;
+}
+
+.cta-box{
+  background:
+  radial-gradient(circle at top right, rgba(59,130,246,.22), transparent 30%),
+  linear-gradient(180deg,#111827,#0f172a);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:70px 30px;
+}
+
+.cta-box h2{
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:18px;
+}
+
+.cta-box p{
+  color:var(--muted);
+  max-width:760px;
+  margin:0 auto 34px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 0;
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.footer-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#cbd5e1;
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:#60a5fa;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+  .hero-grid,
+  .problem-grid,
+  .features-grid,
+  .apps-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:90px;
   }
 }
 
-/* Desktop: 2 centered columns */
-@media (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(450px, 1fr));
-  }
-}
+@media(max-width:820px){
 
-.feature-box {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.feature-btn {
-  display: inline-block;
-  background-color: #e8491d;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-top: 15px;
-  transition: background-color 0.2s ease;
-}
-
-.feature-btn:hover {
-  background-color: #cf3e16;
-}
-
-.cta {
-  background: #35424a;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.cta a {
-  display: inline-block;
-  background: #e8491d;
-  color: #ffffff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin: 10px 0;
-}
-
-.cta a:hover {
-  background: #ffffff;
-  color: #e8491d;
-}
-
-footer {
-  padding: 20px 0;
-  margin-top: 20px;
-  color: #000000;
-  background-color: #f4f4f4;
-  text-align: center;
-}
-
-.menu-toggle {
-  display: block;
-  font-size: 2em;
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 0;
-  margin: 10px 0 0 10px;
-}
-
-.mobile-nav {
-  display: none;
-  background: #35424a;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.mobile-nav a {
-  display: block;
-  padding: 10px 0;
-  text-align: center;
-  border-top: 1px solid #e8491d;
-}
-
-/* Tablet and up refinements */
-@media (min-width: 768px) {
-  .container {
-    width: 85%; /* tighter on tablet */
+  .desktop-nav{
+    display:none;
   }
 
-  header h1 {
-    font-size: 36px;
-    text-align: left;
+  .menu-btn{
+    display:block;
   }
 
-  header nav {
-    display: block;
-    text-align: right;
+  .mobile-nav.show{
+    display:flex;
   }
 
-  header a {
-    font-size: 16px;
-    padding: 10px;
+  section{
+    padding:65px 0;
   }
 
-  .showcase h1 {
-    font-size: 3em;
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
   }
 
-  .showcase p {
-    font-size: 1.5em;
+  .btn{
+    width:100%;
   }
 
-  .menu-toggle {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: none;
+  .hero-highlights{
+    flex-direction:column;
+    gap:10px;
   }
 }
 
 </style>
-
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>DataMateApps</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <nav class="desktop-nav">
-                <a href="https://datamateapp.github.io/" class="highlight">Home</a>
-                <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
-                <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
-            </nav>
-            <nav class="mobile-nav">
-                <a href="https://datamateapp.github.io/" class="highlight">Home</a>
-                <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
-                <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="showcase">
-        <div class="container">
-            <h1>Master Your Data with Ease</h1>
-            <p>Transform your spreadsheets into powerful data management tools with DataMateApps.</p>
-        </div>
-    </section>
+<header>
 
-    <section class="features">
-    <div class="container">
-        <h2>Download Now (The Ultimate Free, Ad-Free Data Management Solution!)</h2>
-        <div class="feature-grid">
-            <div class="feature-box">
-                <button class="feature-btn" onclick="location.href='https://workspace.google.com/marketplace/app/datamate/609263591431'">DataMate Add-on</button>
-                <p>Streamline data management, contact organization, web form creation, and template handling with a powerful Google Sheets™ add-on that simplifies data entry and automates workflows for businesses and individuals.</p>
-                <p><a href="https://www.youtube.com/embed/9mFRs7j7EHc" target="_blank">Watch the DataMate Overview Video</a></p>
-                
-            <div class="feature-box">
-                <button class="feature-btn" onclick="location.href='https://workspace.google.com/u/0/marketplace/app/formbuilder/514024458769?flow_type=2'">FormBuilder Add-on</button>
-                <p>Build dynamic forms with 29 field types, automate data collection, and integrate with Google Sheets™.</p>
-                <p><a href="https://www.youtube.com/embed/G_iUSWagqNg" target="_blank">Watch the FormBuilder Overview Video</a></p>
-                
-            </div>
-            <div class="feature-box">
-                <button class="feature-btn" onclick="location.href='https://gsuite.google.com/marketplace/app/foo/439805846324'">DynamicForm Add-on</button>
-                <p>Build dynamic data entry forms, automate data collection, and integrate with Google Sheets™.</p>
-                <p><a href="https://youtu.be/9pYkB_fWRRk" target="_blank">Watch the DynamicForm Overview Video</a></p>
-                
-            </div>
-            <div class="feature-box">
-                <button class="feature-btn" onclick="location.href='https://workspace.google.com/marketplace/app/datamate_snapsync/788022214283'">SnapSync Add-on</button>
-                <p>Turn your spreadsheets into live dashboards and keep data in sync across files with ease..</p>
-                <p><a href="https://youtu.be/G9Y1oaT3-DU" target="_blank">Watch the SnapSync Overview Video</a></p>
-                
-            </div>
-            <div class="feature-box">
-                <button class="feature-btn" onclick="location.href='https://workspace.google.com/u/0/marketplace/app/addressblock/786018916601?flow_type=2'">AddressBlock Add-on</button>
-                <p>Organize contacts, import from Gmail, and send formatted HTML emails from Google Sheets™.</p>
-                <p><a href="https://www.youtube.com/embed/C5kKbSRCkGc" target="_blank">Watch the AddressBlock Overview Video</a></p>
-            </div>
-        </div>
+  <div class="container navbar">
+
+    <a href="https://datamateapp.github.io/" class="logo">
+      DataMate<span>Apps</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="https://datamateapp.github.io/">Home</a>
+      <a href="https://datamateapp.github.io/features.html">Features</a>
+      <a href="https://datamateapp.github.io/help.html">Help</a>
+      <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
+      <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy™</a>
+      <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce™</a>
+      <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
+      <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  </div>
+
+  <div class="container">
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="https://datamateapp.github.io/">Home</a>
+      <a href="https://datamateapp.github.io/features.html">Features</a>
+      <a href="https://datamateapp.github.io/help.html">Help</a>
+      <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
+      <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy™</a>
+      <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce™</a>
+      <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
+      <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
+      <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder™</a>
+      <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm™</a>
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="hero-badge">
+        ✅ 100% Free • No Monthly Subscription • Google Sheets™ Powered
+      </div>
+
+      <h1>
+        Turn Google Sheets™ Into
+        <span>Real Business Applications</span>
+      </h1>
+
+      <p>
+        Most teams are stuck between two frustrating options:
+        fighting with chaotic, manual Google Sheets™ that constantly break —
+        or moving to tools like Airtable™, Notion™, Monday.com™, or AppSheet™
+        only to deal with another learning curve, higher costs,
+        and data locked inside someone else’s platform.
+        <br><br>
+        <strong>There’s a better way.</strong>
+        <br><br>
+        DataMate™ lets you transform the Google Sheets™ you already know
+        into powerful, professional business applications —
+        without leaving Google Sheets™.
+        <br><br>
+        <strong>Free. Open. Familiar. Powerful.</strong>
+      </p>
+
+      <div class="hero-actions">
+
+        <a class="btn btn-primary"
+        href="https://workspace.google.com/marketplace/app/datamate/609263591431">
+        Install DataMate™
+        </a>
+
+        <a class="btn btn-secondary"
+        href="https://datamateapp.github.io/features.html">
+        Explore Features
+        </a>
+
+      </div>
+
+      <div class="hero-highlights">
+        <div>✅ Free Lifetime Access</div>
+        <div>✅ No Monthly Fees</div>
+        <div>✅ Powered by Google Sheets™</div>
+        <div>✅ Keep Your Own Data</div>
+      </div>
+
     </div>
+
+    <div class="hero-card">
+
+      <div class="mockup-window">
+
+        <div class="mockup-top">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+        </div>
+
+        <div class="mockup-content">
+
+          <div class="sheet-row">
+            <div class="sheet-cell active"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+          </div>
+
+          <div class="sheet-row">
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell active"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+          </div>
+
+          <div class="sheet-row">
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell active"></div>
+            <div class="sheet-cell"></div>
+          </div>
+
+          <div class="sheet-row">
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell"></div>
+            <div class="sheet-cell active"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+<!-- WHY DATAMATE -->
 
-    <section class="cta">
-        <div class="container">
-            <h2>Start Simplifying Your Data Today</h2>
-            <a href="https://datamateapp.github.io/features.html">Features</a>
-        </div>
-    </section>
+<section class="problem">
 
-    <footer>
-        <div class="container">
-            <p>© 2026 DataMate</p>
-            <p>
-                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                <a href="https://script.google.com/macros/s/AKfycby1GgJMYN1-_dAxH8Tem68ei1JtiE2OXtDGpY5O6XJKlrIH9jDeiyAdI9mpGXqkaDC0/exec">Contact Us</a>
-            </p>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Teams Are Switching to DataMate™</h2>
+      <p>
+        Stop paying monthly subscriptions just to organize your business data.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <div class="problem-card">
+        <h3>💸 Most Platforms Keep Charging Forever</h3>
+        <p>
+          Airtable™, Monday.com™, Notion™, and similar platforms
+          charge recurring monthly fees, restrict features behind paywalls,
+          and keep your workflows tied to proprietary systems.
+        </p>
+      </div>
+
+      <div class="problem-card">
+        <h3>✅ DataMate™ Is Different</h3>
+        <p>
+          DataMate™ is designed around the tools businesses already use:
+          Google Sheets™ and Google Drive™.
+          <br><br>
+          No expensive migration.
+          No complicated retraining.
+          No locked-in database platform.
+          <br><br>
+          <strong>
+          Just free, flexible business applications powered by Google Sheets™.
+          </strong>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>
+        Everything You Need to Build Free Business Systems in Google Sheets™
+      </h2>
+
+      <p>
+        DataMateApps™ transforms ordinary spreadsheets into scalable workflows,
+        dashboards, CRMs, project systems, and operational tools.
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Dynamic Forms</h3>
+        <p>
+          Build advanced forms connected directly to Google Sheets™
+          with modern interfaces and automation.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Live Dashboards</h3>
+        <p>
+          Turn spreadsheet data into professional dashboards and reporting systems.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Contact Management</h3>
+        <p>
+          Manage contacts directly in Google Sheets™ and import contacts from Gmail™.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Automation</h3>
+        <p>
+          Reduce repetitive work with syncing, structured workflows,
+          and automated business processes.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Cross-File Syncing</h3>
+        <p>
+          Keep multiple Google Sheets™ files connected and synchronized automatically.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏗️</div>
+        <h3>Business Templates</h3>
+        <p>
+          Use ready-to-deploy systems for operations, commerce,
+          estimating, project management, and more.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- APPS -->
+
+<section class="apps">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Explore the DataMateApps™ Ecosystem</h2>
+      <p>
+        Free Google Sheets™ add-ons designed to work together.
+      </p>
+    </div>
+
+    <div class="apps-grid">
+
+      <div class="app-card">
+
+        <h3>DataMate™ Add-on</h3>
+
+        <p>
+          Streamline data management, dashboards, contacts,
+          workflows, and business operations directly inside Google Sheets™.
+        </p>
+
+        <div class="app-links">
+
+          <a class="btn btn-primary"
+          href="https://workspace.google.com/marketplace/app/datamate/609263591431">
+          Install Free
+          </a>
+
+          <a class="video-link"
+          href="https://www.youtube.com/embed/9mFRs7j7EHc"
+          target="_blank">
+          Watch Overview →
+          </a>
+
         </div>
-    </footer>
-  <script>
-    function toggleMenu() {
-      var nav = document.querySelector('.mobile-nav');
-      if (nav.style.display === "block") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "block";
-      }
-    }
-  </script>
+
+      </div>
+
+      <div class="app-card">
+
+        <h3>FormBuilder™</h3>
+
+        <p>
+          Build dynamic forms with 29 field types,
+          image/video support, and Google Sheets™ integration.
+        </p>
+
+        <div class="app-links">
+
+          <a class="btn btn-primary"
+          href="https://workspace.google.com/u/0/marketplace/app/formbuilder/514024458769?flow_type=2">
+          Install Free
+          </a>
+
+          <a class="video-link"
+          href="https://www.youtube.com/embed/G_iUSWagqNg"
+          target="_blank">
+          Watch Overview →
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="app-card">
+
+        <h3>SnapSync™</h3>
+
+        <p>
+          Build live dashboards and sync data across multiple
+          Google Sheets™ systems automatically.
+        </p>
+
+        <div class="app-links">
+
+          <a class="btn btn-primary"
+          href="https://workspace.google.com/marketplace/app/datamate_snapsync/788022214283">
+          Install Free
+          </a>
+
+          <a class="video-link"
+          href="https://youtu.be/G9Y1oaT3-DU"
+          target="_blank">
+          Watch Overview →
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="app-card">
+
+        <h3>AddressBlock™</h3>
+
+        <p>
+          Organize contacts, import Gmail™ contacts,
+          and send formatted HTML emails from Google Sheets™.
+        </p>
+
+        <div class="app-links">
+
+          <a class="btn btn-primary"
+          href="https://workspace.google.com/u/0/marketplace/app/addressblock/786018916601?flow_type=2">
+          Install Free
+          </a>
+
+          <a class="video-link"
+          href="https://www.youtube.com/embed/C5kKbSRCkGc"
+          target="_blank">
+          Watch Overview →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        Build Real Business Applications for Free
+        Using Google Sheets™
+      </h2>
+
+      <p>
+        Keep the flexibility of Google Sheets™ while gaining
+        professional workflows, forms, syncing, automation,
+        dashboards, and scalable business systems —
+        without expensive SaaS subscriptions.
+      </p>
+
+      <div class="hero-actions" style="justify-content:center;">
+
+        <a class="btn btn-primary"
+        href="https://workspace.google.com/marketplace/app/datamate/609263591431">
+        Get Started Free
+        </a>
+
+        <a class="btn btn-secondary"
+        href="https://datamateapp.github.io/help.html">
+        View Documentation
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+      <h3 style="margin-bottom:10px;">DataMateApps™</h3>
+
+      <p style="color:#94a3b8;">
+        Free Google Sheets™ powered business applications.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a>
+      <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+      <a href="https://script.google.com/macros/s/AKfycby1GgJMYN1-_dAxH8Tem68ei1JtiE2OXtDGpY5O6XJKlrIH9jDeiyAdI9mpGXqkaDC0/exec">Contact</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+  const nav = document.getElementById('mobileNav');
+  nav.classList.toggle('show');
+}
+
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
