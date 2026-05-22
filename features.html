@@ -1,415 +1,694 @@
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Features</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataMate™ Features</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        :root {
+            --bg: #020617;
+            --card: #111827;
+            --primary: #2563eb;
+            --primary2: #3b82f6;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --border: rgba(255,255,255,.08);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter',sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: min(94%,1200px);
             margin: auto;
-            overflow: hidden;
         }
 
+        section {
+            padding: 70px 0;
+        }
+
+        /* HEADER */
+
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 15px 0;
-            border-bottom: #e8491d 4px solid;
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(18px);
+            background: rgba(2,6,23,.92);
+            border-bottom: 1px solid var(--border);
         }
 
-            header a {
-                color: #ffffff;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 16px;
-                padding: 10px;
-                transition: color 0.3s;
-            }
-
-            header h1 {
-                margin: 0;
-                font-size: 28px;
-                text-align: center;
-            }
-
-            header nav {
-                display: none;
-            }
-
-        .highlight, .current a {
-            color: #e8491d;
-            font-weight: bold;
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 78px;
         }
 
-        header a:hover {
-            color: #e8491d;
-        }
-
-        .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/datamanagement.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            padding: 60px 20px;
-        }
-
-            .showcase h1 {
-                font-size: 3em;
-                margin-bottom: 15px;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            }
-
-            .showcase p {
-                font-size: 1.4em;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-        .features, .formbuilder-section {
-            padding: 40px 0;
-            background: #ffffff;
-            text-align: center;
-        }
-
-            .features h2, .formbuilder-section h2 {
-                color: #35424a;
-                font-size: 2.2em;
-                margin-bottom: 30px;
-            }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .feature-box {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-            .feature-box:hover {
-                transform: translateY(-5px);
-            }
-
-            .feature-box i {
-                font-size: 2.5em;
-                color: #e8491d;
-                margin-bottom: 15px;
-            }
-
-            .feature-box h3 {
-                color: #35424a;
-                font-size: 1.5em;
-                margin: 10px 0;
-            }
-
-            .feature-box p {
-                color: #666;
-                font-size: 1.1em;
-            }
-
-        .formbuilder-section {
-            background: #f4f4f4;
-        }
-
-            .formbuilder-section a {
-                color: #e8491d;
-                text-decoration: none;
-                font-weight: bold;
-            }
-
-                .formbuilder-section a:hover {
-                    text-decoration: underline;
-                }
-
-        .cta {
-            background: #35424a;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
             color: #fff;
-            padding: 40px 0;
-            text-align: center;
+            text-decoration: none;
         }
 
-            .cta h2 {
-                font-size: 2em;
-                margin-bottom: 20px;
+            .logo span {
+                color: #60a5fa;
             }
 
-            .cta a {
-                display: inline-block;
-                background: #e8491d;
-                color: #ffffff;
-                padding: 12px 30px;
-                text-decoration: none;
-                border-radius: 5px;
-                font-size: 1.2em;
-                transition: background 0.3s;
-            }
-
-                .cta a:hover {
-                    background: #cc3e12;
-                }
-
-        footer {
-            padding: 20px 0;
-            color: #000000;
-            background-color: #f4f4f4;
-            text-align: center;
-            font-size: 0.9em;
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
         }
 
-            footer a {
-                color: #35424a;
+            .desktop-nav a {
+                color: #e2e8f0;
                 text-decoration: none;
+                font-size: .92rem;
+                white-space: nowrap;
             }
 
-                footer a:hover {
-                    color: #e8491d;
+                .desktop-nav a:hover,
+                .desktop-nav .active {
+                    color: #60a5fa;
                 }
 
-        .menu-toggle {
-            display: block;
-            font-size: 2em;
+        .menu-btn {
+            display: none;
             background: none;
             border: none;
-            color: #ffffff;
+            color: white;
+            font-size: 2rem;
             cursor: pointer;
-            padding: 0;
-            margin: 10px 0 0 10px;
         }
 
         .mobile-nav {
             display: none;
-            background: #35424a;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+            flex-direction: column;
+            padding-bottom: 20px;
         }
 
             .mobile-nav a {
-                display: block;
-                padding: 15px 0;
-                text-align: center;
-                border-top: 1px solid #e8491d;
+                color: white;
+                text-decoration: none;
+                padding: 14px 0;
+                border-bottom: 1px solid rgba(255,255,255,.06);
             }
 
-        @media (min-width: 768px) {
-            .container {
-                width: 80%;
+            .mobile-nav.show {
+                display: flex;
             }
 
-            header h1 {
-                font-size: 36px;
-                text-align: left;
-                float: left;
-                padding-left: 20px;
+        /* HERO */
+
+        .hero {
+            padding: 110px 0 80px;
+            background: radial-gradient(circle at top right, rgba(59,130,246,.25), transparent 30%), radial-gradient(circle at bottom left, rgba(37,99,235,.18), transparent 35%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: rgba(37,99,235,.15);
+            border: 1px solid rgba(96,165,250,.25);
+            border-radius: 999px;
+            color: #bfdbfe;
+            margin-bottom: 24px;
+            font-size: .92rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem,6vw,5rem);
+            line-height: 1.05;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+            .hero h1 span {
+                color: #60a5fa;
             }
 
-            header nav {
-                display: block;
-                text-align: right;
-                padding-top: 10px;
+        .hero p {
+            font-size: 1.08rem;
+            color: var(--muted);
+            max-width: 760px;
+            margin: 0 auto 34px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg,var(--primary),var(--primary2));
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(37,99,235,.35);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,.15);
+            color: #fff;
+            background: rgba(255,255,255,.04);
+        }
+
+        /* SECTION */
+
+        .section-title {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 50px;
+        }
+
+            .section-title h2 {
+                font-size: clamp(2rem,4vw,3rem);
+                margin-bottom: 16px;
             }
 
-            .feature-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .section-title p {
+                color: var(--muted);
             }
 
-            .menu-toggle {
+        /* FEATURES */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            transition: .25s ease;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-6px);
+                border-color: rgba(96,165,250,.25);
+            }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: rgba(37,99,235,.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+            .feature-icon i {
+                font-size: 2rem;
+                color: #60a5fa;
+            }
+
+        .feature-card h3 {
+            margin-bottom: 14px;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+        }
+
+        /* FORM BUILDER */
+
+        .highlight-section {
+            background: #0b1120;
+        }
+
+        .highlight-box {
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+        }
+
+            .highlight-box h2 {
+                font-size: clamp(2rem,4vw,3rem);
+                margin-bottom: 20px;
+            }
+
+            .highlight-box p {
+                color: var(--muted);
+                max-width: 850px;
+                margin: 0 auto 26px;
+            }
+
+        /* BENEFITS */
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 28px;
+            text-align: center;
+        }
+
+            .benefit-card i {
+                font-size: 2rem;
+                color: #60a5fa;
+                margin-bottom: 16px;
+            }
+
+            .benefit-card p {
+                color: var(--muted);
+            }
+
+        /* CTA */
+
+        .cta-box {
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(59,130,246,.22), transparent 30%), linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 60px 24px;
+        }
+
+            .cta-box h2 {
+                font-size: clamp(2rem,4vw,3rem);
+                margin-bottom: 18px;
+            }
+
+            .cta-box p {
+                color: var(--muted);
+                max-width: 760px;
+                margin: 0 auto 34px;
+            }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+            .footer-links a {
+                color: #cbd5e1;
+                text-decoration: none;
+            }
+
+                .footer-links a:hover {
+                    color: #60a5fa;
+                }
+
+        /* RESPONSIVE */
+
+        @media(max-width:1100px) {
+
+            .desktop-nav {
                 display: none;
             }
 
-            .mobile-nav {
-                display: none;
+            .menu-btn {
+                display: block;
             }
         }
 
-        @media (max-width: 767px) {
-            .showcase h1 {
-                font-size: 2em;
+        @media(max-width:992px) {
+
+            .features-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
 
-            .showcase p {
-                font-size: 1.1em;
+            .hero-actions {
+                flex-direction: column;
             }
 
-            .features h2, .formbuilder-section h2 {
-                font-size: 1.8em;
+                .hero-actions .btn {
+                    width: 100%;
+                }
+        }
+
+        @media(max-width:600px) {
+
+            section {
+                padding: 55px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .highlight-box {
+                padding: 30px 20px;
+            }
+
+            .feature-card,
+            .benefit-card {
+                padding: 24px;
+            }
+
+            .footer-grid,
+            .footer-links {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>DataMateApps</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-              <nav class="desktop-nav">
+        <div class="container navbar">
+
+            <a href="https://datamateapp.github.io/" class="logo">
+                DataMate<span>Apps</span>
+            </a>
+
+            <nav class="desktop-nav">
                 <a href="https://datamateapp.github.io/">Home</a>
-                <a href="https://datamateapp.github.io/features.html" class="highlight">Features</a>
+                <a href="https://datamateapp.github.io/features.html" class="active">Features</a>
                 <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>  
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
+                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy™</a>
+                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce™</a>
+                <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
                 <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
+                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder™</a>
+                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm™</a>
             </nav>
-            <nav class="mobile-nav">
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        </div>
+
+        <div class="container">
+            <nav class="mobile-nav" id="mobileNav">
                 <a href="https://datamateapp.github.io/">Home</a>
-                <a href="https://datamateapp.github.io/features.html" class="highlight">Features</a>
+                <a href="https://datamateapp.github.io/features.html">Features</a>
                 <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html">Support DataMate</a>
+                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/AI Blog</a>
+                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy™</a>
+                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce™</a>
+                <a href="https://datamateapp.github.io/Donate%205%20per%20mo.html">Support</a>
                 <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
+                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder™</a>
+                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm™</a>
             </nav>
         </div>
     </header>
 
-    <section class="showcase">
-        <div class="container">
-            <h1>Explore DataMate Features</h1>
-            <p>Unlock the power of seamless data management with DataMateApps</p>
-        </div>
-    </section>
+    <section class="hero">
+        <div class="container hero-content">
 
-    <section class="features">
-        <div class="container">
-            <h2>What DataMate Can Do for You</h2>
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <i class="material-icons">contacts</i>
-                    <h3>Contact Management</h3>
-                    <p>Easily manage contacts within Google Sheets™ and Excel™—no external CRM needed. Import from Gmail or CSV and keep everything in one place.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="material-icons">storage</i>
-                    <h3>Updatable Datasets</h3>
-                    <p>Store all your data in a single, structured sheet. Update, filter, and sort records like customer data or project logs with ease.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="material-icons">input</i>
-                    <h3>Streamlined Data Entry</h3>
-                    <p>Consolidate inputs into one system. Each entry becomes a record, seamlessly integrated into your dataset—no more scattered files.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="material-icons">history</i>
-                    <h3>Dynamic Log Tracking</h3>
-                    <p>Monitor changes with a log table supporting up to 12 fields per record. Stay organized and find entries instantly.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="material-icons">print</i>
-                    <h3>View & Print Records</h3>
-                    <p>Select, view, and print any record in a clean format—ideal for reports, audits, or presentations.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="material-icons">sort</i>
-                    <h3>Effortless Filtering</h3>
-                    <p>Instantly filter and sort records to analyze trends, update data, or compile reports—all within your spreadsheet.</p>
-                </div>
+            <div class="hero-badge">
+                ✅ Free • Open Source • Google Sheets™ Powered
             </div>
+
+            <h1>
+                Explore <span>DataMate™ Features</span>
+            </h1>
+
+            <p>
+                Transform Google Sheets™ into modern business applications with dashboards,
+                forms, datasets, automation, syncing, contact management, and operational workflows.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="https://workspace.google.com/marketplace/app/datamate/609263591431">
+                    Install Free
+                </a>
+
+                <a class="btn btn-secondary" href="https://datamateapp.github.io/help.html">
+                    View Documentation
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <section class="formbuilder-section">
+    <section>
         <div class="container">
-            <h2>Supercharge with FormBuilder</h2>
-            <p>Create custom forms with <strong>29 field types</strong>, including checkout tables for orders, hyperlinks for quick navigation, media-rich tables (images/videos), conditional logic, file uploads, and email notifications on submission. From surveys to e-commerce order forms, FormBuilder integrates seamlessly with DataMate, enhancing data collection in Google Sheets™.</p>
-            <p> <a href="https://youtu.be/G_iUSWagqNg" target="_blank">Watch Demo</a></p>
+
+            <div class="section-title">
+                <h2>What DataMate™ Can Do</h2>
+                <p>
+                    Everything you need to build scalable business systems inside Google Sheets™.
+                </p>
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">contacts</i>
+                    </div>
+                    <h3>Contact Management</h3>
+                    <p>
+                        Manage contacts directly inside Google Sheets™ without needing an external CRM.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">storage</i>
+                    </div>
+                    <h3>Updatable Datasets</h3>
+                    <p>
+                        Store, filter, organize, and update records from a centralized dataset.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">input</i>
+                    </div>
+                    <h3>Streamlined Data Entry</h3>
+                    <p>
+                        Consolidate forms and records into a single connected workflow.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">history</i>
+                    </div>
+                    <h3>Dynamic Log Tracking</h3>
+                    <p>
+                        Track updates and maintain historical records automatically.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">print</i>
+                    </div>
+                    <h3>View & Print Records</h3>
+                    <p>
+                        Generate clean printable layouts for reports and operational documents.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">sort</i>
+                    </div>
+                    <h3>Effortless Filtering</h3>
+                    <p>
+                        Quickly analyze and organize spreadsheet records with advanced filtering.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
-    <section class="features">
+    <section class="highlight-section">
         <div class="container">
-            <h2>Why Choose DataMate?</h2>
-            <div class="feature-grid">
-                <div class="feature-box">
+
+            <div class="highlight-box">
+
+                <h2>Supercharge DataMate™ with FormBuilder™</h2>
+
+                <p>
+                    Create custom forms with 29 field types including checkout tables,
+                    media-rich layouts, conditional logic, file uploads, hyperlinks,
+                    email notifications, and advanced workflows.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://workspace.google.com/u/0/marketplace/app/formbuilder/514024458769?flow_type=2">
+                        Install FormBuilder™
+                    </a>
+
+                    <a class="btn btn-secondary" href="https://youtu.be/G_iUSWagqNg">
+                        Watch Demo
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Why Choose DataMate™?</h2>
+                <p>
+                    Free, modern, scalable tools built around Google Sheets™.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-card">
                     <i class="material-icons">accessibility</i>
                     <h3>Simple & Intuitive</h3>
-                    <p>Designed for all skill levels, making complex tasks straightforward and user-friendly.</p>
+                    <p>
+                        Built for teams of all skill levels.
+                    </p>
                 </div>
-                <div class="feature-box">
+
+                <div class="benefit-card">
                     <i class="material-icons">lock_open</i>
                     <h3>Free & Open</h3>
-                    <p>Accessible to everyone at no cost, with open-source code and no intrusive ads.</p>
+                    <p>
+                        No monthly subscriptions or proprietary lock-in.
+                    </p>
                 </div>
-                <div class="feature-box">
+
+                <div class="benefit-card">
                     <i class="material-icons">speed</i>
-                    <h3>Time-Saving Efficiency</h3>
-                    <p>Keeps your data organized and accurate, freeing you to focus on what matters.</p>
+                    <h3>Efficient Workflows</h3>
+                    <p>
+                        Save time and streamline operations using automation.
+                    </p>
                 </div>
+
             </div>
+
         </div>
     </section>
 
-    <section class="cta">
+    <section>
         <div class="container">
-            <h2>Get Started Today</h2>
-            <p>Transform your data management with DataMate—free, powerful, and built for you.</p>
-            <a href="https://script.google.com/macros/s/AKfycbxbj_LpLRcQxyuwbhH8Z0YeD43jneM33rtKMIRqgLmxuemov_BHpuG3RHcLXXLB3yGVjg/exec" target="_blank">Download Now</a>
+
+            <div class="cta-box">
+
+                <h2>Build Business Applications for Free</h2>
+
+                <p>
+                    Keep the flexibility of Google Sheets™ while gaining professional workflows,
+                    dashboards, syncing, forms, automation, and operational tools.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://workspace.google.com/marketplace/app/datamate/609263591431">
+                        Get Started Free
+                    </a>
+
+                    <a class="btn btn-secondary" href="https://datamateapp.github.io/help.html">
+                        Learn More
+                    </a>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>© 2026 DataMateApps | Empowering Your Data Management</p>
-            <p>
-                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                <a href="https://script.google.com/macros/s/AKfycby1GgJMYN1-_dAxH8Tem68ei1JtiE2OXtDGpY5O6XJKlrIH9jDeiyAdI9mpGXqkaDC0/exec">Contact Us</a>
-            </p>
+        <div class="container footer-grid">
+
+            <div>
+                <h3 style="margin-bottom:10px;">DataMateApps™</h3>
+                <p style="color:#94a3b8;">
+                    Free Google Sheets™ powered business applications.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a>
+                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a>
+                <a href="https://script.google.com/macros/s/AKfycby1GgJMYN1-_dAxH8Tem68ei1JtiE2OXtDGpY5O6XJKlrIH9jDeiyAdI9mpGXqkaDC0/exec">Contact</a>
+            </div>
+
         </div>
     </footer>
 
     <script>
         function toggleMenu() {
-            var nav = document.querySelector('.mobile-nav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
+            const nav = document.getElementById('mobileNav');
+            nav.classList.toggle('show');
         }
     </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
