@@ -510,6 +510,235 @@ footer{
     width:100%;
   }
 }
+  .workflow-section{
+  padding:100px 0;
+  background:
+  radial-gradient(circle at top left, rgba(37,99,235,.12), transparent 30%),
+  #020617;
+}
+
+.section-header{
+  text-align:center;
+  max-width:850px;
+  margin:0 auto 60px;
+}
+
+.section-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  background:rgba(37,99,235,.12);
+  border:1px solid rgba(96,165,250,.2);
+  color:#bfdbfe;
+  margin-bottom:22px;
+  font-size:.92rem;
+}
+
+.section-header h2{
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1.1;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+.section-header p{
+  color:#cbd5e1;
+  font-size:1.08rem;
+}
+
+.workflow-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+
+.workflow-card{
+  background:linear-gradient(180deg,#111827,#0f172a);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:30px;
+  padding:38px;
+  position:relative;
+  overflow:hidden;
+}
+
+.workflow-card h3{
+  font-size:1.8rem;
+  margin-bottom:18px;
+}
+
+.workflow-intro{
+  color:#cbd5e1;
+  margin-bottom:28px;
+}
+
+.workflow-icon{
+  width:72px;
+  height:72px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:24px;
+  background:rgba(37,99,235,.15);
+}
+
+.workflow-icon .material-icons{
+  font-size:2.2rem;
+  color:#60a5fa;
+}
+
+.workflow-list{
+  padding-left:22px;
+  margin-bottom:28px;
+}
+
+.workflow-list li{
+  margin-bottom:16px;
+  color:#cbd5e1;
+}
+
+.workflow-example{
+  background:#020617;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:28px;
+}
+
+.workflow-example h4{
+  margin-bottom:18px;
+}
+
+.example-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.example-list span{
+  background:rgba(255,255,255,.06);
+  padding:10px 14px;
+  border-radius:12px;
+  font-size:.92rem;
+}
+
+.workflow-arrows{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.workflow-arrows div{
+  padding:12px 16px;
+  border-radius:12px;
+  background:rgba(255,255,255,.04);
+  color:#cbd5e1;
+}
+
+.workflow-problems,
+.workflow-benefits{
+  display:grid;
+  gap:14px;
+}
+
+.problem-item,
+.benefit-item{
+  padding:16px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  color:#e2e8f0;
+}
+
+.new-way{
+  border:1px solid rgba(96,165,250,.2);
+  box-shadow:0 20px 60px rgba(37,99,235,.12);
+}
+
+.workflow-steps{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:30px;
+}
+
+.step{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+}
+
+.step-number{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  font-weight:700;
+  flex-shrink:0;
+}
+
+.database-box{
+  background:
+  radial-gradient(circle at top right, rgba(59,130,246,.18), transparent 30%),
+  #020617;
+  border:1px solid rgba(96,165,250,.15);
+  border-radius:22px;
+  padding:28px;
+  margin-bottom:28px;
+}
+
+.database-box h4{
+  font-size:1.3rem;
+  margin-bottom:12px;
+}
+
+.database-box p{
+  color:#cbd5e1;
+}
+
+.inline-link{
+  color:#60a5fa;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.inline-link:hover{
+  text-decoration:underline;
+}
+
+@media(max-width:992px){
+
+  .workflow-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:700px){
+
+  .workflow-section{
+    padding:70px 0;
+  }
+
+  .workflow-card{
+    padding:24px;
+  }
+
+  .workflow-card h3{
+    font-size:1.45rem;
+  }
+
+  .section-header h2{
+    font-size:2rem;
+  }
+}
 
 </style>
 </head>
@@ -705,6 +934,204 @@ footer{
     </div>
 
   </div>
+
+<section class="workflow-section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-badge">
+        📊 Google Sheets™ Database Workflows
+      </div>
+
+      <h2>
+        Stop Creating Hundreds of Spreadsheet Files
+      </h2>
+
+      <p>
+        If you use spreadsheet-based forms, there’s a better way than
+        creating and storing hundreds of separate files.
+      </p>
+
+    </div>
+
+    <div class="workflow-grid">
+
+      <div class="workflow-card old-way">
+
+        <div class="workflow-icon">
+          <span class="material-icons">folder_copy</span>
+        </div>
+
+        <h3>
+          Traditional Spreadsheet Workflow
+        </h3>
+
+        <p class="workflow-intro">
+          Most spreadsheet systems eventually become difficult to manage.
+        </p>
+
+        <ul class="workflow-list">
+
+          <li>
+            Saving individual spreadsheets for every customer,
+            project, inspection, estimate, or report
+          </li>
+
+          <li>
+            Renaming files manually
+          </li>
+
+          <li>
+            Searching through folders to find old submissions
+          </li>
+
+          <li>
+            Copying templates over and over
+          </li>
+
+        </ul>
+
+        <div class="workflow-example">
+
+          <h4>
+            Typical Process
+          </h4>
+
+          <div class="example-list">
+
+            <span>Invoice</span>
+            <span>Inspection Report</span>
+            <span>Job Estimate</span>
+            <span>Contact Form</span>
+            <span>Timesheet</span>
+
+          </div>
+
+          <div class="workflow-arrows">
+
+            <div>Make a copy</div>
+            <div>Rename file</div>
+            <div>Save to folder</div>
+            <div>Repeat forever</div>
+
+          </div>
+
+        </div>
+
+        <div class="workflow-problems">
+
+          <div class="problem-item">
+            ❌ File clutter
+          </div>
+
+          <div class="problem-item">
+            ❌ Duplicate templates
+          </div>
+
+          <div class="problem-item">
+            ❌ Version control issues
+          </div>
+
+          <div class="problem-item">
+            ❌ Difficult reporting & searching
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="workflow-card new-way">
+
+        <div class="workflow-icon">
+          <span class="material-icons">database</span>
+        </div>
+
+        <h3>
+          Database-Style Spreadsheet Workflow
+        </h3>
+
+        <p class="workflow-intro">
+
+          With
+          <a href="https://workspace.google.com/marketplace/app/datamate/609263591431"
+          target="_blank"
+          class="inline-link">
+          DataMate™
+          </a>
+
+          your Google Sheets™ forms become front-end interfaces
+          while all records are stored in structured tables
+          inside one centralized workbook.
+        </p>
+
+        <div class="workflow-steps">
+
+          <div class="step">
+            <span class="step-number">1</span>
+            Fill out the form
+          </div>
+
+          <div class="step">
+            <span class="step-number">2</span>
+            Click “Save Record”
+          </div>
+
+          <div class="step">
+            <span class="step-number">3</span>
+            Data is written into organized tables automatically
+          </div>
+
+        </div>
+
+        <div class="database-box">
+
+          <h4>
+            Your Spreadsheet Becomes a Lightweight Database
+          </h4>
+
+          <p>
+            Every submission becomes a searchable structured record.
+          </p>
+
+        </div>
+
+        <div class="workflow-benefits">
+
+          <div class="benefit-item">
+            ✅ Edit existing records
+          </div>
+
+          <div class="benefit-item">
+            ✅ Search instantly
+          </div>
+
+          <div class="benefit-item">
+            ✅ Filter by customer/date/status
+          </div>
+
+          <div class="benefit-item">
+            ✅ Print forms dynamically
+          </div>
+
+          <div class="benefit-item">
+            ✅ Generate dashboards & reports
+          </div>
+
+          <div class="benefit-item">
+            ✅ Share one centralized system with your team
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>  
 
 </section>
 
