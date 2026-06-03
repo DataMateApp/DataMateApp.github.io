@@ -1,409 +1,552 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataMateApps - Simplify Your Data Management</title>
+
+    <title>Support DataMateApps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        :root {
+            --bg: #020617;
+            --card: #111827;
+            --primary: #2563eb;
+            --primary2: #3b82f6;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --border: rgba(255,255,255,.08);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter',sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
         }
 
         .container {
-            width: 90%;
+            width: min(92%,1200px);
             margin: auto;
-            overflow: hidden;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .25s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg,var(--primary),var(--primary2));
+            color: white;
+            box-shadow: 0 15px 35px rgba(37,99,235,.35);
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+            }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.05);
+            color: white;
+            border: 1px solid rgba(255,255,255,.1);
         }
 
         header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            border-bottom: #e8491d 3px solid;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(2,6,23,.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
         }
 
-            header a {
-                color: #ffffff;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 14px;
-                padding: 5px;
-                display: inline-block;
-            }
-
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-                text-align: center;
-            }
-
-            header nav {
-                display: none;
-            }
-
-        .highlight, .current a {
-            color: #e8491d;
-            font-weight: bold;
+        .navbar {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        header a:hover {
-            color: #cccccc;
-            font-weight: bold;
-        }
-
-        .showcase {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/datamanagement.jpg') no-repeat center center;
-            background-size: cover;
-            text-align: center;
-            color: #ffffff;
-            padding: 40px 0;
-        }
-
-            .showcase h1 {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-            }
-
-            .showcase p {
-                font-size: 1.2em;
-                padding: 0 20px;
-            }
-
-        .features {
-            padding: 20px 0;
-            text-align: center;
-            background: #ffffff;
-        }
-
-            .features h2 {
-                color: #35424a;
-            }
-
-        .feature-box {
-            padding: 10px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        .feature-btn {
-            background-color: #e8491d;
+        .logo {
             color: white;
-            padding: 10px 20px;
-            text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
-        .cta {
-            background: #35424a;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-            .cta a {
-                display: inline-block;
-                background: #e8491d;
-                color: #ffffff;
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                margin: 10px 0;
+            .logo span {
+                color: #60a5fa;
             }
 
-                .cta a:hover {
-                    background: #ffffff;
-                    color: #e8491d;
-                }
-        .buy-btn p {
-            margin-top: 10px;
-            font-size: 1em;
-            color: #333;
+        .hero {
+            text-align: center;
+            padding: 120px 0;
+            background: radial-gradient(circle at top right, rgba(59,130,246,.25),transparent 35%), radial-gradient(circle at bottom left, rgba(37,99,235,.15),transparent 35%);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(37,99,235,.15);
+            border: 1px solid rgba(96,165,250,.25);
+            color: #bfdbfe;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem,6vw,5rem);
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 1.15rem;
+        }
+
+        .hero-actions {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+            .section-title h2 {
+                font-size: clamp(2rem,4vw,3rem);
+                margin-bottom: 20px;
+            }
+
+            .section-title p {
+                color: var(--muted);
+            }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 35px;
+        }
+
+        .donation-card {
             text-align: center;
         }
 
-        button {
-            font-weight: bold;
-            background-color: #1e90ff;
-            color: white;
-            padding: 10px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .donation-option {
-            text-align: center;
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #60a5fa;
             margin: 20px 0;
         }
 
-        button {
-            font-weight: bold;
-            background-color: #4285f4;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-            button:hover {
-                background-color: #357ae8;
+            .price span {
+                font-size: 1rem;
+                color: var(--muted);
             }
 
-        .stripe-button-wrapper {
-            margin-top: 10px;
-            display: inline-block;
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
         }
 
-        stripe-buy-button {
-            --stripe-background-color: #4285f4;
-            --stripe-text-color: white;
-            --stripe-font-size: 16px;
-            --stripe-border-radius: 8px;
-            width: auto;
+        .stat {
+            text-align: center;
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
         }
+
+            .stat h2 {
+                font-size: 3rem;
+                color: #60a5fa;
+            }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 25px;
+        }
+
+        .timeline-card {
+            background: linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+        }
+
+            .timeline-card h3 {
+                margin-bottom: 15px;
+            }
+
+            .timeline-card p {
+                color: var(--muted);
+            }
+
+        .story {
+            max-width: 900px;
+            margin: auto;
+        }
+
+            .story p {
+                margin-bottom: 20px;
+                color: var(--muted);
+            }
+
+        .quote {
+            margin: 35px 0;
+            padding: 30px;
+            border-left: 4px solid #60a5fa;
+            background: rgba(255,255,255,.03);
+            border-radius: 0 18px 18px 0;
+            font-size: 1.2rem;
+        }
+
+        .cta {
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(59,130,246,.25),transparent 30%), linear-gradient(180deg,#111827,#0f172a);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 70px 30px;
+        }
+
+            .cta h2 {
+                font-size: clamp(2rem,4vw,3rem);
+                margin-bottom: 20px;
+            }
+
+            .cta p {
+                max-width: 700px;
+                margin: auto;
+                color: var(--muted);
+            }
+
+            .cta .btn {
+                margin-top: 35px;
+            }
 
         footer {
-            padding: 20px 0;
-            margin-top: 20px;
-            color: #000000;
-            background-color: #f4f4f4;
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
             text-align: center;
         }
-        /* Mobile Menu */
-        .menu-toggle {
-            display: block;
-            font-size: 2em;
-            background: none;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            padding: 0;
-            margin: 10px 0 0 10px;
-        }
 
-        .mobile-nav {
-            display: none;
-            background: #35424a;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-            .mobile-nav a {
-                display: block;
-                padding: 10px 0;
-                text-align: center;
-                border-top: 1px solid #e8491d;
-            }
-        /* Desktop Styles */
-        @media (min-width: 768px) {
-            .container {
-                width: 80%;
+            footer p {
+                color: var(--muted);
             }
 
-            header h1 {
-                font-size: 36px;
-                text-align: left;
+        @media(max-width:768px) {
+
+            .stats {
+                grid-template-columns: 1fr;
             }
 
-            header nav {
-                display: block;
-                text-align: right;
+            .hero {
+                padding: 90px 0;
             }
 
-            header a {
-                font-size: 16px;
-                padding: 10px;
+            section {
+                padding: 70px 0;
             }
-
-            .showcase h1 {
-                font-size: 3em;
-            }
-
-            .showcase p {
-                font-size: 1.5em;
-            }
-
-            .feature-box {
-                float: left;
-                width: 30%;
-            }
-
-            .menu-toggle {
-                display: none;
-            }
-
-            .mobile-nav {
-                display: none;
-            }
-        }
-         blockquote {
-            font-style: italic;
-            color: #555;
-            border-left: 4px solid #0073e6;
-            padding-left: 10px;
-            margin-left: 0;
-        }
-        strong {
-            color: #222;
         }
     </style>
 </head>
+
 <body>
+
     <header>
-        <div class="container">
-            <h1>DataMateApps</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-             <nav class="desktop-nav">
-                <a href="https://datamateapp.github.io/">Home</a>
-                <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a> 
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html" class="highlight">Support DataMate</a>
-                <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
-            </nav>
-            <nav class="mobile-nav">
-                <a href="https://datamateapp.github.io/">Home</a>
-                <a href="https://datamateapp.github.io/features.html">Features</a>
-                <a href="https://datamateapp.github.io/help.html">Help</a>
-                <a href="https://datamateapp.github.io/OpenAIBlog.html">Open/ai Blog</a>
-                <a href="https://datamateapp.github.io/DownloadProjectProdigy.html">ProjectProdigy</a>
-                <a href="https://datamateapp.github.io/DownloadDataMateCommece.html">DataMate Commerce</a>
-                <a href="https://datamateapp.github.io/Donate 5 per mo.html" class="highlight">Support DataMate</a>
-                <a href="https://www.reddit.com/r/DataMateApps/">Community</a>
-                <a href="https://drive.google.com/file/d/1-5nFTmWhpziCA_0FvasDEDvLgsouYeIs/view?usp=sharing">Open Source FormBuilder</a>
-                <a href="https://drive.google.com/file/d/1kIZ7_8IoylVT7BIKYmPAQzI_dmg5mN6L/view?usp=sharing">Open Source DynamicForm</a>
-            </nav> 
+
+        <div class="container navbar">
+
+            <a href="https://datamateapp.github.io/" class="logo">
+                DataMate<span>Apps</span>
+            </a>
+
+            <a href="https://datamateapp.github.io/" class="btn btn-secondary">
+                Back to Home
+            </a>
+
         </div>
+
     </header>
 
+    <section class="hero">
 
-    <div class="container">
+        <div class="container">
 
-       
-        <div class="donation-option">
-            <h2>Donate $5.00/Month</h2>
-            <button onclick="donateFive()">Donate $5.00</button>
-        </div>
-
-        <div class="donation-option">
-            <h2>One-Time Donation</h2>
-            <div class="stripe-button-wrapper">
-                <stripe-buy-button buy-button-id="buy_btn_1QO2WDG1lPcU42DNgACDVfYi"
-                                   publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
-                </stripe-buy-button>
+            <div class="badge">
+                ❤️ Community Supported Software
             </div>
 
-                <p><h2>You may cancel at any time or view your reciept in the Doner Portal.</h2></p>
-                <button onclick="window.location.href='https://billing.stripe.com/p/login/bIY01q6q33nl1Ww4gg'">Doner Portal
+            <h1>Keep DataMate Free For Everyone</h1>
+
+            <p>
+                DataMate was created to help businesses transform ordinary spreadsheets
+                into powerful business applications. Your support helps fund development,
+                documentation, tutorials, hosting, and future improvements.
+            </p>
+
+            <div class="hero-actions">
+
+                <button class="btn btn-primary" onclick="donateFive()">
+                    Donate $5 Per Month
+                </button>
+
             </div>
+
         </div>
-    </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Support The Project</h2>
+                <p>
+                    Choose the option that works best for you.
+                </p>
+            </div>
+
+            <div class="donation-grid">
+
+                <div class="card donation-card">
+
+                    <h3>Monthly Supporter</h3>
+
+                    <div class="price">
+                        $5
+                        <span>/month</span>
+                    </div>
+
+                    <p>
+                        Help fund ongoing development,
+                        bug fixes, new features, videos,
+                        and support resources.
+                    </p>
+
+                    <br>
+
+                    <button class="btn btn-primary" onclick="donateFive()">
+                        Become A Supporter
+                    </button>
+
+                </div>
+
+                <div class="card donation-card">
+
+                    <h3>One-Time Donation</h3>
+
+                    <div class="price">
+                        ❤
+                    </div>
+
+                    <p>
+                        Make a one-time contribution
+                        to help keep DataMate growing.
+                    </p>
+
+                    <br>
+
+                    <stripe-buy-button buy-button-id="buy_btn_1QO2WDG1lPcU42DNgACDVfYi"
+                                       publishable-key="pk_live_51Of8JuG1lPcU42DNYCtcxoexE8BK72WjqGMZxcOsd7nHnktF1al9RJVXW4eCC46j8ER4jAkoXw0Cj63cpcFLg0VP006ScZi4wY">
+                    </stripe-buy-button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h2>100%</h2>
+                    <p>Free Core Software</p>
+                </div>
+
+                <div class="stat">
+                    <h2>∞</h2>
+                    <p>Business Solutions Possible</p>
+                </div>
+
+                <div class="stat">
+                    <h2>2026</h2>
+                    <p>Continuing Development</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>The Story Behind DataMate</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-card">
+                    <h3>Construction Career</h3>
+                    <p>
+                        Years spent managing projects where spreadsheets
+                        were the backbone of operations.
+                    </p>
+                </div>
+
+                <div class="timeline-card">
+                    <h3>The Idea</h3>
+                    <p>
+                        What if spreadsheets could act like lightweight databases
+                        without forcing users to learn complex software?
+                    </p>
+                </div>
+
+                <div class="timeline-card">
+                    <h3>DataMate Was Born</h3>
+                    <p>
+                        A platform designed to bridge the gap between
+                        spreadsheets and traditional databases.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container story">
+
+            <div class="section-title">
+                <h2>Why DataMateApps Are Free</h2>
+            </div>
+
+            <p>
+                Hi, I'm Dan Northway, founder and developer of DataMateApps.
+                Before retiring, I spent my career managing construction projects
+                where spreadsheets were used for nearly everything.
+            </p>
+
+            <div class="quote">
+                "What if I could turn spreadsheets into lightweight databases?"
+            </div>
+
+            <p>
+                That idea eventually became DataMate.
+                The goal was never to replace enterprise systems or SQL databases.
+                Instead, it was to give small businesses and teams a practical,
+                affordable way to organize and manage information.
+            </p>
+
+            <p>
+                Today, DataMate remains free because the mission matters more than
+                the software itself. Every user helps shape its future.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="container">
+
+            <div class="cta">
+
+                <h2>Help Keep DataMate Alive</h2>
+
+                <p>
+                    If DataMate has helped your business, saved you time,
+                    or inspired a project, consider supporting the future
+                    of the platform.
+                </p>
+
+                <button class="btn btn-primary" onclick="donateFive()">
+                    Support DataMate
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 DataMateApps • Empowering Spreadsheet Users Everywhere
+            </p>
+
+        </div>
+
+    </footer>
 
     <script>
+
         function donateFive() {
-            window.open("https://buy.stripe.com/4gwbJ702c4gF3jW6oo", "_blank").focus();
+            window.open(
+                "https://buy.stripe.com/4gwbJ702c4gF3jW6oo",
+                "_blank"
+            );
         }
 
     </script>
 
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-            <h1>Why DataMateApps Are Free</h1>
-
-    <div class="container">
-
-    <h2>About DataMateApps</h2>
-    <p>Hi, I'm <strong>Dan Northway</strong>—Founder and Developer of DataMateApps. Before retiring, I spent my career as a <strong>Construction Project Manager and Superintendent</strong>.</p>
-
-    <p>At most companies I worked with, spreadsheets were the backbone of project management. Everything—timecards, pay applications, logs—was stored in countless Excel and PDF files, requiring manual tracking.</p>
-
-    <p>I knew databases could streamline this process, but Excel was the standard. That’s when I had an idea:</p>
-
-    <blockquote>
-        <p><em>What if I could turn Excel itself into a lightweight database?</em></p>
-    </blockquote>
-
-    <p>Using <strong>forms and VBA</strong>, I built a system that stored, logged, and organized data efficiently—making sorting and filtering a breeze. It became an essential tool in my workflow.</p>
-
-    <h2>The Birth of DataMate</h2>
-    <p>After retiring, I revisited the concept, and a lightbulb went off:</p>
-
-    <blockquote>
-        <p><em>Why not make this work with any form?</em></p>
-    </blockquote>
-
-    <p>With help from the recently released <strong>ChatGPT</strong>, <strong>DataMate was born!</strong></p>
-
-    <p>DataMate isn’t a replacement for <strong>full-scale databases like SQL</strong> or enterprise-level solutions. Instead, it’s designed for <strong>small businesses and teams</strong> that rely on spreadsheets but need a <strong>smarter, structured way to manage data</strong>.</p>
-
-    <p>It bridges the gap between <strong>manual spreadsheets</strong> and <strong>complex (often expensive) systems</strong> that may be overkill for smaller operations.</p>
-
-    <h2>Why are DataMateApps Free?</h2>
-    <p>Because <strong>the idea matters more than the programming.</strong></p>
-
-    <p>Technology has made development more accessible, and for me, this is both a <strong>passion project</strong> and a way to <strong>keep my mind sharp</strong>. More importantly, I see DataMate as a <strong>legacy—one that grows and evolves with every user.</strong></p>
-
-    <hr>
-
-    <p>That said, while DataMateApps are free, its future depends on the support of those who find it valuable. Donations help cover development costs and ensure the project continues to grow for the next generation. If you believe in what DataMateApps can do, consider contributing to keep it alive and evolving.</p>
-
-    <h2>Spread the Word!</h2>
-        <p>If you’ve found DataMateApps useful, share it with colleagues, friends, and anyone who could benefit from these tools. The more people use and contribute, the better the project becomes for everyone.</p>
-        <p>Whether it’s through word of mouth, social media, or email, every share makes a difference. Let’s build something great together!</p>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>© 2026 DataMateApps | Empowering Your Data Management</p>
-            <p>
-                <a href="https://datamateapp.github.io/privacypolicy.html">Privacy Policy</a> |
-                <a href="https://datamateapp.github.io/termsconditions.html">Terms & Conditions</a> |
-                <a href="https://script.google.com/macros/s/AKfycby1GgJMYN1-_dAxH8Tem68ei1JtiE2OXtDGpY5O6XJKlrIH9jDeiyAdI9mpGXqkaDC0/exec">Contact Us</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var nav = document.querySelector('.mobile-nav');
-            if (nav.style.display === "block") {
-                nav.style.display = "none";
-            } else {
-                nav.style.display = "block";
-            }
-        }
-    </script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
