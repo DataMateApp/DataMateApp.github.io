@@ -3,900 +3,389 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Download ProjectProdigy – Construction Project Management for Google Sheets™</title>
+    <title>ProjectProdigy — Free Construction Project Management for Google Sheets™</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
+            --bg: #020617;
+            --card: #111827;
             --primary: #10b981;
-            --primary-dark: #059669;
-            --primary-light: #d1fae5;
-            --secondary: #3b82f6;
-            --secondary-light: #dbeafe;
-            --accent: #8b5cf6;
-            --dark: #1e293b;
-            --light: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
+            --primary2: #34d399;
+            --text: #f8fafc;
+            --muted: #cbd5e1;
+            --border: rgba(255,255,255,.08);
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: var(--light);
-            color: var(--gray-800);
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
-            animation: gradient 15s ease infinite;
-            pointer-events: none;
-            z-index: 0;
+        .container {
+            width: min(92%, 1200px);
+            margin: auto;
         }
 
-        @keyframes gradient {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+        section { padding: 90px 0; }
+
+        .hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at top right, rgba(16,185,129,.25), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(52,211,153,.15), transparent 40%);
         }
 
-        /* Hero Section */
-        .showcase {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 60px;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            overflow: hidden;
-            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
         }
 
-        .showcase::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-            filter: blur(80px);
-            animation: pulse 4s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        .showcase-inner {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-        }
-
-        .eyebrow {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 50px;
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-            color: var(--primary-dark);
-            animation: fadeInDown 0.8s ease;
-        }
-
-        .eyebrow-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation: blink 2s ease infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(16,185,129,.15);
+            border: 1px solid rgba(52,211,153,.3);
+            border-radius: 999px;
+            color: #a1f2c7;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.05;
             font-weight: 800;
-            background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
+            margin-bottom: 20px;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .hero p {
+            color: var(--muted);
+            font-size: 1.25rem;
         }
 
-        .showcase-subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            color: var(--gray-800);
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease 0.4s both;
-            font-weight: 600;
-        }
-
-        .showcase-tagline {
-            font-size: clamp(1rem, 2vw, 1.125rem);
-            color: var(--gray-600);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            animation: fadeInUp 0.8s ease 0.6s both;
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
         .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--primary2));
             color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-            position: relative;
-            overflow: hidden;
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: white;
         }
 
-        .btn-primary:hover::before {
-            left: 100%;
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
-        }
-
-        /* Main Content */
-        .page {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            background: var(--light);
-        }
-
-        .section-card {
-            background: white;
-            border: 1px solid var(--gray-200);
+        .mockup {
+            background: linear-gradient(180deg, #111827, #0f172a);
+            border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 3rem 2rem;
-            margin-bottom: 3rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            text-align: center;
         }
 
-        .section-card:hover {
-            border-color: var(--primary-light);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        .section-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
         }
 
-        .section-kicker {
-            display: inline-block;
-            color: var(--primary);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
+        .section-title h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 16px;
         }
 
-        h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-800);
-        }
-
-        h3 {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--gray-800);
-        }
-
-        .muted {
-            color: var(--gray-600);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-        }
-
-        .lead {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--gray-700);
-            margin-bottom: 1.5rem;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--gray-700);
-        }
-
-        ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-
-        .list-grid, .feature-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
         }
 
-        .feature-card {
-            background: var(--gray-50);
-            border: 2px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
-            background: white;
-        }
-
-        .feature-card h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
         }
 
         .highlight-band {
-            background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            font-size: 1.125rem;
-            font-weight: 500;
-            color: var(--gray-800);
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(52,211,153,0.1));
+            border-left: 5px solid var(--primary);
+            padding: 28px;
+            border-radius: 16px;
+            margin: 40px 0;
+            font-size: 1.2rem;
         }
 
-        /* Comparison Table */
+        .feature-grid, .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 2rem;
+        }
+
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            background: var(--card);
         }
-
-        .comparison-table thead {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        th, td {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        thead th {
+            background: var(--primary);
             color: white;
         }
 
-        .comparison-table th {
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--gray-200);
-            color: var(--gray-700);
-        }
-
-        .comparison-table tbody tr:hover {
-            background: var(--gray-50);
-        }
-
-        .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .table-label {
-            font-weight: 600;
-            color: var(--gray-800);
-        }
-
-        .procore-section {
-            background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
-            border: 2px solid #fbbf24;
-            border-radius: 24px;
-            padding: 3rem 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-card {
-            background: white;
-            border: 2px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .comparison-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--gray-800);
-        }
-
-        .callout-box {
-            background: white;
-            border: 2px solid var(--primary);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
+        .cta {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 80px 40px;
             text-align: center;
-        }
-
-        .callout-box strong {
-            font-size: 1.5rem;
-            color: var(--gray-800);
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .callout-box p {
-            color: var(--gray-600);
-            font-size: 1.125rem;
-        }
-
-        .note {
-            color: var(--gray-600);
-            font-style: italic;
-            margin: 1rem 0;
-        }
-
-        .video-link {
-            margin: 1.5rem 0;
-            font-size: 1.125rem;
-        }
-
-        .video-link a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .video-link a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .video-link a:hover::after {
-            width: 100%;
         }
 
         footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
             text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--gray-200);
-            background: var(--gray-50);
-            color: var(--gray-600);
+            color: var(--muted);
         }
 
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .list-grid, .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-table {
-                font-size: 0.875rem;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.75rem 0.5rem;
-            }
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <!-- HERO -->
-    <header class="showcase">
-        <div class="showcase-inner">
-            <div class="eyebrow">
-                <span class="eyebrow-dot"></span>
-                <span>Free lifetime download • Google Sheets™ native</span>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge">Free Lifetime Download • Google Sheets™ Native</div>
+                <h1>ProjectProdigy</h1>
+                <p>Free, Lifetime Construction Project Management System built entirely on Google Sheets™ and Google Drive™ — no new platform, no lock-in.</p>
+                
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzkyqkPtW3w5C3o7p-gicygbSnpNmq866Q4uROpIGw-wXzjVOsIMRi4SZg44rx_ZLmq/exec" target="_blank">
+                        Download Free
+                    </a>
+                    <a class="btn btn-secondary" href="https://youtu.be/V0V7N736wsg" target="_blank">Watch Demo</a>
+                </div>
             </div>
-
-            <h1>ProjectProdigy</h1>
-
-            <p class="showcase-subtitle">
-                Free, Lifetime Project System for Sheets-Driven Teams
-            </p>
-            <p class="showcase-tagline">
-                Built completely on Google Sheets™ and Google Drive™ — no new platform, no lock-in.
-            </p>
+            <div class="mockup">
+                <h2>Project Dashboard</h2>
+                <p>Estimates • RFIs • Submittals • Contacts • Field Reports</p>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="page">
-
-        <!-- WHAT IS PROJECTPRODIGY -->
-        <section class="section-card">
-            <div class="section-kicker">What ProjectProdigy Is</div>
-            <h2>A free, lifetime construction project management system built entirely on Google Sheets™ and Google Drive™</h2>
-            <p class="muted">
+    <!-- WHAT IS PROJECTPRODIGY -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>What ProjectProdigy Is</h2>
+                <p>A free, lifetime construction project management system built entirely on Google Sheets™ and Google Drive™</p>
+            </div>
+            <p class="muted" style="text-align:center; max-width:900px; margin:auto; font-size:1.2rem;">
                 It organizes, links, and synchronizes every project spreadsheet inside a single Drive folder — turning scattered files into a connected, navigable project workspace.
             </p>
-            <p class="lead">
-                Powered by DataMate, ProjectProdigy goes beyond data entry and forms to deliver true project-level coordination, without subscriptions, contracts, or proprietary platforms.
+            <p class="muted" style="text-align:center; max-width:900px; margin:30px auto; font-size:1.2rem;">
+                Powered by DataMate, ProjectProdigy delivers true project-level coordination without subscriptions or proprietary platforms.
             </p>
-        </section>
+        </div>
+    </section>
 
-        <!-- DESIGNED AROUND REAL JOBS -->
-        <section class="section-card">
-            <div class="section-kicker">Designed Around Real Jobs</div>
-            <h2>Built for How Construction Teams Actually Work</h2>
-            <p class="lead">Your projects don't live in one file — neither should your system.</p>
-            <p class="muted">
-                Construction projects live across estimates, RFIs, submittals, logs, pay apps, contacts, and field reports. ProjectProdigy brings everything together inside Google Sheets™.
-            </p>
-
-            <h3>Its purpose is simple:</h3>
-            <ul>
-                <li>Centralize all project files — Estimate, PM, Field, and Admin</li>
-                <li>Store estimates and management documents together in a single Google Sheets™ project folder containing multiple datasets</li>
-                <li>Automatically link and synchronize spreadsheets</li>
-                <li>Eliminate broken links and manual file tracking</li>
-                <li>Manage contacts directly in Sheets — no external CRM required</li>
-                <li>Import contacts from Gmail™ for instant project setup</li>
-            </ul>
-
-            <div class="highlight-band">
-                No new software. No forced workflows. Just structure, automation, and clarity.
+    <!-- DESIGNED AROUND REAL JOBS -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Built for How Construction Teams Actually Work</h2>
             </div>
-        </section>
+            <p class="muted" style="text-align:center; max-width:800px; margin:auto;">Your projects don't live in one file — neither should your system.</p>
 
-        <!-- FOLDER-DRIVEN INTELLIGENCE -->
-        <section class="section-card">
-            <div class="section-kicker">Folder-Driven Intelligence</div>
-            <h2>Your Project Folder Is the System</h2>
-            <p class="lead">With ProjectProdigy, the project folder is the project.</p>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>Automatic Organization</h4>
-                    <p>The Drive folder name becomes the project name. All project files live inside that folder or its subfolders.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Centralize All Files</h3>
+                    <p>Estimates, RFIs, submittals, logs, pay apps, contacts, and field reports in one project folder.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Everything Together</h4>
-                    <p>Estimates, contacts, RFIs, submittals, logs, and dashboards stay organized together.</p>
+                <div class="card">
+                    <h3>Automatic Linking & Sync</h3>
+                    <p>Spreadsheets stay connected and synchronized.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Smart Discovery</h4>
-                    <p>ProjectProdigy automatically discovers, organizes, and connects files based on location and naming.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Dynamic Updates</h4>
-                    <p>Rename the folder — the project updates everywhere.</p>
+                <div class="card">
+                    <h3>Contact Management</h3>
+                    <p>Import from Gmail™ and use across all documents.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- INSIDE SHEETS -->
-        <section class="section-card">
-            <div class="section-kicker">Inside Sheets</div>
-            <h2>A Live Project Dashboard in Your Spreadsheet</h2>
-            <p class="lead">A navigation sidebar that mirrors your Drive folder — right inside Google Sheets™.</p>
+    <!-- FOLDER-DRIVEN INTELLIGENCE -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Project Folder Is the System</h2>
+            </div>
+            <div class="grid">
+                <div class="card"><h3>Automatic Organization</h3><p>Drive folder name = Project name.</p></div>
+                <div class="card"><h3>Smart Discovery</h3><p>Automatically discovers and connects files.</p></div>
+                <div class="card"><h3>Dynamic Updates</h3><p>Rename folder → everything updates instantly.</p></div>
+            </div>
+        </div>
+    </section>
 
-            <p class="muted">
-                ProjectProdigy adds a smart navigation sidebar directly inside Google Sheets™:
-            </p>
+    <!-- INSIDE SHEETS -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>A Live Project Dashboard in Your Spreadsheet</h2>
+            </div>
+            <p class="muted" style="text-align:center; max-width:800px; margin:auto;">Smart navigation sidebar that mirrors your Drive folder — right inside Google Sheets™.</p>
 
-            <ul>
+            <ul style="max-width:700px; margin:40px auto; font-size:1.1rem;">
                 <li>Collapsible, hierarchical view of your entire project folder</li>
                 <li>Instant access to every dataset and document</li>
-                <li>No more hunting through Drive or bookmarks</li>
+                <li>No more hunting through Drive</li>
             </ul>
-
-            <h3 style="margin-top: 2rem;">Pinned project sections include:</h3>
-            <div class="list-grid">
-                <ul>
-                    <li>Main Project Files</li>
-                    <li>Project Contacts</li>
-                    <li>RFIs</li>
-                    <li>Submittals</li>
-                    <li>Purchase Orders</li>
-                    <li>Change Orders</li>
-                </ul>
-                <ul>
-                    <li>Pay Applications</li>
-                    <li>Superintendent Field Pack</li>
-                    <li>Daily Reports</li>
-                    <li>Weekly Time Sheets</li>
-                    <li>SWPPP Reports</li>
-                    <li>ESTIMATE (Dashboard + CSI-organized estimate sheets and folders)</li>
-                </ul>
-            </div>
 
             <div class="highlight-band">
                 Everything opens in one click — always in the right place.
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ONE-CLICK SYNC -->
-        <section class="section-card">
-            <div class="section-kicker">One-Click Sync</div>
-            <h2>Keep Every File Aligned with a Single Button</h2>
-            <p class="muted">
-                ProjectProdigy's Sync Project button keeps your entire project aligned. With a single click, it:
-            </p>
-
-            <ul>
-                <li>Writes the project name into key project sheets</li>
-                <li>Syncs Project Contacts across RFIs, Submittals, RFPs, POs, and Change Orders</li>
+    <!-- ONE-CLICK SYNC -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>One-Click Sync</h2>
+            </div>
+            <p class="muted" style="text-align:center; max-width:800px; margin:auto;">Keep your entire project aligned with a single button.</p>
+            <ul style="max-width:700px; margin:40px auto;">
+                <li>Writes project name into key sheets</li>
+                <li>Syncs contacts across RFIs, Submittals, POs, etc.</li>
                 <li>Updates and rebuilds the Estimate Dashboard</li>
-                <li>Pushes dashboard links into estimate files, Weekly Time Sheets, and Daily Reports</li>
             </ul>
+        </div>
+    </section>
 
-            <div class="highlight-band">
-                Your contacts, links, and dashboards stay current — automatically.
-            </div>
-        </section>
-
-        <!-- ESTIMATING -->
-        <section class="section-card">
-            <div class="section-kicker">Estimating</div>
-            <h2>A Smarter Estimate System — with CSI Support</h2>
-            <p class="lead">Estimates are treated as a first-class system, not loose files.</p>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>Automatic Detection</h4>
-                    <p>Detects the Estimate Dashboard and finds all estimate sheets — even in nested folders.</p>
+    <!-- ESTIMATING + CONTACTS + ECOSYSTEM -->
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <h3>Estimating with CSI Support</h3>
+                    <p>Automatic detection, smart organization, intelligent linking, and auto-rebuild of dashboards.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Smart Organization</h4>
-                    <p>Sorts estimates automatically and maintains proper structure.</p>
+                <div class="card">
+                    <h3>Built-in Contact Management</h3>
+                    <p>Centralized contacts, Gmail import, automatic linking across documents.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Intelligent Linking</h4>
-                    <p>Writes dashboard link to each estimate, and project name to each estimate.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Auto-Rebuild</h4>
-                    <p>Rebuilds the dashboard on every sync to keep everything current.</p>
+                <div class="card">
+                    <h3>Powered by DataMate</h3>
+                    <p>Dynamic forms, record management, linked dashboards, and production-ready reliability.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <p class="muted" style="margin-top: 2rem;">
-                This structure fully supports CSI Divisions and Sections, making it ideal for professional estimating workflows.
-            </p>
-        </section>
-
-        <!-- CONTACTS -->
-        <section class="section-card">
-            <div class="section-kicker">Contacts</div>
-            <h2>Built-In Contact Management (No CRM Required)</h2>
-            <p class="muted">
-                ProjectProdigy lets you manage all project contacts directly in Google Sheets™:
-            </p>
-
-            <ul>
-                <li>Centralized Project Contacts dataset</li>
-                <li>Import contacts directly from Gmail™</li>
-                <li>Automatically link contacts to RFIs, submittals, POs, and change orders</li>
-                <li>Keep ownership, consultants, subs, and vendors in one place</li>
-            </ul>
-
-            <div class="highlight-band">
-                Your contacts live with your project — not in a separate system.
-            </div>
-        </section>
-
-        <!-- DATAMATE ECOSYSTEM -->
-        <section class="section-card">
-            <div class="section-kicker">DataMate Ecosystem</div>
-            <h2>Seamlessly Integrated with DataMate</h2>
-            <p class="muted">
-                ProjectProdigy is a core extension of the DataMate ecosystem. It leverages DataMate's strengths:
-            </p>
-
-            <div class="list-grid">
-                <ul>
-                    <li>Dynamic forms</li>
-                    <li>Dataset and record management</li>
-                    <li>Linked dashboards</li>
-                </ul>
-                <ul>
-                    <li>Configurable columns and logic</li>
-                    <li>OAuth-aware Drive™ access</li>
-                    <li>Production-ready reliability</li>
-                </ul>
-            </div>
-
-            <p class="lead" style="margin-top: 2rem;">
-                Together, they transform Google Sheets™ from single-file tools into a connected, multi-file project platform.
-            </p>
-        </section>
-
-        <!-- PRODUCTION READY -->
-        <section class="section-card">
-            <div class="section-kicker">Production Ready</div>
-            <h2>Ready for Real Projects on Day One</h2>
-            <p class="muted">ProjectProdigy is built for real-world use:</p>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h4>Clean, Modern UI</h4>
-                    <p>Professional design that looks and feels polished.</p>
+    <!-- PRODUCTION READY + WHO IT'S FOR -->
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div class="card">
+                    <h3>Production Ready</h3>
+                    <p>Clean UI, reliable dialogs, secure OAuth access — built for real projects.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Reliable Dialogs</h4>
-                    <p>Avoids common Apps Script issues with robust implementation.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>Secure Access</h4>
-                    <p>OAuth-aware Drive™ access ensures your data stays safe.</p>
-                </div>
-                <div class="feature-card">
-                    <h4>No Prototypes</h4>
-                    <p>A solid, tested system — not an experiment.</p>
+                <div class="card">
+                    <h3>Ideal For</h3>
+                    <p>Construction estimators, project managers, superintendents, and teams that prefer spreadsheet flexibility.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="highlight-band">
-                No prototypes. No subscriptions. Just a solid system.
-            </div>
-        </section>
-
-        <!-- WHO IT'S FOR -->
-        <section class="section-card">
-            <div class="section-kicker">Who It's For</div>
-            <h2>Ideal for teams that:</h2>
-
-            <div class="list-grid">
-                <ul>
-                    <li>Run projects in Google Sheets™</li>
-                    <li>Use multiple linked datasets per job</li>
-                    <li>Want contacts, estimates, and documents in one place</li>
-                    <li>Need consistent naming, linking, and dashboards</li>
-                </ul>
-                <ul>
-                    <li>Want a free alternative to heavyweight PM platforms</li>
-                    <li>Already use — or plan to use — DataMate</li>
-                    <li>Prefer spreadsheet flexibility over rigid workflows</li>
-                </ul>
+    <!-- WHY NOT PROCORE -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Not Procore?</h2>
+                <p>Procore is powerful — but not every project needs an enterprise platform.</p>
             </div>
 
-            <p class="lead" style="margin-top: 2rem;">
-                Typical users include: construction estimators, project managers, superintendents, small-to-mid-size contractors, and operations teams managing multiple active jobs.
-            </p>
-        </section>
-
-        <!-- WHY NOT PROCORE -->
-        <section class="procore-section">
-            <div class="section-kicker">Why Not Procore?</div>
-            <h2>Procore is powerful — but not every project needs an enterprise platform.</h2>
-            <p class="muted">
-                If your team already works in Google Sheets™, Procore can feel heavy, expensive, and disconnected from how you actually manage projects. ProjectProdigy offers a simpler alternative.
-            </p>
-
-            <div class="comparison-grid">
-                <div class="comparison-card">
+            <div class="grid">
+                <div class="card">
                     <h3>When Procore Makes Sense</h3>
                     <ul>
                         <li>Large commercial portfolios</li>
-                        <li>Complex compliance and approval workflows</li>
-                        <li>Dedicated admins and training budgets</li>
-                        <li>Enterprise integrations (ERP, accounting, BIM)</li>
+                        <li>Complex compliance workflows</li>
+                        <li>Enterprise integrations</li>
                     </ul>
-                    <p style="margin-top: 1rem; color: var(--gray-600); font-style: italic;">Procore is built for scale — and priced accordingly.</p>
                 </div>
-
-                <div class="comparison-card" style="border-color: var(--primary);">
-                    <h3 style="color: var(--primary);">When ProjectProdigy Is the Better Choice</h3>
+                <div class="card">
+                    <h3>When ProjectProdigy Is Better</h3>
                     <ul>
-                        <li>Already manage projects in Google Sheets™</li>
-                        <li>Want estimates, contacts, and documents in one place</li>
-                        <li>Prefer flexible spreadsheets over fixed workflows</li>
-                        <li>Don't need enterprise-level overhead</li>
-                        <li>Want a free alternative to heavyweight PM software</li>
+                        <li>Already work in Google Sheets™</li>
+                        <li>Want flexible spreadsheets</li>
+                        <li>Prefer no subscriptions</li>
                     </ul>
                 </div>
             </div>
 
-            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Side-by-Side Comparison</h3>
-            <div style="overflow-x: auto;">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>ProjectProdigy</th>
-                            <th>Procore</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="table-label">Platform</td>
-                            <td>Google Sheets™ + Drive™</td>
-                            <td>Proprietary cloud platform</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Setup Time</td>
-                            <td>Minutes</td>
-                            <td>Weeks to months</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Learning Curve</td>
-                            <td>Minimal (Sheets-based)</td>
-                            <td>Steep</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Project Structure</td>
-                            <td>Folder-driven</td>
-                            <td>Module-driven</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Contacts</td>
-                            <td>Built into Sheets, import from Gmail</td>
-                            <td>Separate contact system</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Customization</td>
-                            <td>Unlimited (formulas, layouts, logic)</td>
-                            <td>Limited to platform rules</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Data Ownership</td>
-                            <td>100% yours in Drive</td>
-                            <td>Locked in platform</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Subscriptions</td>
-                            <td>Free, lifetime</td>
-                            <td>Ongoing, enterprise pricing</td>
-                        </tr>
-                        <tr>
-                            <td class="table-label">Best For</td>
-                            <td>Spreadsheet-driven teams</td>
-                            <td>Enterprise organizations</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="highlight-band" style="text-align:center; margin-top:40px;">
+                <strong>The Real Difference:</strong> Procore replaces your workflow. ProjectProdigy organizes it.
             </div>
+        </div>
+    </section>
 
-            <div class="callout-box">
-                <strong>The Real Difference</strong>
-                <p>Procore replaces your workflow. ProjectProdigy organizes it.</p>
-            </div>
-
-            <p style="font-size: 1.125rem; color: var(--gray-700); margin-top: 2rem;">
-                ProjectProdigy doesn't force your data into rigid modules. It connects the spreadsheets you already use — estimates, RFIs, submittals, logs, contacts — into a single, synchronized project system.
-            </p>
-
-            <p style="font-size: 1.125rem; color: var(--gray-700); font-weight: 600; margin-top: 1rem;">
-                No contracts. No per-user fees. No vendor lock-in.
-            </p>
-
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 16px;">
-                <p style="font-size: 1.5rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem;">
-                    If Procore feels like too much platform, ProjectProdigy is exactly enough.
+    <!-- DOWNLOAD CTA -->
+    <section>
+        <div class="container">
+            <div class="cta">
+                <h2>Ready to Organize Your Projects?</h2>
+                <p style="margin:25px 0; font-size:1.25rem;">Download ProjectProdigy now and start managing construction projects the smart way — in Google Sheets™.</p>
+                <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzkyqkPtW3w5C3o7p-gicygbSnpNmq866Q4uROpIGw-wXzjVOsIMRi4SZg44rx_ZLmq/exec" target="_blank" style="font-size:1.35rem; padding:20px 50px;">
+                    Download ProjectProdigy FREE ↓
+                </a>
+                <p style="margin-top:30px;">
+                    🎥 <a href="https://youtu.be/V0V7N736wsg" target="_blank" style="color:#60a5fa;">Watch Installation Video</a>
                 </p>
             </div>
-        </section>
-
-        <!-- DOWNLOAD CTA -->
-        <section class="section-card">
-            <div class="section-kicker">Get Started</div>
-            <h2>Ready to Organize Your Projects?</h2>
-            <p class="muted">
-                Download ProjectProdigy now and start managing your construction projects the way they should be managed — in Google Sheets™.
-            </p>
-
-            <p class="note">(Drive OAuth required)</p>
-
-            <p class="video-link">
-                🎥 <a href="https://youtu.be/V0V7N736wsg" target="_blank" rel="noopener">Watch Installation Video</a>
-            </p>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a class="btn-primary" href="https://script.google.com/macros/s/AKfycbzkyqkPtW3w5C3o7p-gicygbSnpNmq866Q4uROpIGw-wXzjVOsIMRi4SZg44rx_ZLmq/exec" target="_blank" rel="noopener">
-                    Download ProjectProdigy FREE<span style="margin-left:0.5rem;">↓</span>
-                </a>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <footer>
-        <p>© 2026 ProjectProdigy • Powered by DataMate</p>
-        <p>Free for lifetime use • No subscriptions • Full data ownership</p>
+        <div class="container">
+            <p>© 2026 ProjectProdigy • Powered by DataMate™</p>
+            <p>Free for lifetime use • No subscriptions • Full data ownership</p>
+        </div>
     </footer>
 
 </body>
 </html>
-
